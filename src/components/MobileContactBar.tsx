@@ -36,8 +36,8 @@ export default function MobileContactBar({menuOpen}:{menuOpen:boolean}){
    const el=found as HTMLElement|null,next=el?{service:normalizeService(el.dataset.contact)||undefined,city:el.dataset.contactCity||undefined,offer:el.dataset.contactOffer==='1'||undefined}:null;
    setSection(old=>JSON.stringify(old)===JSON.stringify(next)?old:next);};
   const queue=()=>{if(!frame)frame=requestAnimationFrame(read)};
-  window.addEventListener('scroll',queue,{passive:true});window.addEventListener('resize',queue);const timer=window.setTimeout(read,300);read();
-  return()=>{window.removeEventListener('scroll',queue);window.removeEventListener('resize',queue);window.clearTimeout(timer);if(frame)cancelAnimationFrame(frame)};
+  window.addEventListener('scroll',queue,{passive:true});const watch=new MutationObserver(queue);watch.observe(document.body,{subtree:true,attributes:true,attributeFilter:['data-contact','data-contact-city','data-contact-offer']});window.addEventListener('resize',queue);const timer=window.setTimeout(read,300);read();
+  return()=>{watch.disconnect();window.removeEventListener('scroll',queue);window.removeEventListener('resize',queue);window.clearTimeout(timer);if(frame)cancelAnimationFrame(frame)};
  },[location.pathname,location.search]);
  useEffect(()=>{
   document.body.classList.toggle('has-direct-contact',eligible);

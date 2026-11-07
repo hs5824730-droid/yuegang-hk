@@ -247,6 +247,19 @@ export function Credits() {
               </li>
             ))}
           </ul>
+          <h2 className="credits-h">{L('地圖資料', 'Map data')}</h2>
+          <ul className="credits credits-text">
+            <li><div>
+              <strong>{L('香港十八區界線', 'Hong Kong district boundaries')}</strong>
+              <span>{L('來源：民政事務總署「香港行政區界線」，經 DATA.GOV.HK 發布', 'Source: Home Affairs Department, “Hong Kong Administrative District Boundaries”, via DATA.GOV.HK')}</span>
+              <a href="https://data.gov.hk/" target="_blank" rel="noopener noreferrer">DATA.GOV.HK</a>
+            </div></li>
+            <li><div>
+              <strong>{L('海岸線', 'Coastline')}</strong>
+              <span>{L('來源：Natural Earth，公有領域', 'Source: Natural Earth, public domain')}</span>
+              <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">naturalearthdata.com</a>
+            </div></li>
+          </ul>
           <h2 className="credits-h">Unsplash</h2>
           <ul className="credits">
             {UNSPLASH.map((u) => (
