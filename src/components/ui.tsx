@@ -24,7 +24,8 @@ export function SmartImg({ src, alt, className = '', style, eager = false, posit
 }
 
 /** Reveals once when scrolled into view. Content is always visible without JS or with reduced motion. */
-export function Reveal({ children, className = '', delay = 0, as: Tag = 'div' }: { children: ReactNode; className?: string; delay?: number; as?: 'div' | 'section' | 'li' | 'article' }) {
+/** contact names the enquiry service the bottom contact bar should offer while this block is read. */
+export function Reveal({ children, className = '', delay = 0, as: Tag = 'div', contact }: { children: ReactNode; className?: string; delay?: number; as?: 'div' | 'section' | 'li' | 'article'; contact?: string }) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -48,7 +49,7 @@ export function Reveal({ children, className = '', delay = 0, as: Tag = 'div' }:
   }, []);
   const Cmp = Tag as 'div';
   return (
-    <Cmp ref={ref as never} className={`reveal ${shown ? 'in' : ''} ${className}`} style={{ transitionDelay: delay ? `${delay}ms` : undefined }}>
+    <Cmp ref={ref as never} data-contact={contact} className={`reveal ${shown ? 'in' : ''} ${className}`} style={{ transitionDelay: delay ? `${delay}ms` : undefined }}>
       {children}
     </Cmp>
   );

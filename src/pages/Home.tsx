@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, BadgeCheck, Check, Hammer, House, Languages, MapPin, Minus, Search, Wrench } from 'lucide-react';
 import { useEnquiry } from '../components/Enquiry';
 import { Reveal, SmartImg } from '../components/ui';
 import { cityName, useI18n } from '../i18n';
+import type { Service } from '../enquiry-options';
 
 /** Licensed Wikimedia photographs, credited on /credits. Cross-fade slowly. */
 const HERO_PHOTOS = [
@@ -10,30 +12,56 @@ const HERO_PHOTOS = [
   { key: 'kowloon', img: '/img/hk/kowloon.webp', pos: '30% 55%' },
 ];
 
+const REGIONS = ['Hong Kong Island', 'Kowloon', 'New Territories', 'Islands'] as const;
+
 /** Wikimedia photographs of the four service regions, credited on /credits. */
-const REGION_PHOTOS = [
-  { city: 'Hong Kong Island', img: '/img/hk/mid-levels.webp', pos: '50% 50%' },
-  { city: 'Kowloon', img: '/img/hk/kowloon.webp', pos: '22% 55%' },
-  { city: 'New Territories', img: '/img/hk/tai-po.webp', pos: '50% 50%' },
-  { city: 'Islands', img: '/img/hk/islands.webp', pos: '62% 45%' },
-];
+const REGION_PHOTOS: Record<(typeof REGIONS)[number], { img: string; pos: string }> = {
+  'Hong Kong Island': { img: '/img/hk/mid-levels.webp', pos: '50% 50%' },
+  Kowloon: { img: '/img/hk/kowloon.webp', pos: '22% 55%' },
+  'New Territories': { img: '/img/hk/tai-po.webp', pos: '50% 50%' },
+  Islands: { img: '/img/hk/islands.webp', pos: '62% 45%' },
+};
 
 export default function Home() {
   const { L, lang } = useI18n();
   const enquire = useEnquiry();
   const [scene, setScene] = useState(0);
+  const [service, setService] = useState<Service>('letting');
+  const [region, setRegion] = useState<string>('');
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = window.setTimeout(() => setScene(i => (i + 1) % HERO_PHOTOS.length), 11000);
+    const timer = window.setTimeout(() => setScene(i => (i + 1) % HERO_PHOTOS.length), 12000);
     return () => window.clearTimeout(timer);
   }, [scene]);
 
-  const sceneName = [L('維多利亞港', 'Victoria Harbour'), cityName('Kowloon', lang)];
+  const quick: [Service, string][] = [
+    ['letting', L('放租', 'Let')], ['management', L('租務管理', 'Manage')], ['selling', L('放售', 'Sell')], ['buying', L('買樓', 'Buy')], ['renovation', L('翻新', 'Renovate')],
+  ];
+
+  const facts = [
+    { Icon: BadgeCheck, t: L('持牌地產代理', 'Licensed estate agent'), d: L('依《地產代理條例》經營', 'Under the Estate Agents Ordinance') },
+    { Icon: Languages, t: L('粵語 · 普通話 · English', 'Cantonese · Mandarin · English'), d: L('用你習慣嘅語言溝通', 'In the language you prefer') },
+    { Icon: MapPin, t: L('港九新界及離島', 'All of Hong Kong'), d: L('按地址安排就近同事', 'A colleague near your flat') },
+  ];
+
+  const compare: [string, boolean][] = [
+    [L('放盤宣傳、約人睇樓', 'Marketing and viewings'), true],
+    [L('揀租客、簽租約、交吉交收', 'Tenant selection, tenancy, handover'), true],
+    [L('收租、同租客傾偈', 'Rent and tenant contact'), false],
+    [L('維修、驗樓、續約', 'Repairs, inspections, renewals'), false],
+  ];
+
+  const extras = [
+    { to: '/home-services', Icon: House, t: L('房屋服務', 'Home services'), d: L('清潔、睇屋、吉屋巡查', 'Cleaning, sitting, vacant-flat checks') },
+    { to: '/?service=maintenance', Icon: Wrench, t: L('維修保養', 'Repairs'), d: L('報維修、定期檢查', 'Requests and checks') },
+    { to: '/advisory#renovation', Icon: Hammer, t: L('裝修翻新', 'Renovation'), d: L('放租前執靚、換廚廁', 'Refreshes, kitchens, bathrooms') },
+    { to: '/?service=buyer-advisory', Icon: Search, t: L('置業查詢', 'Buying advice'), d: L('預算、按揭、印花稅', 'Budget, mortgage, stamp duty') },
+  ];
 
   const principles: [string, string][] = [
-    [L('持牌經營', 'Licensed'), L('依照《地產代理條例》經營，公司及營業員牌照號碼公開列明。', 'We act under the Estate Agents Ordinance; company and salesperson licence numbers are published.')],
     [L('書面先行', 'Agreed in writing'), L('佣金、服務範圍及是否雙邊代理，簽署表格 3／表格 5 之前逐項說明。', 'Fees, scope and any dual agency are set out before Form 3 or Form 5 is signed.')],
-    [L('一位顧問', 'One adviser'), L('由睇樓、交收到維修，同一位同事跟進，以粵語、普通話或英文匯報。', 'One colleague follows your property from viewing to repairs, reporting in Cantonese, Mandarin or English.')],
+    [L('一位顧問跟到尾', 'One adviser throughout'), L('由睇樓、交收到維修，同一位同事跟進，定期匯報進度。', 'One colleague follows your property from viewing to repairs and keeps you updated.')],
+    [L('海外業主都安心', 'Owners overseas are covered'), L('睇樓、交收、驗樓由本地同事處理，進度用電話、WhatsApp 或微信話你知。', 'Viewings, handovers and inspections are handled locally, with updates by phone, WhatsApp or WeChat.')],
   ];
 
   const faq: [string, string][] = [
@@ -51,80 +79,157 @@ export default function Home() {
           {HERO_PHOTOS.map((p, i) => <img key={p.key} src={p.img} alt="" className={i === scene ? 'is-on' : ''} style={{ objectPosition: p.pos }} fetchPriority={i === 0 ? 'high' : 'low'} loading={i === 0 ? 'eager' : 'lazy'} />)}
         </div>
         <span className="hx-hero-shade" aria-hidden />
-        <div className="hx-hero-copy">
-          <p className="hx-label">{L('香港住宅物業', 'Hong Kong Residential')}</p>
-          <h1 id="home-title">{L('細心打理，', 'Hong Kong homes,')}<br />{L('香港每一個家', 'quietly well kept')}</h1>
-          <button type="button" className="hx-link hx-link-light" onClick={() => enquire({ service: 'letting' })}>{L('預約私人諮詢', 'Arrange a private consultation')}</button>
-        </div>
-        <p className="hx-hero-caption" aria-live="off"><span>{String(scene + 1).padStart(2, '0')}</span>{sceneName[scene]}</p>
-      </section>
+        <div className="hx-wrap hx-hero-grid">
+          <div className="hx-hero-copy">
+            <p className="hx-eyebrow">{L('香港住宅 · 放租 · 管理 · 買賣', 'Hong Kong residential · Letting · Management · Sales')}</p>
+            <h1 id="home-title">{L('你嘅物業，', 'Your Hong Kong property,')}<br /><em>{L('交俾專業團隊打理', 'in professional hands')}</em></h1>
+            <p className="hx-lead">{L('由搵租客、收租、維修，到買賣與翻新，悦港一位專屬顧問全程跟進，粵語、普通話、English 隨你揀。', 'From tenants, rent and repairs to sales and renovation, one dedicated Harbour Joy adviser follows everything through, in Cantonese, Mandarin or English.')}</p>
+            <div className="hx-actions">
+              <button type="button" className="btn btn-primary" onClick={() => enquire({ service: 'letting' })}>{L('預約免費諮詢', 'Book a free consultation')}<ArrowRight size={18} aria-hidden /></button>
+              <Link className="btn btn-line" to="/viewings">{L('瀏覽盤源', 'Browse listings')}</Link>
+            </div>
+          </div>
 
-      {/* ------------------------------------------------------------ intro */}
-      <section className="hx-intro" id="what-we-do" aria-label={L('關於悦港', 'About Harbour Joy')}>
-        <Reveal className="hx-narrow">
-          <p className="hx-label">悦港 · Harbour Joy</p>
-          <p className="hx-statement">{L('由放租、租務管理，到買賣與翻新，\n悦港以一位專屬顧問，陪你走過物業嘅每一個階段。', 'From letting and management to sales and renovation, Harbour Joy gives each owner one dedicated adviser for every stage of a property’s life.')}</p>
-        </Reveal>
+          <form className="hx-panel hx-quick" onSubmit={e => { e.preventDefault(); enquire({ service, city: region || undefined }); }} aria-labelledby="quick-title">
+            <h2 id="quick-title">{L('快速查詢', 'Quick enquiry')}</h2>
+            <p>{L('揀服務同地區，同事會盡快聯絡你。', 'Choose a service and district; a colleague will be in touch.')}</p>
+            <fieldset>
+              <legend>{L('需要咩服務', 'Service')}</legend>
+              <div className="hx-chips">
+                {quick.map(([value, label]) => (
+                  <label key={value} className={service === value ? 'is-on' : ''}>
+                    <input type="radio" name="quick-service" value={value} checked={service === value} onChange={() => setService(value)} />{label}
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <label className="hx-field">
+              <span>{L('物業地區', 'District')}</span>
+              <select value={region} onChange={e => setRegion(e.target.value)}>
+                <option value="">{L('未決定 / 其他', 'Not sure / other')}</option>
+                {REGIONS.map(r => <option key={r} value={r}>{cityName(r, lang)}</option>)}
+              </select>
+            </label>
+            <button type="submit" className="btn btn-primary hx-quick-submit">{L('留低聯絡方式', 'Leave your details')}<ArrowUpRight size={17} aria-hidden /></button>
+          </form>
+        </div>
+
+        <div className="hx-wrap hx-facts-wrap">
+          <ul className="hx-panel hx-facts">
+            {facts.map(({ Icon, t, d }) => <li key={t}><Icon size={20} aria-hidden /><span><strong>{t}</strong><small>{d}</small></span></li>)}
+            <li className="hx-facts-offer"><Link to="/offer"><span><strong>{L('業主首個單位免佣', 'No owner commission, first flat')}</strong><small>{L('另送交吉清潔 · 至 2027年2月', 'Free pre-letting clean · until Feb 2027')}</small></span><ArrowUpRight size={16} aria-hidden /></Link></li>
+          </ul>
+        </div>
       </section>
 
       {/* --------------------------------------------------------- services */}
-      <section className="hx-features" aria-label={L('服務', 'Services')}>
-        <Reveal as="article" className="hx-feature">
-          <span id="services" className="v-anchor" />
-          <figure className="hx-feature-photo"><SmartImg src="/img/interior.jpg" alt={L('客廳（示意）', 'A living room (illustrative)')} position="50% 50%" /></figure>
-          <div className="hx-feature-copy">
-            <p className="hx-label"><span>01</span>{L('放租及租務管理', 'Letting & Management')}</p>
-            <h2>{L('租得其所，之後亦有人照應', 'Let well, and looked after long after')}</h2>
-            <p>{L('我哋為你物色合適租客、處理租約與交收；選擇租務管理嘅話，收租、維修及續約亦一併跟進。', 'We find the right tenant and handle the tenancy and handover. With management, rent, repairs and renewals are followed up too.')}</p>
-            <div className="hx-links">
-              <Link className="hx-link" to="/services">{L('了解服務', 'Discover more')}</Link>
-              <button type="button" className="hx-link rp-management-cta" onClick={() => enquire({ service: 'management' })}>{L('預約諮詢', 'Enquire')}</button>
+      <section className="hx-sec" id="what-we-do" aria-labelledby="home-biz-title">
+        <div className="hx-wrap">
+          <header className="hx-head">
+            <div>
+              <p className="hx-eyebrow">{L('核心服務', 'What we do')}</p>
+              <h2 id="home-biz-title">{L('一個團隊，打理物業嘅每一步', 'One team for every stage of your property')}</h2>
             </div>
-          </div>
-        </Reveal>
+            <Link className="hx-more" to="/services">{L('全部服務', 'All services')}<ArrowUpRight size={16} aria-hidden /></Link>
+          </header>
 
-        <Reveal as="article" className="hx-feature hx-feature-flip">
-          <span id="buy-sell-home" className="v-anchor" />
-          <figure className="hx-feature-photo"><SmartImg src="/img/hk/mid-levels.webp" alt={L('半山住宅', 'Homes in the Mid-Levels')} position="50% 50%" /></figure>
-          <div className="hx-feature-copy">
-            <p className="hx-label"><span>02</span>{L('買賣物業', 'Sales & Acquisitions')}</p>
-            <h2>{L('買或賣，先從你嘅計劃講起', 'Buying or selling begins with your plans')}</h2>
-            <p>{L('免費市價參考、查冊及物業資料表格，佣金喺表格 3／表格 5 寫明；未簽約，不收分文。', 'Market guidance, land searches and property information forms, with fees set out in Form 3 or Form 5. Nothing is payable before you sign.')}</p>
-            <div className="hx-links">
-              <Link className="hx-link sales-selling-cta" to="/selling-registration">{L('登記放售', 'Selling')}</Link>
-              <Link className="hx-link sales-buying-cta" to="/buying-registration">{L('登記買樓', 'Buying')}</Link>
-            </div>
-          </div>
-        </Reveal>
+          <div className="hx-cards">
+            <Reveal as="article" className="hx-panel hx-card" contact="management">
+              <span id="services" className="v-anchor" />
+              <figure><SmartImg src="/img/interior.jpg" alt={L('客廳（示意）', 'A living room (illustrative)')} position="50% 50%" /><figcaption>01</figcaption></figure>
+              <div className="hx-card-body">
+                <p className="hx-eyebrow">{L('放租及租務管理', 'Letting & management')}</p>
+                <h3>{L('租得好，之後都有人睇住', 'Let well, and looked after')}</h3>
+                <p>{L('物色合適租客、處理租約交收；揀租務管理，收租、維修、續約都交俾我哋。', 'We find the tenant and handle the tenancy; with management, rent, repairs and renewals too.')}</p>
+                <div className="hx-card-links">
+                  <button type="button" className="btn btn-primary rp-management-cta" onClick={() => enquire({ service: 'management' })}>{L('查詢', 'Enquire')}</button>
+                  <Link className="hx-more" to="/services">{L('了解更多', 'Learn more')}<ArrowUpRight size={15} aria-hidden /></Link>
+                </div>
+              </div>
+            </Reveal>
 
-        <Reveal as="article" className="hx-feature">
-          <span id="advisory-home" className="v-anchor" />
-          <figure className="hx-feature-photo"><SmartImg src="/img/renovation/hk-kitchen.webp" alt={L('翻新後嘅香港單位廚房', 'A renovated Hong Kong kitchen')} position="50% 60%" /></figure>
-          <div className="hx-feature-copy">
-            <p className="hx-label"><span>03</span>{L('翻新及置業顧問', 'Renovation & Advisory')}</p>
-            <h2>{L('先上門細看，再逐項報價', 'Seen in person, then quoted item by item')}</h2>
-            <p>{L('放租前翻新、廚房浴室更換，以至置業預算、按揭及印花稅，我哋先了解，你同意先開工。', 'Pre-letting refreshes, kitchens and bathrooms, and advice on budgets, mortgages and stamp duty. Work starts only once you approve.')}</p>
-            <div className="hx-links">
-              <Link className="hx-link" to="/advisory">{L('了解服務', 'Discover more')}</Link>
-              <Link className="hx-link advisory-home-cta" to="/advisory-registration?service=renovation">{L('登記翻新', 'Register')}</Link>
-            </div>
+            <Reveal as="article" className="hx-panel hx-card" contact="selling" delay={80}>
+              <span id="buy-sell-home" className="v-anchor" />
+              <figure><SmartImg src="/img/hk/mid-levels.webp" alt={L('半山住宅', 'Homes in the Mid-Levels')} position="50% 50%" /><figcaption>02</figcaption></figure>
+              <div className="hx-card-body">
+                <p className="hx-eyebrow">{L('買賣物業', 'Buying & selling')}</p>
+                <h3>{L('買定賣，先從你嘅計劃講起', 'Start with your plans')}</h3>
+                <p>{L('免費市價參考、查冊及物業資料表格；佣金喺表格 3／表格 5 寫明，未簽約不收分文。', 'Free price guidance, land searches and property forms; fees in Form 3 / Form 5, nothing before you sign.')}</p>
+                <div className="hx-card-links">
+                  <Link className="btn btn-primary sales-selling-cta" to="/selling-registration">{L('登記放售', 'Sell')}</Link>
+                  <Link className="btn btn-line sales-buying-cta" to="/buying-registration">{L('登記買樓', 'Buy')}</Link>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal as="article" className="hx-panel hx-card" contact="renovation" delay={160}>
+              <span id="advisory-home" className="v-anchor" />
+              <figure><SmartImg src="/img/renovation/hk-kitchen.webp" alt={L('翻新後嘅香港單位廚房', 'A renovated Hong Kong kitchen')} position="50% 60%" /><figcaption>03</figcaption></figure>
+              <div className="hx-card-body">
+                <p className="hx-eyebrow">{L('翻新及置業顧問', 'Renovation & advisory')}</p>
+                <h3>{L('先上門睇，再逐項報價', 'Seen first, then quoted item by item')}</h3>
+                <p>{L('放租前翻新、換廚房浴室，以至置業預算、按揭及印花稅，你點頭先開工。', 'Refreshes, kitchens and bathrooms, plus budgets, mortgages and stamp duty. Work starts once you approve.')}</p>
+                <div className="hx-card-links">
+                  <Link className="btn btn-primary advisory-home-cta" to="/advisory-registration?service=renovation">{L('登記翻新', 'Register')}</Link>
+                  <Link className="hx-more" to="/advisory">{L('了解更多', 'Learn more')}<ArrowUpRight size={15} aria-hidden /></Link>
+                </div>
+              </div>
+            </Reveal>
           </div>
-        </Reveal>
+
+          <ul className="hx-extras">
+            {extras.map(({ to, Icon, t, d }) => (
+              <li key={to}>
+                <Link className="hx-panel" to={to}><Icon size={20} aria-hidden /><span><strong>{t}</strong><small>{d}</small></span><ArrowUpRight size={16} aria-hidden /></Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ----------------------------------------------- letting vs managing */}
+      <section className="hx-sec hx-sec-band" aria-labelledby="home-plan-title" data-contact="letting">
+        <div className="hx-wrap hx-split">
+          <div className="hx-split-copy">
+            <p className="hx-eyebrow">{L('揀適合你嘅方式', 'Choose your level of service')}</p>
+            <h2 id="home-plan-title">{L('淨放租，定係連管理一齊交俾我哋？', 'Letting only, or management as well?')}</h2>
+            <p>{L('兩種方式都包放盤宣傳、揀租客同交收。想租客入住之後都唔使煩，就揀租務管理。', 'Both include marketing, tenant selection and handover. Choose management if you would rather not deal with anything after move-in.')}</p>
+            <Link className="hx-more" to="/offer">{L('業主優惠詳情', 'Owner offer details')}<ArrowUpRight size={15} aria-hidden /></Link>
+          </div>
+          <div className="hx-panel hx-table-wrap">
+            <table className="hx-compare">
+              <caption className="sr-only">{L('淨放租同租務管理比較', 'Letting only vs management')}</caption>
+              <thead><tr><th scope="col"><span className="sr-only">{L('服務內容', 'Service')}</span></th><th scope="col">{L('淨放租', 'Letting')}</th><th scope="col">{L('租務管理', 'Managed')}</th></tr></thead>
+              <tbody>
+                {compare.map(([label, inLetting]) => (
+                  <tr key={label}>
+                    <th scope="row">{label}</th>
+                    <td>{inLetting ? <><Check size={17} aria-hidden /><span className="sr-only">{L('包含', 'Included')}</span></> : <><Minus size={15} aria-hidden /><span className="hx-own">{L('自理', 'You')}</span></>}</td>
+                    <td><Check size={17} aria-hidden /><span className="sr-only">{L('包含', 'Included')}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot><tr><td /><td><button type="button" className="btn btn-line rp-letting-cta" onClick={() => enquire({ service: 'letting' })}>{L('查詢', 'Enquire')}</button></td><td><button type="button" className="btn btn-primary" onClick={() => enquire({ service: 'management' })}>{L('查詢', 'Enquire')}</button></td></tr></tfoot>
+            </table>
+          </div>
+        </div>
       </section>
 
       {/* ----------------------------------------------------------- regions */}
-      <section className="hx-regions" aria-labelledby="home-cities-title">
+      <section className="hx-sec" aria-labelledby="home-cities-title" data-contact="letting">
         <div className="hx-wrap">
           <header className="hx-head">
-            <p className="hx-label">{L('服務地區', 'Where we work')}</p>
-            <h2 id="home-cities-title">{L('港九新界及離島', 'Across Hong Kong')}</h2>
+            <div>
+              <p className="hx-eyebrow">{L('服務地區', 'Where we work')}</p>
+              <h2 id="home-cities-title">{L('港九新界及離島，都喺你附近', 'Across Hong Kong, near your flat')}</h2>
+            </div>
           </header>
-          <ul>
-            {REGION_PHOTOS.map(({ city, img, pos }) => (
+          <ul className="hx-regions">
+            {REGIONS.map(city => (
               <li key={city}>
                 <button type="button" onClick={() => enquire({ city, service: 'letting' })} aria-label={L(`查詢${cityName(city, lang)}嘅物業`, `Enquire about a home in ${city}`)}>
-                  <SmartImg src={img} alt="" position={pos} />
-                  <span>{cityName(city, lang)}</span>
+                  <SmartImg src={REGION_PHOTOS[city].img} alt="" position={REGION_PHOTOS[city].pos} />
+                  <span><MapPin size={15} aria-hidden />{cityName(city, lang)}<ArrowUpRight size={15} aria-hidden /></span>
                 </button>
               </li>
             ))}
@@ -132,65 +237,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* -------------------------------------------------------- privilege */}
-      <section className="hx-privilege" aria-labelledby="home-offer-title">
-        <Reveal className="hx-wrap hx-privilege-inner">
-          <p className="hx-label">{L('業主禮遇', 'For owners')}</p>
+      {/* ------------------------------------------------- principles + FAQ */}
+      <section className="hx-sec hx-sec-band" aria-labelledby="home-about-title">
+        <div className="hx-wrap hx-trust">
           <div>
-            <h2 id="home-offer-title">{L('首個委託單位，豁免業主佣金', 'No owner commission on your first property')}</h2>
-            <p>{L('另送交吉清潔一次，適用於 2027 年 2 月底前簽署嘅放租委託。', 'With a complimentary pre-letting clean, for letting appointments signed before the end of February 2027.')}</p>
-            <Link className="hx-link" to="/offer">{L('細閱條款', 'Read the terms')}</Link>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* ------------------------------------------------------- principles */}
-      <section className="hx-principles" aria-labelledby="home-about-title">
-        <div className="hx-wrap">
-          <header className="hx-head">
-            <p className="hx-label">{L('我們的做法', 'How we work')}</p>
+            <p className="hx-eyebrow">{L('點解揀悦港', 'Why Harbour Joy')}</p>
             <h2 id="home-about-title">{L('熟悉香港，認真對待每一層樓', 'Local knowledge, careful follow-through')}</h2>
-          </header>
-          <ol>
-            {principles.map(([t, d], i) => (
-              <Reveal as="li" key={t} delay={i * 80}>
-                <span className="hx-numeral" aria-hidden>{['I', 'II', 'III'][i]}</span>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </Reveal>
-            ))}
-          </ol>
-          <Link className="hx-link" to="/about">{L('認識悦港', 'About Harbour Joy')}</Link>
-        </div>
-      </section>
-
-      {/* --------------------------------------------------------------- FAQ */}
-      <section className="hx-faq" aria-labelledby="home-faq-title">
-        <div className="hx-wrap hx-faq-inner">
-          <header className="hx-head">
-            <p className="hx-label">{L('常見問題', 'Questions')}</p>
-            <h2 id="home-faq-title">{L('業主常問', 'What owners ask')}</h2>
-            <Link className="hx-link" to="/services#rental-faq">{L('更多問題', 'More questions')}</Link>
-          </header>
-          <div className="hx-faq-list">
-            {faq.map(([q, a]) => (
-              <details key={q}>
-                <summary>{q}</summary>
-                <p>{a}</p>
-              </details>
-            ))}
+            <ol className="hx-principles">
+              {principles.map(([t, d], i) => (
+                <li key={t} className="hx-panel"><span className="hx-num">{String(i + 1).padStart(2, '0')}</span><div><h3>{t}</h3><p>{d}</p></div></li>
+              ))}
+            </ol>
+            <Link className="hx-more" to="/about">{L('認識悦港', 'About Harbour Joy')}<ArrowUpRight size={15} aria-hidden /></Link>
+          </div>
+          <div>
+            <p className="hx-eyebrow">{L('常見問題', 'FAQ')}</p>
+            <h2 id="home-faq-title">{L('業主最常問', 'What owners ask first')}</h2>
+            <div className="hx-panel hx-faq">
+              {faq.map(([q, a], i) => (
+                <details key={q} open={i === 0}>
+                  <summary>{q}</summary>
+                  <p>{a}</p>
+                </details>
+              ))}
+            </div>
+            <Link className="hx-more" to="/services#rental-faq">{L('更多問題', 'More questions')}<ArrowUpRight size={15} aria-hidden /></Link>
           </div>
         </div>
       </section>
 
       {/* ----------------------------------------------------------- closing */}
-      <section className="hx-closing" aria-labelledby="home-close-title">
-        <SmartImg src="/img/hk/hk-island.webp" alt="" position="60% 50%" />
-        <span className="hx-hero-shade" aria-hidden />
-        <div className="hx-closing-copy">
-          <p className="hx-label">{L('私人諮詢', 'Private consultation')}</p>
-          <h2 id="home-close-title">{L('同我們談談你的物業', 'Tell us about your property')}</h2>
-          <button type="button" className="hx-button" onClick={() => enquire()}>{L('留低聯絡方式', 'Leave your details')}</button>
+      <section className="hx-sec hx-closing" aria-labelledby="home-close-title">
+        <div className="hx-wrap">
+          <div className="hx-panel hx-closing-panel">
+            <SmartImg src="/img/hk/hk-island.webp" alt="" position="60% 50%" />
+            <div className="hx-closing-copy">
+              <p className="hx-eyebrow">{L('私人諮詢', 'Private consultation')}</p>
+              <h2 id="home-close-title">{L('不如傾吓你層樓？', 'Let’s talk about your flat')}</h2>
+              <p>{L('話我哋知層樓喺邊、想我哋幫咩手，同事好快會搵你。', 'Tell us where the flat is and what you need — a colleague will be in touch.')}</p>
+            </div>
+            <div className="hx-actions">
+              <button type="button" className="btn btn-primary" onClick={() => enquire()}>{L('開始委託查詢', 'Start an enquiry')}<ArrowRight size={18} aria-hidden /></button>
+              <Link className="btn btn-line" to="/contact">{L('其他聯絡方式', 'Other ways to reach us')}</Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>
