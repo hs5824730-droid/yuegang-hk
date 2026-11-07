@@ -67,9 +67,9 @@ export default function Advisory() {
   ];
 
   const values = [
-    { Icon: ClipboardCheck, t: L('免費評估，按項目報價', 'Free assessment, quoted per project'), d: L('先評估再報價，確認方案後先開工。', 'Works begin only after you approve the plan.') },
-    { Icon: ShieldCheck, t: L('同出租安排銜接', 'Aligned with letting'), d: L('翻新時間同放租計劃一齊安排，減少空置。', 'Planned around the letting timeline to limit vacancy.') },
-    { Icon: House, t: L('現場有人跟進', 'Someone on site'), d: L('本地團隊跟進，進度以照片同說明反饋。', 'Our local team reports progress with photos and notes.') },
+    { Icon: ClipboardCheck, t: L('管理處申報，我哋幫你搞', 'Building management paperwork handled'), d: L('開工前向大廈管理處申報、交按金，跟足裝修守則同開工時間（一般平日朝九晚六），唔會滋擾鄰居。', 'We file with building management, pay any deposit and keep to the fit-out rules and working hours, so neighbours are not disturbed.') },
+    { Icon: ShieldCheck, t: L('註冊承建商，合規施工', 'Registered contractors, compliant works'), d: L('涉及《小型工程監管制度》嘅項目，例如裝冷氣機支架、改窗，交俾註冊小型工程承建商做，完工有證明文件。', 'Items under the Minor Works Control System, such as air-conditioner brackets or window changes, are done by registered contractors with completion records.') },
+    { Icon: House, t: L('交吉空檔開工，少啲空置', 'Works timed between tenancies'), d: L('預先排好工期，喺租客退租到新租客入伙嘅空檔完成，唔使白白損失租金。', 'Scheduled for the gap between tenants, so the flat is not left empty longer than needed.') },
   ];
 
   return (
@@ -82,7 +82,7 @@ export default function Advisory() {
           <Link className="btn btn-primary advisory-hero-cta" to="/advisory-registration?service=renovation">{L('預約免費評估', 'Book a free assessment')}<ArrowRight size={18} aria-hidden /></Link>
           <a className="btn btn-line" href="#renovation">{L('了解裝修翻新', 'About renovation')}</a>
         </>}
-        aside={pairPending ? <div className="ds-compare-ba-placeholder" aria-hidden /> : pairReady ? <div className="v-hero-compare"><BeforeAfter L={L} /><p className="v-compare-cap">{L('改造方案對比 · 示意', 'Renovation concept · illustrative')}</p></div> : <figure className="v-tile-photo"><SmartImg src={REN(3)} alt={L('牆面粉刷（示意）', 'Repainting (illustrative)')} /></figure>}
+        aside={pairPending ? <div className="ds-compare-ba-placeholder" aria-hidden /> : pairReady ? <div className="v-hero-compare"><BeforeAfter L={L} /><p className="v-compare-cap">{L('改造方案對比 · 示意', 'Renovation concept · illustrative')}</p></div> : <figure className="v-tile-photo"><SmartImg src={REN('hk-living')} alt={L('細單位客廳翻新（示意）', 'Compact living room refresh (illustrative)')} /></figure>}
       />
 
       <section className="v-sec v-sec-tight" aria-labelledby="adv-svc-title">
@@ -129,9 +129,9 @@ export default function Advisory() {
 
           <h3 className="v-subhead">{L('效果參考', 'Gallery')}</h3>
           <div className="v-gallery">
-            {[[3, L('牆面粉刷', 'Repainting')], [4, L('施工跟進', 'Works underway')], [5, L('客廳煥新', 'Living room refresh')]].map(([n, label]) => (
+            {[['hk-living', L('細單位客廳 · 窗台變坐位', 'Compact living · bay-window seat'), L('細單位客廳翻新：窗台改成坐位兼儲物（示意）', 'Compact living room with a bay-window seat (illustrative)')], ['hk-kitchen', L('狹長廚房 · 牆身櫃用盡高度', 'Galley kitchen · full-height storage'), L('狹長廚房翻新：吊櫃用盡牆身高度（示意）', 'Galley kitchen with full-height cabinets (illustrative)')], ['hk-bathroom', L('浴室 · 浴缸改企缸', 'Bathroom · tub to walk-in shower'), L('浴室翻新：浴缸改企缸淋浴（示意）', 'Bathroom with the tub replaced by a walk-in shower (illustrative)')]].map(([n, label, alt]) => (
               <figure key={n}>
-                <SmartImg src={REN(n)} alt={L('翻新相關示意照片', 'Renovation (illustrative)')} />
+                <SmartImg src={REN(n)} alt={alt} />
                 <figcaption><span>{label}</span><small>{L('示意', 'Illustrative')}</small></figcaption>
               </figure>
             ))}

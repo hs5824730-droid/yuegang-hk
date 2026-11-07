@@ -30,7 +30,7 @@ export default function RentalServices() {
       decide: L('租俾邊個、咩條件，由你決定。', 'You choose the tenant and the terms.'),
     },
     {
-      img: '/img/renovation/5.webp',
+      img: '/img/renovation/hk-living.webp',
       alt: L('整理好嘅客廳（示意）', 'A prepared living room (illustrative)'),
       step: L('簽約同入住', 'Lease & move in'),
       title: L('由簽約到交鑰匙，將入住接好', 'From signing to keys'),
