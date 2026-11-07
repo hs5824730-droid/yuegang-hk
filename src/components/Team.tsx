@@ -13,6 +13,8 @@ export const MEMBERS: Member[] = [];
 export default function Team() {
   const { L } = useI18n();
   const enquire = useEnquiry();
+  // Nothing to show until real, licensed team members are added.
+  if (!MEMBERS.length) return null;
   return (
     <section className="ds-sec team-section" id="team" aria-labelledby="team-title">
       <div className="wrap">
@@ -22,7 +24,7 @@ export default function Team() {
             <h2 id="team-title">{L('認識為你跟進嘅人', 'Meet the people behind the work')}</h2>
           </div>
         </div>
-        {MEMBERS.length ? <div className="ds-team">
+        <div className="ds-team">
           {MEMBERS.map((m) => (
             <article className="ds-member" key={m.id}>
               <div className="ds-member-photo"><SmartImg src={`/team/${m.id}.webp`} alt={m.en} position="50% 20%" /></div>
@@ -35,7 +37,7 @@ export default function Team() {
               </div>
             </article>
           ))}
-        </div> : <p className="ds-lead">{L('團隊成員介紹及個人地產代理牌照號碼整理中，公佈後會喺度列出。', 'Team profiles and individual estate agent licence numbers will be listed here once published.')}</p>}
+        </div>
         <div className="ds-team-cta">
           <p>{L('想等團隊跟進你嘅單位？留低地區同需求，我哋安排對應同事聯絡你。', 'Want our team to look after your flat? Tell us the district and what you need, and the right person will be in touch.')}</p>
           <button type="button" className="btn btn-primary" onClick={() => enquire({ service: 'management' })}>

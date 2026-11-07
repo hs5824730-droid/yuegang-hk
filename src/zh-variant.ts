@@ -1,10 +1,20 @@
 /**
  * Chinese display variants. Site copy is written once in Cantonese (粵語, Traditional script);
- * the 繁體中文 variant is derived from it as standard written Chinese (書面語).
+ * the 繁體中文 variant is derived from it as Mandarin (普通話) wording in Traditional script.
  */
 export type ZhVariant = 'yue' | 'hant';
 export type SiteLanguage = ZhVariant | 'en';
 
+/** Hong Kong property terms that Mandarin readers say differently. Applied before the Cantonese rules. */
+const MANDARIN: [string, string][] = [
+  ['粵語 / English', '中文 / English'], ['睇吓盤', '查看房源'], ['搵返', '再找'], ['一路跟到尾', '全程跟進'], ['跟到尾', '跟進到底'], ['放盤宣傳', '房源推廣'], ['約人睇樓', '安排看房'], ['放售', '出售'], ['跟維修', '跟進維修'],
+  ['網上睇樓', '線上看房'], ['約睇樓', '預約看房'], ['睇樓', '看房'], ['免費傾吓', '免費諮詢'], ['問吓', '諮詢'], ['睇住', '照看'],
+  ['淨放租', '只出租'], ['只放租', '只出租'], ['放租', '出租'], ['租盤', '出租房源'], ['售盤', '出售房源'], ['放盤', '房源委託'], ['樓盤', '房源'], ['盤源', '房源'],
+  ['買樓賣樓', '買房賣房'], ['買樓', '買房'], ['賣樓', '賣房'], ['租樓', '租房'], ['樓價', '房價'], ['樓況', '房屋狀況'], ['屋苑', '社區'],
+  ['搬屋', '搬家'], ['按金', '押金'], ['交吉', '交房'], ['入伙', '入住'], ['交收', '交接'], ['冷氣機', '空調'], ['冷氣', '空調'], ['傢俬', '傢俱'],
+  ['第 1 個單位', '第 1 套房'], ['第 2 個單位', '第 2 套房'], ['首個單位', '第一套房'], ['第一個單位', '第一套房'], ['第二個單位', '第二套房'], ['幾個單位', '多套房'], ['個單位', '套房'], ['單位', '房屋'],
+  ['查詢', '諮詢'], ['電郵', '電子郵件'], ['手提電話', '手機'], ['師傅', '師傅'], ['業主優惠', '房東優惠'], ['業主', '房東'],
+];
 /** Whole phrases first, so idioms read naturally instead of word-by-word. */
 const PHRASES: [string, string][] = [
   ['你淨係收租就得', '您只需收租即可'], ['一蚊都唔收', '分文不收'], ['得㗎！', '可以！'], ['得㗎', '可以'], ['冇問題', '沒問題'],
@@ -23,7 +33,7 @@ const CHARS: [RegExp, string][] = [
   [/我哋/g, '我們'], [/你哋/g, '你們'], [/佢哋/g, '他們'], [/佢/g, '他'], [/嘅/g, '的'], [/係/g, '是'], [/冇/g, '沒有'],
   [/唔/g, '不'], [/喺/g, '在'], [/咗/g, '了'], [/啲/g, '些'], [/呢/g, '這'], [/嗰/g, '那'], [/咁/g, '這麼'], [/嚟/g, '來'],
   [/俾/g, '給'], [/畀/g, '給'], [/攞/g, '拿'], [/搵/g, '找'], [/撳/g, '按'], [/咩/g, '什麼'], [/揀/g, '選擇'], [/啱/g, '合適'],
-  [/(?<!睇)睇(?!樓)/g, '看'], [/傾/g, '商談'], [/吓/g, '一下'], [/㗎|喇|嘞|囉|㖭/g, ''], [/啦/g, '吧'],
+  [/睇/g, '看'], [/傾/g, '商談'], [/吓/g, '一下'], [/㗎|喇|嘞|囉|㖭/g, ''], [/啦/g, '吧'],
   [/仲/g, '還'], [/(?<![相不一共陪如等])同(?![事意一樣時步區類])/g, '和'],
   [/(?<![旁身海兩雙這那周左右河岸一])邊(?![界境緣])/g, '哪'], [/你(?!們)/g, '您'],
 ];
@@ -33,6 +43,7 @@ export function toWrittenChinese(text: string): string {
   const hit = cache.get(text);
   if (hit !== undefined) return hit;
   let out = text;
+  for (const [from, to] of MANDARIN) out = out.split(from).join(to);
   for (const [from, to] of PHRASES) out = out.split(from).join(to);
   for (const [from, to] of CHARS) out = out.replace(from, to);
   cache.set(text, out);
