@@ -118,7 +118,7 @@ export default function HomeServices() {
                   <p className="hs-tag">{s}</p>
                   <p className="hs-card-d">{d}</p>
                   <ul className="hs-checks">{items.map(item => <li key={item}><Check size={15} aria-hidden />{item}</li>)}</ul>
-                  {id === 'garden' && <a className="hs-garden-jump" href="#hs-garden">{L('睇吓庭院同露台靈感', 'Explore courtyard & terrace ideas')}<ArrowRight size={15} aria-hidden /></a>}
+                  {id === 'garden' && <a className="hs-garden-jump" href="#hs-garden">{L('睇吓露台同天台靈感', 'Explore courtyard & terrace ideas')}<ArrowRight size={15} aria-hidden /></a>}
                   <Link className="hs-card-link" to={book(id)}>{L('預約呢項服務', 'Book this service')}<ArrowUpRight size={17} aria-hidden /></Link>
                 </div>
               </Reveal>

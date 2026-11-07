@@ -159,13 +159,21 @@ export function buildGarden(index: number) {
     for (let i = 0; i < 10; i++) box(0, .499, -.22 + i * .057, .72, .012, .022, charcoal, g);
     const seat = box(0, .55, .1, .65, .09, .53, fabric, g); seat.rotation.x = -.05;
   }
-  function fire(x: number, z: number, radius = .5) {
-    cyl(x, .28, z, radius, .45, stone); cyl(x, .514, z, radius * .76, .025, charcoal);
-    for (let i = 0; i < 4; i++) {
-      const log = cyl(x + (random() - .5) * .25, .57, z + (random() - .5) * .2, .035, .4, wood); log.rotation.z = Math.PI / 2; log.rotation.y = i;
+  // Hong Kong terraces and rooftops do not allow open fires: a low stone coffee table instead.
+  function lowTable(x: number, z: number, radius = .5) {
+    cyl(x, .2, z, radius * .55, .36, stone); cyl(x, .4, z, radius, .06, ivory);
+    cyl(x + radius * .3, .47, z - radius * .2, .09, .08, charcoal); sphere(x - radius * .25, .5, z + radius * .15, .07, greens[2]);
+  }
+  // Neighbouring high-rises behind the back wall, so every design reads as a terrace among towers.
+  function skyline() {
+    const concrete = [mat(0xd8d4cb), mat(0xc9ccd0), mat(0xe2ddd2)], glass = mat(0x8ea2b2, .35);
+    let x = -w / 2 + .2;
+    while (x < w / 2 + .6) {
+      const tw = 1.1 + random() * 1.2, th = 3.2 + random() * 4.2, z = -d / 2 - 1.1 - random() * 1.8;
+      box(x + tw / 2, th / 2 - .3, z, tw, th, 1.2, concrete[Math.floor(random() * 3)]);
+      for (let y = .55; y < th - .6; y += .5) box(x + tw / 2, y - .3, z + .61, tw * .82, .16, .02, glass);
+      x += tw + .15 + random() * .4;
     }
-    const ember = mat(0xe78928, .7, { emissive: 0xe25f10, emissiveIntensity: .4 });
-    for (let i = 0; i < 5; i++) { const flame = mesh(new T.ConeGeometry(.065, .17 + random() * .16, 7), ember, x + (random() - .5) * .22, .68, z + (random() - .5) * .2); flame.rotation.z = (random() - .5) * .5; }
   }
   function rug(x: number, z: number, r: number) {
     const m = mesh(new T.CircleGeometry(r, 64), textured('rug'), x, .044, z); m.rotation.x = -Math.PI / 2; m.castShadow = false;
@@ -241,15 +249,16 @@ export function buildGarden(index: number) {
   box(0, .69, -d / 2, w + .1, 1.4, .1, ivory);
   rail(w / 2, 0, d, Math.PI / 2, spec.kind === 'dining');
   rail(0, d / 2, w);
+  skyline();
   if (spec.kind === 'curved') {
     planter(-3.55, 0, .75, 4.8); planter(-1.8, -2.55, 4.2, .65); planter(1, -2.5, .85, .8);
     tropical(-3.55, .5, -2, 1.25); tree(.9, -2.5, 2);
     curvedSeat(-.75, 0, 2.45); deck(-1.9, 2.62, 4.6, .72);
-    rug(-.65, .75, 1); fire(-1, -.1, .48); lounge(.52, .65, -.65);
+    rug(-.65, .75, 1); lowTable(-1, -.1, .48); lounge(.52, .65, -.65);
     bar(2.2, -2.35, 2.6); kitchen(3.7, -.2, 2.6, -Math.PI / 2); planter(3.7, 1.9, .7, 1.2);
   } else if (spec.kind === 'long') {
     planter(-4.6, 0, .7, 3.25); planter(-1, -1.62, 7.4, .65);
-    curvedSeat(-2.7, 0, 1.65); deck(-3.2, .15, 3.3, 3.25); fire(-3, .2, .4);
+    curvedSeat(-2.7, 0, 1.65); deck(-3.2, .15, 3.3, 3.25); lowTable(-3, .2, .4);
     for (let i = 0; i < 3; i++) box(.6, .055, -.85 + i * .85, 5.3, .06, .7, ivory);
     box(-.2, .83, -1.6, 1.1, 1.65, .1, ivory); // perforated privacy screen
     for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) cyl(-.6 + i * .27, .3 + j * .3, -1.52, .065, .025, charcoal).rotation.x = Math.PI / 2;
@@ -263,7 +272,7 @@ export function buildGarden(index: number) {
     tropical(3.8, .52, 1.5, 1.1);
   } else if (spec.kind === 'pergola') {
     deck(2.1, -2.15, 3.6, 2.8); pergola(2.1, -2.15, 3.5, 2.75);
-    bench(2.1, -3.25, 3.2, 0, true); fire(2, -2, .42); lounge(1.3, -1.2, -.7);
+    bench(2.1, -3.25, 3.2, 0, true); lowTable(2, -2, .42); lounge(1.3, -1.2, -.7);
     kitchen(-3.55, -.2, 3.7, Math.PI / 2); bar(-3.2, -2.25, 1.1); water(-1.6, -2.7, 1.6, .8);
     planter(-3.65, 2, .65, 2); planter(0, 3.15, 6.9, .65); tree(-3.6, 2.6, 2.2);
     box(2.7, 1.1, 1.6, 2.8, 2.2, .16, ivory); box(2.7, 1.1, 1.48, .83, 1.95, .04, metal);
@@ -277,7 +286,7 @@ export function buildGarden(index: number) {
   } else if (spec.kind === 'minimal') {
     planter(-3.8, -.5, .7, 3.4); tree(-3.8, -.5, 2.2); planter(-.7, -2.2, 5.8, .55);
     water(-1.5, -1.5, 2.35, 1.1); bench(1.8, -1.9, 3.3, 0, true);
-    kitchen(3.7, .35, 2.35, -Math.PI / 2); fire(1, .2, .62); lounge(-.5, .6, .7); tropical(3.65, .52, -2.1, 1.25);
+    kitchen(3.7, .35, 2.35, -Math.PI / 2); lowTable(1, .2, .62); lounge(-.5, .6, .7); tropical(3.65, .52, -2.1, 1.25);
   } else if (spec.kind === 'balcony') {
     deck(-.2, -1.65, 3.1, 4.4); bench(-.25, -3.25, 2.8, 0, true);
     box(-.25, .2, -1.5, 2.2, .025, 2, cushion); cyl(-.25, .48, -1.5, .4, .055, stone); cyl(-.25, .25, -1.5, .1, .46, ivory);

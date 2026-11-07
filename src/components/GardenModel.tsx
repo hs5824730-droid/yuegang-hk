@@ -37,7 +37,7 @@ export default function GardenModel({ design, title, onPhoto }: { design: number
     </div>
     <div className="garden-model-stage">
       <div className="garden-model-canvas" ref={host} role="img" aria-label={L(`${title}，可旋轉嘅三維設計示意`, `${title}, interactive 3D design study`)} aria-describedby={help} hidden={status === 'failed'} />
-      {status === 'loading' && <p className="garden-model-status" role="status">{L('正在構建三維庭院…', 'Building the 3D garden…')}</p>}
+      {status === 'loading' && <p className="garden-model-status" role="status">{L('正在構建三維露台…', 'Building the 3D garden…')}</p>}
       {status === 'failed' && <div className="garden-model-error" role="status">
         <p>{L('當前設備暫時無法顯示三維場景，可以繼續查睇完整設計圖。', '3D is unavailable on this device. You can still view the full design image.')}</p>
         <button type="button" onClick={onPhoto}>{L('返回設計圖', 'Back to images')}</button>
