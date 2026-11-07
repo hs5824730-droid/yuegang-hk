@@ -12,8 +12,8 @@ export function OfferBanner() {
     <div className="home-offer-card">
       <div className="home-offer-copy">
         <span className="home-offer-tag"><Sparkles size={15} aria-hidden />{L('限時活動', 'Limited time')}</span>
-        <h2 id="home-offer-title">{L('第一層樓免出租佣金，第二個單位半價', 'First property: no letting commission. Second: half price.')}</h2>
-        <p><Truck size={16} aria-hidden />{L(`出租仲送免費搬屋。活動至 ${end}，以查詢確認為準。`, `Free moving included with letting. Until ${end}; terms confirmed when you enquire.`)}</p>
+        <h2 id="home-offer-title">{L('第一個單位業主免佣，第二個單位半價', 'First flat: no owner commission. Second: half price.')}</h2>
+        <p><Truck size={16} aria-hidden />{L(`放租前仲送交吉深層清潔同冷氣機清洗。活動至 ${end}，以書面委託為準。`, `Plus a free deep clean and air-conditioner wash before letting. Until ${end}; terms set in the written agreement.`)}</p>
       </div>
       <div className="home-offer-actions">
         <Link className="btn btn-primary" to="/?service=rent&offer=1">{L('即刻查詢', 'Enquire now')}<ArrowRight size={17} aria-hidden /></Link>
@@ -69,7 +69,7 @@ export function HomeFaq() {
   const end = formatMonth(config.promotion.endMonth, lang);
   const items = [
     [L('費用點樣收？', 'How are fees charged?'), L('出租佣金同租務管理嘅管理費分開計算。具體金額同收費方式跟單位情況、服務範圍有關，同事會喺委託前書面說明，確認後再開始。', 'Letting commission and ongoing management fees are separate. The amounts depend on the property and the services you choose, and your assistant sets them out in writing before you appoint us.')],
-    [L('限時優惠點樣用？', 'How do the limited-time offers work?'), L(`同一位業主委託出租嘅第一層樓免出租佣金，第二個單位半價，出租仲配套免費搬屋，活動至 ${end}。管理費唔喺優惠範圍內。查詢時話同事即可，具體以確認為準。`, `For the same owner, the first property has no letting commission and the second is half price, with free moving included — until ${end}. Management fees aren’t included. Just mention it when you enquire; terms are confirmed then.`)],
+    [L('限時優惠點樣用？', 'How do the limited-time offers work?'), L(`同一位業主委託放租嘅第一個單位業主免佣，第二個單位業主佣金半價，仲送一次交吉深層清潔同冷氣機清洗，活動至 ${end}。租客佣金按市場慣例，管理費唔喺優惠範圍。`, `For the same owner, the first flat carries no owner commission and the second is half price, plus a free deep clean and air-conditioner wash — until ${end}. Tenant commission follows market practice; management fees are not included.`)],
     [L('人唔喺香港，可以委託嗎？', 'Can I appoint you from overseas?'), L('可以。睇樓、交收、巡檢呢啲需要到場嘅事，由本地團隊處理；你通過電話、WhatsApp 或報告了解進展，需要決定嘅事情再確認。', 'Yes. Viewings, handovers and inspections are handled by our local team; you follow progress by phone, messages or reports and confirm the decisions that need you.')],
     [L('多久能租出去？', 'How long does it take to find a tenant?'), L('跟地區、房屋狀況、租金定價同季節都有關係，沒法俾統一嘅時間。我哋會先參考同區域樓盤俾出租金建議，幫你將單位準備好，再安排推廣同睇樓。具體以查詢時嘅評估為準。', 'It depends on the area, the property, the asking rent and the season, so there’s no single answer. We advise on rent from comparable listings, help prepare the home and then market it. Your assistant can give a view once they know the property.')],
     [L('租務管理包括咩？', 'What does ongoing management include?'), L('一般包括放租嘅全部工作，加上租期內嘅租金跟進、租客日常聯絡、報修處理同維修協調、定期巡檢，同埋續租或退租交收。具體範圍寫喺委託協議裏。', 'Generally everything in letting, plus rent follow-up, day-to-day tenant contact, repair requests and trades, routine inspections, and renewals or end-of-lease handover. The exact scope is set out in your agreement.')],

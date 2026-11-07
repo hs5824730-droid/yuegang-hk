@@ -301,12 +301,12 @@ export function OfferMeter() {
         {rows.map((r) => (
           <li key={r} className={`m-${Math.min(r, 3)}`}>
             <span className="m-label">{L(`第 ${r} 套`, `Property ${r}`)}</span>
-            <span className="m-val">{r === 1 ? L('免出租佣金', 'No letting commission') : r === 2 ? L('出租佣金半價', 'Half letting commission') : L('按正常標準', 'Standard terms')}</span>
+            <span className="m-val">{r === 1 ? L('業主免佣', 'No owner commission') : r === 2 ? L('業主佣金半價', 'Half owner commission') : L('按正常標準', 'Standard terms')}</span>
           </li>
         ))}
       </ol>
       <p className="meter-note">
-        {L(`按同一業主委託嘅房屋順序計算，優惠至 ${end}。僅針對出租佣金，不含銷售佣金同管理費。`, `Counted in order across one owner’s properties, until ${end}. Letting commission only; sales commission and management fees are not included.`)}
+        {L(`按同一業主委託嘅單位次序計，優惠至 ${end}。只減業主放租佣金，唔包買賣佣金同管理費。`, `Counted in order across one owner’s properties, until ${end}. Letting commission only; sales commission and management fees are not included.`)}
       </p>
     </div>
   );
@@ -320,8 +320,8 @@ export function faqItems(L: LFn, end: string) {
       a: L('願意自己處理租期內嘅事情，只放租就夠了；名下有多層樓，或唔想處理維修同租客溝通，可以揀租務管理。拿不準都沒關係，同事會根據你嘅情況俾建議。', 'If you are happy to handle the tenancy yourself, letting only is enough. If you own several properties or would rather not deal with repairs and tenants, choose management. Not sure? Our assistant will suggest what fits.'),
     },
     {
-      q: L('首個單位免出租佣金係點樣算嘅？', 'How does the first-property offer work?'),
-      a: L(`按同一位業主委託出租嘅房屋順序計算：第一個單位免出租佣金，第二個單位出租佣金半價，優惠至 ${end}。優惠只針對出租佣金，唔包括租務管理嘅管理費、銷售佣金或其他費用，具體以書面委託協議為準。`, `Counted in order across the properties one owner appoints us to let: the first has no letting commission, the second is at half. Runs until ${end}. It applies to letting commission only — not management fees, sales commission or other charges — as set out in the written agreement.`),
+      q: L('業主免佣點樣計？', 'How does the owner commission offer work?'),
+      a: L(`按同一位業主委託放租嘅單位次序計：第一個單位業主免佣，第二個單位業主佣金半價，優惠至 ${end}。租客佣金按市場慣例；租務管理費、買賣佣金同其他費用唔減免，以簽署嘅表格 5 為準。`, `Counted in order across the flats one owner appoints us to let: no owner commission on the first, half on the second, until ${end}. Tenant commission follows market practice; management fees, sales commission and other charges are not discounted, as set out in the signed Form 5.`),
     },
     {
       q: L('我嘅單位而家由其他代理管理，可以轉過嚟嗎？', 'My property is with another agency. Can I move it to you?'),
@@ -332,8 +332,8 @@ export function faqItems(L: LFn, end: string) {
       a: L('費用同房產情況、服務範圍有關，同事會在你委託之前書面說明。', 'Fees depend on the property and the services you choose. Our assistant sets them out in writing before you appoint us.'),
     },
     {
-      q: L('租客入住時，可以幫忙搬屋嗎？', 'Can you help with moving when a tenant moves in?'),
-      a: L('只放租同租務管理嘅出租配套都提供免費搬屋服務，主要圍繞入住呢層單位嘅搬屋，業主或租客都可以使用。服務區域、次數等具體安排由同事確認。', 'Free moving comes with letting, under both letting only and management, mainly for the move into the property, and either the owner or the tenant can use it. Areas and other details are confirmed by our assistant.'),
+      q: L('放租前送嘅清潔包啲咩？', 'What does the free pre-letting clean include?'),
+      a: L('只放租或者租務管理都有：租客入伙前送一次全屋交吉深層清潔，同埋清洗單位內嘅冷氣機。時間由同事同你約。', 'Both letting only and management include one whole-flat deep clean before move-in and a wash of the flat’s air conditioners, at a time agreed with you.'),
     },
     {
       q: L('我都想賣樓，或者喺香港買樓？', 'Can you also help me sell or buy?'),

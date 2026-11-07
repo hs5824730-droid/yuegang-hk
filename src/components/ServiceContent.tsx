@@ -58,9 +58,9 @@ export function RentalCampaign({ standalone = false }: { standalone?: boolean })
   const enquire = useEnquiry();
   const end = formatMonth(config.promotion.endMonth, lang);
   const offers = [
-    { n: L('一', '1'), Icon: KeyRound, t: L('第一層樓，免出租佣金', 'First property: no letting commission'), d: L('同一位業主委託我哋出租嘅第一層樓屋，唔收出租佣金。', 'The first property an owner appoints us to let carries no letting commission.') },
-    { n: L('二', '2'), Icon: Percent, t: L('第二層樓，出租佣金半價', 'Second property: half the letting commission'), d: L('同一位業主委託出租嘅第二層樓屋，出租佣金減半。', 'The second property from the same owner is let at half the usual commission.') },
-    { n: L('三', '3'), Icon: Truck, t: L('出租配套，免費搬屋', 'Free moving with every letting'), d: L('用於搬入該房屋，業主或租客均可使用；服務區域同具體安排以團隊確認為準。', 'For moving into the property, for the owner or the tenant. Areas and arrangements are confirmed by our team.') },
+    { n: L('一', '1'), Icon: KeyRound, t: L('第一個單位，業主免佣', 'First flat: no owner commission'), d: L('同一位業主委託我哋放租嘅第一個單位，業主一蚊佣金都唔使俾。', 'The first flat an owner appoints us to let carries no owner commission.') },
+    { n: L('二', '2'), Icon: Percent, t: L('第二個單位，業主佣金半價', 'Second flat: half the owner commission'), d: L('同一位業主委託放租嘅第二個單位，業主佣金減半。', 'The second flat from the same owner carries half the usual owner commission.') },
+    { n: L('三', '3'), Icon: Truck, t: L('交吉清潔，送埋洗冷氣', 'Free deep clean and air-con wash'), d: L('租客入伙前，送一次全屋深層清潔同冷氣機清洗，單位一交出去就乾淨企理。', 'Before move-in, one whole-flat deep clean and an air-conditioner wash, so the flat is spotless at handover.') },
   ];
   return <section className={`rental-campaign ${standalone ? 'campaign-standalone' : 'section'}`} id="offer" aria-labelledby="campaign-title">
     <div className="wrap">

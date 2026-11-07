@@ -35,7 +35,7 @@ export default function RentalServices() {
       step: L('簽約同入住', 'Lease & move in'),
       title: L('由簽約到交鑰匙，將入住接好', 'From signing to keys'),
       text: L('溝通租約同入住時間，整理房況記錄，安排鑰匙交收；進度你隨時睇到。', 'We coordinate the lease and move-in date, the condition record and the keys, and keep you posted.'),
-      decide: L('租約條件由你確認；入住搬屋可按優惠一齊安排。', 'You confirm the lease; moving help under the offer can be arranged too.'),
+      decide: L('租約條件由你確認；交吉清潔可按優惠喺租客入伙前安排。', 'You confirm the lease; the offer’s pre-letting clean is booked before move-in.'),
     },
   ];
 
@@ -49,7 +49,7 @@ export default function RentalServices() {
     [L('開始委託前，需要先做咩？', 'What happens before I appoint you?'), L('話我哋地區、地址或區域，同埋想只放租定係租務管理。了解房況後說明準備事項、服務範圍同費用，確認合適再籤委託。', 'Tell us the city, address or suburb, and which service you want. We explain preparation, scope and fees before you decide.')],
     [L('出租前嘅清潔、維修費用點樣算？', 'How are cleaning and repairs paid for?'), L('呢類支出同出租佣金、管理費分開說明；先溝通報價同授權，再按確認範圍推進。', 'These are separate from letting commission and management fees, and agreed with you before any work.')],
     [L('單位正喺其他代理管理，可以轉嚟嗎？', 'Can I transfer from another agency?'), L('目前唔接由其他代理轉嚟嘅出租或託管委託。可以先說明房屋現狀，我哋確認能否安排。', 'We do not currently take over letting or management from another agency. Tell us about the property and we will confirm.')],
-    [L('免費搬屋點樣安排？', 'How does the free moving help work?'), L('免費搬屋係出租配套，用於入住該房屋嘅業主或租客；區域、次數同安排由團隊確認。', 'Free moving comes with letting, for the owner or tenant moving into that property. Areas, number of moves and timing are confirmed with our team.')],
+    [L('送嘅清潔包啲咩？', 'What does the free clean include?'), L('簽放租委託後，喺租客入伙前送一次全屋交吉深層清潔，同埋清洗單位內嘅冷氣機（一般分體機或窗口機）。時間由同事同你約。', 'After you appoint us to let, we arrange one whole-flat deep clean before move-in plus a wash of the flat’s air conditioners (standard split or window units), at a time agreed with you.')],
   ];
 
   const index = [
@@ -152,9 +152,9 @@ export function OfferSection({ compact = false }: { compact?: boolean }) {
   const enquire = useEnquiry();
   const end = formatMonth(config.promotion.endMonth, lang);
   const items = [
-    { Icon: KeyRound, v: 'HK$0', t: L('首個單位免出租佣金', 'No letting fee on your first property') },
-    { Icon: Percent, v: L('半價', '50%'), t: L('第二個單位出租佣金半價', 'Half the letting fee on your second') },
-    { Icon: Truck, v: L('免費', 'Free'), t: L('出租配套免費搬屋', 'Free moving with letting') },
+    { Icon: KeyRound, v: 'HK$0', t: L('首個單位業主免佣', 'No owner commission on your first flat') },
+    { Icon: Percent, v: L('半價', '50%'), t: L('第二個單位業主佣金半價', 'Half the owner commission on your second') },
+    { Icon: Truck, v: L('免費', 'Free'), t: L('送交吉深層清潔同冷氣機清洗', 'Free deep clean and air-con wash') },
   ];
   return (
     <section className={`v-sec v-offer rp-offer ${compact ? 'offer-compact' : ''}`} id="rental-offer" aria-labelledby="rp-offer-title">
@@ -175,7 +175,7 @@ export function OfferSection({ compact = false }: { compact?: boolean }) {
             ))}
           </ul>
           <div className="v-offer-foot">
-            <p>{L('優惠只針對出租佣金，唔係免租金；租務管理管理費另計，買賣佣金及其他費用唔減免。', 'Letting commission only — not free rent. Management fees are separate; sales commission and other costs are not discounted.')}</p>
+            <p>{L('優惠只減業主嗰邊嘅放租佣金，唔係免租金；租客佣金按市場慣例，租務管理費、買賣佣金同其他費用唔減免。', 'Only the owner’s letting commission is reduced — not free rent. Tenant commission follows market practice; management fees, sales commission and other costs are not discounted.')}</p>
             <div className="v-actions">
               <button type="button" className="btn btn-primary rp-offer-cta" onClick={() => enquire({ service: 'letting', offer: true })}>{L('查詢呢項優惠', 'Ask about the offer')}<ArrowRight size={18} aria-hidden /></button>
               {compact && <Link className="btn btn-line" to="/offer">{L('優惠說明', 'Offer details')}</Link>}

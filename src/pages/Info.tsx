@@ -27,10 +27,10 @@ export function Offer() {
         img="/img/hk/harbour-night.webp"
         alt={L('由山頂望維港夜景', 'Victoria Harbour at night from the Peak')}
         pos="50% 60%"
-        figure={{ value: 'HK$0', label: L('第一個單位嘅出租佣金', 'Letting commission on your first flat') }}
+        figure={{ value: 'HK$0', label: L('第一個單位嘅業主佣金', 'Owner commission on your first flat') }}
         kicker={L(`業主限時優惠 · 至 ${end}`, `Owner offer · until ${end}`)}
-        title={L('首個單位免出租佣金，第二個單位半價', 'First property free of letting commission, second at half')}
-        lead={L('同一位業主，按委託放租嘅次序計；租出之後仲送你免費搬屋。', 'Counted in order for one owner, with free moving included with letting.')}
+        title={L('首個單位業主免佣，第二個單位半價', 'No owner commission on your first flat, half on the second')}
+        lead={L('同一位業主，按委託放租嘅次序計；租客入伙前仲送交吉深層清潔同冷氣機清洗。', 'Counted in order for one owner, plus a free deep clean and air-conditioner wash before move-in.')}
       >
         <div className="ds-actions">
           <button type="button" className="btn btn-primary rp-offer-cta" onClick={() => enquire({ service: 'letting', offer: true })}>{L('查詢呢項優惠', 'Ask about the offer')}<ArrowRight size={18} aria-hidden /></button>

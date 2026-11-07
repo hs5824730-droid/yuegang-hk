@@ -81,7 +81,7 @@ export function OwnerHero({ service, onService }: { service: OwnerService; onSer
 
       <Link to="/offer" className="owner-offer">
         <span className="offer-symbol" aria-hidden>0<span>%</span></span>
-        <span><strong>{L('首個單位免出租佣金，第二個單位半價', 'First letting commission free. Second half-price.')}</strong><small>{L(`同一業主 · 僅出租佣金 · 至 ${end}`, `Same owner · letting commission only · until ${end}`)}</small></span>
+        <span><strong>{L('首個單位業主免佣，第二個單位半價', 'No owner commission on your first flat. Second half-price.')}</strong><small>{L(`同一業主 · 業主佣金 · 至 ${end}`, `Same owner · owner commission · until ${end}`)}</small></span>
         <ArrowRight size={17} aria-hidden />
       </Link>
     </div>
