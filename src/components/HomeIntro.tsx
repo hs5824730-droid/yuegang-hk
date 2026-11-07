@@ -47,22 +47,22 @@ export default function HomeIntro({ nextId }: { nextId: string }) {
 
   return <section ref={ref} className={`home-intro ${play ? 'intro-play' : ''}`} aria-labelledby="intro-title">
     <div className="intro-media">
-      <SmartImg src={IMG.hero} alt={L('树荫中的当代住宅（配图）', 'A contemporary home among trees (editorial photo)')} position="58% 60%" eager />
+      <SmartImg src={IMG.hero} alt={L('樹蔭中嘅當代住宅（配圖）', 'A contemporary home among trees (editorial photo)')} position="58% 60%" eager />
     </div>
     <div className="intro-shade" aria-hidden />
     <div className="wrap intro-content">
-      <p className="intro-kicker">{L('桉湾 EUCOVE · 澳洲房产出租与托管', 'EUCOVE · Australian letting & property management')}</p>
+      <p className="intro-kicker">{L('悦港 Harbour Joy · 香港房產放租同管理', 'Harbour Joy · Hong Kong letting & property management')}</p>
       <h1 id="intro-title">
-        <span className="line">{L('出租交给我们，', 'Leave the letting to us.')}</span>
-        <span className="line">{L('您只管收租。', 'You just collect the rent.')}</span>
+        <span className="line">{L('出租交俾我哋，', 'Leave the letting to us.')}</span>
+        <span className="line">{L('你只管收租。', 'You just collect the rent.')}</span>
       </h1>
-      <p className="intro-sub">{L('找租客、收租、维修、和租客沟通，都有我们跟进。', 'Finding tenants, collecting rent, repairs and tenant contact — we follow it all up.')}</p>
+      <p className="intro-sub">{L('搵租客、收租、維修、同租客溝通，都有我哋跟進。', 'Finding tenants, collecting rent, repairs and tenant contact — we follow it all up.')}</p>
       <RentalOfferStamp />
       <div className="intro-actions">
-        <button type="button" className="btn btn-primary btn-lg" onClick={() => enquire({ service: 'letting' })}>{L('免费咨询', 'Free enquiry')}<ArrowRight size={18} aria-hidden /></button>
-        <button type="button" className="intro-explore" onClick={explore}>{L('开始了解', 'Explore')}<ArrowDown size={18} aria-hidden /></button>
+        <button type="button" className="btn btn-primary btn-lg" onClick={() => enquire({ service: 'letting' })}>{L('免費查詢', 'Free enquiry')}<ArrowRight size={18} aria-hidden /></button>
+        <button type="button" className="intro-explore" onClick={explore}>{L('開始了解', 'Explore')}<ArrowDown size={18} aria-hidden /></button>
       </div>
     </div>
-    <button type="button" className="intro-scroll" onClick={explore} aria-label={L('向下浏览', 'Scroll down')}><span /></button>
+    <button type="button" className="intro-scroll" onClick={explore} aria-label={L('向下瀏覽', 'Scroll down')}><span /></button>
   </section>;
 }

@@ -6,20 +6,22 @@ import { formatDate, useI18n } from '../i18n';
 import { useEnquiry } from './Enquiry';
 import type { ViewingListing } from '../viewing-types';
 import PropertyExplorer, { type ExplorerItem } from './PropertyExplorer';
+import { SHOW_DEMO_LISTINGS } from '../hk-site';
 import './viewing-samples.css';
 
-type Kind = 'rent' | 'sold';
+type Kind = 'rent' | 'sale' | 'sold';
 type Choice = { listing:string;room:string;city:string };
 type Listing = ViewingListing & { availabilityStatus?: unknown };
 type Catalog = Record<Kind, Listing[]>;
-const kinds: Kind[] = ['rent', 'sold'];
+const kinds: Kind[] = ['rent', 'sale', 'sold'];
+const asKind = (value: string | null | undefined): Kind => value === 'sale' || value === 'sold' ? value : 'rent';
 
 export default function ViewingSamplePage() {
   const { L, lang, pick } = useI18n();
   const [search, setSearch] = useSearchParams();
   const enquire = useEnquiry();
   const [catalog, setCatalog] = useState<Catalog | null>(null);
-  const [unavailable, setUnavailable] = useState<Record<Kind, boolean>>({ rent: false, sold: false });
+  const [unavailable, setUnavailable] = useState<Record<Kind, boolean>>({ rent: false, sale: false, sold: false });
   const choices = useRef<Partial<Record<Kind, Choice>>>({});
   useEffect(() => {
     const controller = new AbortController();
@@ -28,7 +30,8 @@ export default function ViewingSamplePage() {
         const response = await fetch(`/api/viewing-samples?kind=${kind}`, { signal: controller.signal });
         if (!response.ok) throw new Error('unavailable');
         const data = await response.json();
-        return { kind, listings: Array.isArray(data.listings) ? data.listings as Listing[] : [], failed: false };
+        const listings = (Array.isArray(data.listings) ? data.listings as Listing[] : []).filter(l => SHOW_DEMO_LISTINGS || !l.demo);
+        return { kind, listings, failed: false };
       } catch { return { kind, listings: [] as Listing[], failed: true }; }
     })).then(results => {
       if (controller.signal.aborted) return;
@@ -38,18 +41,18 @@ export default function ViewingSamplePage() {
     return () => controller.abort();
   }, []);
 
-  // The public rental pool contains only explicitly verified active rentals.
-  // Missing/leased source records stay in the API/archive, never get relabelled.
-  const publicCatalog=catalog?{rent:catalog.rent.filter(l=>viewingStatus(l)==='available'),sold:catalog.sold}:null;
+  // The public rental pool contains only explicitly available rentals.
+  const publicCatalog=catalog?{rent:catalog.rent.filter(l=>viewingStatus(l)==='available'),sale:catalog.sale,sold:catalog.sold}:null;
   const known=publicCatalog&&kinds.flatMap(k=>publicCatalog[k]).find(l=>l.id===search.get('listing'));
-  const kind:Kind=known?.kind==='sold'||known?.kind==='rent'?known.kind:search.get('kind')==='sold'?'sold':'rent';
+  const kind:Kind=known?asKind(known.kind):asKind(search.get('kind'));
   const listings=publicCatalog?.[kind]||[];
   const requestedCity=search.get('viewCity')||'';
   const city=listings.some(l=>l.city===requestedCity)?requestedCity:'';
   const visible=listings.filter(l=>!city||l.city===city);
   const chosen = visible.find(l => l.id === search.get('listing')) || visible[0];
   const room = chosen?.rooms.find(r => r.id === search.get('room'))?.id || '';
-  usePublishContactPage(chosen?{city:chosen.city,service:kind==='sold'?'buy':'rent',listing:kind==='rent'?chosen.id:undefined,propertyAddress:`${chosen.address}, ${chosen.suburb}`}:{city:city||undefined});
+  const service = kind === 'rent' ? 'rent' : 'buy';
+  usePublishContactPage(chosen?{city:chosen.city,service,listing:kind==='rent'?chosen.id:undefined,propertyAddress:`${chosen.address}, ${chosen.suburb}`}:{city:city||undefined});
   const searchKey = search.toString();
 
   useEffect(() => {
@@ -72,50 +75,58 @@ export default function ViewingSamplePage() {
     if (choice.listing) next.set('listing', choice.listing);
     if (choice.room) next.set('room', choice.room);
     if (choice.city) next.set('viewCity', choice.city);
-
     setSearch(next, { preventScrollReset: true });
   };
   const chooseKind = (nextKind: Kind) => {
-    if (!catalog || nextKind === kind) return;
+    if (!publicCatalog || nextKind === kind) return;
     const remembered = choices.current[nextKind];
-    const pool=nextKind==='rent'?catalog.rent.filter(l=>viewingStatus(l)==='available'):catalog.sold;
+    const pool=publicCatalog[nextKind];
     const rememberedCity=pool.some(l=>l.city===remembered?.city)?remembered!.city:'';
     const candidates=pool.filter(l=>!rememberedCity||l.city===rememberedCity);
     const selected=candidates.find(l=>l.id===remembered?.listing)||candidates[0];
     navigate(nextKind,{listing:selected?.id||'',room:selected?.rooms.some(r=>r.id===remembered?.room)?remembered!.room:'',city:rememberedCity});
   };
   const openEnquiry = () => {
-    if(chosen)enquire(viewingStatus(chosen)==='available'?{service:'rent',listing:chosen.id,city:chosen.city,propertyAddress:`${chosen.address}, ${chosen.suburb}`}:{service:kind==='sold'?'buy':'rent',city:chosen.city});
+    if(!chosen)return;
+    const propertyAddress=`${chosen.address}, ${chosen.suburb}`;
+    if(kind==='rent'&&viewingStatus(chosen)==='available')enquire({service:'rent',listing:chosen.id,city:chosen.city,propertyAddress});
+    else enquire({service:'buy',city:chosen.city,propertyAddress:kind==='sale'?propertyAddress:undefined});
   };
-  const statusLabel=(l:Listing)=>l.kind==='sold'?L('已成交','Sold'):L('可租','Available');
+  const statusLabel=(l:Listing)=>l.kind==='sold'?L('已成交','Sold'):l.kind==='sale'?L('放售中','For sale'):L('可租','For rent');
+  const priceNote=(l:Listing)=>l.kind==='sold'?(l.soldPrice===null?L('成交紀錄 · 成交價未公開','Sold record · price not disclosed'):L('成交紀錄 · 成交價','Sold record · sold price'))
+    :l.kind==='sale'?L('業主叫價，最終以買賣合約為準。','Asking price; the sale agreement is final.'):L('掛牌月租，唔包差餉、地租同管理費（另有註明除外）。','Asking rent per month, excluding rates, government rent and management fees unless stated.');
   const items: ExplorerItem[] = listings.map(l => ({
-    id: l.id, statusLabel:statusLabel(l), address: l.address, suburb: l.suburb, city: l.city, postcode: l.postcode,
+    id: l.id, statusLabel:(l.demo?L('示範 · ','Example · '):'')+statusLabel(l), address: l.address, suburb: l.suburb, city: l.city, postcode: l.postcode,
     beds: l.beds, baths: l.baths, cars: l.cars, price: pick(l.priceDisplay),
-    priceNote: kind === 'sold' ? (l.soldPrice === null ? L('已成交记录 · 成交价未公开', 'Sold record · price not disclosed') : L('已成交记录 · 成交价', 'Sold record · sold price')) : L('挂牌周租，非成交租金。', 'Asking rent per week, not achieved rent.'),
-    facts: [...(l.features||[]).map(pick), ...(kind === 'sold' ? (l.soldDate ? [L('成交日期：', 'Sold: ') + formatDate(l.soldDate, lang)] : []) : (l.availableDate ? [L('可入住时间：', 'Available from: ') + formatDate(l.availableDate, lang)] : []))],
+    priceNote: priceNote(l),
+    facts: [...(l.features||[]).map(pick), ...(l.kind === 'sold' ? (l.soldDate ? [L('成交日期：', 'Sold: ') + formatDate(l.soldDate, lang)] : []) : (l.availableDate ? [L('可入住日期：', 'Available from: ') + formatDate(l.availableDate, lang)] : []))],
     coverUrl: l.coverUrl, geo: l.geo,
     rooms: l.rooms.map(r => ({ id: r.id, label: pick(r.label), photoUrl: r.photoUrl, thumbnailUrl: r.thumbnailUrl, videoUrl: r.videoUrl })),
   }));
+  const tabLabel = (k: Kind) => k === 'rent' ? L('租盤', 'To rent') : k === 'sale' ? L('售盤', 'For sale') : L('成交紀錄', 'Sold');
+  const tabNote = (k: Kind) => k === 'rent' ? L('可租單位', 'Available homes') : k === 'sale' ? L('業主放售', 'Owner listings') : L('近期成交', 'Recent sales');
+  const hasDemo = Boolean(publicCatalog && kinds.some(k => publicCatalog[k].some(l => l.demo)));
 
   return <div className="viewing-samples wrap">
-    <header className="ds viewing-samples-heading"><p className="ds-kicker">{L('在线看房', 'Online viewings')}</p><h1>{L('不在现场，也能先把房子看清楚', 'See the home clearly before you visit')}</h1><p className="ds-lead">{L('浏览出租房源及市场成交参考。市场参考不代表桉湾经手案例。', 'Explore rental homes and market sale references. Market references are not EUCOVE transactions.')}</p></header>
-    <div className="viewing-kind-tabs" role="group" aria-label={L('房源类型', 'Property category')}>
+    <header className="ds viewing-samples-heading"><p className="ds-kicker">{L('網上睇樓', 'Online viewings')}</p><h1>{L('未到現場，都可以先睇清楚層樓', 'See the flat clearly before you visit')}</h1><p className="ds-lead">{L('租盤、售盤同成交紀錄都喺度。睇中咗，撳一下就可以約我哋睇樓。', 'Rentals, sales and recent transactions in one place. Found one you like? Tap to book a viewing.')}</p></header>
+    {hasDemo && <p className="hk-demo-banner" role="note">{L('溫馨提示：以下係網站示範盤，用嚟展示放盤格式，並非業主委託嘅真實放盤，價錢同資料都唔可以作準。正式上線前會換成已簽表格 3／表格 5 嘅真實盤源。屋苑相片來自 Wikimedia Commons，詳見圖片署名。', 'Please note: the listings below are website examples showing the listing format. They are not real instructions from owners, and prices and details are not offers. They will be replaced by real listings with signed Form 3 / Form 5 before launch. Estate photos come from Wikimedia Commons; see Photo credits.')}</p>}
+    <div className="viewing-kind-tabs" role="group" aria-label={L('樓盤類型', 'Property category')}>
       {kinds.map(k => <button type="button" key={k} aria-pressed={kind === k} onClick={() => chooseKind(k)} disabled={!catalog}>
-        <span>{k === 'rent' ? L('出租房源', 'Rental homes') : L('买卖房屋', 'Buying & selling')}</span>
-        <small>{k === 'sold' ? L('已成交记录', 'Sold records') : L('挂牌资料', 'Listing records')}{catalog && ` · ${publicCatalog?.[k].length||0}`}</small>
+        <span>{tabLabel(k)}</span>
+        <small>{tabNote(k)}{publicCatalog && ` · ${publicCatalog[k].length}`}</small>
       </button>)}
     </div>
 
-    {!catalog ? <div className="px-skeleton" role="status" aria-label={L('正在读取房源资料…', 'Loading property records…')} />
-      : !chosen ? <div className="viewing-sample-empty"><h2>{kind==='rent'?L('暂无可展示的出租房源','No rental homes to display'):L('暂无成交参考','No sold references to display')}</h2>{city&&<button type="button" className="btn btn-line" onClick={()=>navigate(kind,{listing:listings[0]?.id||'',room:'',city:''})}>{L('清除筛选','Clear filters')}</button>}<p>{unavailable[kind] ? L('房源资料暂未读取成功，您可以先留下需求。', 'Property records could not be loaded. You can still leave an enquiry.') : kind==='rent'?L('可先浏览成交参考，或咨询出租服务。','Explore sold references or enquire about letting services.'):L('您可以先告诉我们想了解什么。','Tell us what you would like to discuss.')}</p>{kind==='rent'&&<button type="button" className="btn btn-line" onClick={()=>chooseKind('sold')}>{L('浏览已成交参考','Browse sold references')}</button>}<button type="button" className="btn btn-primary" onClick={() => enquire({ service: kind === 'sold' ? 'buy' : 'rent' })}>{L('提交咨询', 'Enquire')}</button></div>
-      : chosen && <PropertyExplorer key={kind} items={items} selectedId={chosen.id} roomId={room}
+    {!catalog ? <div className="px-skeleton" role="status" aria-label={L('讀緊樓盤資料…', 'Loading property records…')} />
+      : !chosen ? <div className="viewing-sample-empty"><h2>{kind==='rent'?L('暫時未有租盤','No rentals right now'):kind==='sale'?L('暫時未有售盤','No homes for sale right now'):L('暫時未有成交紀錄','No sale records yet')}</h2>{city&&<button type="button" className="btn btn-line" onClick={()=>navigate(kind,{listing:listings[0]?.id||'',room:'',city:''})}>{L('清除篩揀','Clear filters')}</button>}<p>{unavailable[kind] ? L('樓盤資料暫時讀唔到，你可以先留低需求，我哋幫你搵。', 'Property records could not be loaded. Leave your requirements and we will look for you.') : L('話我哋知你想搵咩，我哋幫你留意。','Tell us what you are after and we will keep an eye out.')}</p><button type="button" className="btn btn-primary" onClick={() => enquire({ service: kind === 'rent' ? 'rent' : 'buy' })}>{L('留低需求', 'Leave your requirements')}</button></div>
+      : <PropertyExplorer key={kind} items={items} selectedId={chosen.id} roomId={room}
         city={city} onCity={c => { const first = listings.find(l => !c || l.city === c); navigate(kind, { listing: first?.id || '', room: '', city: c }); }}
         onSelect={id => navigate(kind, { listing: id, room: '', city })}
         onRoom={id => navigate(kind, { listing: chosen.id, room: id, city })}
-        tag={kind==='sold'?L('市场成交参考 · 已成交','Market reference · sold'):statusLabel(chosen)}
-        photoNote={L('当前显示房源照片。', 'Showing property photos.')}
-        videoNote={L('AI 视频可能改变细节；实际布局、尺寸与房况以现场为准。', 'AI video may alter details; check layout, size and condition in person.')}
-        cta={{ label: kind==='sold'?L('咨询买卖服务','Discuss buying or selling'):viewingStatus(chosen)==='available'?L('预约看房','Arrange a viewing'):L('咨询出租服务','Discuss letting services'), onClick: openEnquiry }}
+        tag={(chosen.demo?L('示範盤 · ','Example · '):'')+statusLabel(chosen)}
+        photoNote={L('而家顯示緊屋苑相片。', 'Showing estate photos.')}
+        videoNote={L('AI 影片可能會改變細節；實際間隔、面積同樓況以現場為準。', 'AI video may alter details; check layout, size and condition in person.')}
+        cta={{ label: kind==='sold'?L('想買同區？問吓我哋','Buying nearby? Ask us'):kind==='sale'?L('約睇呢個盤','Book a viewing'):L('約睇樓','Book a viewing'), onClick: openEnquiry }}
       />}
   </div>;
 }

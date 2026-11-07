@@ -1,16 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "eucove",
+  "name": "harbour-joy",
   "account_id": "b65685ed0ee606d73747149aff303600",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-23",
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": false,
   "preview_urls": false,
-  "routes": [
-    { "pattern": "eucove.com", "custom_domain": true },
-    { "pattern": "www.eucove.com", "custom_domain": true }
-  ],
+  // Harbour Joy has no domain yet; add its own routes here. Never reuse eucove.com.
+  "routes": [],
   "send_metrics": false,
   "assets": {
     "directory": "./dist",
@@ -20,17 +18,17 @@
   },
   "d1_databases": [{
     "binding": "DB",
-    "database_name": "eucove",
-    "database_id": "f5f5b5d7-f6d0-4fd7-8aaf-0c58ece47204",
+    "database_name": "harbour-joy",
+    "database_id": "REPLACE-WITH-HARBOUR-JOY-D1-ID",
     "migrations_dir": "migrations"
   }],
-  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "eucove-media" }],
+  "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "harbour-joy-media" }],
   "triggers": { "crons": ["* * * * *"] },
   "vars": {
     "PUBLIC_DIRECT_CONTACT_ENABLED": "false",
-    "APP_URL": "https://eucove.com",
-    "BRAND_ZH": "桉湾",
-    "BRAND_EN": "EUCOVE",
+    "APP_URL": "https://example.invalid",
+    "BRAND_ZH": "悦港",
+    "BRAND_EN": "Harbour Joy",
     "WHATSAPP_NUMBER": "",
     "DISABLE_TELEGRAM": "false",
     "SIGNAL_ENABLED": "true",

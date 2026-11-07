@@ -1,11 +1,11 @@
 import {z} from 'zod';
 import {isPhone} from './enquiry-options';
 
-export const REGISTRATION_STATUSES={new:['待联系','To contact'],contacted:['已联系','Contacted'],following:['跟进中','Following up'],appointed:['已委托','Appointed'],paused:['暂缓','On hold']} as const;
-export const REGISTRATION_SERVICES={marketing:['推广找租客','Marketing & finding tenants'],screening:['背景及申请审核','Tenant screening & applications'],viewings:['看房沟通','Inspections & communication'],handover:['合同入住交接','Lease & move-in handover'],management:['日常管理维修','Ongoing management & repairs']} as const;
-export const PROPERTY_KINDS={house:['独立屋','House'],townhouse:['联排别墅','Townhouse'],apartment:['公寓 / 单元房','Apartment / Unit'],other:['其他','Other']} as const;
-export const FURNISHING={furnished:['带家具','Furnished'],unfurnished:['不带家具','Unfurnished'],part:['部分家具','Partly furnished']} as const;
-export const RENTAL_MODES={whole:['整租','Whole property'],rooms:['分房','By room'],advice:['希望提供建议','Advice needed']} as const;
+export const REGISTRATION_STATUSES={new:['待聯絡','To contact'],contacted:['已聯絡','Contacted'],following:['跟進中','Following up'],appointed:['已委託','Appointed'],paused:['暫緩','On hold']} as const;
+export const REGISTRATION_SERVICES={marketing:['推廣搵租客','Marketing & finding tenants'],screening:['背景及申請審核','Tenant screening & applications'],viewings:['睇樓溝通','Inspections & communication'],handover:['合同交收入住','Lease & move-in handover'],management:['日常管理維修','Ongoing management & repairs']} as const;
+export const PROPERTY_KINDS={house:['獨立屋','House'],townhouse:['聯排別墅','Townhouse'],apartment:['公寓 / 單元房','Apartment / Unit'],other:['其他','Other']} as const;
+export const FURNISHING={furnished:['帶傢俱','Furnished'],unfurnished:['不帶傢俱','Unfurnished'],part:['部分傢俱','Partly furnished']} as const;
+export const RENTAL_MODES={whole:['整租','Whole property'],rooms:['分房','By room'],advice:['希望提供建議','Advice needed']} as const;
 const optionalNumber=(max:number)=>z.preprocess(v=>v===null||v===undefined||typeof v==='string'&&!v.trim()?undefined:typeof v==='string'||typeof v==='number'?Number(v):NaN,z.number().finite().min(0).max(max).optional());
 export const rentalRegistrationSchema=z.object({
  requestId:z.uuid(),language:z.enum(['zh','en']),name:z.string().trim().min(1).max(100),

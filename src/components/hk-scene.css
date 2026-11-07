@@ -1,0 +1,32 @@
+/* 3D Hong Kong relief behind the home hero. Stacking: still photo < canvas < shade < hero copy < chips. */
+.hk3d { position: absolute; inset: 0; background: #0b0c0f; touch-action: pan-y; }
+html body.v2 .v-home-hero { -webkit-user-select: none; user-select: none; }
+.hk3d-still, .hk3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hk3d-still { object-fit: cover; transition: opacity .8s ease; }
+.hk3d-canvas { display: block; opacity: 0; transition: opacity .6s ease; cursor: grab; }
+.hk3d-canvas:active { cursor: grabbing; }
+.hk3d-3d .hk3d-canvas { opacity: 1; }
+.hk3d-3d .hk3d-still { opacity: 0; }
+.hk3d-still-mode .hk3d-canvas { display: none; }
+.hk3d-ui { position: absolute; left: 0; right: 0; bottom: 22px; z-index: 2; margin: 0 auto; width: min(1240px, 100% - 48px); display: flex; align-items: center; justify-content: space-between; gap: 16px; pointer-events: none; }
+.hk3d-chips { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; pointer-events: auto; }
+.hk3d-label { display: inline-flex; align-items: center; gap: 6px; margin-right: 6px; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: #E2C98F; }
+.hk3d-chips button { appearance: none; border: 1px solid rgba(255, 255, 255, .32); background: rgba(12, 12, 14, .42); color: rgba(255, 255, 255, .88); font: inherit; font-size: 13px; padding: 6px 12px; cursor: pointer; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: background .2s, color .2s, border-color .2s; }
+.hk3d-chips button:hover { border-color: #fff; color: #fff; }
+.hk3d-chips button[aria-pressed='true'] { background: #fff; border-color: #fff; color: #111; }
+.hk3d-chips button:focus-visible { outline: 2px solid #E2C98F; outline-offset: 2px; }
+.hk3d-hint { margin: 0; font-size: 13px; color: rgba(255, 255, 255, .72); animation: hk3dHint 2.4s ease-in-out infinite; }
+@keyframes hk3dHint { 0%, 100% { transform: translateX(0); opacity: .55; } 50% { transform: translateX(8px); opacity: 1; } }
+
+/* The home hero keeps its copy readable while letting the city show through on the right. */
+html body.v2 .v-home-hero.has-bg { min-height: min(820px, calc(100svh - 64px)); padding-bottom: 110px; }
+html body.v2 .v-home-hero .v-hero-shade { pointer-events: none; background: linear-gradient(90deg, rgba(8, 9, 12, .72) 0%, rgba(8, 9, 12, .38) 42%, rgba(8, 9, 12, 0) 70%), linear-gradient(0deg, rgba(8, 9, 12, .55) 0%, rgba(8, 9, 12, 0) 26%); }
+@media (max-width: 760px) {
+  html body.v2 .v-home-hero.has-bg { min-height: 0; padding: 48svh 0 36px; background: #0b0c0f; }
+  .hk3d { bottom: auto; height: 56svh; }
+  html body.v2 .v-home-hero .v-hero-shade { background: linear-gradient(180deg, rgba(8, 9, 12, .35) 0%, rgba(8, 9, 12, 0) 18%, rgba(8, 9, 12, 0) 34%, rgba(11, 12, 15, .9) 50%, #0b0c0f 58%); }
+  .hk3d-ui { top: 12px; bottom: auto; width: calc(100% - 32px); }
+  .hk3d-hint { display: none; }
+  .hk3d-label { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .hk3d-hint { animation: none; } }

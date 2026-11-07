@@ -1,11 +1,11 @@
 /* =====================================================================
-   EUCOVE "Eucalyptus" (v2) — warm paper, eucalyptus ink, coral actions.
+   Harbour Joy "Eucalyptus" (v2) — warm paper, eucalyptus ink, coral actions.
    Generated from scratchpad/v2/v2.src.css: "V" expands to `html body.v2`
    so these rules win over the older stylesheets without !important.
 
    Palette  paper #F6F1E8 · paper-2 #EFE6D7 · ink #15302A · ink-2 #3E524C
             sage #DCE7DE · sage-2 #C6D7CA · leaf #2F6B55 · sand #EBD8BF
-            coral #F07A43 (actions, offer)
+            coral #C9A86A (actions, offer)
    Shape    radius 28 panels · 20 cards · 14 photos · pill buttons
    Type     display 600, -0.035em; body 16.5/1.7; numbers 700
    Motion   one entrance per element; art lines draw once; static on reduce
@@ -14,7 +14,7 @@ html body.v2 {
   --v-paper: #f6f1e8; --v-paper-2: #efe6d7; --v-card: #fffdf8;
   --v-ink: #15302a; --v-ink-2: #3e524c; --v-mute: #6b7a74;
   --v-sage: #dce7de; --v-sage-2: #c6d7ca; --v-leaf: #2f6b55;
-  --v-sand: #ebd8bf; --v-coral: #f07a43; --v-coral-2: #e3672e; --v-coral-ink: #b4461a;
+  --v-sand: #ebd8bf; --v-coral: #C9A86A; --v-coral-2: #B8955A; --v-coral-ink: #8A6A2B;
   --v-line: #e3d8c6; --v-line-ink: rgba(255, 255, 255, .16);
   --v-r: 28px; --v-r-md: 20px; --v-r-sm: 14px;
   --v-ease: cubic-bezier(.2, .75, .2, 1);
@@ -36,7 +36,7 @@ html body.v2 .btn, html body.v2 #main .btn, html body.v2 .site-header .btn, html
   border-radius: 999px; min-height: 50px; padding: 12px 24px; font-weight: 650; font-size: 15.5px; letter-spacing: 0; gap: 9px;
   transition: background-color .2s, color .2s, border-color .2s, transform .2s var(--v-ease), box-shadow .2s;
 }
-html body.v2 .btn-primary, html body.v2 .btn-gold { background: var(--v-coral); color: var(--v-ink); border-color: var(--v-coral); box-shadow: 0 10px 22px -12px rgba(224, 96, 40, .7); }
+html body.v2 .btn-primary, html body.v2 .btn-gold { background: var(--v-coral); color: var(--v-ink); border-color: var(--v-coral); box-shadow: 0 10px 22px -12px rgba(201, 168, 106, .7); }
 html body.v2 .btn-primary:hover:not(:disabled), html body.v2 .btn-gold:hover:not(:disabled) { background: var(--v-coral-2); color: var(--v-ink); }
 html body.v2 .btn-line, html body.v2 .btn-ghost, html body.v2 .btn-glass { background: transparent; border: 1.5px solid var(--v-ink); color: var(--v-ink); }
 html body.v2 .btn-line:hover:not(:disabled) { background: var(--v-ink); color: var(--v-paper); }
@@ -503,21 +503,21 @@ html body.v2 .v-hero-receipt, html body.v2 .v-rate, html body.v2 .v-hero-compare
 }
 
 /* =====================================================================
-   User direction (2026-10-26): keep the previous EUCOVE look — white,
+   User direction (2026-10-26): keep the previous Harbour Joy look — white,
    near-black panels, brand orange, square edges, photographs — and only
    change the arrangement. The v2 layout stays; tokens go back.
    ===================================================================== */
 html body.v2 {
-  --v-paper: #ffffff; --v-paper-2: #f2f1ee; --v-card: #ffffff;
-  --v-ink: #0f0f0e; --v-ink-2: #4b4642; --v-mute: #7a736c;
-  --v-sage: #f2f1ee; --v-sage-2: #dedbd5; --v-leaf: #c2410c;
-  --v-sand: #f2f1ee; --v-coral: #ff6a2b; --v-coral-2: #f25a18; --v-coral-ink: #c2410c;
-  --v-line: #dedbd5;
+  --v-paper: #ffffff; --v-paper-2: #F3ECDD; --v-card: #ffffff;
+  --v-ink: #0B1F45; --v-ink-2: #4b4642; --v-mute: #7a736c;
+  --v-sage: #F3ECDD; --v-sage-2: #E2D8C3; --v-leaf: #8A6A2B;
+  --v-sand: #F3ECDD; --v-coral: #C9A86A; --v-coral-2: #B8955A; --v-coral-ink: #8A6A2B;
+  --v-line: #E2D8C3;
   --v-r: 0px; --v-r-md: 0px; --v-r-sm: 0px;
   --v-shadow: 0 24px 50px -30px rgba(0, 0, 0, .45);
 }
 html body.v2 .btn, html body.v2 #main .btn, html body.v2 .site-header .btn, html body.v2 .enq .btn, html body.v2 .mobile-contact .btn, html body.v2 .direct-contact-dialog .btn, html body.v2 .direct-contact-result .btn, html body.v2 .px-cta { border-radius: 0 !important; }
-html body.v2 .btn-primary, html body.v2 .btn-gold { color: #1b1410; box-shadow: none; }
+html body.v2 .btn-primary, html body.v2 .btn-gold { color: #0B1F45; box-shadow: none; }
 html body.v2 .v-pill, html body.v2 .v-ico, html body.v2 .v-stage-n, html body.v2 .v-flow-n, html body.v2 .v-tile-photo, html body.v2 .v-cities button, html body.v2 .v-team-faces li, html body.v2 .v-gallery figure, html body.v2 .v-care-photo, html body.v2 .v-extras a, html body.v2 .v-tiles4 a, html body.v2 .v-decide, html body.v2 .v-promises ul, html body.v2 .v-cta-panel, html body.v2 .v-team, html body.v2 .v-care, html body.v2 .v-care-list li, html body.v2 .v-sec-sage, html body.v2 .v-qa-item, html body.v2 .v-receipt, html body.v2 .v-tile, html body.v2 .v-offer-panel, html body.v2 .v-offer-items li, html body.v2 .v-stage, html body.v2 .v-path, html body.v2 .v-cards3 li, html body.v2 .v-cards2 li, html body.v2 .v-flow li, html body.v2 .v-timeline li, html body.v2 .v-rate, html body.v2 .v-ref, html body.v2 .v-compare-ba .ds-compare-ba-stage, html body.v2 .ds-compare-ba-placeholder, html body.v2 .ds-compare-ba-tag, html body.v2 .ds-index-row, html body.v2 .ds-index a, html body.v2 .main-nav a, html body.v2 .lang-toggle, html body.v2 .ds-split, html body.v2 .ds-split-media, html body.v2 .ds-split-panel, html body.v2 .px-main, html body.v2 .px-cities button, html body.v2 .px-strip button, html body.v2 .viewing-kind-tabs button, html body.v2 .reception-card, html body.v2 .enq, html body.v2 .direct-contact-dialog, html body.v2 .direct-contact-methods > :is(button,a), html body.v2 .lf-svc, html body.v2 .lf-city, html body.v2 .lf-contact-options button, html body.v2 .lf input, html body.v2 .lf textarea, html body.v2 .field input, html body.v2 .field textarea, html body.v2 .ds-member, html body.v2 .ds-member-photo, html body.v2 .v-tile-photo figcaption, html body.v2 .v-gallery figcaption small { border-radius: 0 !important; }
 html body.v2 .v-pill { background: transparent; padding: 0; color: var(--v-coral-ink); font-weight: 700; letter-spacing: .06em; }
 html body.v2 .v-pill::before { content: ''; width: 22px; height: 2px; background: var(--v-coral); }
@@ -526,7 +526,7 @@ html body.v2 .v-sec-sage { margin-inline: 0; background: var(--v-paper-2); }
 html body.v2 .v-tile-sand, html body.v2 .v-offer-panel { background: var(--v-paper-2); }
 html body.v2 .v-ico { background: transparent; border: 1px solid currentColor; color: var(--v-ink); }
 html body.v2 .v-care-list .v-ico, html body.v2 .v-tiles4 li.is-featured .v-ico { background: transparent; border-color: rgba(255, 255, 255, .35); color: #fff; }
-html body.v2 .v-stage-n, html body.v2 .v-timeline .v-flow-n { color: #1b1410; }
+html body.v2 .v-stage-n, html body.v2 .v-timeline .v-flow-n { color: #0B1F45; }
 html body.v2 .v-decide { background: var(--v-paper-2); }
 
 /* header: previous plain white bar, underline for the current page */
@@ -552,21 +552,21 @@ html body.v2 .v-hero.has-bg { position: relative; overflow: hidden; color: #fff;
 html body.v2 .v-hero.has-bg > .wrap { position: relative; z-index: 1; width: min(1240px, 100% - 48px); }
 html body.v2 .v-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: vBg 1.6s var(--v-ease) both; }
 @keyframes vBg { from { transform: scale(1.06); filter: brightness(.7); } }
-html body.v2 .v-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 10, 9, .78) 0%, rgba(10, 10, 9, .55) 45%, rgba(10, 10, 9, .15) 100%); }
+html body.v2 .v-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6, 18, 44, .78) 0%, rgba(6, 18, 44, .55) 45%, rgba(6, 18, 44, .15) 100%); }
 html body.v2 .v-hero.has-bg h1, html body.v2 .v-hero.has-bg h1 em { color: #fff; }
-html body.v2 .v-hero.has-bg h1 em { color: #ffb489; }
+html body.v2 .v-hero.has-bg h1 em { color: #E2C98F; }
 html body.v2 .v-hero.has-bg .v-lead { color: rgba(255, 255, 255, .86); }
-html body.v2 .v-hero.has-bg .v-pill { color: #ffb489; }
-html body.v2 .v-hero.has-bg .v-pill::before { background: #ffb489; }
+html body.v2 .v-hero.has-bg .v-pill { color: #E2C98F; }
+html body.v2 .v-hero.has-bg .v-pill::before { background: #E2C98F; }
 html body.v2 .v-hero.has-bg .btn-line { color: #fff; border-color: rgba(255, 255, 255, .7); }
 html body.v2 .v-hero.has-bg .btn-line:hover { background: #fff; color: var(--v-ink); }
 html body.v2 .v-hero.has-bg .v-hero-receipt { margin: 0 0 0 auto; }
-html body.v2 .v-hero.has-bg .v-rate { background: rgba(15, 15, 14, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+html body.v2 .v-hero.has-bg .v-rate { background: rgba(8, 22, 52, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 
 /* phone fixes */
 @media (max-width: 860px) {
   html body.v2 .v-hero.has-bg { min-height: 0; padding: 40px 0 32px; display: block; }
-  html body.v2 .v-hero-shade { background: linear-gradient(180deg, rgba(10, 10, 9, .55) 0%, rgba(10, 10, 9, .7) 60%, rgba(10, 10, 9, .85) 100%); }
+  html body.v2 .v-hero-shade { background: linear-gradient(180deg, rgba(6, 18, 44, .55) 0%, rgba(6, 18, 44, .7) 60%, rgba(6, 18, 44, .85) 100%); }
   html body.v2 .v-hero.has-bg .v-hero-receipt { margin: 8px 0 0; }
 }
 @media (max-width: 600px) {

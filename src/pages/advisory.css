@@ -1,4 +1,4 @@
-/* Property services (置业顾问) page */
+/* Property services (置業顧問) page */
 .adv-hero { padding: 48px 0 8px; }
 .adv-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
 .adv-hero h1 { font-size: clamp(28px, 3.2vw, 42px); margin-bottom: 12px; }
@@ -6,7 +6,7 @@
 .adv-hero-img, .adv-gallery figure { position: relative; margin: 0; border-radius: 0; overflow: hidden; background: var(--alt); }
 .adv-hero-img { aspect-ratio: 4 / 3; }
 .adv-hero-img img, .adv-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.adv-hero-img figcaption { position: absolute; left: 10px; bottom: 10px; font-size: 11px; color: #fff; background: rgba(20, 16, 12, .6); padding: 2px 8px; border-radius: 0; }
+.adv-hero-img figcaption { position: absolute; left: 10px; bottom: 10px; font-size: 11px; color: #fff; background: rgba(8, 22, 52, .6); padding: 2px 8px; border-radius: 0; }
 
 /* four service cards */
 .adv-services { padding-top: 40px; }
@@ -55,10 +55,10 @@
 .adv-compare-before { position: absolute; inset: 0; clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
 .adv-compare-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 0 1px rgba(0, 0, 0, .15); pointer-events: none; }
 .adv-compare input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
-.adv-tag { position: absolute; top: 12px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(20, 16, 12, .6); padding: 3px 8px; border-radius: 0; pointer-events: none; }
+.adv-tag { position: absolute; top: 12px; font-size: 12px; font-weight: 600; color: #fff; background: rgba(8, 22, 52, .6); padding: 3px 8px; border-radius: 0; pointer-events: none; }
 .adv-tag-l { left: 12px; }
 .adv-tag-r { right: 12px; }
-.adv-compare figcaption { position: absolute; left: 12px; bottom: 10px; font-size: 11px; color: #fff; background: rgba(20, 16, 12, .6); padding: 2px 8px; border-radius: 0; }
+.adv-compare figcaption { position: absolute; left: 12px; bottom: 10px; font-size: 11px; color: #fff; background: rgba(8, 22, 52, .6); padding: 2px 8px; border-radius: 0; }
 
 .adv-values { list-style: none; margin: 36px 0 0; padding: 24px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .adv-values li { display: flex; gap: 12px; }

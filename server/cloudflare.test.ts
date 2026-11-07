@@ -35,9 +35,9 @@ test('local D1 export preserves data and hashes, drops sessions and excludes pri
     source.prepare('INSERT INTO users(id,name,email,password_hash,role,city,created_at) VALUES(?,?,?,?,?,?,?)').run('u', 'Admin', 'export@example.test', 'hash-preserved', 'admin', null, '2026-10-23');
     source.prepare('INSERT INTO sessions(id,user_id,expires_at) VALUES(?,?,?)').run('old-session', 'u', Date.now() + 3600000);
     const image = randomUUID() + '.jpg';
-    source.prepare('INSERT INTO properties(id,city,published,data,created_at,updated_at) VALUES(?,?,?,?,?,?)').run('p', 'Sydney', 0, JSON.stringify({ images: ['/uploads/' + image, '/data/viewing-source/private.jpg'], floorplan: '' }), '2026-10-23', '2026-10-23');
+    source.prepare('INSERT INTO properties(id,city,published,data,created_at,updated_at) VALUES(?,?,?,?,?,?)').run('p', 'Hong Kong Island', 0, JSON.stringify({ images: ['/uploads/' + image, '/data/viewing-source/private.jpg'], floorplan: '' }), '2026-10-23', '2026-10-23');
     source.prepare('INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES(?,?,?,?,?)').run('o', '123456789', '123456789', "O'Neil", '2026-10-23');
-    source.prepare('INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)').run('l', randomUUID(), 'request-hash-preserved', 'o', 'Sydney', 'letting', JSON.stringify({ name: "O'Neil" }), '2026-10-23');
+    source.prepare('INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)').run('l', randomUUID(), 'request-hash-preserved', 'o', 'Hong Kong Island', 'letting', JSON.stringify({ name: "O'Neil" }), '2026-10-23');
     source.prepare('INSERT INTO notifications(id,lead_id,claimed_until,claim_token) VALUES(?,?,?,?)').run('n', 'l', Date.now() + 60000, 'old-lease');
     const stdout = execFileSync(process.execPath, ['scripts/export-cloudflare-data.mjs', '--database', filename, '--out', output], { encoding: 'utf8' }); assert.equal(stdout.includes("O'Neil"), false);
     destination.exec(readFileSync(output, 'utf8'));
@@ -83,8 +83,8 @@ test('Cloudflare Worker runs real workerd, D1 and R2 without external network', 
     const response = await mf.dispatchFetch('https://eucove.com' + url, { method, redirect: 'manual', headers: { 'Content-Type': 'application/json', Origin: 'https://eucove.com', 'CF-Connecting-IP': ip || `192.0.2.${++serial % 250 + 1}`, ...(cookie ? { Cookie: cookie } : {}) }, body: body === undefined ? undefined : JSON.stringify(body) });
     return { response, body: response.headers.get('content-type')?.includes('application/json') ? await response.json() as any : null };
   };
-  const input = { name: '=Worker Owner', contact: '+61 400 222 991', city: 'Brisbane', service: 'manage', language: 'zh', consent: true, preferredAdvisorId: 'andy-xiang', offerInterest: true, salutation: 'ms', requestId: randomUUID() };
-  const property = { title: { zh: '测试住宅', en: 'Fixture home' }, description: { zh: '', en: '' }, address: '1 Fixture Street', city: 'Brisbane', suburb: 'Fixture', postcode: '4000', type: 'house', status: 'rent', price: 700, priceLabel: { zh: '', en: '' }, beds: 3, baths: 2, cars: 1, area: null, images: [], floorplan: '', tourUrl: '', tourKind: 'none', published: false, events: [] };
+  const input = { name: '=Worker Owner', contact: '+61 400 222 991', city: 'New Territories', service: 'manage', language: 'zh', consent: true, offerInterest: true, salutation: 'ms', requestId: randomUUID() };
+  const property = { title: { zh: '测试住宅', en: 'Fixture home' }, description: { zh: '', en: '' }, address: '1 Fixture Street', city: 'New Territories', suburb: 'Fixture', postcode: '4000', type: 'house', status: 'rent', price: 700, priceLabel: { zh: '', en: '' }, beds: 3, baths: 2, cars: 1, area: null, images: [], floorplan: '', tourUrl: '', tourKind: 'none', published: false, events: [] };
   try {
     const db = await mf.getD1Database('DB');
     await applyTestMigrations(db);
@@ -112,12 +112,12 @@ test('Cloudflare Worker runs real workerd, D1 and R2 without external network', 
     });
     await t.test('existing scrypt users log in inside workerd and upgrade to Web Crypto hashes', async () => {
       const salt = 'ab'.repeat(16); const password = 'LegacyFixturePassword2026';
-      await db.prepare('INSERT INTO users(id,name,email,password_hash,role,city,created_at) VALUES(?,?,?,?,?,?,?)').bind('legacy', 'Legacy', 'legacy@example.test', salt + ':' + scryptSync(password, salt, 64).toString('hex'), 'assistant', 'Perth', new Date().toISOString()).run();
+      await db.prepare('INSERT INTO users(id,name,email,password_hash,role,city,created_at) VALUES(?,?,?,?,?,?,?)').bind('legacy', 'Legacy', 'legacy@example.test', salt + ':' + scryptSync(password, salt, 64).toString('hex'), 'assistant', 'New Territories', new Date().toISOString()).run();
       const result = await request('/api/admin/login', 'POST', { email: 'legacy@example.test', password }); assert.equal(result.response.status, 200, JSON.stringify(result.body));
       const row = await db.prepare('SELECT password_hash FROM users WHERE id=?').bind('legacy').first<{ password_hash: string }>(); assert.match(row!.password_hash, /^pbkdf2-sha256\$/);
     });
     await t.test('roles/city scopes and published property contracts match Node API', async () => {
-      for (const [role, email, city] of [['manager', 'manager@example.test', 'Sydney'], ['assistant', 'assistant@example.test', 'Brisbane']]) {
+      for (const [role, email, city] of [['manager', 'manager@example.test', 'Hong Kong Island'], ['assistant', 'assistant@example.test', 'New Territories']]) {
         const created = await request('/api/admin/users', 'POST', { name: role, email, city, role, password: 'CityFixturePassword2026' }, adminCookie); assert.equal(created.response.status, 201);
         const login = await request('/api/admin/login', 'POST', { email, password: 'CityFixturePassword2026' });
         if (role === 'manager') { managerId = created.body.user.id; managerCookie = login.response.headers.get('set-cookie')!.split(';')[0]; } else assistantCookie = login.response.headers.get('set-cookie')!.split(';')[0];
@@ -127,7 +127,7 @@ test('Cloudflare Worker runs real workerd, D1 and R2 without external network', 
       assert.equal((await request('/api/admin/properties/' + propertyId, 'PUT', { ...property, published: true }, managerCookie)).response.status, 404);
       assert.equal((await request('/api/admin/properties', 'POST', property, assistantCookie)).response.status, 403);
       assert.equal((await request('/api/admin/properties/' + propertyId, 'PUT', { ...property, published: true }, adminCookie)).response.status, 200);
-      assert.equal((await request('/api/properties?city=Brisbane&beds=3&maxPrice=700')).body.properties.length, 1); assert.equal((await request('/api/properties?minPrice=bad')).response.status, 400);
+      assert.equal((await request('/api/properties?city=New Territories&beds=3&maxPrice=700')).body.properties.length, 1); assert.equal((await request('/api/properties?minPrice=bad')).response.status, 400);
     });
     await t.test('concurrent identical leads create one owner, lead and atomic outbox; edited replay conflicts', async () => {
       const payload = { ...input, propertyId };
@@ -153,7 +153,7 @@ test('Cloudflare Worker runs real workerd, D1 and R2 without external network', 
       assert.equal((await request('/api/admin/leads/' + leadId, 'PATCH', { assignedTo: managerId }, assistantCookie)).response.status, 403);
       assert.equal((await request('/api/admin/leads/' + leadId, 'PATCH', { assignedTo: managerId }, adminCookie)).response.status, 400);
       const patched = await request('/api/admin/leads/' + leadId, 'PATCH', { status: 'following', notes: 'Fixture follow-up', nextFollowUp: null }, assistantCookie); assert.equal(patched.response.status, 200); assert.equal(patched.body.lead.nextFollowUp, '');
-      assert.equal(patched.body.lead.preferredAdvisorName, 'Andy Xiang'); assert.equal(patched.body.lead.serviceGroup, 'rental');
+      assert.equal(patched.body.lead.serviceGroup, 'rental');
       const csv = await mf.dispatchFetch('https://eucove.com/api/admin/export/leads', { headers: { Cookie: adminCookie } }); assert.match(await csv.text(), /'=Worker Owner/);
       assert.equal((await request('/api/admin/notifications/retry', 'POST', {}, assistantCookie)).response.status, 403);
     });
@@ -170,7 +170,7 @@ test('Cloudflare Worker runs real workerd, D1 and R2 without external network', 
     await t.test('notification leases exclude overlapping delivery and format Chinese service preferences', async () => {
       assert.equal(sent.length, 0);
       await Promise.all([request('/__test/notify'), request('/__test/notify')]); assert.equal(sent.length, 1);
-      assert.doesNotMatch(sent[0].text, /指定顾问：|咨询限时优惠：|https?:|编号：/); assert.match(sent[0].text, /长期托管/); assert.equal(sent[0].text.includes(input.contact), true); assert.match(sent[0].text, /【客户姓名】=Worker Owner\n【客户性别】女（女士）\n/); assert.match(sent[0].text, /【房屋所在城市】布里斯班/);
+      assert.doesNotMatch(sent[0].text, /指定顾问：|咨询限时优惠：|https?:|编号：/); assert.match(sent[0].text, /租務管理/); assert.equal(sent[0].text.includes(input.contact), true); assert.match(sent[0].text, /【客户姓名】=Worker Owner\n【客户性别】女（女士）\n/); assert.match(sent[0].text, /【房屋所在城市】新界/);
       assert.equal((await db.prepare('SELECT status FROM notifications').first<{ status: string }>())!.status, 'sent');
     });
     await t.test('retry ceiling, expired leases, 429 delay and manual retry are durable', async () => {

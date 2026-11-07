@@ -12,7 +12,7 @@ const schema = z.object({
   cities: z.array(text(80).min(1)).min(1).max(10), services: z.array(text(100).min(1)).min(1).max(10),
   campaignName: text(200).default(''), adName: text(200).default(''), startTime: text(200).optional(), salutation: text(100).optional(),
 }).strict();
-const cityMap: Record<string, string> = { 悉尼:'Sydney',墨尔本:'Melbourne',布里斯班:'Brisbane',珀斯:'Perth',阿德莱德:'Adelaide',堪培拉:'Canberra',其他:'other',其他城市:'other' };
+const cityMap: Record<string, string> = { 港島:'Hong Kong Island',港岛:'Hong Kong Island',九龍:'Kowloon',九龙:'Kowloon',新界:'New Territories',離島:'Islands',离岛:'Islands',其他:'other',其他地區:'other',其他地区:'other' };
 const serviceMap: Record<string, string> = { 寻找租客:'letting',出租招租:'letting',房屋出租:'letting',长期托管:'management',买卖房屋:'other',装修服务:'renovation',装修翻新:'renovation',购房咨询:'buyer-advisory',置业咨询:'buyer-advisory',买房:'buying',卖房:'selling' };
 const encoder = new TextEncoder();
 const digest = async (value: string) => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', encoder.encode(value))), b=>b.toString(16).padStart(2,'0')).join('');

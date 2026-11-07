@@ -1,0 +1,54 @@
+{
+  "model": "onnx-community/depth-anything-v2-small",
+  "revision": "4472b7362082ad9968fee890ca0f1e5aca36b93d",
+  "dtype": "q8",
+  "depthConvention": "relative-inverse-depth-white-near",
+  "purpose": "Illustrative 3D relief generated from licensed Hong Kong photographs (see /credits). Not a measured scan.",
+  "photos": [
+    {
+      "id": "harbour-night",
+      "source": "/img/hk/harbour-night.webp",
+      "sourceSha256": "9dc3660419ddc271cd3b59f44c26a341e1acffbf3daaa7df29babf9cd8c387c0",
+      "image": "/depth/hk/harbour-night.webp",
+      "depth": "/depth/hk/harbour-night.depth.png",
+      "width": 1600,
+      "height": 757
+    },
+    {
+      "id": "hk-island",
+      "source": "/img/hk/hk-island.webp",
+      "sourceSha256": "ee60df0a5dec95daec29363023fcf5c8052cb92ce69dd04066d48c571c927705",
+      "image": "/depth/hk/hk-island.webp",
+      "depth": "/depth/hk/hk-island.depth.png",
+      "width": 1400,
+      "height": 842
+    },
+    {
+      "id": "kowloon",
+      "source": "/img/hk/kowloon.webp",
+      "sourceSha256": "6b81675ff96abe51c169c7565c2d773accd80b351cf7b3bfa3e5332ed1ccec10",
+      "image": "/depth/hk/kowloon.webp",
+      "depth": "/depth/hk/kowloon.depth.png",
+      "width": 1400,
+      "height": 818
+    },
+    {
+      "id": "new-territories",
+      "source": "/img/hk/new-territories.webp",
+      "sourceSha256": "5ef32a52ce661b7d5f948c29bd080d370cd456c406a0bdedd2c9fe18ce20a1ce",
+      "image": "/depth/hk/new-territories.webp",
+      "depth": "/depth/hk/new-territories.depth.png",
+      "width": 1400,
+      "height": 1051
+    },
+    {
+      "id": "islands",
+      "source": "/img/hk/islands.webp",
+      "sourceSha256": "32f555da8cfbc8cbffe67787794d5beaf70bbd04055218dd356ec52098c2385b",
+      "image": "/depth/hk/islands.webp",
+      "depth": "/depth/hk/islands.depth.png",
+      "width": 1400,
+      "height": 1050
+    }
+  ]
+}

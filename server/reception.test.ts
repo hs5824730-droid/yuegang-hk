@@ -15,7 +15,7 @@ import {execFileSync} from 'node:child_process';
 import {build} from 'esbuild';
 import {Miniflare,convertV4MiniflareOptions,Response as MFResponse} from 'miniflare';
 import {receptionMigration,assignReception,saveReception,receptionEvent,receptionReport,type ReceptionDB,type ReceptionTarget} from './reception';
-const target=(channel:'whatsapp'|'wechat',order:number,groupOrder=1):ReceptionTarget=>({id:randomUUID(),channel,cities:['Sydney','Melbourne'],enabled:true,groupId:'group-'+groupOrder,groupName:'Group '+groupOrder,groupOrder,targetOrder:order,value:channel==='whatsapp'?'+6140000000'+order:'/uploads/'+randomUUID()+'.png'});
+const target=(channel:'whatsapp'|'wechat',order:number,groupOrder=1):ReceptionTarget=>({id:randomUUID(),channel,cities:['Hong Kong Island','Kowloon'],enabled:true,groupId:'group-'+groupOrder,groupName:'Group '+groupOrder,groupOrder,targetOrder:order,value:channel==='whatsapp'?'+6140000000'+order:'/uploads/'+randomUUID()+'.png'});
 function sqliteAdapter(db:DatabaseSync):ReceptionDB{return {all:async(sql,args=[])=>db.prepare(sql).all(...args as any[]) as any[],batch:async qs=>{db.exec('BEGIN IMMEDIATE');try{for(const q of qs)db.prepare(q.sql).run(...q.args as any[]);db.exec('COMMIT')}catch(e){db.exec('ROLLBACK');throw e}}}}
 async function independentChecks(db:ReceptionDB){
  const empty=await assignReception(db,{requestId:randomUUID(),channel:'whatsapp'});assert.equal(empty.target,null);
@@ -44,24 +44,24 @@ async function independentChecks(db:ReceptionDB){
  await wildcardChecks(db);
 }
 async function cityChecks(db:ReceptionDB){
- const a={...target('whatsapp',1),cities:['Sydney','Melbourne'],queueOrder:0};
- const b={...target('whatsapp',2),cities:['Sydney'],queueOrder:1};const m={...target('whatsapp',3),cities:['Melbourne'],queueOrder:2};
+ const a={...target('whatsapp',1),cities:['Hong Kong Island','Kowloon'],queueOrder:0};
+ const b={...target('whatsapp',2),cities:['Hong Kong Island'],queueOrder:1};const m={...target('whatsapp',3),cities:['Kowloon'],queueOrder:2};
  const wx={...target('wechat',1),cities:[]};
  await saveReception(db,{targets:[m,b,wx,a]});
  const globalBefore=await db.all('SELECT * FROM reception_channel_cursor ORDER BY channel');
  const cityAssign=(city:string,requestId=randomUUID())=>assignReception(db,{channel:'whatsapp',city,requestId});
- assert.equal((await cityAssign('Sydney')).target!.id,a.id);assert.equal((await cityAssign('Sydney')).target!.id,b.id);
- assert.equal((await cityAssign('Melbourne')).target!.id,a.id);assert.equal((await cityAssign('Melbourne')).target!.id,m.id);
- const noMatchId=randomUUID();const no=await cityAssign('Brisbane',noMatchId);assert.equal(no.target,null);assert.equal(no.outcome,'no_city_match');assert.equal(no.scope,'city');
+ assert.equal((await cityAssign('Hong Kong Island')).target!.id,a.id);assert.equal((await cityAssign('Hong Kong Island')).target!.id,b.id);
+ assert.equal((await cityAssign('Kowloon')).target!.id,a.id);assert.equal((await cityAssign('Kowloon')).target!.id,m.id);
+ const noMatchId=randomUUID();const no=await cityAssign('New Territories',noMatchId);assert.equal(no.target,null);assert.equal(no.outcome,'no_city_match');assert.equal(no.scope,'city');
  const other=await cityAssign('Gold Coast');assert.equal(other.city,'other');assert.equal(other.outcome,'no_city_match');
- const same=randomUUID();const first=await cityAssign('Sydney',same);const sameRows=await Promise.all(Array.from({length:12},()=>cityAssign('Sydney',same)));assert.ok(sameRows.every(row=>row.id===first.id));
- await assert.rejects(()=>cityAssign('Melbourne',same),/different city|其他城市/);
- const concurrent=await Promise.all(Array.from({length:20},()=>cityAssign('Sydney')));assert.equal(concurrent.filter(row=>row.target!.id===a.id).length,10);assert.equal(concurrent.filter(row=>row.target!.id===b.id).length,10);
+ const same=randomUUID();const first=await cityAssign('Hong Kong Island',same);const sameRows=await Promise.all(Array.from({length:12},()=>cityAssign('Hong Kong Island',same)));assert.ok(sameRows.every(row=>row.id===first.id));
+ await assert.rejects(()=>cityAssign('Kowloon',same),/different city|其他城市/);
+ const concurrent=await Promise.all(Array.from({length:20},()=>cityAssign('Hong Kong Island')));assert.equal(concurrent.filter(row=>row.target!.id===a.id).length,10);assert.equal(concurrent.filter(row=>row.target!.id===b.id).length,10);
  assert.deepEqual(await db.all('SELECT * FROM reception_channel_cursor ORDER BY channel'),globalBefore);
- assert.equal((await assignReception(db,{requestId:randomUUID(),channel:'wechat',city:'Brisbane'})).target!.id,wx.id,'WeChat matches its independent city pool; empty cities covers all');
- await saveReception(db,{targets:[{...a,enabled:false,value:'+61400999999'},b,m,wx]});assert.equal((await cityAssign('Sydney',same)).target!.value,first.target!.value,'Historic target snapshot never changes');
- assert.equal((await cityAssign('Sydney')).target!.id,b.id);assert.equal((await cityAssign('Brisbane',noMatchId)).target,null,'An idempotent no-match is never reassigned later');
- await saveReception(db,{targets:[{...b,cities:[]},wx]});assert.equal((await cityAssign('Sydney')).target!.id,b.id,'Empty cities matches all cities');
+ assert.equal((await assignReception(db,{requestId:randomUUID(),channel:'wechat',city:'New Territories'})).target!.id,wx.id,'WeChat matches its independent city pool; empty cities covers all');
+ await saveReception(db,{targets:[{...a,enabled:false,value:'+61400999999'},b,m,wx]});assert.equal((await cityAssign('Hong Kong Island',same)).target!.value,first.target!.value,'Historic target snapshot never changes');
+ assert.equal((await cityAssign('Hong Kong Island')).target!.id,b.id);assert.equal((await cityAssign('New Territories',noMatchId)).target,null,'An idempotent no-match is never reassigned later');
+ await saveReception(db,{targets:[{...b,cities:[]},wx]});assert.equal((await cityAssign('Hong Kong Island')).target!.id,b.id,'Empty cities matches all cities');
  assert.equal((await assignReception(db,{requestId:randomUUID(),channel:'whatsapp'})).target!.id,b.id,'City-less sharing retains original global pool');
 }
 test('SQLite: independent persistent channel cursors, same-ID cross-channel isolation, concurrency, retry and analytics',async()=>{const file=path.join(mkdtempSync(path.join(tmpdir(),'reception-channels-')),'db.sqlite');const db=new DatabaseSync(file);db.exec('CREATE TABLE leads(id TEXT PRIMARY KEY,request_id TEXT UNIQUE,city TEXT);'+receptionMigration+receptionCityMigration+receptionDefaultsMigration+readFileSync('migrations/0009_whatsapp_prefill.sql','utf8')+readFileSync('migrations/0007_signal_outbox.sql','utf8')+readFileSync('migrations/0010_direct_contact_notifications.sql','utf8')+readFileSync('migrations/0011_direct_phone_events.sql','utf8')+readFileSync('migrations/0012_notification_recipients.sql','utf8'));assert.equal(readFileSync('migrations/0003_reception.sql','utf8').replace(/\r\n/g,'\n'),receptionMigration.replace(/\r\n/g,'\n'));await independentChecks(sqliteAdapter(db));const before=db.prepare('SELECT * FROM reception_channel_cursor ORDER BY channel').all();db.close();const reopened=new DatabaseSync(file);assert.deepEqual(reopened.prepare('SELECT * FROM reception_channel_cursor ORDER BY channel').all(),before);reopened.close()});
@@ -71,15 +71,15 @@ test('real Worker/D1: same independent allocation plus protected config, channel
  try{const db=await mf.getD1Database('DB');await applyTestMigrations(db);const adapter:ReceptionDB={all:async(sql,args=[])=>(await db.prepare(sql).bind(...args).all()).results as any[],batch:async qs=>{await db.batch(qs.map(q=>db.prepare(q.sql).bind(...q.args)))}};await independentChecks(adapter);
  const request=async(url:string,method='GET',body?:unknown,cookie='',origin='https://eucove.com')=>{const r=await mf.dispatchFetch('https://eucove.com'+url,{method,headers:{Origin:origin,'Content-Type':'application/json',Cookie:cookie},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,body:await r.json() as any,headers:r.headers}};
  assert.equal((await request('/api/admin/reception')).status,401);assert.equal((await request('/api/reception/assign')).status,404);assert.equal((await request('/api/reception/assign','POST',{requestId:randomUUID(),channel:'whatsapp'},'','https://evil.test')).status,403);assert.equal((await request('/api/reception/assign','POST',{requestId:randomUUID()})).status,400);
- const login=await request('/api/admin/login','POST',{email:'reception@example.test',password:'ReceptionFixturePassword2026'});const cookie=login.headers.get('set-cookie')!.split(';')[0];assert.equal((await request('/api/admin/reception','GET',undefined,cookie)).status,200);await request('/api/admin/users','POST',{name:'Manager',email:'channel-manager@example.test',password:'ManagerFixturePassword2026',role:'manager',city:'Sydney'},cookie);const manager=await request('/api/admin/login','POST',{email:'channel-manager@example.test',password:'ManagerFixturePassword2026'});assert.equal((await request('/api/admin/reception','GET',undefined,manager.headers.get('set-cookie')!.split(';')[0])).status,403);
- const input={requestId:randomUUID(),name:'Fixture',contact:'+61400000000',city:'Sydney',service:'management',language:'zh',consent:true,website:''};const lead=await request('/api/leads','POST',input);assert.equal(lead.status,201);const linked=await request('/api/reception/assign','POST',{requestId:randomUUID(),channel:'wechat',leadRequestId:input.requestId});assert.equal((await request('/api/admin/reception','GET',undefined,cookie)).body.records.find((r:any)=>r.id===linked.body.id).leadId,lead.body.id);
+ const login=await request('/api/admin/login','POST',{email:'reception@example.test',password:'ReceptionFixturePassword2026'});const cookie=login.headers.get('set-cookie')!.split(';')[0];assert.equal((await request('/api/admin/reception','GET',undefined,cookie)).status,200);await request('/api/admin/users','POST',{name:'Manager',email:'channel-manager@example.test',password:'ManagerFixturePassword2026',role:'manager',city:'Hong Kong Island'},cookie);const manager=await request('/api/admin/login','POST',{email:'channel-manager@example.test',password:'ManagerFixturePassword2026'});assert.equal((await request('/api/admin/reception','GET',undefined,manager.headers.get('set-cookie')!.split(';')[0])).status,403);
+ const input={requestId:randomUUID(),name:'Fixture',contact:'+61400000000',city:'Hong Kong Island',service:'management',language:'zh',consent:true,website:''};const lead=await request('/api/leads','POST',input);assert.equal(lead.status,201);const linked=await request('/api/reception/assign','POST',{requestId:randomUUID(),channel:'wechat',leadRequestId:input.requestId});assert.equal((await request('/api/admin/reception','GET',undefined,cookie)).body.records.find((r:any)=>r.id===linked.body.id).leadId,lead.body.id);
  }finally{await mf.dispose()}
 });
 test('Node HTTP: same origin/admin permissions, no GET turn, no allocation during lead submit, raster QR safety',async()=>{
  const directory=mkdtempSync(path.join(tmpdir(),'routing-http-'));Object.assign(process.env,{DATABASE_PATH:path.join(directory,'db.sqlite'),UPLOAD_DIR:path.join(directory,'uploads'),SESSION_SECRET:'routing-fixture-only-key-123456789012345678901',DISABLE_TELEGRAM:'true',ADMIN_EMAIL:'routing@example.test',ADMIN_PASSWORD:'RoutingFixturePassword2026',APP_URL:'http://localhost:5173',NODE_ENV:'test'});const {createApp}=await import('./app');const {db}=await import('./db');const server=createApp().listen(0,'127.0.0.1');await new Promise<void>(r=>server.once('listening',r));const location=server.address() as {port:number};
  const request=async(url:string,method='GET',body?:unknown,cookie='',origin='http://localhost:5173')=>{const r=await fetch(`http://127.0.0.1:${location.port}`+url,{method,headers:{Origin:origin,'Content-Type':'application/json',Cookie:cookie},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,body:await r.json() as any,headers:r.headers}};
  try{assert.equal((await request('/api/admin/reception')).status,401);assert.equal((await request('/api/reception/assign')).status,404);assert.equal((await request('/api/reception/assign','POST',{requestId:randomUUID(),channel:'whatsapp'},'','https://evil.test')).status,403);const login=await request('/api/admin/login','POST',{email:'routing@example.test',password:'RoutingFixturePassword2026'});const cookie=login.headers.get('set-cookie')!.split(';')[0];const templatePath='/api/admin/reception/whatsapp-prefill';assert.equal((await request(templatePath)).status,401);const template=(await request(templatePath,'GET',undefined,cookie)).body;assert.equal((await request(templatePath,'PUT',{zh:'{unknown}',en:'',expectedVersion:template.version},cookie)).status,400);const updated=await request(templatePath,'PUT',{zh:'Node {city} {service}\n&?#+🙂',en:'Node {city} {service}',expectedVersion:template.version},cookie);assert.equal(updated.status,200);assert.equal((await request(templatePath,'GET',undefined,cookie)).body.zh,'Node {city} {service}\n&?#+🙂');assert.equal((await request('/api/admin/reception','PUT',{targets:[target('whatsapp',1),target('wechat',1)]},cookie)).status,200);
- const input={requestId:randomUUID(),name:'Fixture',contact:'+61400000000',city:'Sydney',service:'management',language:'zh',consent:true,website:''};const lead=await request('/api/leads','POST',input);assert.equal(lead.status,201);assert.equal((await request('/api/admin/reception','GET',undefined,cookie)).body.records.length,0);const id=randomUUID();const wa=await request('/api/reception/assign','POST',{requestId:id,channel:'whatsapp',leadRequestId:input.requestId});const wx=await request('/api/reception/assign','POST',{requestId:id,channel:'wechat',leadRequestId:input.requestId});assert.notEqual(wa.body.id,wx.body.id);assert.equal((await request('/api/reception/assign','POST',{requestId:id,channel:'whatsapp'})).body.id,wa.body.id);assert.equal(wa.body.target.groupName,undefined);
+ const input={requestId:randomUUID(),name:'Fixture',contact:'+61400000000',city:'Hong Kong Island',service:'management',language:'zh',consent:true,website:''};const lead=await request('/api/leads','POST',input);assert.equal(lead.status,201);assert.equal((await request('/api/admin/reception','GET',undefined,cookie)).body.records.length,0);const id=randomUUID();const wa=await request('/api/reception/assign','POST',{requestId:id,channel:'whatsapp',leadRequestId:input.requestId});const wx=await request('/api/reception/assign','POST',{requestId:id,channel:'wechat',leadRequestId:input.requestId});assert.notEqual(wa.body.id,wx.body.id);assert.equal((await request('/api/reception/assign','POST',{requestId:id,channel:'whatsapp'})).body.id,wa.body.id);assert.equal(wa.body.target.groupName,undefined);
  const report=(await request('/api/admin/reception','GET',undefined,cookie)).body;assert(report.records.every((r:any)=>r.leadId===lead.body.id));const form=new FormData();form.append('file',new Blob(['<svg/>'],{type:'image/svg+xml'}),'qr.svg');assert.equal((await fetch(`http://127.0.0.1:${location.port}/api/admin/uploads`,{method:'POST',headers:{Origin:'http://localhost:5173',Cookie:cookie},body:form})).status,400);
  }finally{await new Promise<void>((r,j)=>server.close(e=>e?j(e):r()));db.close()}
 });
@@ -91,34 +91,34 @@ async function wildcardChecks(db:ReceptionDB){
  const base={displayName:'QR admin label',originalName:'Source nickname',originalFileName:'original.png',fileNameSource:'upload' as const};
  const wa={...target('whatsapp',1),cities:[],queueOrder:0};
  const wx={...target('wechat',1),...base,cities:[],queueOrder:0};
- const sx={...target('wechat',2),cities:['Sydney','Brisbane'],queueOrder:1};
+ const sx={...target('wechat',2),cities:['Hong Kong Island','New Territories'],queueOrder:1};
  const off={...target('wechat',3),cities:[],enabled:false,queueOrder:2};
  await saveReception(db,{targets:[wa,wx,sx,off]});
  const globals=await db.all('SELECT * FROM reception_channel_cursor ORDER BY channel');
  const assign=(channel:string,city:string,requestId=randomUUID())=>assignReception(db,{channel,city,requestId});
- for(const channel of ['whatsapp','wechat'])for(const city of ['Perth','Canberra','Adelaide','other']){
+ for(const channel of ['whatsapp','wechat'])for(const city of ['New Territories','Islands','Islands','other']){
   const a=await assign(channel,city);assert.equal(a.scope,'city');assert.equal(a.target!.id,channel==='whatsapp'?wa.id:wx.id);
   assert.equal((a.target as any).displayName,undefined,'Public QR assignment never leaks admin metadata');
  }
- const ids=await Promise.all(Array.from({length:20},()=>assign('wechat','Brisbane')));assert.equal(ids.filter(r=>r.target!.id===wx.id).length,10);assert.equal(ids.filter(r=>r.target!.id===sx.id).length,10);
+ const ids=await Promise.all(Array.from({length:20},()=>assign('wechat','New Territories')));assert.equal(ids.filter(r=>r.target!.id===wx.id).length,10);assert.equal(ids.filter(r=>r.target!.id===sx.id).length,10);
  assert.deepEqual(await db.all('SELECT * FROM reception_channel_cursor ORDER BY channel'),globals,'City turns never advance global cursors');
- const id=randomUUID(),a=await assign('wechat','Melbourne',id);assert.equal(a.target!.id,wx.id);
+ const id=randomUUID(),a=await assign('wechat','Kowloon',id);assert.equal(a.target!.id,wx.id);
  const cityBefore=await db.all('SELECT * FROM reception_city_cursor ORDER BY channel,city');
- const retries=await Promise.all(Array.from({length:15},()=>assign('wechat','Melbourne',id)));assert(retries.every(r=>r.id===a.id));
+ const retries=await Promise.all(Array.from({length:15},()=>assign('wechat','Kowloon',id)));assert(retries.every(r=>r.id===a.id));
  assert.deepEqual(await db.all('SELECT * FROM reception_city_cursor ORDER BY channel,city'),cityBefore);
- await assert.rejects(()=>assign('wechat','Sydney',id));
+ await assert.rejects(()=>assign('wechat','Hong Kong Island',id));
  const old=(await db.all('SELECT * FROM reception_channel_assignments WHERE id=?',[a.id]))[0];
- await saveReception(db,{targets:[wa,{...wx,...base,displayName:'Edited',cities:['Sydney'],enabled:false},sx,off]});
+ await saveReception(db,{targets:[wa,{...wx,...base,displayName:'Edited',cities:['Hong Kong Island'],enabled:false},sx,off]});
  assert.deepEqual((await db.all('SELECT * FROM reception_channel_assignments WHERE id=?',[a.id]))[0],old,'Editing names/cities/enabled never mutates prior snapshots');
- assert.equal((await assign('wechat','Melbourne')).outcome,'no_city_match','Explicit Sydney/Brisbane targets never cross city boundaries');
- assert.equal((await assign('wechat','Sydney')).target!.id,sx.id);
- const legacy={...wa};delete (legacy as any).cities;await saveReception(db,{targets:[legacy]});assert.equal((await assign('whatsapp','Brisbane')).target!.id,wa.id,'Missing cities is compatible with wildcard');
+ assert.equal((await assign('wechat','Kowloon')).outcome,'no_city_match','Explicit Hong Kong Island/New Territories targets never cross city boundaries');
+ assert.equal((await assign('wechat','Hong Kong Island')).target!.id,sx.id);
+ const legacy={...wa};delete (legacy as any).cities;await saveReception(db,{targets:[legacy]});assert.equal((await assign('whatsapp','New Territories')).target!.id,wa.id,'Missing cities is compatible with wildcard');
  await assert.rejects(()=>saveReception(db,{targets:[{...wx,originalFileName:'../../secret.png'}]}));
  await assert.rejects(()=>saveReception(db,{targets:[{...wx,originalFileName:'C:\\secret.png'}]}));
  await assert.rejects(()=>saveReception(db,{targets:[{...wx,originalFileName:'a'.repeat(161)}]}));
- const raw=JSON.stringify([{id:a.id,channel:'wechat',city:'Melbourne',scope:'city',outcome:'assigned',createdAt:old.created_at,target:JSON.parse(old.target_data),qr:0}]);
- const routing=leadRouting({contactMethod:'wechat'},'Melbourne',raw);assert.equal(routing.assignments[0].target!.displayName,base.displayName);assert.equal(routing.assignments[0].wechatQrDisplayed,false);
- const message=notificationMessage({lead_id:randomUUID(),city:'Melbourne',service:'rent',data:JSON.stringify({name:'Mock only',contact:'FixtureWX',contactMethod:'wechat'}),created_at:old.created_at,routing_json:raw},'https://example.test');
+ const raw=JSON.stringify([{id:a.id,channel:'wechat',city:'Kowloon',scope:'city',outcome:'assigned',createdAt:old.created_at,target:JSON.parse(old.target_data),qr:0}]);
+ const routing=leadRouting({contactMethod:'wechat'},'Kowloon',raw);assert.equal(routing.assignments[0].target!.displayName,base.displayName);assert.equal(routing.assignments[0].wechatQrDisplayed,false);
+ const message=notificationMessage({lead_id:randomUUID(),city:'Kowloon',service:'rent',data:JSON.stringify({name:'Mock only',contact:'FixtureWX',contactMethod:'wechat'}),created_at:old.created_at,routing_json:raw},'https://example.test');
  assert.match(message,/分流名称：QR admin label/);assert.doesNotMatch(message,/原图昵称：|上传原文件名：/);assert.doesNotMatch(message,/已显示微信二维码/);
  const report=await receptionReport(db);assert.equal(report.records.find(r=>r.id===a.id)!.target!.originalName,base.originalName);
 }

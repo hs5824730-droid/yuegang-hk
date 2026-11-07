@@ -1,18 +1,18 @@
 import {z} from 'zod';
 import {isContact} from './enquiry-options';
 
-export const INTAKE_TYPES={buying:['买房','Buying'],selling:['卖房','Selling'],advisory:['置业顾问','Property services']} as const;
+export const INTAKE_TYPES={buying:['買樓','Buying'],selling:['賣樓','Selling'],advisory:['置業顧問','Property services']} as const;
 export type IntakeType=keyof typeof INTAKE_TYPES;
 export const INTAKE_PATHS={buying:'/buying-registration',selling:'/selling-registration',advisory:'/advisory-registration'} as const;
-export const INTAKE_STATUSES={new:['待联系','To contact'],contacted:['已联系','Contacted'],following:['需求确认','Confirming needs'],appointed:['服务中','In progress'],completed:['已完成','Completed'],paused:['暂缓','Paused']} as const;
-export const ADVISORY_NEEDS={'buyer-advisory':['购房咨询','Buying advice'],renovation:['装修翻新','Renovation'],'house-care':['房屋打理','Home care'],garden:['草坪与园艺','Lawn & garden'],cleaning:['清洁服务','Cleaning'],'home-sitting':['空置与居家照看','Vacancy & home sitting'],maintenance:['维修维护','Repairs & maintenance'],other:['其他','Other']} as const;
-export const TIMINGS={'':['尚未确定','Not decided'],asap:['尽快','As soon as possible'],'1-3-months':['1–3个月内','Within 1–3 months'],'3-6-months':['3–6个月内','Within 3–6 months'],later:['6个月以后','After 6 months']} as const;
-export const PROPERTY_TYPES={'':['尚未确定','Not decided'],house:['独立屋','House'],townhouse:['联排住宅','Townhouse'],apartment:['公寓','Apartment'],other:['其他','Other']} as const;
-export const PURPOSES={'':['尚未确定','Not decided'],home:['自住','To live in'],investment:['投资','Investment'],both:['两者兼顾','Both']} as const;
-export const OCCUPANCIES={'':['尚未确定','Not decided'],owner:['自住','Owner occupied'],tenanted:['出租中','Tenanted'],vacant:['空置','Vacant']} as const;
-export const YES_NO={'':['尚未确定','Not decided'],yes:['是','Yes'],no:['否','No']} as const;
-export const CARE_FREQUENCIES={'':['尚未确定','Not decided'],once:['一次性','One-off'],regular:['定期','Regular']} as const;
-export const URGENCIES={'':['尚未确定','Not decided'],routine:['一般安排','Routine'],soon:['希望尽快处理','As soon as possible']} as const;
+export const INTAKE_STATUSES={new:['待聯絡','To contact'],contacted:['已聯絡','Contacted'],following:['需求確認','Confirming needs'],appointed:['服務中','In progress'],completed:['已完成','Completed'],paused:['暫緩','Paused']} as const;
+export const ADVISORY_NEEDS={'buyer-advisory':['置業查詢','Buying advice'],renovation:['裝修翻新','Renovation'],'house-care':['房屋打理','Home care'],garden:['草坪同園藝','Lawn & garden'],cleaning:['清潔服務','Cleaning'],'home-sitting':['空置同居家睇住','Vacancy & home sitting'],maintenance:['維修維護','Repairs & maintenance'],other:['其他','Other']} as const;
+export const TIMINGS={'':['尚未確定','Not decided'],asap:['儘快','As soon as possible'],'1-3-months':['1–3個月內','Within 1–3 months'],'3-6-months':['3–6個月內','Within 3–6 months'],later:['6個月之後','After 6 months']} as const;
+export const PROPERTY_TYPES={'':['尚未確定','Not decided'],house:['獨立屋','House'],townhouse:['聯排住宅','Townhouse'],apartment:['公寓','Apartment'],other:['其他','Other']} as const;
+export const PURPOSES={'':['尚未確定','Not decided'],home:['自住','To live in'],investment:['投資','Investment'],both:['兩者兼顧','Both']} as const;
+export const OCCUPANCIES={'':['尚未確定','Not decided'],owner:['自住','Owner occupied'],tenanted:['出租中','Tenanted'],vacant:['空置','Vacant']} as const;
+export const YES_NO={'':['尚未確定','Not decided'],yes:['係','Yes'],no:['否','No']} as const;
+export const CARE_FREQUENCIES={'':['尚未確定','Not decided'],once:['一次性','One-off'],regular:['定期','Regular']} as const;
+export const URGENCIES={'':['尚未確定','Not decided'],routine:['一般安排','Routine'],soon:['希望儘快處理','As soon as possible']} as const;
 const text=(max:number)=>z.string().trim().max(max).refine(v=>!/[\u0000-\u001f\u007f]/.test(v),'invalid_text');
 const money=z.preprocess(v=>v==null||typeof v==='string'&&!v.trim()?undefined:typeof v==='number'||typeof v==='string'?Number(v):NaN,z.number().finite().min(0).max(1000000000).optional());
 const count=z.preprocess(v=>v==null||typeof v==='string'&&!v.trim()?undefined:typeof v==='number'||typeof v==='string'?Number(v):NaN,z.number().int().min(0).max(30).optional());

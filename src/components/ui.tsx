@@ -71,16 +71,15 @@ export function IconBadge({ children, tone = 'light' }: { children: ReactNode; t
 }
 
 export const IMG = {
-  hero: '/img/hero-house.jpg',
+  hero: '/img/hk/harbour-night.webp',
   interior: '/img/interior.jpg',
-  queenslander: '/img/queenslander.jpg',
-  white: '/img/white-house.jpg',
+  queenslander: '/img/hk/tai-po.webp',
+  white: '/img/hk/mid-levels.webp',
   detail: '/img/apartment-detail.jpg',
-  Melbourne: '/img/melbourne.jpg',
-  Sydney: '/img/sydney.jpg',
-  Perth: '/img/perth.jpg',
-  Adelaide: '/img/adelaide.jpg',
-  Canberra: '/img/canberra.jpg',
+  'Hong Kong Island': '/img/hk/hk-island.webp',
+  Kowloon: '/img/hk/kowloon.webp',
+  'New Territories': '/img/hk/new-territories.webp',
+  Islands: '/img/hk/islands.webp',
 } as const;
 
 /** Scroll behaviour that respects prefers-reduced-motion. */

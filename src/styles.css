@@ -12,11 +12,11 @@
   --line: var(--sand-6);
   --white: #fff;
   /* Bright brand orange for actions; darker orange for small text and focus. */
-  --brand-orange: #ff6a2b;
+  --brand-orange: #C9A86A;
   --action: var(--brand-orange);
   --action-hover: var(--orange-10);
   --action-ink: var(--sand-12);
-  --euc: #c2410c;
+  --euc: #8A6A2B;
   --euc-dark: var(--orange-12);
   --euc-tint: var(--orange-2);
   --brass: var(--euc);
@@ -473,7 +473,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--euc); outline: n
 
 /* sheet */
 .enq-root { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: flex-end; }
-.enq-scrim { position: absolute; inset: 0; background: rgba(31, 29, 27, .45); animation: fade .2s ease; }
+.enq-scrim { position: absolute; inset: 0; background: rgba(8, 22, 52, .45); animation: fade .2s ease; }
 .enq { position: relative; display: flex; flex-direction: column; width: min(480px, 100%); height: 100%; background: var(--paper); box-shadow: -8px 0 24px rgba(0, 0, 0, .12); }
 .enq-head { display: flex; align-items: center; gap: 6px; padding: 8px 8px 8px 20px; border-bottom: 1px solid var(--line); background: var(--paper); }
 .enq-head h2 { flex: 1; font-size: 1rem; margin: 0; }
@@ -501,7 +501,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--euc); outline: n
   .list-toolbar .seg button { flex: 1; padding: 6px 8px; }
   .filter-wrap { display: none; }
   .filter-wrap.open { display: block; position: fixed; inset: 0; z-index: 90; }
-  .filter-wrap.open .filter-scrim { display: block; position: absolute; inset: 0; background: rgba(31, 29, 27, .45); }
+  .filter-wrap.open .filter-scrim { display: block; position: absolute; inset: 0; background: rgba(8, 22, 52, .45); }
   .filter-panel { position: absolute; left: 0; right: 0; bottom: 0; max-height: 86dvh; overflow-y: auto; background: var(--paper); border-radius: 0; padding: 0 16px; animation: up .22s ease; }
   .filter-head { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; position: sticky; top: 0; background: var(--paper); }
   .filter-foot { display: block; position: sticky; bottom: 0; padding: 12px 0 calc(12px + var(--safe-b)); background: var(--paper); }
@@ -555,7 +555,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--euc); outline: n
 .market-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 0 18px; flex-wrap: wrap; }
 .market-kinds { display: flex; gap: 4px; }
 .market-kinds button { min-height: 44px; border: 0; background: transparent; color: var(--ink-3); padding: 8px 18px; font: 500 .88rem var(--sans); cursor: pointer; border-radius: 0; }
-.market-kinds button[aria-pressed='true'] { color: #C2410C; background: #fff0e7; }
+.market-kinds button[aria-pressed='true'] { color: #8A6A2B; background: #F6EFDF; }
 .mkt-note { font-size: .86rem; color: var(--ink-3); margin: 4px 0 14px; max-width: 80ch; }
 .mkt { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .mkt-item { display: grid; grid-template-columns: 1fr auto; gap: 8px 24px; padding: 16px; background: var(--white); border: 1px solid var(--line); border-radius: 0; }

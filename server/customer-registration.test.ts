@@ -14,7 +14,7 @@ import type {ReceptionDB} from './reception';
 import type {User} from './schema';
 
 const admin:User={id:crypto.randomUUID(),name:'Fixture admin',email:'admin@example.test',role:'admin',city:null};
-const manager:User={...admin,id:crypto.randomUUID(),role:'manager',city:'Sydney'};
+const manager:User={...admin,id:crypto.randomUUID(),role:'manager',city:'Hong Kong Island'};
 const sample=(extra:Record<string,unknown>={})=>({requestId:crypto.randomUUID(),language:'zh',type:'buying',name:'仅本地虚构客户',contactMethod:'phone',contact:'+447700900001',details:{},...extra});
 function fixture(){const native=new DatabaseSync(':memory:');native.exec('PRAGMA foreign_keys=ON');for(const f of readdirSync('migrations').filter(f=>f.endsWith('.sql')).sort())native.exec(readFileSync('migrations/'+f,'utf8'));const db:ReceptionDB={all:async(sql,args=[])=>native.prepare(sql).all(...args as any[]) as any[],batch:async qs=>{native.exec('BEGIN');try{for(const q of qs)native.prepare(q.sql).run(...q.args as any[]);native.exec('COMMIT')}catch(e){native.exec('ROLLBACK');throw e}}};return {db,native};}
 const list=async(db:ReceptionDB,user=admin)=>(await customerRegistrationAdmin(db,user,'GET','/api/admin/customer-registrations') as {records:any[]}).records;
@@ -39,10 +39,10 @@ test('concurrent retries create one record and receipt; new registrations never 
 test('city permissions, mail exclusion, follow-up concurrency, reassignment and buying/advice conversion',async()=>{
  const {db,native}=fixture();try{
   for(const u of [admin,manager])native.prepare('INSERT INTO users(id,name,email,password_hash,role,city,created_at) VALUES(?,?,?,?,?,?,?)').run(u.id,u.name,u.email+u.id,'fixture',u.role,u.city,'2026-10-28');
-  const r=await saveCustomerRegistration(db,sample({city:'Sydney'}));await saveCustomerRegistration(db,sample({city:'Hobart'}));await saveCustomerRegistration(db,sample());assert.equal((await list(db,manager)).length,1);
-  assert.equal((await list(db,{...manager,city:'Melbourne'})).length,0);await assert.rejects(list(db,{...admin,role:'mail'}),/权限/);
+  const r=await saveCustomerRegistration(db,sample({city:'Hong Kong Island'}));await saveCustomerRegistration(db,sample({city:'Hobart'}));await saveCustomerRegistration(db,sample());assert.equal((await list(db,manager)).length,1);
+  assert.equal((await list(db,{...manager,city:'Kowloon'})).length,0);await assert.rejects(list(db,{...admin,role:'mail'}),/权限/);
   const route='/api/admin/customer-registrations/'+r.receipt.id;
-  await assert.rejects(customerRegistrationAdmin(db,{...manager,city:'Melbourne'},'GET',route),/不存在/);
+  await assert.rejects(customerRegistrationAdmin(db,{...manager,city:'Kowloon'},'GET',route),/不存在/);
   await assert.rejects(customerRegistrationAdmin(db,{...manager,role:'assistant'},'PATCH',route,followUp({assignedTo:manager.id})),/助理/);
   await assert.rejects(customerRegistrationAdmin(db,admin,'PATCH',route,followUp({category:'selling'})),/分类/);
   const result=await customerRegistrationAdmin(db,manager,'PATCH',route,followUp({assignedTo:manager.id,category:'advisory'})) as any;assert.equal(result.record.category,'advisory');assert.equal(result.record.type,'buying');assert.equal(result.record.version,2);assert.equal(result.record.assignedTo,manager.id);
@@ -52,12 +52,12 @@ test('city permissions, mail exclusion, follow-up concurrency, reassignment and 
 });
 
 test('property location comes from the published sale record; retry works after withdrawal',async()=>{
- const {db,native}=fixture();try{const id=crypto.randomUUID();native.prepare('INSERT INTO properties(id,city,published,data,created_at,updated_at) VALUES(?,?,1,?,?,?)').run(id,'Sydney',JSON.stringify({status:'sale',address:'Fixture Street',suburb:'Fixture Suburb'}),'2026-10-28','2026-10-28');const input=sample({propertyId:id,city:'Perth'});const first=await saveCustomerRegistration(db,input);const saved=(await list(db))[0];assert.equal(saved.city,'Sydney');assert.equal(saved.propertyAddress,'Fixture Street, Fixture Suburb');native.prepare('UPDATE properties SET published=0 WHERE id=?').run(id);assert.deepEqual((await saveCustomerRegistration(db,input)).receipt,first.receipt);await assert.rejects(saveCustomerRegistration(db,sample({propertyId:id})),/房源/);
+ const {db,native}=fixture();try{const id=crypto.randomUUID();native.prepare('INSERT INTO properties(id,city,published,data,created_at,updated_at) VALUES(?,?,1,?,?,?)').run(id,'Hong Kong Island',JSON.stringify({status:'sale',address:'Fixture Street',suburb:'Fixture Suburb'}),'2026-10-28','2026-10-28');const input=sample({propertyId:id,city:'New Territories'});const first=await saveCustomerRegistration(db,input);const saved=(await list(db))[0];assert.equal(saved.city,'Hong Kong Island');assert.equal(saved.propertyAddress,'Fixture Street, Fixture Suburb');native.prepare('UPDATE properties SET published=0 WHERE id=?').run(id);assert.deepEqual((await saveCustomerRegistration(db,input)).receipt,first.receipt);await assert.rejects(saveCustomerRegistration(db,sample({propertyId:id})),/房源/);
  }finally{native.close()}
 });
 
 test('explicit short-enquiry association requires matching contact and city; does not create another lead',async()=>{
- const {db,native}=fixture();try{const id=crypto.randomUUID(),requestId=crypto.randomUUID(),owner=crypto.randomUUID();native.prepare('INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES(?,?,?,?,?)').run(owner,'fixture','+447700900001','Fixture owner','2026-10-28');native.prepare('INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)').run(id,requestId,'fixture',owner,'Sydney','buying',JSON.stringify({contactMethod:'phone',contact:'+44 7700 900001'}),'2026-10-28');await saveCustomerRegistration(db,sample({leadRequestId:requestId}));assert.equal((await list(db))[0].relatedLeadId,id);assert.equal((await list(db))[0].city,'Sydney');await assert.rejects(saveCustomerRegistration(db,sample({leadRequestId:requestId,contact:'+447700900002'})),/关联咨询/);await assert.rejects(saveCustomerRegistration(db,sample({leadRequestId:requestId,city:'Perth'})),/关联咨询/);assert.equal((await db.all('SELECT COUNT(*) n FROM leads'))[0].n,1);
+ const {db,native}=fixture();try{const id=crypto.randomUUID(),requestId=crypto.randomUUID(),owner=crypto.randomUUID();native.prepare('INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES(?,?,?,?,?)').run(owner,'fixture','+447700900001','Fixture owner','2026-10-28');native.prepare('INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)').run(id,requestId,'fixture',owner,'Hong Kong Island','buying',JSON.stringify({contactMethod:'phone',contact:'+44 7700 900001'}),'2026-10-28');await saveCustomerRegistration(db,sample({leadRequestId:requestId}));assert.equal((await list(db))[0].relatedLeadId,id);assert.equal((await list(db))[0].city,'Hong Kong Island');await assert.rejects(saveCustomerRegistration(db,sample({leadRequestId:requestId,contact:'+447700900002'})),/关联咨询/);await assert.rejects(saveCustomerRegistration(db,sample({leadRequestId:requestId,city:'New Territories'})),/关联咨询/);assert.equal((await db.all('SELECT COUNT(*) n FROM leads'))[0].n,1);
  }finally{native.close()}
 });
 

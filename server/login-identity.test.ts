@@ -42,7 +42,7 @@ test('Node: rotation preserves original identity/role/history, revokes sessions,
   await assert.rejects(rotateExistingAdmin(adapter,'missing',next));assert.deepEqual(db.prepare('SELECT password_hash FROM users WHERE id=?').get(original.id),before);
   // Applying the additive migration repeatedly does not alter an existing alias.
   db.exec(readFileSync('migrations/0014_user_login_aliases.sql','utf8'));assert.equal(db.prepare('SELECT user_id FROM user_login_aliases').get()!.user_id,original.id);
-  db.prepare('INSERT INTO users(id,name,email,password_hash,role,city,created_at) VALUES(?,?,?,?,?,?,?)').run('fixture-assistant','Fixture','assistant@example.test','fixture','assistant','Sydney','2026-10-26');
+  db.prepare('INSERT INTO users(id,name,email,password_hash,role,city,created_at) VALUES(?,?,?,?,?,?,?)').run('fixture-assistant','Fixture','assistant@example.test','fixture','assistant','Hong Kong Island','2026-10-26');
   db.prepare('INSERT INTO user_login_aliases VALUES(?,?)').run('taken-alias','fixture-assistant');
   await assert.rejects(rotateExistingAdmin(adapter,'fixture-assistant',next));
   await assert.rejects(rotateExistingAdmin(adapter,original.id,{...next,loginName:'taken-alias',passwordHash:await portableHash('UnusedFixture2026!')}));

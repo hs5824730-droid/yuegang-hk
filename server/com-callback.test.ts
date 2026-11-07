@@ -11,18 +11,18 @@ import { leadSchema } from './schema.js';
 import { applyTestMigrations } from './test-migrations.js';
 
 const legacyId = '11111111-1111-4111-8111-111111111111';
-const legacy = { name: 'Hash Owner', contact: '+61 400 000 111', city: 'Melbourne', service: 'management', language: 'en' as const, message: 'Kept', currentlyManaged: false, consent: true as const, website: '', requestId: legacyId };
+const legacy = { name: 'Hash Owner', contact: '+61 400 000 111', city: 'Kowloon', service: 'management', language: 'en' as const, message: 'Kept', currentlyManaged: false, consent: true as const, website: '', requestId: legacyId };
 
 test('missing consent is implied and an explicit true is unchanged', () => {
   assert.deepEqual(leadSchema.parse(prepareLeadBody(legacy)), leadSchema.parse(legacy));
-  const parsed = leadSchema.parse(prepareLeadBody({ name: '王女士', contact: '0412 345 678', city: 'Sydney' }));
+  const parsed = leadSchema.parse(prepareLeadBody({ name: '王女士', contact: '0412 345 678', city: 'Hong Kong Island' }));
   assert.equal(parsed.consent, 'implied');
   assert.equal(parsed.service, 'letting');
   assert.equal(parsed.language, 'zh');
   assert.match(parsed.requestId, /^[0-9a-f-]{36}$/i);
-  assert.equal(leadSchema.parse(prepareLeadBody({ name: '王女士', contact: '0412 345 678', city: 'Sydney', consent: true, requestId: legacyId })).consent, true);
-  assert.equal(leadSchema.safeParse(prepareLeadBody({ name: '王女士', contact: '0412 345 678', city: 'Sydney', consent: false })).success, false);
-  assert.equal(leadSchema.safeParse(prepareLeadBody({ contact: '0412345678', city: 'Sydney' })).success, false);
+  assert.equal(leadSchema.parse(prepareLeadBody({ name: '王女士', contact: '0412 345 678', city: 'Hong Kong Island', consent: true, requestId: legacyId })).consent, true);
+  assert.equal(leadSchema.safeParse(prepareLeadBody({ name: '王女士', contact: '0412 345 678', city: 'Hong Kong Island', consent: false })).success, false);
+  assert.equal(leadSchema.safeParse(prepareLeadBody({ contact: '0412345678', city: 'Hong Kong Island' })).success, false);
 });
 
 test('com home and services do not inject the top callback form', () => {
@@ -51,7 +51,7 @@ test('callback script fires Lead only after a saved enquiry and does not send co
     const frames: { src: string }[] = [];
     let posted: Record<string, unknown> | null = null;
     const values: Record<string, { value: string }> = {
-      name: { value: '王' }, contact: { value: '0412345678' }, city: { value: 'Sydney' }, cityOther: { value: '' },
+      name: { value: '王' }, contact: { value: '0412345678' }, city: { value: 'Hong Kong Island' }, cityOther: { value: '' },
       service: { value: 'letting' }, language: { value: 'zh' }, website: { value: '' }, requestId: { value: legacyId },
     };
     const status = { hidden: true, className: '', textContent: '' };
@@ -123,20 +123,20 @@ test('com worker shows the callback form and stores implied consent', async () =
       const response = await mf.dispatchFetch('https://eucove.com/api/leads', { method: 'POST', headers: { Origin: 'https://eucove.com', 'Content-Type': 'application/json', 'CF-Connecting-IP': ip }, body: JSON.stringify(body) });
       return { status: response.status, body: await response.json() as { id?: string; requestId?: string; error?: string } };
     };
-    const created = await post({ name: '王女士', contact: '+61 400 111 222', city: 'Sydney' }, '192.0.2.40');
+    const created = await post({ name: '王女士', contact: '+61 400 111 222', city: 'Hong Kong Island' }, '192.0.2.40');
     assert.equal(created.status, 201);
     assert.match(created.body.requestId || '', /^[0-9a-f-]{36}$/i);
-    const retry = await post({ name: '王女士', contact: '+61 400 111 222', city: 'Sydney', requestId: created.body.requestId }, '192.0.2.40');
+    const retry = await post({ name: '王女士', contact: '+61 400 111 222', city: 'Hong Kong Island', requestId: created.body.requestId }, '192.0.2.40');
     assert.equal(retry.status, 200); assert.equal(retry.body.id, created.body.id);
     const stored = await db.prepare('SELECT service,data FROM leads WHERE id=?').bind(created.body.id).first<{ service: string; data: string }>();
     const data = JSON.parse(stored!.data);
     assert.equal(stored?.service, 'letting');
     assert.equal(data.language, 'zh');
     assert.equal(data.consent, 'implied');
-    const explicit = await post({ name: '李先生', contact: '+61 400 111 223', city: 'Melbourne', service: 'letting', language: 'zh', consent: true, requestId: randomUUID() }, '192.0.2.41');
+    const explicit = await post({ name: '李先生', contact: '+61 400 111 223', city: 'Kowloon', service: 'letting', language: 'zh', consent: true, requestId: randomUUID() }, '192.0.2.41');
     assert.equal(explicit.status, 201);
     const explicitRow = await db.prepare('SELECT data FROM leads WHERE id=?').bind(explicit.body.id).first<{ data: string }>();
     assert.equal(JSON.parse(explicitRow!.data).consent, true);
-    assert.equal((await post({ name: '王女士', contact: '+61 400 111 224', city: 'Sydney', consent: false, requestId: randomUUID() }, '192.0.2.42')).status, 400);
+    assert.equal((await post({ name: '王女士', contact: '+61 400 111 224', city: 'Hong Kong Island', consent: false, requestId: randomUUID() }, '192.0.2.42')).status, 400);
   } finally { await mf.dispose(); rmSync(directory, { recursive: true, force: true }); }
 });

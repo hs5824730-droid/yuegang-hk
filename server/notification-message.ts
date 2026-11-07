@@ -5,7 +5,7 @@ import { notificationContactMethod, notificationRecipientLabel } from './notific
 export interface NotificationMessageRow { lead_id: string; city: string; service: string; data: string; created_at: string; owner_name?: string; owner_contact?: string; routing_json?: string; reception_recipient?: string; }
 export const notificationLine = (value: unknown, limit = 160) => typeof value === 'string' || typeof value === 'number'
   ? String(value).replace(/[\u0000-\u001f\u007f-\u009f\u202a-\u202e\u2066-\u2069]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, limit) : '';
-const cityLabels: Record<string, string> = { Melbourne: '墨尔本', Sydney: '悉尼', Perth: '珀斯', Adelaide: '阿德莱德', Canberra: '堪培拉', Brisbane: '布里斯班', 'Gold Coast': '黄金海岸', other: '其他城市' };
+const cityLabels: Record<string, string> = { 'Hong Kong Island': '港島', Kowloon: '九龍', 'New Territories': '新界', Islands: '離島', other: '其他地區' };
 const beijingClock = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
   hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',

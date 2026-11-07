@@ -56,11 +56,11 @@ export function ErrorState({ message, retry }: { message?: string; retry?: () =>
   return (
     <div className="notice notice-error" role="alert">
       <div>
-        <strong>{L('内容暂时无法加载', 'This content couldn’t be loaded')}</strong>
-        <p>{message && message !== 'network' && !/^HTTP/.test(message) ? message : L('请检查网络后重试。', 'Check your connection and try again.')}</p>
+        <strong>{L('內容暫時無法加載', 'This content couldn’t be loaded')}</strong>
+        <p>{message && message !== 'network' && !/^HTTP/.test(message) ? message : L('請檢查網絡後重試。', 'Check your connection and try again.')}</p>
         {retry && (
           <button className="btn btn-quiet btn-sm" onClick={retry}>
-            {L('重试', 'Retry')}
+            {L('重試', 'Retry')}
           </button>
         )}
       </div>
@@ -71,13 +71,13 @@ export function ErrorState({ message, retry }: { message?: string; retry?: () =>
 export function priceText(p: Property, pick: (b: Property['priceLabel']) => string, L: (zh: string, en: string) => string) {
   const label = pick(p.priceLabel);
   if (label) return label;
-  if (p.price == null) return L('价格面议', 'Price on request');
-  return p.status === 'rent' || p.status === 'leased' ? `${money(p.price)} ${L('/ 周', 'per week')}` : money(p.price);
+  if (p.price == null) return L('價格面議', 'Price on request');
+  return p.status === 'rent' || p.status === 'leased' ? `${money(p.price)} ${L('/ 月', 'per month')}` : money(p.price);
 }
 
 export function tourBadge(p: Property, L: (zh: string, en: string) => string) {
   if (!p.tourUrl || p.tourKind === 'none') return null;
-  return p.tourKind === 'real' ? L('3D 看房', '3D tour') : L('示意 3D', 'Illustrative 3D');
+  return p.tourKind === 'real' ? L('3D 睇樓', '3D tour') : L('示意 3D', 'Illustrative 3D');
 }
 
 export function PropertyCard({ p }: { p: Property }) {
@@ -86,7 +86,7 @@ export function PropertyCard({ p }: { p: Property }) {
   return (
     <Link to={`/properties/${p.id}`} className="pcard">
       <div className="pcard-img">
-        {p.images[0] ? <SmartImg src={p.images[0]} alt={pick(p.title)} /> : <div className="img-ph" aria-hidden><Building2 size={34} /><span>{L('暂无照片', 'Photos to come')}</span></div>}
+        {p.images[0] ? <SmartImg src={p.images[0]} alt={pick(p.title)} /> : <div className="img-ph" aria-hidden><Building2 size={34} /><span>{L('暫無照片', 'Photos to come')}</span></div>}
         <span className={`tag tag-${p.status}`}>{statusLabel(p.status, lang)}</span>
         {tour && (
           <span className="tag tag-tour">
@@ -105,11 +105,11 @@ export function PropertyCard({ p }: { p: Property }) {
           {p.type !== 'land' && (
             <>
               <li title={L('卧室', 'Bedrooms')}><BedDouble size={16} aria-hidden /> {p.beds}</li>
-              <li title={L('卫浴', 'Bathrooms')}><Bath size={16} aria-hidden /> {p.baths}</li>
-              <li title={L('车位', 'Car spaces')}><Car size={16} aria-hidden /> {p.cars}</li>
+              <li title={L('衞浴', 'Bathrooms')}><Bath size={16} aria-hidden /> {p.baths}</li>
+              <li title={L('車位', 'Car spaces')}><Car size={16} aria-hidden /> {p.cars}</li>
             </>
           )}
-          {p.area != null && <li title={L('面积', 'Area')}><Maximize2 size={15} aria-hidden /> {p.area} m²</li>}
+          {p.area != null && <li title={L('面積', 'Area')}><Maximize2 size={15} aria-hidden /> {p.area} m²</li>}
           <li className="spec-type">{typeLabel(p.type, lang)}</li>
         </ul>
       </div>
@@ -148,7 +148,7 @@ export function Timeline({ events }: { events: PropertyEvent[] }) {
           </li>
         );
       })}
-      {sorted.length === 0 && <li className="tl-none">{L('暂无记录', 'No records yet')}</li>}
+      {sorted.length === 0 && <li className="tl-none">{L('暫無記錄', 'No records yet')}</li>}
     </ol>
   );
 }

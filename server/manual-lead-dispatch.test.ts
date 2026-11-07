@@ -25,7 +25,7 @@ function request(body: unknown, secret = telegram.webhookSecret) {
 async function createLead(db: ReceptionDB, id: string) {
   await db.batch([
     { sql: 'INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES(?,?,?,?,?)', args: [id, id, '+447700900001', '虚构客户', '2026-10-30T10:00:00Z'] },
-    { sql: 'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)', args: [id, id, 'fixture', id, 'Sydney', 'letting', JSON.stringify({ name: '虚构客户', contact: '+447700900001', contactMethod: 'phone' }), '2026-10-30T10:00:00Z'] },
+    { sql: 'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)', args: [id, id, 'fixture', id, 'Hong Kong Island', 'letting', JSON.stringify({ name: '虚构客户', contact: '+447700900001', contactMethod: 'phone' }), '2026-10-30T10:00:00Z'] },
     { sql: 'INSERT INTO notifications(id,lead_id,sync_enabled) VALUES(?,?,1)', args: [id, id] },
     { sql: 'INSERT INTO signal_notifications(id,lead_id) VALUES(?,?)', args: [id, id] },
   ]);

@@ -11,20 +11,20 @@ test('Apps Script signing matches intake contract; all answers remain; ambiguous
  const raw='{"phone":"+61491570006"}',time=String(Date.now()),secret='fixture-only-secret';
  const expected=createHmac('sha256',secret).update([time,'POST','/api/integrations/meta-leads',createHash('sha256').update(raw).digest('hex')].join('\n')).digest('hex');
  assert.equal(ctx.eucoveMetaSignature_(time,raw,secret),expected);
- assert.deepEqual(Array.from(ctx.eucoveMetaAnswers_('悉尼、墨尔本')),['悉尼','墨尔本']);
- assert.deepEqual(Array.from(ctx.eucoveMetaAnswers_('["寻找租客","长期托管"]')),['寻找租客','长期托管']);
+ assert.deepEqual(Array.from(ctx.eucoveMetaAnswers_('港島、九龍')),['港島','九龍']);
+ assert.deepEqual(Array.from(ctx.eucoveMetaAnswers_('["寻找租客","租務管理"]')),['寻找租客','租務管理']);
  assert.throws(()=>ctx.eucoveMetaTime_(null,'2026-10-25 12:30:00'));
  assert.equal(ctx.eucoveMetaTime_(null,'2026-10-25T12:30:00+08:00'),'2026-10-25T04:30:00.000Z');
  const map={leadId:'id',submittedAt:'created_time',phone:'phone',cities:'city',services:'needs',formId:'form'};
  const index={id:0,created_time:1,phone:2,city:3,needs:4,form:5};
- const row=['l:100000000000001','2026-10-25T12:30:00+08:00','p:+61491570006','悉尼','寻找租客','f:123456789'];
+ const row=['l:100000000000001','2026-10-25T12:30:00+08:00','p:+61491570006','港島','寻找租客','f:123456789'];
  const native=ctx.eucoveMetaRow_(row,row,index,map,{p:{SHEET_ID:'fixture',FORM_ID:'123456789'}});
  assert.equal(native.leadId,'100000000000001');assert.equal(native.phone,'+61491570006');assert.equal(native.formId,'123456789');
 });
 test('scheduled sheet bridge skips historical/incomplete rows, retries failed import, and marks receipt only',()=>{
  const headers=['lead_id','created_time','phone_number','city','needs'];
  const date=new Date().toISOString(),old='2025-01-01T00:00:00Z';
- const rows:any[][]=[headers.slice(),['l:100000000000001',old,'p:+61491570006','悉尼','寻找租客'],['l:100000000000002',date,'p:+61491570006','悉尼、墨尔本','寻找租客、长期托管'],['100000000000003',date,'','悉尼','寻找租客']];
+ const rows:any[][]=[headers.slice(),['l:100000000000001',old,'p:+61491570006','港島','寻找租客'],['l:100000000000002',date,'p:+61491570006','港島、九龍','寻找租客、租務管理'],['100000000000003',date,'','港島','寻找租客']];
  const props={SHEET_ID:'fixture-sheet',TAB_NAME:'Meta',FORM_ID:'123456789',IMPORT_SECRET:'fixture-meta-secret-12345678901234567890',SYNC_ENABLED:'true',SYNC_START_AT:'2026-01-01T00:00:00Z',COLUMN_MAP:JSON.stringify({leadId:'lead_id',submittedAt:'created_time',phone:'phone_number',cities:'city',services:'needs'})};
  const range=(r:number,c:number,h=1,w=1)=>({getDisplayValues:()=>Array.from({length:h},(_,a)=>Array.from({length:w},(_,b)=>String(rows[r-1+a]?.[c-1+b]??''))),getValues:()=>Array.from({length:h},(_,a)=>Array.from({length:w},(_,b)=>rows[r-1+a]?.[c-1+b]??'')),setValue:(v:unknown)=>{rows[r-1]??=[];rows[r-1][c-1]=v;}});
  const sheet={getLastRow:()=>rows.length,getLastColumn:()=>rows[0].length,getRange:range,getDataRange:()=>range(1,1,rows.length,rows[0].length)};

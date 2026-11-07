@@ -15,21 +15,21 @@ const tg={token:'local-fixture',chatId:'local-fixture'},signal={url:'https://loc
 function nativeDB(){const db=new DatabaseSync(':memory:');for(const name of readdirSync('migrations').filter(n=>n.endsWith('.sql')).sort())db.exec(readFileSync('migrations/'+name,'utf8'));return db;}
 function adapter(native:DatabaseSync):ReceptionDB{return{all:async(sql,args=[])=>native.prepare(sql).all(...args as any[]) as any[],batch:async qs=>{native.exec('BEGIN IMMEDIATE');try{for(const q of qs)native.prepare(q.sql).run(...q.args as any[]);native.exec('COMMIT');}catch(e){native.exec('ROLLBACK');throw e;}}};}
 const target=(cities:any[],name:string,order:number):ReceptionTarget=>({id:randomUUID(),channel:'whatsapp',enabled:true,cities,queueOrder:order,groupId:'fixture',groupName:'Fixture group',groupOrder:0,targetOrder:order,value:'+44770090000'+(order+1),displayName:name});
-const input=(overrides={})=>({requestId:randomUUID(),channel:'whatsapp',source:'website_direct',pagePath:'/services',city:'Sydney',service:'manage',language:'zh',...overrides});
+const input=(overrides={})=>({requestId:randomUUID(),channel:'whatsapp',source:'website_direct',pagePath:'/services',city:'Hong Kong Island',service:'manage',language:'zh',...overrides});
 async function checks(db:ReceptionDB){
  await db.batch([{sql:"UPDATE notification_channels SET enabled=1,enabled_at='2026-01-01T00:00:00Z' WHERE channel='signal'",args:[]}]);
- const a=target(['Sydney'],'示例 A',0),b=target([],'示例 B',1);await saveReception(db,{targets:[a,b]});
+ const a=target(['Hong Kong Island'],'示例 A',0),b=target([],'示例 B',1);await saveReception(db,{targets:[a,b]});
  await assignReception(db,{requestId:randomUUID(),channel:'whatsapp'});assert.equal((await db.all('SELECT * FROM direct_contact_notifications')).length,0,'Existing share links do not create a new direct notification');
  const request=input();const results=await Promise.all(Array.from({length:8},()=>assignReception(db,request)));assert(results.every(r=>r.id===results[0].id));
  assert.equal((await db.all('SELECT * FROM direct_contact_notifications')).length,2);
  assert.equal((await db.all('SELECT * FROM leads')).length,0);assert.equal((await db.all('SELECT * FROM owners')).length,0);assert.equal((await db.all('SELECT * FROM notifications')).length,0);assert.equal((await db.all('SELECT * FROM signal_notifications')).length,0);
- const city=await assignReception(db,input({city:'Melbourne'}));assert.equal(city.target!.id,b.id,'Only global wildcard can match Melbourne');
- await assert.rejects(()=>assignReception(db,{...request,city:'Melbourne'}),/different|其他/);
+ const city=await assignReception(db,input({city:'Kowloon'}));assert.equal(city.target!.id,b.id,'Only global wildcard can match Kowloon');
+ await assert.rejects(()=>assignReception(db,{...request,city:'Kowloon'}),/different|其他/);
  await assert.rejects(()=>assignReception(db,input({pagePath:'/admin'})));
  await assert.rejects(()=>assignReception(db,input({leadRequestId:randomUUID()})));
  // Restrict all targets: no cross-city fallback; still one persisted no-match with both statuses.
- await saveReception(db,{targets:[a,{...b,cities:['Sydney']}]});
- const noMatch=await assignReception(db,input({city:'Perth'}));assert.equal(noMatch.target,null);assert.equal(noMatch.outcome,'no_city_match');
+ await saveReception(db,{targets:[a,{...b,cities:['Hong Kong Island']}]});
+ const noMatch=await assignReception(db,input({city:'New Territories'}));assert.equal(noMatch.target,null);assert.equal(noMatch.outcome,'no_city_match');
  const global=await assignReception(db,input({city:undefined,service:undefined}));assert(global.target);assert.equal(global.scope,'global');
  const batch=await Promise.all(Array.from({length:10},()=>assignReception(db,input())));assert.equal(batch.filter(r=>r.target!.id===a.id).length,5);assert.equal(batch.filter(r=>r.target!.id===b.id).length,5);
  const selected=results[0];const snapshot=(await receptionReport(db)).records.find(r=>r.id===selected.id)!;
@@ -68,7 +68,7 @@ test('direct notifications: shared preview, leases, one message + late edit, fai
   failTg=false;await due();await deliverDirectContacts(db,'telegram',tg);assert.equal(sent.filter(s=>s.transport==='telegram').length,2,'Unknown sends are not blindly retried');
   const uncertain=await assignReception(db,input());await due();uncertainSignal=true;await deliverDirectContacts(db,'signal',signal);assert.equal((await db.all("SELECT status FROM direct_contact_notifications WHERE assignment_id=? AND transport='signal'",[uncertain.id]))[0].status,'uncertain');
   await db.batch([{sql:"UPDATE direct_contact_notifications SET next_attempt=9999999999999 WHERE transport='telegram' AND status='pending'",args:[]}]);const crash=await assignReception(db,input());await db.batch([{sql:"UPDATE direct_contact_notifications SET attempts=1,claim_token='interrupted',claimed_until=1,next_attempt=0 WHERE assignment_id=? AND transport='telegram'",args:[crash.id]}]);const sendsBefore=sent.length;await deliverDirectContacts(db,'telegram',tg);assert.equal((await db.all("SELECT status FROM direct_contact_notifications WHERE assignment_id=? AND transport='telegram'",[crash.id]))[0].status,'uncertain');assert.equal(sent.length,sendsBefore,'Expired initial Telegram lease is uncertain, never a blind resend');
-  const row={direct_context:JSON.stringify({service:'management'}),channel:'whatsapp',routing_city:'Sydney',routing_scope:'city',created_at:'2026-10-23T16:00:00Z',target_data:null,actions:0};const text=directContactMessage(row);assert.match(text,/该城暂无可用接待/);assert.match(text,/北京时间：2026-10-24 00:00:00/);assert.match(text,/分配目标：未分配/);
+  const row={direct_context:JSON.stringify({service:'management'}),channel:'whatsapp',routing_city:'Hong Kong Island',routing_scope:'city',created_at:'2026-10-23T16:00:00Z',target_data:null,actions:0};const text=directContactMessage(row);assert.match(text,/该城暂无可用接待/);assert.match(text,/北京时间：2026-10-24 00:00:00/);assert.match(text,/分配目标：未分配/);
  }finally{globalThis.fetch=original;native.close();}
 });
 test('real workerd/D1: identical direct assignment/outbox contract, public reads do not allocate, admin status is protected',async()=>{
@@ -105,7 +105,7 @@ test('activation and lead separation: only new explicit direct contacts enqueue;
   const old=await assignReception(db,input());assert.equal((await db.all('SELECT * FROM direct_contact_notifications WHERE assignment_id=?',[old.id])).length,1);
   await db.batch([{sql:"UPDATE notification_channels SET enabled=1,enabled_at='2026-01-01' WHERE channel='signal'",args:[]}]);
   await assignReception(db,input());assert.equal((await db.all('SELECT * FROM direct_contact_notifications')).length,3);assert.equal((await db.all("SELECT * FROM direct_contact_notifications WHERE assignment_id=? AND transport='signal'",[old.id])).length,0);
-  const owner=randomUUID(),lead=randomUUID(),request=randomUUID();await db.batch([{sql:'INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES(?,?,?,?,?)',args:[owner,'fixture','fixture-local','Fixture','2026-10-24T00:00:00Z']},{sql:'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)',args:[lead,request,'fixture',owner,'Sydney','management','{}','2026-10-24T00:00:00Z']}]);
+  const owner=randomUUID(),lead=randomUUID(),request=randomUUID();await db.batch([{sql:'INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES(?,?,?,?,?)',args:[owner,'fixture','fixture-local','Fixture','2026-10-24T00:00:00Z']},{sql:'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)',args:[lead,request,'fixture',owner,'Hong Kong Island','management','{}','2026-10-24T00:00:00Z']}]);
   await assignReception(db,{requestId:randomUUID(),channel:'whatsapp',leadRequestId:request});assert.equal((await db.all('SELECT * FROM direct_contact_notifications')).length,3);assert.equal((await db.all('SELECT * FROM owners')).length,1);assert.equal((await db.all('SELECT * FROM leads')).length,1);
   const id=await assignReception(db,input());await db.batch([{sql:'UPDATE direct_contact_notifications SET next_attempt=0 WHERE assignment_id=?',args:[id.id]}]);
   const original=globalThis.fetch;let failures=0;globalThis.fetch=(async()=>{failures++;return Response.json({ok:false},{status:429,headers:{'Retry-After':'7'}});}) as typeof fetch;

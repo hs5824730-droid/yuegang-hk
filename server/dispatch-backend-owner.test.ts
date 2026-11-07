@@ -15,8 +15,8 @@ function fixture(){
 }
 test('TG selection atomically assigns backend owner/contacted for a lead and linked registration without granting account access',async()=>{
  const {db,native,staff}=fixture();try{
-  native.exec("UPDATE lead_dispatch_settings SET enabled=1; INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES('o','o','+447700900001','fixture','2026-11-07T00:00:00Z'); INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES('lead','request','hash','o','Sydney','letting','{}','2026-11-07T00:00:00Z');");
-  const linked=await saveCustomerRegistration(db,{requestId:crypto.randomUUID(),type:'buying',language:'zh',name:'虚构测试',contactMethod:'email',contact:'fixture@example.test',city:'Sydney',details:{}});
+  native.exec("UPDATE lead_dispatch_settings SET enabled=1; INSERT INTO owners(id,contact_key,contact,name,created_at) VALUES('o','o','+447700900001','fixture','2026-11-07T00:00:00Z'); INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES('lead','request','hash','o','Hong Kong Island','letting','{}','2026-11-07T00:00:00Z');");
+  const linked=await saveCustomerRegistration(db,{requestId:crypto.randomUUID(),type:'buying',language:'zh',name:'虚构测试',contactMethod:'email',contact:'fixture@example.test',city:'Hong Kong Island',details:{}});
   native.prepare("UPDATE customer_registrations SET related_lead_id='lead' WHERE id=?").run(linked.receipt.id);
   native.prepare("UPDATE manual_lead_dispatch SET recipient='江牧',selected_at='2026-11-07T01:00:00Z' WHERE source='lead' AND source_id='lead'").run();
   assert.deepEqual({...native.prepare("SELECT assigned_to,status FROM leads WHERE id='lead'").get()},{assigned_to:staff[1],status:'contacted'});
@@ -31,7 +31,7 @@ test('rental and customer detail show the chosen owner; later progress is not re
  const {db,native,staff}=fixture();try{
   native.exec('UPDATE registration_notification_settings SET enabled=1');
   const rental=await saveRentalRegistration(db,{requestId:crypto.randomUUID(),language:'zh',name:'测试',phone:'+447700900001',email:'fixture@example.test'});
-  const customer=await saveCustomerRegistration(db,{requestId:crypto.randomUUID(),type:'buying',language:'zh',name:'测试',contactMethod:'email',contact:'fixture@example.test',city:'Sydney',details:{}});
+  const customer=await saveCustomerRegistration(db,{requestId:crypto.randomUUID(),type:'buying',language:'zh',name:'测试',contactMethod:'email',contact:'fixture@example.test',city:'Hong Kong Island',details:{}});
   native.prepare("UPDATE customer_registrations SET status='completed' WHERE id=?").run(customer.receipt.id);
   native.exec("UPDATE registration_notifications SET recipient='江承裕',selected_at='2026-11-07T01:00:00Z'");
   const admin={id:'admin',role:'admin',city:null} as any;

@@ -8,7 +8,7 @@ import {build} from 'esbuild';
 import {Miniflare,convertV4MiniflareOptions,Response as MFResponse} from 'miniflare';
 import {assignReception,saveReception} from './reception';
 import {applyTestMigrations} from './test-migrations';
-const input={requestId:crypto.randomUUID(),name:'Callback-only fixture',contact:'+447700900001',contactMethod:'whatsapp',city:'Sydney',service:'letting',language:'zh',consent:true};
+const input={requestId:crypto.randomUUID(),name:'Callback-only fixture',contact:'+447700900001',contactMethod:'whatsapp',city:'Hong Kong Island',service:'letting',language:'zh',consent:true};
 const vars={APP_URL:'https://fixture.invalid',SESSION_SECRET:'local-public-contact-fixture-secret-only',PUBLIC_DIRECT_CONTACT_ENABLED:'false',DISABLE_TELEGRAM:'true',SIGNAL_ENABLED:'false',MAIL_ENABLED:'false',MAIL_SEND_ENABLED:'false',REGISTRATION_SHEETS_ENABLED:'false'};
 test('retired public direct API cannot allocate or notify; validated contact form still persists once in real D1',async()=>{
  const directory=mkdtempSync(path.join(tmpdir(),'callback-only-')),bundle=path.join(directory,'worker.mjs');

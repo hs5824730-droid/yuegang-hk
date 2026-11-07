@@ -25,7 +25,7 @@ export default function MobileContactBar({menuOpen}:{menuOpen:boolean}){
   return()=>{document.body.classList.remove('has-direct-contact');document.body.style.removeProperty('--direct-contact-height');observer.disconnect()};
  },[eligible]);
  if(!eligible)return null;
- return <div ref={bar} className="mobile-contact direct-contact callback-contact" hidden={menuOpen||isOpen||obscured} aria-label={L('留下你的联系方式','Leave your contact details')}>
-  <button type="button" className="btn btn-primary" onClick={()=>enquire(options)} aria-haspopup="dialog"><span>{L('留下你的联系方式','Leave your contact details')}</span><ArrowUpRight size={17} aria-hidden/></button>
+ return <div ref={bar} className="mobile-contact direct-contact callback-contact" hidden={menuOpen||isOpen||obscured} aria-label={L('留低你嘅聯絡方式','Leave your contact details')}>
+  <button type="button" className="btn btn-primary" onClick={()=>enquire(options)} aria-haspopup="dialog"><span>{L('留低你嘅聯絡方式','Leave your contact details')}</span><ArrowUpRight size={17} aria-hidden/></button>
  </div>;
 }

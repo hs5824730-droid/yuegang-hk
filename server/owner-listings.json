@@ -1,22 +1,403 @@
 [
   {
-    "id": "reference-20261031001",
-    "kind": "sale",
+    "id": "reference-9000000001",
+    "demo": true,
+    "kind": "rent",
     "availabilityStatus": "available",
-    "availabilityCheckedAt": null,
-    "address": "Upper Coomera",
-    "suburb": "Upper Coomera",
-    "city": "Gold Coast",
-    "postcode": "4209",
-    "beds": 3,
+    "availabilityCheckedAt": "2026-11-07T00:00:00+08:00",
+    "address": "太古城 · 中層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 2,
     "baths": 1,
     "cars": null,
     "priceDisplay": {
-      "zh": "A$720,000",
-      "en": "A$720,000"
+      "zh": "HK$24,500 / 月",
+      "en": "HK$24,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": "2026-12-01",
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/taikoo-shing.webp",
+    "features": [
+      {
+        "zh": "實用面積 580 呎",
+        "en": "Saleable area 580 sq ft"
+      },
+      {
+        "zh": "中層，向東南",
+        "en": "Mid floor, faces south-east"
+      },
+      {
+        "zh": "步行約 5 分鐘到太古站",
+        "en": "About 5 minutes’ walk to Tai Koo MTR"
+      },
+      {
+        "zh": "屋苑有會所、商場同海濱長廊",
+        "en": "Clubhouse, mall and harbourfront promenade"
+      },
+      {
+        "zh": "業主可以考慮養細狗",
+        "en": "Owner open to a small dog"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "太古城屋苑外觀",
+          "en": "Taikoo Shing estate"
+        },
+        "photoUrl": "/img/hk/taikoo-shing.webp",
+        "thumbnailUrl": "/img/hk/taikoo-shing.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000002",
+    "demo": true,
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-07T00:00:00+08:00",
+    "address": "美孚新邨 · 高層單位",
+    "suburb": "荔枝角",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$23,000 / 月",
+      "en": "HK$23,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": "2026-11-20",
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/mei-foo.webp",
+    "features": [
+      {
+        "zh": "實用面積 790 呎",
+        "en": "Saleable area 790 sq ft"
+      },
+      {
+        "zh": "高層開揚景",
+        "en": "High floor, open view"
+      },
+      {
+        "zh": "美孚站兩鐵交匯，出入方便",
+        "en": "Mei Foo station on two MTR lines"
+      },
+      {
+        "zh": "三房兩廁，啱一家大細",
+        "en": "Three bedrooms, two bathrooms — fits a family"
+      },
+      {
+        "zh": "已翻新廚房",
+        "en": "Renovated kitchen"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "美孚新邨屋苑外觀",
+          "en": "Mei Foo Sun Chuen estate"
+        },
+        "photoUrl": "/img/hk/mei-foo.webp",
+        "thumbnailUrl": "/img/hk/mei-foo.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000003",
+    "demo": true,
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-07T00:00:00+08:00",
+    "address": "沙田第一城 · 低層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$13,800 / 月",
+      "en": "HK$13,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": "2026-11-15",
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/city-one.webp",
+    "features": [
+      {
+        "zh": "實用面積 330 呎",
+        "en": "Saleable area 330 sq ft"
+      },
+      {
+        "zh": "第一城站就喺樓下",
+        "en": "City One station right downstairs"
+      },
+      {
+        "zh": "近城門河，散步踩單車都得",
+        "en": "By the Shing Mun River, great for walks and cycling"
+      },
+      {
+        "zh": "適合二人家庭或者上班族",
+        "en": "Suits a couple or working professionals"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田第一城屋苑外觀",
+          "en": "City One Shatin estate"
+        },
+        "photoUrl": "/img/hk/city-one.webp",
+        "thumbnailUrl": "/img/hk/city-one.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000004",
+    "demo": true,
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-07T00:00:00+08:00",
+    "address": "黃埔花園 · 中層單位",
+    "suburb": "紅磡",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$27,000 / 月",
+      "en": "HK$27,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": "2026-12-15",
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/whampoa.webp",
+    "features": [
+      {
+        "zh": "實用面積 750 呎",
+        "en": "Saleable area 750 sq ft"
+      },
+      {
+        "zh": "黃埔站步行約 3 分鐘",
+        "en": "About 3 minutes’ walk to Whampoa MTR"
+      },
+      {
+        "zh": "屋苑內有商場、街市同學校",
+        "en": "Malls, wet market and schools in the estate"
+      },
+      {
+        "zh": "連傢俬電器",
+        "en": "Furnished, with appliances"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "黃埔花園屋苑外觀",
+          "en": "Whampoa Garden estate"
+        },
+        "photoUrl": "/img/hk/whampoa.webp",
+        "thumbnailUrl": "/img/hk/whampoa.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000005",
+    "demo": true,
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-07T00:00:00+08:00",
+    "address": "映灣園 · 高層單位",
+    "suburb": "東涌",
+    "city": "Islands",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$17,500 / 月",
+      "en": "HK$17,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": "2026-11-25",
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/caribbean-coast.webp",
+    "features": [
+      {
+        "zh": "實用面積 520 呎",
+        "en": "Saleable area 520 sq ft"
+      },
+      {
+        "zh": "高層望海景",
+        "en": "High floor with sea view"
+      },
+      {
+        "zh": "去機場約 15 分鐘車程",
+        "en": "About 15 minutes’ drive to the airport"
+      },
+      {
+        "zh": "屋苑有泳池同會所",
+        "en": "Pool and clubhouse"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "映灣園屋苑外觀",
+          "en": "Caribbean Coast estate"
+        },
+        "photoUrl": "/img/hk/caribbean-coast.webp",
+        "thumbnailUrl": "/img/hk/caribbean-coast.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000006",
+    "demo": true,
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-07T00:00:00+08:00",
+    "address": "半山區住宅 · 高層單位",
+    "suburb": "中半山",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$58,000 / 月",
+      "en": "HK$58,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": "2027-01-01",
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/mid-levels.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,050 呎",
+        "en": "Saleable area 1,050 sq ft"
+      },
+      {
+        "zh": "連工人房同車位安排可再傾",
+        "en": "Helper’s room; parking negotiable"
+      },
+      {
+        "zh": "近中環，乘扶手電梯落山方便",
+        "en": "Close to Central via the escalator"
+      },
+      {
+        "zh": "名校網附近",
+        "en": "Near popular school nets"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "半山區住宅外觀（示意）",
+          "en": "Mid-Levels residential area (illustrative)"
+        },
+        "photoUrl": "/img/hk/mid-levels.webp",
+        "thumbnailUrl": "/img/hk/mid-levels.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000007",
+    "demo": true,
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "嘉湖山莊 · 中層單位",
+    "suburb": "天水圍",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$468萬",
+      "en": "HK$4.68M"
     },
     "priceBasis": "asking_sale",
-    "checkedAt": "2026-10-31",
+    "checkedAt": "2026-11-07",
     "listingDate": null,
     "availableDate": null,
     "soldPrice": null,
@@ -26,159 +407,263 @@
     "sourceName": "",
     "sourceUrl": "",
     "mapUrl": "",
-    "coverUrl": "/uploads/62ba3a1b-a34a-47d0-b8de-9a4948064dc4.webp",
+    "coverUrl": "/img/hk/kingswood.webp",
     "features": [
       {
-        "zh": "业主因资金周转需要诚意出售。",
-        "en": "The owner is selling in good faith because they need to free up funds."
+        "zh": "實用面積 520 呎",
+        "en": "Saleable area 520 sq ft"
       },
       {
-        "zh": "三间卧室。",
-        "en": "Three bedrooms."
+        "zh": "三房兩廁，實用率高",
+        "en": "Three bedrooms, two bathrooms, efficient layout"
       },
       {
-        "zh": "开放式客厅、餐厅与厨房。",
-        "en": "Open-plan living, dining and kitchen."
+        "zh": "輕鐵站就喺屋苑旁邊",
+        "en": "Light Rail stop beside the estate"
       },
       {
-        "zh": "浴室配有浴缸和淋浴。",
-        "en": "Bathroom with a bathtub and shower."
-      },
-      {
-        "zh": "带前院及有顶露台。",
-        "en": "Front yard and a covered patio."
+        "zh": "業主誠意放售，可預約睇樓",
+        "en": "Owner keen to sell; viewings by appointment"
       }
     ],
     "rooms": [
       {
-        "id": "photo-1",
+        "id": "exterior",
         "order": 1,
         "label": {
-          "zh": "外观与前院",
-          "en": "Exterior and front yard"
+          "zh": "嘉湖山莊屋苑外觀",
+          "en": "Kingswood Villas estate"
         },
-        "photoUrl": "/uploads/62ba3a1b-a34a-47d0-b8de-9a4948064dc4.webp",
-        "thumbnailUrl": "/uploads/62ba3a1b-a34a-47d0-b8de-9a4948064dc4.webp",
+        "photoUrl": "/img/hk/kingswood.webp",
+        "thumbnailUrl": "/img/hk/kingswood.webp",
         "videoUrl": null,
         "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000008",
+    "demo": true,
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "大埔新市鎮 · 高層單位",
+    "suburb": "大埔",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$478萬",
+      "en": "HK$4.78M"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/tai-po.webp",
+    "features": [
+      {
+        "zh": "實用面積 430 呎",
+        "en": "Saleable area 430 sq ft"
       },
       {
-        "id": "photo-2",
-        "order": 2,
+        "zh": "高層開揚，望吐露港",
+        "en": "High floor overlooking Tolo Harbour"
+      },
+      {
+        "zh": "近大埔墟站",
+        "en": "Near Tai Po Market station"
+      },
+      {
+        "zh": "適合首置",
+        "en": "Good first home"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
         "label": {
-          "zh": "客厅与开放式厨房",
-          "en": "Living area and open-plan kitchen"
+          "zh": "大埔新市鎮（示意）",
+          "en": "Tai Po new town (illustrative)"
         },
-        "photoUrl": "/uploads/7200765e-129e-42b9-bf73-4eafa839b767.png",
-        "thumbnailUrl": "/uploads/7200765e-129e-42b9-bf73-4eafa839b767.png",
+        "photoUrl": "/img/hk/tai-po.webp",
+        "thumbnailUrl": "/img/hk/tai-po.webp",
         "videoUrl": null,
         "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000009",
+    "demo": true,
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "美孚新邨 · 中層單位",
+    "suburb": "荔枝角",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$598萬",
+      "en": "HK$5.98M"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/mei-foo.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
       },
       {
-        "id": "photo-3",
-        "order": 3,
+        "zh": "兩鐵交匯，返工方便",
+        "en": "On two MTR lines"
+      },
+      {
+        "zh": "可做按揭，業主交吉",
+        "en": "Mortgage-ready; vacant possession"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
         "label": {
-          "zh": "浴室视角",
-          "en": "Bathroom view"
+          "zh": "美孚新邨屋苑外觀",
+          "en": "Mei Foo Sun Chuen estate"
         },
-        "photoUrl": "/uploads/1f627921-13ea-4064-b487-a0fef360b7be.webp",
-        "thumbnailUrl": "/uploads/1f627921-13ea-4064-b487-a0fef360b7be.webp",
+        "photoUrl": "/img/hk/mei-foo.webp",
+        "thumbnailUrl": "/img/hk/mei-foo.webp",
         "videoUrl": null,
         "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000010",
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "沙田第一城 · 中層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$520萬",
+      "en": "HK$5.2M"
+    },
+    "priceBasis": "sold_price",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": 5200000,
+    "soldDate": "2026-09-18",
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/city-one.webp",
+    "features": [
+      {
+        "zh": "實用面積 400 呎",
+        "en": "Saleable area 400 sq ft"
       },
       {
-        "id": "photo-4",
-        "order": 4,
+        "zh": "示範成交紀錄",
+        "en": "Example sale record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
         "label": {
-          "zh": "厨房与吧台",
-          "en": "Kitchen and breakfast bar"
+          "zh": "沙田第一城屋苑外觀",
+          "en": "City One Shatin estate"
         },
-        "photoUrl": "/uploads/b5df0407-c8ee-48ef-ae22-90c805f556e3.png",
-        "thumbnailUrl": "/uploads/b5df0407-c8ee-48ef-ae22-90c805f556e3.png",
+        "photoUrl": "/img/hk/city-one.webp",
+        "thumbnailUrl": "/img/hk/city-one.webp",
         "videoUrl": null,
         "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000011",
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "太古城 · 高層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$1,020萬",
+      "en": "HK$10.2M"
+    },
+    "priceBasis": "sold_price",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": 10200000,
+    "soldDate": "2026-08-27",
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/taikoo-shing.webp",
+    "features": [
+      {
+        "zh": "實用面積 760 呎",
+        "en": "Saleable area 760 sq ft"
       },
       {
-        "id": "photo-5",
-        "order": 5,
-        "label": {
-          "zh": "卧室视角一",
-          "en": "Bedroom view one"
-        },
-        "photoUrl": "/uploads/8ca92755-b237-4706-a690-9cab5381350f.png",
-        "thumbnailUrl": "/uploads/8ca92755-b237-4706-a690-9cab5381350f.png",
-        "videoUrl": null,
-        "watermarked": false
-      },
+        "zh": "示範成交紀錄",
+        "en": "Example sale record"
+      }
+    ],
+    "rooms": [
       {
-        "id": "photo-6",
-        "order": 6,
+        "id": "exterior",
+        "order": 1,
         "label": {
-          "zh": "卧室视角二",
-          "en": "Bedroom view two"
+          "zh": "太古城屋苑外觀",
+          "en": "Taikoo Shing estate"
         },
-        "photoUrl": "/uploads/a7d95daf-6bfb-4265-a3c2-0b5a6c9820cd.png",
-        "thumbnailUrl": "/uploads/a7d95daf-6bfb-4265-a3c2-0b5a6c9820cd.png",
-        "videoUrl": null,
-        "watermarked": false
-      },
-      {
-        "id": "photo-7",
-        "order": 7,
-        "label": {
-          "zh": "浴缸与淋浴",
-          "en": "Bathtub and shower"
-        },
-        "photoUrl": "/uploads/600b4a9e-7060-4504-a38d-666509f1e2e9.png",
-        "thumbnailUrl": "/uploads/600b4a9e-7060-4504-a38d-666509f1e2e9.png",
-        "videoUrl": null,
-        "watermarked": false
-      },
-      {
-        "id": "photo-8",
-        "order": 8,
-        "label": {
-          "zh": "有顶露台",
-          "en": "Covered patio"
-        },
-        "photoUrl": "/uploads/608be747-2994-44f2-9b45-d670a718d075.webp",
-        "thumbnailUrl": "/uploads/608be747-2994-44f2-9b45-d670a718d075.webp",
-        "videoUrl": null,
-        "watermarked": false
-      },
-      {
-        "id": "photo-9",
-        "order": 9,
-        "label": {
-          "zh": "入户前廊",
-          "en": "Front porch"
-        },
-        "photoUrl": "/uploads/1864560f-e179-4483-9701-508db815abe0.webp",
-        "thumbnailUrl": "/uploads/1864560f-e179-4483-9701-508db815abe0.webp",
-        "videoUrl": null,
-        "watermarked": false
-      },
-      {
-        "id": "photo-10",
-        "order": 10,
-        "label": {
-          "zh": "厨房家电",
-          "en": "Kitchen appliances"
-        },
-        "photoUrl": "/uploads/eca5adb0-70b5-4abb-89a5-34db1411973c.webp",
-        "thumbnailUrl": "/uploads/eca5adb0-70b5-4abb-89a5-34db1411973c.webp",
-        "videoUrl": null,
-        "watermarked": false
-      },
-      {
-        "id": "photo-11",
-        "order": 11,
-        "label": {
-          "zh": "客餐厨全景",
-          "en": "Living, dining and kitchen"
-        },
-        "photoUrl": "/uploads/78c8a9e7-ea27-4521-befb-3dc2ffd3f929.webp",
-        "thumbnailUrl": "/uploads/78c8a9e7-ea27-4521-befb-3dc2ffd3f929.webp",
+        "photoUrl": "/img/hk/taikoo-shing.webp",
+        "thumbnailUrl": "/img/hk/taikoo-shing.webp",
         "videoUrl": null,
         "watermarked": false
       }

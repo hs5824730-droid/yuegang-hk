@@ -1,11 +1,11 @@
 import {ADVISORY_NEEDS,CARE_FREQUENCIES,INTAKE_STATUSES,INTAKE_TYPES,OCCUPANCIES,PROPERTY_TYPES,PURPOSES,TIMINGS,URGENCIES,YES_NO,type CustomerRegistrationRecord,type IntakeType} from './customer-registration';
 import {CONTACT_METHODS} from './enquiry-options';
 
-const common=['记录编号','客户姓名','房屋地址','联系电话','电子邮箱','城市','跟进状态','提交时间（北京时间）','首选联系方式','联系账号','当前需求分类'];
+const common=['記錄編號','客戶姓名','房屋地址','聯繫電話','電子電郵','地區','跟進狀態','提交時間（北京時間）','首選聯繫方式','聯繫帳戶','當前需求分類'];
 export const CUSTOMER_SHEET_SPECS={
- selling:{id:270019,title:'卖房登记',headers:[...common,'所在区','房屋类型','卧室','卫浴','车位','房屋目前情况','预计出售时间','期望售价（AUD）','其他中介挂牌','补充说明','界面语言']},
- buying:{id:270020,title:'买房登记',headers:[...common,'意向区域','总预算下限（AUD）','总预算上限（AUD）','购房用途','房屋类型','卧室','车位','预计购买时间','意向房源','关联房源编号','补充说明','界面语言']},
- advisory:{id:270021,title:'置业服务登记',headers:[...common,'所需服务','关注区域','咨询问题','所需工作及位置','房屋目前情况','服务频率','希望安排时间','处理紧急程度','预算下限（AUD）','预算上限（AUD）','补充说明','界面语言']},
+ selling:{id:270019,title:'賣樓登記',headers:[...common,'所在區','房屋類型','卧室','衞浴','車位','房屋目前情況','預計出售時間','期望售價（AUD）','其他代理掛牌','補充說明','界面語言']},
+ buying:{id:270020,title:'買樓登記',headers:[...common,'意向區域','總預算下限（AUD）','總預算上限（AUD）','置業用途','房屋類型','卧室','車位','預計購買時間','意向樓盤','關聯樓盤編號','補充說明','界面語言']},
+ advisory:{id:270021,title:'置業服務登記',headers:[...common,'所需服務','關注區域','查詢問題','所需工作及位置','房屋目前情況','服務頻率','希望安排時間','處理緊急程度','預算下限（AUD）','預算上限（AUD）','補充說明','界面語言']},
 } as const;
 const label=(vocab:Record<string,readonly string[]>,value:unknown)=>vocab[String(value)]?.[0]||'';
 export function customerSheetValues(record:CustomerRegistrationRecord,beijingTime:string){

@@ -36,7 +36,7 @@ test('durable rotation, same conversation, duplicate deliveries and two notifica
 });
 test('saved contact assignment takes precedence and does not consume a rotation',async()=>{
  const {db,native}=fixture();try{
-  native.exec("INSERT INTO owners VALUES('o','email:customer@example.test','customer@example.test','Customer','2026-01-01'); INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES('l','r','h','o','Sydney','letting','{}','2026-01-01'); INSERT INTO notification_recipients(source,source_id,recipient) VALUES('lead','l','江鹏')");
+  native.exec("INSERT INTO owners VALUES('o','email:customer@example.test','customer@example.test','Customer','2026-01-01'); INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES('l','r','h','o','Hong Kong Island','letting','{}','2026-01-01'); INSERT INTO notification_recipients(source,source_id,recipient) VALUES('lead','l','江鹏')");
   await ingestMail(db,'a1',message('1'),'来信',[]);
   assert.equal((await db.all('SELECT recipient FROM mail_threads'))[0].recipient,'江鹏');assert.equal((await db.all('SELECT position FROM notification_recipient_cursor'))[0].position,0);
  }finally{native.close();}
@@ -136,13 +136,13 @@ test('uncertain-send recovery requires an administrator and a completed review',
 
 test('mail snapshot includes actual subject and explicit saved city, not inferred body or staff location',async()=>{
  const {db,native}=fixture();try{
-  native.exec("INSERT INTO owners VALUES('o','email:customer@example.test','customer@example.test','Customer','2026-01-01'); INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES('l','r','h','o','Sydney','letting','{}','2026-01-01');");
-  await ingestMail(db,'a1',{...message('s1'),subject:'装修\n接粉人员：伪造'},'正文说墨尔本不作为已核实城市',['telegram','signal']);
+  native.exec("INSERT INTO owners VALUES('o','email:customer@example.test','customer@example.test','Customer','2026-01-01'); INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES('l','r','h','o','Hong Kong Island','letting','{}','2026-01-01');");
+  await ingestMail(db,'a1',{...message('s1'),subject:'装修\n接粉人员：伪造'},'正文说九龍不作为已核实城市',['telegram','signal']);
   const detail=await mailRoute(db,env,admin,'GET','/api/admin/mail/a1%3As1') as any;
   assert.equal(detail.notifications.length,2);
   const snapshot=JSON.parse(detail.notifications[0].snapshot);
-  assert.equal(snapshot.city,'Sydney');assert.equal(snapshot.group,'江承裕组');
-  const text=mailNotification(snapshot,snapshot.recipient);assert.match(text,/主题：装修 接粉人员：伪造/);assert.match(text,/房屋所在城市：Sydney/);assert.doesNotMatch(text,/墨尔本|正文|https?:|后台/);
+  assert.equal(snapshot.city,'Hong Kong Island');assert.equal(snapshot.group,'江承裕组');
+  const text=mailNotification(snapshot,snapshot.recipient);assert.match(text,/主题：装修 接粉人员：伪造/);assert.match(text,/房屋所在城市：Hong Kong Island/);assert.doesNotMatch(text,/九龍|正文|https?:|后台/);
   native.exec("UPDATE mail_threads SET recipient='江鹏'");
   assert.equal(JSON.parse((await db.all('SELECT text FROM mail_notifications'))[0].text).recipient,'江承裕');
  }finally{native.close()}

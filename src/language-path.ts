@@ -18,8 +18,8 @@ export function isLanguagePage(path: string): boolean {
  return isPublicPage(path) || plain === '/overseas' || /^\/(?:registration|(?:rental|buying|selling|advisory)-registration)$/.test(plain) || /^\/contact(?:\/(?:phone|whatsapp|wechat))?$/.test(plain);
 }
 export function registrationPageTitle(path:string,lang:SiteLanguage):string|null {
- const titles:Record<string,readonly string[]>={'/registration':['需求登记','Register your needs'],'/rental-registration':['房屋出租委托登记','Property rental registration'],'/buying-registration':['购房需求登记','Buying registration'],'/selling-registration':['卖房需求登记','Selling registration'],'/advisory-registration':['置业服务登记','Property services registration']};
- const names=titles[withoutLanguage(path)];return names?names[lang==='zh'?0:1]+(lang==='zh'?' | 桉湾 EUCOVE':' | EUCOVE'):null;
+ const titles:Record<string,readonly string[]>={'/registration':['需求登記','Register your needs'],'/rental-registration':['房屋出租委託登記','Property rental registration'],'/buying-registration':['置業需求登記','Buying registration'],'/selling-registration':['賣樓需求登記','Selling registration'],'/advisory-registration':['置業服務登記','Property services registration']};
+ const names=titles[withoutLanguage(path)];return names?names[lang==='zh'?0:1]+(lang==='zh'?' | 悦港 Harbour Joy':' | Harbour Joy'):null;
 }
 export function localizedHref(href: string, lang: SiteLanguage): string {
  if (!href.startsWith('/') || href.startsWith('//')) return href;

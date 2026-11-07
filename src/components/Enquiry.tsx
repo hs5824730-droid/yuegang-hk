@@ -166,9 +166,9 @@ export function EnquiryProvider({ children }: { children: ReactNode }) {
           <div className="enq-scrim" onClick={close} aria-hidden />
           <div className="enq" role="dialog" aria-modal="true" aria-labelledby="enq-title" ref={dialogRef}>
             <div className="enq-head">
-              <h2 id="enq-title">{L('留下你的联系方式', 'Leave your contact details')}</h2>
+              <h2 id="enq-title">{L('留低你嘅聯絡方式', 'Leave your contact details')}</h2>
               <LangToggle />
-              <button type="button" className="icon-btn" onClick={close} aria-label={L('关闭', 'Close')}>
+              <button type="button" className="icon-btn" onClick={close} aria-label={L('關閉', 'Close')}>
                 <X size={22} />
               </button>
             </div>

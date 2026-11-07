@@ -8,7 +8,7 @@ import { cities } from './policy.js';
 export const receptionCities = [...cities, 'other'] as const;
 export type ReceptionCity = typeof receptionCities[number];
 export function receptionCity(value: string): ReceptionCity {
- const aliases: Record<string, ReceptionCity> = { '墨尔本':'Melbourne', '悉尼':'Sydney', '珀斯':'Perth', '阿德莱德':'Adelaide', '堪培拉':'Canberra', '布里斯班':'Brisbane' };
+ const aliases: Record<string, ReceptionCity> = { '港島':'Hong Kong Island', '港岛':'Hong Kong Island', '香港島':'Hong Kong Island', '九龍':'Kowloon', '九龙':'Kowloon', '新界':'New Territories', '離島':'Islands', '离岛':'Islands' };
  return aliases[value.trim()] || receptionCities.find(city => city.toLowerCase() === value.trim().toLowerCase()) || 'other';
 }
 export type ReceptionChannel = 'whatsapp' | 'wechat';

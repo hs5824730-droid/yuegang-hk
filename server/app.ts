@@ -126,7 +126,7 @@ export function createApp() {
   const submitLimit = rateLimit({ windowMs: 3600000, limit: 15, standardHeaders: 'draft-8', legacyHeaders: false, message: { error: '提交过于频繁，请稍后再试 / Too many submissions. Please try later.' } });
   const registrationLimit=rateLimit({windowMs:3600000,limit:15,standardHeaders:'draft-8',legacyHeaders:false,message:{error:'登记提交过于频繁，请稍后再试 / Too many registration attempts'}});
   app.post('/api/rental-registrations',registrationLimit,async(req,res)=>{const result=await saveRentalRegistration(receptionDb,req.body);res.status(result.created?201:200).json(result);});
-  app.post('/api/customer-registrations',registrationLimit,async(req,res)=>{const result=await saveCustomerRegistration(receptionDb,req.body,async id=>{const listing=config.production?publicViewingListing(id):await readViewingManifest(id);return listing?{city:listing.city,address:[listing.address,listing.suburb].filter(Boolean).join(', ')}:null});res.status(result.created?201:200).json(result);});
+  app.post('/api/customer-registrations',registrationLimit,async(req,res)=>{const result=await saveCustomerRegistration(receptionDb,req.body,async id=>{const listing=publicViewingListing(id);return listing?{city:listing.city,address:[listing.address,listing.suburb].filter(Boolean).join(', ')}:null});res.status(result.created?201:200).json(result);});
   app.get(GOOGLE_CALLBACK,async(req,res)=>{const response=await registrationGoogleCallback(receptionDb,{...process.env,APP_URL:config.appUrl,SESSION_SECRET:config.sessionSecret},new Request(new URL(req.originalUrl,config.appUrl),{headers:{Cookie:req.headers.cookie||''}}));res.status(response.status);response.headers.forEach((v,k)=>res.setHeader(k,v));res.send(await response.text());});
   const receptionLimit = rateLimit({ windowMs: 60000, limit: 90, standardHeaders: 'draft-8', legacyHeaders: false, message: { error: '操作过于频繁，请稍后再试 / Too many requests' } });
   const directLimit = rateLimit({windowMs:60000,limit:8,standardHeaders:'draft-8',legacyHeaders:false,message:{error:'操作过于频繁，请稍后再试 / Too many requests'}});
@@ -136,7 +136,7 @@ export function createApp() {
   app.post('/api/leads', submitLimit, async (req, res) => {
     const input = leadSchema.parse(prepareLeadBody(req.body));
     if (input.listingId) {
-      const listing = config.production?publicViewingListing(input.listingId):await readViewingManifest(input.listingId);
+      const listing = publicViewingListing(input.listingId);
       if (!listing) { res.status(400).json({ error: '看房样品不存在或暂未开放 / Viewing sample unavailable' }); return; }
       // Derive the reference location from verified source data, not editable URL fields.
       input.city = listing.city;

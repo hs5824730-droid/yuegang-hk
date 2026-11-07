@@ -2,7 +2,7 @@ import { useEffect, useRef, useState, type MouseEvent, type ReactNode } from 're
 import { scrollBehavior } from './ui';
 
 /**
- * Shared building blocks for the EUCOVE service pages.
+ * Shared building blocks for the Harbour Joy service pages.
  * Motion is one-off (draw on reveal, quiet lift on hover); nothing loops and
  * everything is static under prefers-reduced-motion.
  */

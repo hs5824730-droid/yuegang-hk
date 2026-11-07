@@ -19,8 +19,8 @@ test('lead retries: concurrent requests and changed property visibility preserve
   await new Promise<void>(resolve => server.once('listening', resolve));
   const address = server.address(); assert.ok(address && typeof address !== 'string');
   const propertyId = randomUUID();
-  db.prepare('INSERT INTO properties(id,city,published,data,created_at,updated_at) VALUES(?,?,?,?,?,?)').run(propertyId, 'Brisbane', 1, '{}', '2026-10-23', '2026-10-23');
-  const input = { name: 'Retry test', contact: '+61 400 000 001', city: 'Brisbane', service: 'letting', language: 'zh', consent: true, website: '', requestId: randomUUID(), propertyId };
+  db.prepare('INSERT INTO properties(id,city,published,data,created_at,updated_at) VALUES(?,?,?,?,?,?)').run(propertyId, 'New Territories', 1, '{}', '2026-10-23', '2026-10-23');
+  const input = { name: 'Retry test', contact: '+61 400 000 001', city: 'New Territories', service: 'letting', language: 'zh', consent: true, website: '', requestId: randomUUID(), propertyId };
   const submit = async (body = input) => {
     const response = await fetch(`http://127.0.0.1:${address.port}/api/leads`, {
       method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'http://localhost:5173' }, body: JSON.stringify(body),

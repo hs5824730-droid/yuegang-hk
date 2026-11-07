@@ -11,6 +11,8 @@ export interface ViewingRoom {
 }
 export interface ViewingListing {
   id: string;
+  /** Format example only: no owner instruction (Form 3 / Form 5) behind it. Must be labelled publicly. */
+  demo?: boolean;
   kind: 'rent' | 'sold' | 'sale';
   /** Missing/unknown is never an assertion that a rental is currently available. */
   availabilityStatus?: 'available' | 'leased' | 'unknown';

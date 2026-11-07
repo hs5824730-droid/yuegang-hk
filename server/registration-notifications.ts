@@ -6,7 +6,7 @@ import {ADVISORY_NEEDS,INTAKE_TYPES} from '../src/customer-registration.js';
 import {REGISTRATION_SERVICES} from '../src/rental-registration.js';
 
 type Settings={telegram?:{token:string;chatId:string};signal?:SignalSettings};
-const cities:Record<string,string>={Sydney:'悉尼',Melbourne:'墨尔本',Brisbane:'布里斯班',Perth:'珀斯',Adelaide:'阿德莱德',Canberra:'堪培拉','Gold Coast':'黄金海岸'};
+const cities:Record<string,string>={'Hong Kong Island':'港島',Kowloon:'九龍','New Territories':'新界',Islands:'離島'};
 export function registrationNotificationText(row:Record<string,any>){
  const d=JSON.parse(row.data),rental=row.source_type==='rental';
  const method=rental?'phone':d.contactMethod;

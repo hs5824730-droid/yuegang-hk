@@ -23,6 +23,7 @@ import './styles.css';
 import './service-site.css';
 import './eucove-ds.css';
 import './sol-release.css';
+import './hk-site.css';
 
 const RentalRegistration=lazy(()=>import('./pages/RentalRegistration'));
 const CustomerRegistration=lazy(()=>import('./pages/CustomerRegistration'));
@@ -52,11 +53,11 @@ function SiteRoutes() {return <Routes>
               <Route path="overseas" element={<LegacyViewings />} />
               <Route path="buy-sell" element={<BuySell />} />
               <Route path="advisory" element={<Advisory />} />
-              <Route path="home-services" element={<Suspense fallback={<p role="status" className="wrap">正在载入 / Loading…</p>}><HomeServices /></Suspense>} />
+              <Route path="home-services" element={<Suspense fallback={<p role="status" className="wrap">正在載入 / Loading…</p>}><HomeServices /></Suspense>} />
               <Route path="contact" element={<ReceptionContact />} />
-              <Route path="rental-registration" element={<Suspense fallback={<p role="status" className="wrap">正在载入 / Loading…</p>}><RentalRegistration /></Suspense>} />
-              <Route path="registration" element={<Suspense fallback={<p role="status" className="wrap">正在载入 / Loading…</p>}><RegistrationHub /></Suspense>} />
-              {(['buying','selling','advisory'] as const).map(type=><Route key={type} path={type+'-registration'} element={<Suspense fallback={<p role="status" className="wrap">正在载入 / Loading…</p>}><CustomerRegistration key={type} type={type}/></Suspense>}/>)}
+              <Route path="rental-registration" element={<Suspense fallback={<p role="status" className="wrap">正在載入 / Loading…</p>}><RentalRegistration /></Suspense>} />
+              <Route path="registration" element={<Suspense fallback={<p role="status" className="wrap">正在載入 / Loading…</p>}><RegistrationHub /></Suspense>} />
+              {(['buying','selling','advisory'] as const).map(type=><Route key={type} path={type+'-registration'} element={<Suspense fallback={<p role="status" className="wrap">正在載入 / Loading…</p>}><CustomerRegistration key={type} type={type}/></Suspense>}/>)}
               <Route path="contact/phone" element={<ReceptionContact channel="phone" />} />
               <Route path="contact/whatsapp" element={<ReceptionContact channel="whatsapp" />} />
               <Route path="contact/wechat" element={<ReceptionContact channel="wechat" />} />

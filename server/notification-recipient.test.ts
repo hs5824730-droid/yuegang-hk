@@ -37,7 +37,7 @@ async function deliveryChecks(db: ReceptionDB) {
     const id = randomUUID(), owner = randomUUID(), requestId = randomUUID();
     await db.batch([
       { sql: 'INSERT INTO owners VALUES(?,?,?,?,?)', args: [owner, owner, '+447700900001', name, '2026-10-26T08:39:25Z'] },
-      { sql: 'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)', args: [id, requestId, 'fixture', owner, 'Sydney', 'letting', JSON.stringify({ name, contact: '+447700900001', contactMethod: method }), '2026-10-26T08:39:25Z'] },
+      { sql: 'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)', args: [id, requestId, 'fixture', owner, 'Hong Kong Island', 'letting', JSON.stringify({ name, contact: '+447700900001', contactMethod: method }), '2026-10-26T08:39:25Z'] },
       { sql: 'INSERT INTO notifications(id,lead_id,sync_enabled) VALUES(?,?,1)', args: [randomUUID(), id] },
       { sql: 'INSERT INTO signal_notifications(id,lead_id) VALUES(?,?)', args: [randomUUID(), id] },
     ]);
@@ -78,7 +78,7 @@ async function deliveryChecks(db: ReceptionDB) {
     assert.equal(await position(), 4, 'A failed transport does not consume another turn');
     await send(); assert.equal(sent.length, 9, 'Completed messages are not replayed');
 
-    const qr = { id: randomUUID(), channel: 'wechat', enabled: true, cities: ['Sydney'], groupId: 'jiang-peng', groupName: '江鹏组', groupOrder: 0, targetOrder: 0, value: '/uploads/' + randomUUID() + '.png', displayName: '二维码昵称' };
+    const qr = { id: randomUUID(), channel: 'wechat', enabled: true, cities: ['Hong Kong Island'], groupId: 'jiang-peng', groupName: '江鹏组', groupOrder: 0, targetOrder: 0, value: '/uploads/' + randomUUID() + '.png', displayName: '二维码昵称' };
     await saveReception(db, { targets: [qr] });
     await assignReception(db, { requestId: randomUUID(), leadRequestId: leads[0].requestId, channel: 'wechat' });
     await send();
@@ -96,15 +96,15 @@ async function deliveryChecks(db: ReceptionDB) {
     assert.equal(await position(), 4, 'Saved assignment group wins over edited configuration');
 
     // Direct visits use their own stable identity, with the same fallback staff pool.
-    await assignReception(db, { requestId: randomUUID(), channel: 'whatsapp', contactMethod: 'phone', source: 'website_direct', pagePath: '/services', city: 'Perth' });
-    await assignReception(db, { requestId: randomUUID(), channel: 'wechat', source: 'website_direct', pagePath: '/services', city: 'Sydney' });
+    await assignReception(db, { requestId: randomUUID(), channel: 'whatsapp', contactMethod: 'phone', source: 'website_direct', pagePath: '/services', city: 'New Territories' });
+    await assignReception(db, { requestId: randomUUID(), channel: 'wechat', source: 'website_direct', pagePath: '/services', city: 'Hong Kong Island' });
     await db.batch([{ sql: 'UPDATE direct_contact_notifications SET next_attempt=0', args: [] }]);
     const before = sent.length;
     await Promise.all([deliverDirectContacts(db, 'telegram', telegram), deliverDirectContacts(db, 'signal', signal)]);
     assert.equal(sent.length - before, 4);
     assert.equal(await position(), 5);
     assert.equal((await saved()).filter(r => r.source === 'direct').length, 2);
-    for (const city of ['珀斯', '悉尼']) {
+    for (const city of ['新界', '港島']) {
       const messages = sent.slice(before).filter(s => s.body.text.includes('房屋所在城市】' + city));
       assert.equal(messages.length, 2); assert.equal(messages[0].body.text, messages[1].body.text);
       assert.match(messages[0].body.text,/接粉人员：/);

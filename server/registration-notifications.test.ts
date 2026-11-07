@@ -15,7 +15,7 @@ function fixture(){
  const db:ReceptionDB={all:async(sql,args=[])=>native.prepare(sql).all(...args as any[]) as any[],batch:async qs=>{native.exec('BEGIN');try{for(const q of qs)native.prepare(q.sql).run(...q.args as any[]);native.exec('COMMIT');}catch(error){native.exec('ROLLBACK');throw error;}}};
  return {native,db};
 }
-const customer=()=>({requestId:crypto.randomUUID(),type:'buying',language:'zh',name:'虚构登记测试',contactMethod:'wechat',contact:'fixture-wechat',city:'Sydney',details:{}});
+const customer=()=>({requestId:crypto.randomUUID(),type:'buying',language:'zh',name:'虚构登记测试',contactMethod:'wechat',contact:'fixture-wechat',city:'Hong Kong Island',details:{}});
 test('new registrations only: disabled history, idempotent submissions, four business types, edits do not notify',async()=>{
  const {native,db}=fixture();try{
   await saveCustomerRegistration(db,customer());

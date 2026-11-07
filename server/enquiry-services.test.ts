@@ -15,7 +15,7 @@ const { createApp } = await import('./app.js');
 const { db } = await import('./db.js');
 const { config } = await import('./config.js');
 const { deliverNotifications } = await import('./notifications.js');
-const base = { name: 'Service Test', contact: '+61 400 000 099', city: 'Brisbane', service: 'letting', language: 'zh', consent: true, requestId: randomUUID() };
+const base = { name: 'Service Test', contact: '+61 400 000 099', city: 'New Territories', service: 'letting', language: 'zh', consent: true, requestId: randomUUID() };
 
 test('service vocabulary: all groups, legacy aliases and advisory URL aliases', () => {
   for (const service of [...PUBLIC_SERVICES, 'moving']) assert.equal(leadSchema.parse({ ...base, service }).service, service);
@@ -29,7 +29,7 @@ test('new optional fields validate contacts, preference and sensible bounds', ()
   for (const input of [
     { contactMethod: 'email', contact: 'owner@example.test' }, { contact: 'owner@example.test' },
     { contactMethod: 'wechat', contact: 'Owner_2026' }, { contactMethod: 'whatsapp', contact: '+86 138 0000 0000' },
-    { propertyType: 'house', bedrooms: 0, offerInterest: true, preferredAdvisorId: ADVISORS[0].id },
+    { propertyType: 'house', bedrooms: 0, offerInterest: true },
     { service: 'renovation', needSummary: 'Kitchen and paint', startTime: '1-3-months' },
     { service: 'buyer-advisory', budgetRange: 'A$800,000–1,000,000' },
   ]) assert.equal(leadSchema.safeParse({ ...base, ...input }).success, true, JSON.stringify(input));
@@ -51,7 +51,7 @@ test('enquiry API stores optional fields, separates email owners, deduplicates a
   const post = async (input: object) => { const response = await fetch(url + '/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'http://localhost:5173' }, body: JSON.stringify(input) }); return { status: response.status, data: await response.json() as any }; };
   const originalFetch = globalThis.fetch;
   try {
-    const input = { ...base, service: 'manage', contactMethod: 'email', contact: 'first@example.test', bedrooms: 3, propertyType: 'house', offerInterest: true, preferredAdvisorId: 'andy-xiang' };
+    const input = { ...base, service: 'manage', contactMethod: 'email', contact: 'first@example.test', bedrooms: 3, propertyType: 'house', offerInterest: true };
     const first = await post(input); assert.equal(first.status, 201);
     const retry = await post({ ...input, service: 'management' }); assert.equal(retry.status, 200); assert.equal(retry.data.id, first.data.id);
     assert.equal((await post({ ...input, bedrooms: 4 })).status, 409);
@@ -63,17 +63,17 @@ test('enquiry API stores optional fields, separates email owners, deduplicates a
     const list = await (await fetch(url + '/api/admin/leads', { headers: { Cookie: cookie } })).json() as any;
     const lead = list.leads.find((item: any) => item.id === first.data.id);
     assert.equal(lead.service, 'management'); assert.equal(lead.serviceGroup, 'rental');
-    assert.equal(lead.preferredAdvisorName, 'Andy Xiang'); assert.equal(lead.bedrooms, 3); assert.equal(lead.offerInterest, true);
+    assert.equal(lead.bedrooms, 3); assert.equal(lead.offerInterest, true);
     const messages: string[] = [];
     config.telegramToken = 'mock-token'; config.telegramChatId = 'mock-chat';
     globalThis.fetch = (async (_url, init) => { messages.push(JSON.parse(String(init?.body)).text); return new Response('{"ok":true}'); }) as typeof fetch;
     await deliverNotifications();
     assert.equal(messages.length, 2);
-    const management = messages.find(message => message.includes('类型：长期托管'))!;
-    assert.match(management, /分组：出租与托管/); assert.doesNotMatch(management, /指定顾问：/);
+    const management = messages.find(message => message.includes('类型：租務管理'))!;
+    assert.match(management, /分组：放租同管理/); assert.doesNotMatch(management, /指定顾问：/);
     assert.doesNotMatch(management, /卧室数：|咨询限时优惠：/);
     assert.ok(messages.some(message => message.includes('@example.test')));
-    assert.ok(messages.some(message => message.includes('类型：装修翻新') && !message.includes('希望开始：')));
+    assert.ok(messages.some(message => message.includes('类型：裝修翻新') && !message.includes('希望开始：')));
     assert.equal((db.prepare('SELECT COUNT(*) AS n FROM leads').get() as any).n, 2);
   } finally { globalThis.fetch = originalFetch; config.telegramToken = ''; config.telegramChatId = ''; server.closeAllConnections(); await new Promise<void>(resolve => server.close(() => resolve())); db.close(); }
 });

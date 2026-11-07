@@ -29,7 +29,7 @@ export function LanguageSeo() {
    const el = document.createElement('link');el.rel = rel;el.href = href;
    if (hreflang) el.hreflang = hreflang;el.dataset.languageSeo = '';document.head.append(el);
   }
-  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en';
  }, [location.pathname, lang]);
  return null;
 }

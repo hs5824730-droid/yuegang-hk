@@ -17,14 +17,14 @@ async function checks(db:ReceptionDB){
  const create=async(active=true,createdAt=new Date().toISOString())=>{
   const lead=randomUUID(),request=randomUUID(),owner=randomUUID();await db.batch([
    {sql:'INSERT INTO owners VALUES(?,?,?,?,?)',args:[owner,owner,'+61400000001','Fictional Signal fixture',createdAt]},
-   {sql:'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)',args:[lead,request,'fixture',owner,'Melbourne','letting',JSON.stringify({name:'Fictional <&> fixture',contact:'+61400000001',contactMethod:'whatsapp'}),createdAt]},
+   {sql:'INSERT INTO leads(id,request_id,request_hash,owner_id,city,service,data,created_at) VALUES(?,?,?,?,?,?,?,?)',args:[lead,request,'fixture',owner,'Kowloon','letting',JSON.stringify({name:'Fictional <&> fixture',contact:'+61400000001',contactMethod:'whatsapp'}),createdAt]},
    {sql:signalQueueSql,args:[randomUUID(),0,request,'fixture',Number(active)]},
   ]);return {id:lead,requestId:request};
  };
  assert.equal(await read((await create()).id),undefined,'Disabled channels never enqueue');
  await db.batch([{sql:"UPDATE notification_channels SET enabled=1,enabled_at='2026-10-23T00:00:00.000Z' WHERE channel='signal'",args:[]}]);
  assert.equal(await read((await create(true,'2026-10-22T23:59:59Z')).id),undefined,'No historical backfill');assert.equal(await read((await create(false)).id),undefined,'Runtime switch is required too');
- const wa={id:randomUUID(),channel:'whatsapp',enabled:true,cities:['Melbourne'],groupId:'fixture',groupName:'Fictional group',groupOrder:0,targetOrder:0,value:'+61400000002'};await saveReception(db,{targets:[wa]});
+ const wa={id:randomUUID(),channel:'whatsapp',enabled:true,cities:['Kowloon'],groupId:'fixture',groupName:'Fictional group',groupOrder:0,targetOrder:0,value:'+61400000002'};await saveReception(db,{targets:[wa]});
  const lead=await create(true,'2026-10-23T16:00:00Z');const original=globalThis.fetch;const calls:any[]=[];let mode='ok';let onSend:(()=>Promise<void>)|null=null;
  globalThis.fetch=(async(url,init)=>{verifyRequest(String(url),init);const input=JSON.parse(String(init?.body));assert.deepEqual(Object.keys(input).sort(),['id','revision','text']);calls.push(input);if(onSend){const action=onSend;onSend=null;await action();}if(mode==='network')throw Error('simulated');if(mode==='429')return Response.json({error:'busy'},{status:429,headers:{'Retry-After':'90'}});if(mode==='uncertain')return Response.json({error:'delivery_uncertain'},{status:409});return Response.json({ok:true,timestamp:1700000000000});}) as typeof fetch;
  const send=()=>deliverSignal(db,settings,20);
@@ -50,7 +50,7 @@ test('real workerd/D1: future-only enqueue and independent Telegram/Signal deliv
   const body=await request.text();if(new URL(request.url).hostname==='fixture.up.railway.app'){signalCalls++;try{verifyRequest(request.url,{method:request.method,headers:Object.fromEntries(request.headers),body});}catch(e){outboundErrors.push(e instanceof Error?e.message:'signature failure');}return new MFResponse(JSON.stringify({error:'busy'}),{status:429,headers:{'Content-Type':'application/json'}});}if(new URL(request.url).hostname==='api.telegram.org'){tgCalls++;return new MFResponse(JSON.stringify({ok:true,result:{message_id:123}}),{headers:{'Content-Type':'application/json'}});}throw Error('All other network blocked');
  }}));
  try{const d1=await mf.getD1Database('DB');await applyTestMigrations(d1);const adapter:ReceptionDB={all:async(sql,args=[])=>(await d1.prepare(sql).bind(...args).all()).results as any[],batch:async qs=>{await d1.batch(qs.map(q=>d1.prepare(q.sql).bind(...q.args)));}};await checks(adapter);
- await d1.prepare('DELETE FROM signal_notifications').run();const requestId=randomUUID();const input={name:'Fictional HTTP fixture',contact:'+61400000003',contactMethod:'whatsapp',city:'Sydney',service:'rent',language:'zh',consent:true,requestId};
+ await d1.prepare('DELETE FROM signal_notifications').run();const requestId=randomUUID();const input={name:'Fictional HTTP fixture',contact:'+61400000003',contactMethod:'whatsapp',city:'Hong Kong Island',service:'rent',language:'zh',consent:true,requestId};
  const post=()=>mf.dispatchFetch('https://eucove.com/api/leads',{method:'POST',headers:{Origin:'https://eucove.com','Content-Type':'application/json'},body:JSON.stringify(input)});
  assert.equal((await post()).status,201);for(let i=0;i<30&&signalCalls===0;i++)await new Promise(r=>setTimeout(r,25));assert.equal(signalCalls,1,'The request-time waitUntil makes the first Signal attempt immediately');
  assert.equal((await post()).status,200);assert.equal((await d1.prepare('SELECT COUNT(*) n FROM signal_notifications').first())!.n,1);assert.equal(signalCalls,1,'An idempotent lead retry does not send again');

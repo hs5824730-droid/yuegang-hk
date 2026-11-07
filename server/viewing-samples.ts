@@ -84,7 +84,7 @@ async function output(manifest: ViewingManifest): Promise<ViewingListing> {
 export function viewingSamplesRouter() {
   const router = Router();
   router.use((req, res, next) => {
-    if (!config.production) {next();return;}
+    // 悦港 serves its published listing set in every environment; local manifests are no longer used.
     if(!['GET','HEAD'].includes(req.method)){res.sendStatus(404);return;}
     const route=req.path.replace(/\/$/,'')||'/';
     if(route==='/'){const kind=req.query.kind||'rent';if(kind!=='rent'&&kind!=='sold'&&kind!=='sale'){res.sendStatus(400);return;}res.json({listings:publicViewingListings(kind as 'rent'|'sold'|'sale')});return;}

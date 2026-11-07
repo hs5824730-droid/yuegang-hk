@@ -6,11 +6,11 @@ import path from 'node:path';
 import { build } from 'esbuild';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
 import { notificationMessage, notificationBeijingTime } from './notification-message.js';
-const message = (data: Record<string,unknown>, overrides = {}) => notificationMessage({lead_id:'00000000-0000-4000-8000-000000000001',city:'Melbourne',service:'letting',created_at:'2026-10-23T00:00:00Z',data:JSON.stringify(data),...overrides},'https://eucove.com');
+const message = (data: Record<string,unknown>, overrides = {}) => notificationMessage({lead_id:'00000000-0000-4000-8000-000000000001',city:'Kowloon',service:'letting',created_at:'2026-10-23T00:00:00Z',data:JSON.stringify(data),...overrides},'https://eucove.com');
 test('customer notification uses saved name/phone/property city and plain text, not inferred location',()=>{
- const text=message({name:'虚构客户 <b>测试</b>\n伪标题',contact:'+61 400 000 001',contactMethod:'phone',city:'Sydney',needSummary:'测试\n需求'});
- assert.ok(text.startsWith('【客户姓名】虚构客户 <b>测试</b> 伪标题\n【客户性别】未提供\n【联系电话】+61 400 000 001\n【房屋所在城市】墨尔本'));
- assert.ok(!text.includes('\n伪标题'));assert.ok(!text.includes('需求：'));assert.ok(!text.includes('房屋所在城市】悉尼'));
+ const text=message({name:'虚构客户 <b>测试</b>\n伪标题',contact:'+61 400 000 001',contactMethod:'phone',city:'Hong Kong Island',needSummary:'测试\n需求'});
+ assert.ok(text.startsWith('【客户姓名】虚构客户 <b>测试</b> 伪标题\n【客户性别】未提供\n【联系电话】+61 400 000 001\n【房屋所在城市】九龍'));
+ assert.ok(!text.includes('\n伪标题'));assert.ok(!text.includes('需求：'));assert.ok(!text.includes('房屋所在城市】港島'));
 });
 test('WhatsApp contact is a phone; WeChat ID is never made into a phone',()=>{
  assert.match(message({name:'虚构WA',contact:'+61400000002',contactMethod:'whatsapp'}),/【联系电话】\+61400000002/);
@@ -35,10 +35,10 @@ test('legacy owners fallback, real other city, missing phone, length and control
  assert.ok(!message({name:'Name\u202e\tValue'}).includes('\u202e'));
 });
 
-const snapshot = (overrides: Record<string, unknown> = {}) => JSON.stringify([{id:'snapshot-only',channel:'whatsapp',scope:'city',city:'Melbourne',createdAt:'2026-10-25T10:00:00Z',target:{id:'target-fixture',value:'+61491570006',displayName:'示例接待',groupName:'江鹏组',prefillText:'Hello &?#+🙂',templateVersion:1,...overrides}}]);
+const snapshot = (overrides: Record<string, unknown> = {}) => JSON.stringify([{id:'snapshot-only',channel:'whatsapp',scope:'city',city:'Kowloon',createdAt:'2026-10-25T10:00:00Z',target:{id:'target-fixture',value:'+61491570006',displayName:'示例接待',groupName:'江鹏组',prefillText:'Hello &?#+🙂',templateVersion:1,...overrides}}]);
 test('exact compact copy: saved snapshot only, no links/title/ID/offer/details or assignment time',()=>{
  const text=message({name:'虚构客户',contact:'+61491570006',contactMethod:'whatsapp',offerInterest:true,needSummary:'Hidden',preferredAdvisorId:'andy-xiang'}, {created_at:'2026-10-23T16:00:00Z',routing_json:snapshot()});
- assert.equal(text, ['【客户姓名】虚构客户','【客户性别】未提供','【联系电话】+61491570006','【房屋所在城市】墨尔本','分组：出租与托管','类型：出租招租','','联系方式种类：WhatsApp','分流渠道：WhatsApp','分配目标：+61491570006','分流名称：示例接待','接粉人员：待分配','北京时间：2026-10-24 00:00:00'].join('\n'));
+ assert.equal(text, ['【客户姓名】虚构客户','【客户性别】未提供','【联系电话】+61491570006','【房屋所在城市】九龍','分组：放租同管理','类型：放租','','联系方式种类：WhatsApp','分流渠道：WhatsApp','分配目标：+61491570006','分流名称：示例接待','接粉人员：待分配','北京时间：2026-10-24 00:00:00'].join('\n'));
  assert.doesNotMatch(text,/https?:|wa.me|\/uploads|\/admin|192\.168|新的网站咨询|优惠|编号|指定顾问|模板|UTC|2026-10-25|隐藏/);
 });
 test('chosen Mr or Ms is reported as the customer gender; anything else stays unknown',()=>{
@@ -57,7 +57,7 @@ test('Beijing created time uses explicit Shanghai h23 across midnight, year boun
   ['invalid','未提供'], ['', '未提供'],
  ]) assert.equal(notificationBeijingTime(utc),expected,utc);
  const previous=process.env.TZ;
- try { for(const tz of ['UTC','America/Los_Angeles','Australia/Sydney']) { process.env.TZ=tz;assert.equal(notificationBeijingTime('2026-10-23 16:00:00'),'2026-10-24 00:00:00'); } }
+ try { for(const tz of ['UTC','America/Los_Angeles','Australia/Hong Kong Island']) { process.env.TZ=tz;assert.equal(notificationBeijingTime('2026-10-23 16:00:00'),'2026-10-24 00:00:00'); } }
  finally { if(previous===undefined) delete process.env.TZ;else process.env.TZ=previous; }
 });
 test('QR snapshot names have truthful fallbacks; phone, awaiting and unmatched never invent a recipient',()=>{
@@ -81,7 +81,7 @@ test('real workerd formats the identical compact notification with explicit Beij
  const mf=new Miniflare(convertV4MiniflareOptions({modules:true,scriptPath:bundle,compatibilityDate:'2026-10-23'}));
  try {
   for(const created_at of ['2026-10-23T16:00:00Z','2026-12-31T15:59:59Z','2026-10-23 16:00:00']) {
-   const row={lead_id:'fictional-only',city:'Sydney',service:'letting',created_at,data:JSON.stringify({name:'虚构客户',contact:'+61491570006',contactMethod:'whatsapp'}),routing_json:snapshot()};
+   const row={lead_id:'fictional-only',city:'Hong Kong Island',service:'letting',created_at,data:JSON.stringify({name:'虚构客户',contact:'+61491570006',contactMethod:'whatsapp'}),routing_json:snapshot()};
    const response=await mf.dispatchFetch('https://fixture.invalid',{method:'POST',body:JSON.stringify(row)});
    const body=await response.json() as {text:string};
    assert.equal(body.text,notificationMessage(row,'http://192.168.100.110:5180'));

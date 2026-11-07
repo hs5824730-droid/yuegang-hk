@@ -1,0 +1,39 @@
+/* 悦港 Hong Kong additions on top of the shared v2 design. */
+html body.v2 .v-regions { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+html body.v2 .v-regions button { aspect-ratio: 4 / 5; }
+html body.v2 .v-trust { align-items: center; }
+html body.v2 .v-trust-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+html body.v2 .v-trust-list li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; background: var(--v-card); border: 1px solid var(--v-line); }
+html body.v2 .v-trust-list li > svg { flex: none; margin-top: 2px; color: var(--v-coral); }
+html body.v2 .v-trust-list strong { display: block; font-size: 16px; }
+html body.v2 .v-trust-list small { display: block; margin-top: 4px; font-size: 14px; line-height: 1.6; color: var(--v-mute); }
+
+/* Licence line and demo-listing notices required for Hong Kong estate agency advertising. */
+.site-licence { margin: 6px 0 0; font-size: 12px; opacity: .72; }
+.hk-demo-ribbon { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; font-size: 12px; font-weight: 650; letter-spacing: .02em; background: #fff4d6; color: #7a4b00; border: 1px solid #f0c66b; }
+.hk-demo-banner { margin: 0 0 18px; padding: 12px 16px; font-size: 14px; line-height: 1.6; background: #fff8e6; color: #5c3a00; border-left: 3px solid #f0a92b; }
+.hk-pdpo { margin: 10px 0 0; font-size: 12px; line-height: 1.6; color: var(--v-mute, #6b6b6b); }
+.hk-pdpo a { color: inherit; text-decoration: underline; }
+
+@media (max-width: 900px) { html body.v2 .v-regions { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Three listing tabs (租盤 / 售盤 / 成交紀錄) and HKD prices that keep "/ 月" on one line. */
+.viewing-samples .viewing-kind-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 720px; }
+.viewing-samples .px-price { font-size: clamp(34px, 3.4vw, 50px); white-space: nowrap; }
+@media (max-width: 520px) { .viewing-samples .px-price { font-size: 32px; } .viewing-samples .viewing-kind-tabs small { font-size: 11px; } }
+
+/* Harbour Joy brand mark: navy on light surfaces, cream on dark ones. */
+html body .site-header .logo .mark { color: #0B1F45 !important; }
+html body .site-footer .logo .mark, html body .logo-light .mark, html body .admin-brand .logo .mark { color: #F7EFDC !important; }
+
+/* Harbour Joy palette, from the logo: harbour navy, cream paper, brass accents. */
+html body.v2 {
+  --v-paper: #FBF8F1; --v-paper-2: #F3ECDD; --v-card: #FFFFFF;
+  --v-ink: #0B1F45; --v-ink-2: #33415E; --v-mute: #6B7389;
+  --v-sage: #F3ECDD; --v-sage-2: #E2D8C3; --v-leaf: #8A6A2B;
+  --v-sand: #F3ECDD; --v-coral: #C9A86A; --v-coral-2: #B8955A; --v-coral-ink: #8A6A2B;
+  --v-line: #E2D8C3;
+}
+html body.v2 .btn-primary, html body.v2 .btn-gold { color: #0B1F45; }
+html body.v2 .v-hero.has-bg h1 em { color: #E2C98F; }
+html body.v2 .site-header { background: rgba(251, 248, 241, .96); }

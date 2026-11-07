@@ -5,8 +5,7 @@ import { languageFromPath } from '../src/language-path.js';
 
 const citySet = new Set<string>(cities);
 const cityLabels: Record<string, readonly [string, string]> = {
-  Melbourne: ['墨尔本', 'Melbourne'], Sydney: ['悉尼', 'Sydney'], Perth: ['珀斯', 'Perth'],
-  Adelaide: ['阿德莱德', 'Adelaide'], Canberra: ['堪培拉', 'Canberra'], Brisbane: ['布里斯班', 'Brisbane'],
+  'Hong Kong Island': ['港島', 'Hong Kong Island'], Kowloon: ['九龍', 'Kowloon'], 'New Territories': ['新界', 'New Territories'], Islands: ['離島', 'Islands'],
 };
 
 /** Defaults for a short callback. Present service, language, consent and requestId are left untouched. */

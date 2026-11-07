@@ -1,6 +1,6 @@
 export interface ReceptionNames {displayName?:string;originalName?:string;originalFileName?:string;fileNameSource?:'upload'|'archive';note?:string;}
 export type ReceptionChannel = 'whatsapp'|'wechat';
-export type ReceptionCity = 'Melbourne'|'Sydney'|'Perth'|'Adelaide'|'Canberra'|'Brisbane'|'other';
+export type ReceptionCity = 'Hong Kong Island'|'Kowloon'|'New Territories'|'Islands'|'other';
 export interface LeadRoutingAssignment { id:string;channel:ReceptionChannel;city:string;scope:'city'|'global';outcome:'assigned'|'no_city_match'|'unconfigured';assignedAt:string;target:{id:string;value:string;url:string;groupId:string;groupName:string;prefillText?:string;templateVersion?:number}&ReceptionNames|null;whatsappOpenAttempted:boolean;wechatQrDisplayed:boolean; }
 export interface LeadRouting {state:'phone_callback'|'awaiting_assignment'|'assigned'|'no_city_match'|'unconfigured'|'not_requested';assignments:LeadRoutingAssignment[];}
 export interface ReceptionTarget extends ReceptionNames {id:string;cities?:ReceptionCity[];queueOrder?:number;channel:ReceptionChannel;enabled:boolean;groupId:string;groupName:string;groupOrder:number;targetOrder:number;value:string;}

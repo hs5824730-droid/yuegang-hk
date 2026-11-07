@@ -26,20 +26,18 @@ import { IMG, IconBadge, SmartImg, scrollBehavior } from './ui';
 type LFn = (zh: string, en: string) => string;
 
 /* ------------------------------------------------------------------ cities */
-const POS: Record<string, string> = { Melbourne: '35% 100%', Sydney: '30% 45%', Perth: '40% 55%', Adelaide: '55% 60%', Canberra: '50% 45%' };
+const POS: Record<string, string> = { 'Hong Kong Island': '62% 50%', Kowloon: '22% 55%', 'New Territories': '55% 50%', Islands: '62% 45%' };
 
 function cityCopy(c: string, L: LFn) {
   switch (c) {
-    case 'Melbourne':
-      return { state: L('维多利亚州', 'Victoria'), note: L('墨尔本当地团队在城市负责人安排下，处理看房、入住交接等现场事务。', 'In Melbourne, our local team handles viewings, move-in handover and other on-site work, arranged by the city lead.'), photo: L('亚拉河与南岸', 'The Yarra River and Southbank') };
-    case 'Sydney':
-      return { state: L('新南威尔士州', 'New South Wales'), note: L('悉尼当地团队在城市负责人安排下处理招租与托管的现场事务。', 'In Sydney, our local team handles on-site letting and management work, arranged by the city lead.'), photo: L('悉尼港与歌剧院', 'Sydney Harbour and the Opera House') };
-    case 'Perth':
-      return { state: L('西澳大利亚州', 'Western Australia'), note: L('珀斯当地团队在城市负责人安排下，处理看房、交接等现场事务。', 'In Perth, our local team handles viewings, handover and other on-site work, arranged by the city lead.'), photo: L('天鹅河畔的珀斯市中心', 'Perth CBD from the Swan River') };
-    case 'Adelaide':
-      return { state: L('南澳大利亚州', 'South Australia'), note: L('阿德莱德当地团队在城市负责人安排下，处理推广、看房和租客联络。', 'In Adelaide, our local team handles marketing, viewings and tenant contact, arranged by the city lead.'), photo: L('托伦斯河畔的阿德莱德市中心', 'Adelaide CBD across the River Torrens') };
+    case 'Hong Kong Island':
+      return { state: L('中西區 · 灣仔 · 東區 · 南區', 'Central & Western · Wan Chai · Eastern · Southern'), note: L('港島區由同事負責睇樓、交收及維修跟進，涵蓋半山、鰂魚湧、太古、南區等住宅區。', 'On Hong Kong Island we handle viewings, handovers and repairs across Mid-Levels, Quarry Bay, Taikoo, the Southern District and more.'), photo: L('由尖沙咀望向港島', 'Hong Kong Island from Tsim Sha Tsui') };
+    case 'Kowloon':
+      return { state: L('油尖旺 · 九龍城 · 深水埗 · 觀塘', 'Yau Tsim Mong · Kowloon City · Sham Shui Po · Kwun Tong'), note: L('九龍區同事熟悉西九、紅磡、何文田、九龍灣等屋苑，就近安排睇樓同交收。', 'In Kowloon we know West Kowloon, Hung Hom, Ho Man Tin, Kowloon Bay and more, and arrange viewings nearby.'), photo: L('維港旁嘅環球貿易廣場', 'ICC on Victoria Harbour') };
+    case 'New Territories':
+      return { state: L('沙田 · 大埔 · 將軍澳 · 荃灣 · 元朗', 'Sha Tin · Tai Po · Tseung Kwan O · Tsuen Wan · Yuen Long'), note: L('新界新市鎮屋苑多、面積較大，適閤家庭租客；同事按地址安排跟進。', 'New Territories new towns offer larger family homes; a colleague is assigned by address.'), photo: L('沙田城門河畔', 'The Shing Mun River in Sha Tin') };
     default:
-      return { state: L('澳大利亚首都领地', 'Australian Capital Territory'), note: L('堪培拉负责人对接本地房东，招租与托管事务就近处理。', 'Our Canberra lead works with local owners and handles letting and management nearby.'), photo: L('伯利格里芬湖与国会大厦', 'Lake Burley Griffin and Parliament House') };
+      return { state: L('東湧 · 愉景灣 · 馬灣', 'Tung Chung · Discovery Bay · Ma Wan'), note: L('離島住宅鄰近機場及大自然，同事可安排實地或視像睇樓。', 'Island homes sit near the airport and countryside; we arrange in-person or video viewings.'), photo: L('東湧新市鎮', 'Tung Chung new town') };
   }
 }
 
@@ -80,7 +78,7 @@ export function CityAtlas({ selected, onSelect, visual = false }: { selected?: s
 
   return (
     <div className={`atlas ${visual ? 'atlas-visual' : ''}`}>
-      <div className="atlas-list" role="tablist" ref={tablist} aria-label={L('选择城市', 'Choose a city')}>
+      <div className="atlas-list" role="tablist" ref={tablist} aria-label={L('揀地區', 'Choose a city')}>
         {config.cities.map((c, i) => (
           <button
             key={c}
@@ -110,7 +108,7 @@ export function CityAtlas({ selected, onSelect, visual = false }: { selected?: s
           </h3>
           <p>{copy.note}</p>
           <button type="button" className="btn btn-primary" onClick={() => enquire({ city, service: 'letting' })}>
-            {L(`咨询${cityName(city, lang)}的房子`, `Ask about a ${city} property`)}
+            {L(`查詢${cityName(city, lang)}嘅單位`, `Ask about a ${city} property`)}
           </button>
         </div>
       </div>
@@ -121,15 +119,15 @@ export function CityAtlas({ selected, onSelect, visual = false }: { selected?: s
 /* ---------------------------------------------------------------- services */
 export function serviceRows(L: LFn): { icon: ReactNode; t: string; d: string; letting: boolean | string; manage: boolean | string }[] {
   return [
-    { icon: <ClipboardCheck />, t: L('出租前准备建议', 'Pre-letting advice'), d: L('清洁、小修、拍照等准备事项的建议清单', 'A checklist for cleaning, small repairs and photography'), letting: true, manage: true },
-    { icon: <Receipt />, t: L('租金建议', 'Rent guidance'), d: L('参考同区域在租房源，给出挂牌租金建议', 'A suggested asking rent based on comparable local listings'), letting: true, manage: true },
-    { icon: <Camera />, t: L('推广与看房', 'Marketing and viewings'), d: L('发布房源，统一安排看房，回应租客咨询', 'Listing, scheduled viewings and answering tenant enquiries'), letting: true, manage: true },
-    { icon: <UserSearch />, t: L('申请筛选', 'Applicant screening'), d: L('整理申请资料，与您沟通后确定租客', 'We collate applications and agree the tenant with you'), letting: true, manage: true },
-    { icon: <FileSignature />, t: L('签约与入住交接', 'Lease and move-in'), d: L('租约沟通、钥匙交接与入住记录', 'Lease discussions, key handover and move-in records'), letting: true, manage: true },
-    { icon: <Clock />, t: L('租金跟进', 'Rent follow-up'), d: L('关注租金到账，逾期时及时与租客沟通', 'Watching rent payments and following up with tenants when late'), letting: false, manage: true },
-    { icon: <Wrench />, t: L('维修协调', 'Repairs coordination'), d: L('接收报修，联系维修方并向您确认', 'Taking repair requests, arranging trades and checking with you'), letting: false, manage: true },
-    { icon: <MessageSquareText />, t: L('租客日常联络', 'Day-to-day tenant contact'), d: L('租期内的问题由我们统一对接', 'We are the tenant’s point of contact during the lease'), letting: false, manage: true },
-    { icon: <PhoneCall />, t: L('定期向您沟通', 'Regular updates to you'), d: L('用中文或英文，告诉您房子的情况', 'Updates on the property, in Chinese or English'), letting: false, manage: true },
+    { icon: <ClipboardCheck />, t: L('出租前準備建議', 'Pre-letting advice'), d: L('清潔、小修、拍照等準備事項嘅建議清單', 'A checklist for cleaning, small repairs and photography'), letting: true, manage: true },
+    { icon: <Receipt />, t: L('租金建議', 'Rent guidance'), d: L('參考同區域在租樓盤，俾出掛牌租金建議', 'A suggested asking rent based on comparable local listings'), letting: true, manage: true },
+    { icon: <Camera />, t: L('推廣同睇樓', 'Marketing and viewings'), d: L('發佈樓盤，統一安排睇樓，回應租客查詢', 'Listing, scheduled viewings and answering tenant enquiries'), letting: true, manage: true },
+    { icon: <UserSearch />, t: L('申請篩揀', 'Applicant screening'), d: L('整理申請資料，同你溝通後確定租客', 'We collate applications and agree the tenant with you'), letting: true, manage: true },
+    { icon: <FileSignature />, t: L('簽約同交收入住', 'Lease and move-in'), d: L('租約溝通、鑰匙交收同入住記錄', 'Lease discussions, key handover and move-in records'), letting: true, manage: true },
+    { icon: <Clock />, t: L('租金跟進', 'Rent follow-up'), d: L('關注租金到賬，逾期時即時同租客溝通', 'Watching rent payments and following up with tenants when late'), letting: false, manage: true },
+    { icon: <Wrench />, t: L('維修協調', 'Repairs coordination'), d: L('接收報修，聯絡維修方並向你確認', 'Taking repair requests, arranging trades and checking with you'), letting: false, manage: true },
+    { icon: <MessageSquareText />, t: L('租客日常聯絡', 'Day-to-day tenant contact'), d: L('租期內嘅問題由我哋統一對接', 'We are the tenant’s point of contact during the lease'), letting: false, manage: true },
+    { icon: <PhoneCall />, t: L('定期向你溝通', 'Regular updates to you'), d: L('用粵語、普通話或者英文，話你單位嘅情況', 'Updates on the property, in Chinese or English'), letting: false, manage: true },
   ];
 }
 
@@ -147,20 +145,20 @@ export function ServicePicker({ tab: ctl, onTab, compact = false }: { tab?: 'let
       ? {
           img: IMG.white,
           pos: '50% 50%',
-          title: L('仅招租', 'Letting only'),
-          lead: L('我们负责把房子顺利租出去：从准备、推广、看房到签约交接。租客入住后，日常事务由您自己处理。', 'We get the property let: preparation, marketing, viewings, lease and handover. Once the tenant moves in, you look after day-to-day matters yourself.'),
-          fit: L('适合在澳洲本地、愿意自己打理租期事务的房东。', 'Suits owners in Australia who are happy to manage the tenancy themselves.'),
+          title: L('只放租', 'Letting only'),
+          lead: L('我哋負責將單位順利租出去：由準備、推廣、睇樓到簽約交收。租客入住後，日常事務由你自己處理。', 'We get the property let: preparation, marketing, viewings, lease and handover. Once the tenant moves in, you look after day-to-day matters yourself.'),
+          fit: L('適合喺香港本地、願意自己打理租期事務嘅業主。', 'Suits owners in Hong Kong who are happy to manage the tenancy themselves.'),
         }
       : {
           img: IMG.interior,
           pos: '50% 60%',
-          title: L('长期托管', 'Ongoing management'),
-          lead: L('招租完成后继续由团队代管：租金跟进、维修协调、租客联络，并定期用中文或英文向您沟通。', 'After letting, our team keeps looking after it: rent follow-up, repairs, tenant contact and regular updates to you in Chinese or English.'),
-          fit: L('适合名下有多套房，或没时间处理租期事务的房东。', 'Suits owners with several properties, or without time to handle the tenancy.'),
+          title: L('租務管理', 'Ongoing management'),
+          lead: L('放租完成後繼續由團隊代管：租金跟進、維修協調、租客聯絡，並定期用粵語、普通話或者英文向你溝通。', 'After letting, our team keeps looking after it: rent follow-up, repairs, tenant contact and regular updates to you in Chinese or English.'),
+          fit: L('適合名下有多層樓，或沒時間處理租期事務嘅業主。', 'Suits owners with several properties, or without time to handle the tenancy.'),
         };
   return (
     <div className={`picker ${compact ? 'picker-compact' : ''}`}>
-      <div className="seg seg-slide" role="tablist" aria-label={L('选择服务', 'Choose a service')} style={{ ['--n' as string]: 2, ['--i' as string]: tab === 'letting' ? 0 : 1 }}>
+      <div className="seg seg-slide" role="tablist" aria-label={L('揀服務', 'Choose a service')} style={{ ['--n' as string]: 2, ['--i' as string]: tab === 'letting' ? 0 : 1 }}>
         {(['letting', 'management'] as const).map((k) => (
           <button key={k} role="tab" id={`${uid}-${k}`} aria-controls={`${uid}-panel`} aria-selected={tab === k} tabIndex={tab === k ? 0 : -1} className={tab === k ? 'on' : ''} onClick={() => setTab(k)} onKeyDown={(e) => {
             if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
@@ -170,13 +168,13 @@ export function ServicePicker({ tab: ctl, onTab, compact = false }: { tab?: 'let
             document.getElementById(`${uid}-${next}`)?.focus();
           }}>
             {k === 'letting' ? <KeyRound size={18} aria-hidden /> : <ShieldCheck size={18} aria-hidden />}
-            {k === 'letting' ? L('仅招租', 'Letting only') : L('长期托管', 'Ongoing management')}
+            {k === 'letting' ? L('只放租', 'Letting only') : L('租務管理', 'Ongoing management')}
           </button>
         ))}
       </div>
       <div className="picker-body" role="tabpanel" id={`${uid}-panel`} aria-labelledby={`${uid}-${tab}`} key={tab}>
         <div className="picker-img">
-          <SmartImg src={data.img} alt={L('编辑配图：当代住宅', 'Editorial photo: a contemporary home')} position={data.pos} />
+          <SmartImg src={data.img} alt={L('編輯配圖：當代住宅', 'Editorial photo: a contemporary home')} position={data.pos} />
         </div>
         <div className="picker-copy">
           <h3>{data.title}</h3>
@@ -195,10 +193,10 @@ export function ServicePicker({ tab: ctl, onTab, compact = false }: { tab?: 'let
           <p className="picker-fit">{data.fit}</p>
           <div className="row-actions">
             <button type="button" className="btn btn-primary" onClick={() => enquire({ service: tab })}>
-              {tab === 'letting' ? L('咨询仅招租', 'Ask about letting') : L('咨询长期托管', 'Ask about management')}
+              {tab === 'letting' ? L('查詢只放租', 'Ask about letting') : L('查詢租務管理', 'Ask about management')}
             </button>
             <Link to="/services#compare" className="btn btn-quiet">
-              {L('看完整对比', 'Compare in full')}
+              {L('睇完整對比', 'Compare in full')}
             </Link>
           </div>
         </div>
@@ -216,18 +214,18 @@ export function CompareTable() {
         <span className="sr-only">{L('包含', 'Included')}</span>
       </span>
     ) : (
-      <span className="no">{L('房东自理', 'Owner')}</span>
+      <span className="no">{L('業主自理', 'Owner')}</span>
     );
   return (
     <div className="compare" id="compare">
       <table>
-        <caption className="sr-only">{L('仅招租与长期托管服务对比', 'Letting only vs ongoing management')}</caption>
+        <caption className="sr-only">{L('只放租同租務管理服務對比', 'Letting only vs ongoing management')}</caption>
         <thead>
           <tr>
-            <th scope="col">{L('服务内容', 'What’s included')}</th>
-            <th scope="col">{L('仅招租', 'Letting only')}</th>
+            <th scope="col">{L('服務內容', 'What’s included')}</th>
+            <th scope="col">{L('只放租', 'Letting only')}</th>
             <th scope="col" className="hl">
-              {L('长期托管', 'Management')}
+              {L('租務管理', 'Management')}
             </th>
           </tr>
         </thead>
@@ -247,7 +245,7 @@ export function CompareTable() {
           ))}
         </tbody>
       </table>
-      <p className="fine">{L('具体服务范围与收费在委托前书面说明，以双方签署的协议为准。', 'Exact scope and fees are set out in writing before you appoint us, as agreed in the signed agreement.')}</p>
+      <p className="fine">{L('具體服務範圍同收費喺委託前書面說明，以雙方簽署嘅協議為準。', 'Exact scope and fees are set out in writing before you appoint us, as agreed in the signed agreement.')}</p>
     </div>
   );
 }
@@ -256,10 +254,10 @@ export function CompareTable() {
 export function Process() {
   const { L } = useI18n();
   const steps = [
-    { icon: <MessageSquareText />, t: L('告诉我们房子的情况', 'Tell us about the property'), d: L('留下城市、服务需求和联系电话。', 'Share the city, service you need and a contact number.') },
-    { icon: <PhoneCall />, t: L('助理联系您', 'An assistant gets in touch'), d: L('用您习惯的语言，了解房子和您的期望。', 'In your preferred language, to understand the home and what you want.') },
-    { icon: <ClipboardCheck />, t: L('确认方案与费用', 'Agree scope and fees'), d: L('选择仅招租或长期托管，服务内容与费用书面说明。', 'Choose letting only or management; scope and fees are put in writing.') },
-    { icon: <Handshake />, t: L('签署委托，开始招租', 'Sign and start letting'), d: L('当地团队开始招租，进展由助理告诉您。', 'The local team starts letting; your assistant keeps you posted.') },
+    { icon: <MessageSquareText />, t: L('話我哋單位嘅情況', 'Tell us about the property'), d: L('留低地區、服務需求同聯絡電話。', 'Share the city, service you need and a contact number.') },
+    { icon: <PhoneCall />, t: L('同事聯絡你', 'An assistant gets in touch'), d: L('用你習慣嘅語言，了解單位同你嘅期望。', 'In your preferred language, to understand the home and what you want.') },
+    { icon: <ClipboardCheck />, t: L('確認方案同費用', 'Agree scope and fees'), d: L('揀只放租或租務管理，服務內容同費用書面說明。', 'Choose letting only or management; scope and fees are put in writing.') },
+    { icon: <Handshake />, t: L('簽署委託，開始放租', 'Sign and start letting'), d: L('本地團隊開始放租，進展由同事話你。', 'The local team starts letting; your assistant keeps you posted.') },
   ];
   return (
     <ol className="process">
@@ -288,9 +286,9 @@ export function OfferMeter() {
   return (
     <div className="meter">
       <div className="meter-head">
-        <p>{L('您名下准备委托出租的房子', 'Properties you plan to let with us')}</p>
-        <div className="stepper" role="group" aria-label={L('房屋数量', 'Number of properties')}>
-          <button type="button" onClick={() => setN(Math.max(1, n - 1))} disabled={n <= 1} aria-label={L('减少一套', 'One fewer')}>
+        <p>{L('你名下準備委託出租嘅單位', 'Properties you plan to let with us')}</p>
+        <div className="stepper" role="group" aria-label={L('房屋數量', 'Number of properties')}>
+          <button type="button" onClick={() => setN(Math.max(1, n - 1))} disabled={n <= 1} aria-label={L('減少一套', 'One fewer')}>
             <Minus size={16} />
           </button>
           <output aria-live="polite">{L(`${n} 套`, `${n}`)}</output>
@@ -303,12 +301,12 @@ export function OfferMeter() {
         {rows.map((r) => (
           <li key={r} className={`m-${Math.min(r, 3)}`}>
             <span className="m-label">{L(`第 ${r} 套`, `Property ${r}`)}</span>
-            <span className="m-val">{r === 1 ? L('免出租佣金', 'No letting commission') : r === 2 ? L('出租佣金半价', 'Half letting commission') : L('按正常标准', 'Standard terms')}</span>
+            <span className="m-val">{r === 1 ? L('免出租佣金', 'No letting commission') : r === 2 ? L('出租佣金半價', 'Half letting commission') : L('按正常標準', 'Standard terms')}</span>
           </li>
         ))}
       </ol>
       <p className="meter-note">
-        {L(`按同一房东委托的房屋顺序计算，优惠至 ${end}。仅针对出租佣金，不含销售佣金与管理费。`, `Counted in order across one owner’s properties, until ${end}. Letting commission only; sales commission and management fees are not included.`)}
+        {L(`按同一業主委託嘅房屋順序計算，優惠至 ${end}。僅針對出租佣金，不含銷售佣金同管理費。`, `Counted in order across one owner’s properties, until ${end}. Letting commission only; sales commission and management fees are not included.`)}
       </p>
     </div>
   );
@@ -318,28 +316,28 @@ export function OfferMeter() {
 export function faqItems(L: LFn, end: string) {
   return [
     {
-      q: L('仅招租和长期托管，我该选哪个？', 'Letting only or ongoing management — which should I choose?'),
-      a: L('愿意自己处理租期内的事情，仅招租就够了；名下有多套房，或不想处理维修和租客沟通，可以选长期托管。拿不准也没关系，助理会根据您的情况给建议。', 'If you are happy to handle the tenancy yourself, letting only is enough. If you own several properties or would rather not deal with repairs and tenants, choose management. Not sure? Our assistant will suggest what fits.'),
+      q: L('只放租同租務管理，我應該揀邊個？', 'Letting only or ongoing management — which should I choose?'),
+      a: L('願意自己處理租期內嘅事情，只放租就夠了；名下有多層樓，或唔想處理維修同租客溝通，可以揀租務管理。拿不準都沒關係，同事會根據你嘅情況俾建議。', 'If you are happy to handle the tenancy yourself, letting only is enough. If you own several properties or would rather not deal with repairs and tenants, choose management. Not sure? Our assistant will suggest what fits.'),
     },
     {
-      q: L('首套免出租佣金是怎么算的？', 'How does the first-property offer work?'),
-      a: L(`按同一位房东委托出租的房屋顺序计算：第一套免出租佣金，第二套出租佣金半价，优惠至 ${end}。优惠只针对出租佣金，不包括长期托管的管理费、销售佣金或其他费用，具体以书面委托协议为准。`, `Counted in order across the properties one owner appoints us to let: the first has no letting commission, the second is at half. Runs until ${end}. It applies to letting commission only — not management fees, sales commission or other charges — as set out in the written agreement.`),
+      q: L('首個單位免出租佣金係點樣算嘅？', 'How does the first-property offer work?'),
+      a: L(`按同一位業主委託出租嘅房屋順序計算：第一個單位免出租佣金，第二個單位出租佣金半價，優惠至 ${end}。優惠只針對出租佣金，唔包括租務管理嘅管理費、銷售佣金或其他費用，具體以書面委託協議為準。`, `Counted in order across the properties one owner appoints us to let: the first has no letting commission, the second is at half. Runs until ${end}. It applies to letting commission only — not management fees, sales commission or other charges — as set out in the written agreement.`),
     },
     {
-      q: L('我的房子现在由其他中介管理，可以转过来吗？', 'My property is with another agency. Can I move it to you?'),
-      a: L('目前我们不承接由其他中介转来的出租或托管委托。如果您的情况比较特殊，可以先联系助理确认。', 'We don’t currently take over lettings or management from another agency. If your situation is unusual, please check with our assistant first.'),
+      q: L('我嘅單位而家由其他代理管理，可以轉過嚟嗎？', 'My property is with another agency. Can I move it to you?'),
+      a: L('目前我哋唔接由其他代理轉嚟嘅出租或託管委託。如果你嘅情況比較特殊，可以先聯絡同事確認。', 'We don’t currently take over lettings or management from another agency. If your situation is unusual, please check with our assistant first.'),
     },
     {
-      q: L('管理费怎么收？', 'What are the management fees?'),
-      a: L('费用和房产情况、服务范围有关，助理会在您委托之前书面说明。', 'Fees depend on the property and the services you choose. Our assistant sets them out in writing before you appoint us.'),
+      q: L('管理費點樣收？', 'What are the management fees?'),
+      a: L('費用同房產情況、服務範圍有關，同事會在你委託之前書面說明。', 'Fees depend on the property and the services you choose. Our assistant sets them out in writing before you appoint us.'),
     },
     {
-      q: L('租客入住时，可以帮忙搬家吗？', 'Can you help with moving when a tenant moves in?'),
-      a: L('仅招租与长期托管的出租配套都提供免费搬家服务，主要围绕入住这套房子的搬家，房东或租客都可以使用。服务区域、次数等具体安排由助理确认。', 'Free moving comes with letting, under both letting only and management, mainly for the move into the property, and either the owner or the tenant can use it. Areas and other details are confirmed by our assistant.'),
+      q: L('租客入住時，可以幫忙搬屋嗎？', 'Can you help with moving when a tenant moves in?'),
+      a: L('只放租同租務管理嘅出租配套都提供免費搬屋服務，主要圍繞入住呢層單位嘅搬屋，業主或租客都可以使用。服務區域、次數等具體安排由同事確認。', 'Free moving comes with letting, under both letting only and management, mainly for the move into the property, and either the owner or the tenant can use it. Areas and other details are confirmed by our assistant.'),
     },
     {
-      q: L('我也想卖房，或者在澳洲买房？', 'Can you also help me sell or buy?'),
-      a: L('可以。我们同样提供卖房委托和买房咨询；尚未到澳洲的买家可以远程咨询在售房源，有实景 3D 导览的房源会单独标注。', 'Yes. We also handle sales and buying enquiries. Buyers who haven’t arrived in Australia yet can enquire about homes for sale remotely; any listing with a real 3D tour is labelled as such.'),
+      q: L('我都想賣樓，或者喺香港買樓？', 'Can you also help me sell or buy?'),
+      a: L('可以。我哋同樣提供賣樓委託同買樓查詢；尚未到香港嘅買家可以遠程查詢在售樓盤，有實景 3D 導覽嘅樓盤會單獨標註。', 'Yes. We also handle sales and buying enquiries. Buyers who haven’t arrived in Hong Kong yet can enquire about homes for sale remotely; any listing with a real 3D tour is labelled as such.'),
     },
   ];
 }
@@ -375,16 +373,16 @@ export function CtaBand({ title, text }: { title?: string; text?: string; img?: 
         <div className="v-cta-panel">
           <Leaf className="v-cta-leaf" />
           <div className="v-cta-copy">
-            <h2>{title || L('从一套房开始聊', 'Start with one property')}</h2>
-            <p>{text || L('告诉我们房子在哪座城市、想要哪种服务，助理会联系您说明下一步。', 'Tell us the city and the service you have in mind; our assistant will explain what happens next.')}</p>
+            <h2>{title || L('由一層樓開始傾', 'Start with one property')}</h2>
+            <p>{text || L('話我哋單位喺邊區、想要邊種服務，同事會聯絡你講下一步點做。', 'Tell us the city and the service you have in mind; our assistant will explain what happens next.')}</p>
           </div>
           <div className="v-actions">
             <button type="button" className="btn btn-primary" onClick={() => enquire()}>
-              {L('开始委托咨询', 'Start an enquiry')}
+              {L('開始委託查詢', 'Start an enquiry')}
               <ArrowRight size={18} aria-hidden />
             </button>
             <Link to="/services" className="btn btn-line">
-              {L('了解服务', 'See services')}
+              {L('了解服務', 'See services')}
             </Link>
           </div>
         </div>

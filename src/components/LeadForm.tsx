@@ -13,7 +13,7 @@ export { PUBLIC_SERVICES, isPhone } from '../enquiry-options';
 export type { PublicService } from '../enquiry-options';
 
 const GROUP_ICONS = { rental: KeyRound, sales: Tag, advisory: Hammer, other: MessageCircle };
-const GROUP_SHORT_LABELS = { rental: { zh: '出租托管', en: 'Let & manage' }, sales: { zh: '买卖房屋', en: 'Buy & sell' }, advisory: { zh: '置业顾问', en: 'Property services' }, other: { zh: '其他', en: 'Other' } };
+const GROUP_SHORT_LABELS = { rental: { zh: '出租託管', en: 'Let & manage' }, sales: { zh: '買賣物業', en: 'Buy & sell' }, advisory: { zh: '置業顧問', en: 'Property services' }, other: { zh: '其他', en: 'Other' } };
 const PUBLIC_CONTACT_METHODS = ['phone', 'whatsapp', 'wechat', 'email'] as const;
 type PublicContactMethod = typeof PUBLIC_CONTACT_METHODS[number];
 
@@ -126,12 +126,12 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
 
   function check(s: number, focus = true) {
     const e: Record<string, string> = {};
-    if (s === 1 && !f.city.trim()) e.city = L('请选择或填写城市', 'Choose or enter a city');
-    if (s === 1 && rental && f.bedrooms !== '' && (!Number.isInteger(Number(f.bedrooms)) || Number(f.bedrooms) < 0 || Number(f.bedrooms) > 20)) e.bedrooms = L('请填写 0–20 之间的整数', 'Enter a whole number from 0 to 20');
+    if (s === 1 && !f.city.trim()) e.city = L('請揀或填寫地區', 'Choose or enter a city');
+    if (s === 1 && rental && f.bedrooms !== '' && (!Number.isInteger(Number(f.bedrooms)) || Number(f.bedrooms) < 0 || Number(f.bedrooms) > 20)) e.bedrooms = L('請填寫 0–20 之間嘅整數', 'Enter a whole number from 0 to 20');
     if (s === 2) {
-      if (!f.name.trim()) e.name = L('请填写称呼', 'Enter your name');
-      if (!f.contact.trim()) e.contact=L('请填写联系方式（必填）','Contact details are required');
-      else if (!isContact(f.contact, f.contactMethod)) e.contact = f.contactMethod === 'email' ? L('请填写有效的邮箱地址，例如 name@example.com', 'Enter a valid email address, e.g. name@example.com') : f.contactMethod === 'wechat' ? L('请填写有效微信号：6–20 位，以字母开头', 'Enter a valid WeChat ID: 6–20 characters, starting with a letter') : L('请输入有效号码：7–15 位数字，可带 + 和区号', 'Enter a valid number: 7–15 digits, + and area code allowed');
+      if (!f.name.trim()) e.name = L('請填寫稱呼', 'Enter your name');
+      if (!f.contact.trim()) e.contact=L('請填寫聯絡方式（必填）','Contact details are required');
+      else if (!isContact(f.contact, f.contactMethod)) e.contact = f.contactMethod === 'email' ? L('請填寫有效嘅電郵地址，例如 name@example.com', 'Enter a valid email address, e.g. name@example.com') : f.contactMethod === 'wechat' ? L('請填寫有效微信 ID：6–20 位，以字母開頭', 'Enter a valid WeChat ID: 6–20 characters, starting with a letter') : L('請輸入有效號碼：7–15 位數字，可帶 + 同區號', 'Enter a valid number: 7–15 digits, + and area code allowed');
     }
     setErrors(e);
     if (Object.keys(e).length) {
@@ -186,7 +186,7 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
       const m = (err as Error).message;
       setServerError(
         m === 'network' || /^HTTP/.test(m)
-          ? L('没有发送成功：网络或服务暂时不可用。已填写的内容都还在，请稍后重试。', 'Not sent — the network or service is unavailable. Everything you entered is still here; please try again.')
+          ? L('冇發送成功：網絡或服務暫時不可用。已填寫嘅內容都仲在，請稍後重試。', 'Not sent — the network or service is unavailable. Everything you entered is still here; please try again.')
           : m,
       );
     } finally {
@@ -208,15 +208,15 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
     return (
       <div className="lf-done" role="status">
         <CheckCircle2 size={36} strokeWidth={1.6} aria-hidden />
-        <h3>{L('咨询已发送', 'Enquiry sent')}</h3>
+        <h3>{L('查詢已發送', 'Enquiry sent')}</h3>
         <p>
-          {L('助理会通过您留下的方式与您联系。咨询编号 ', 'Our assistant will use your chosen contact method. Reference ')}
+          {L('同事會通過你留低嘅方式同你聯絡。查詢編號 ', 'Our assistant will use your chosen contact method. Reference ')}
           <strong className="mono">{ref}</strong>
         </p>
         <div className="lf-done-actions">
-          {!rental&&<Link className="btn btn-line" to={registrationPath(f.service)} state={{intake:{leadRequestId:lastAttempt.current?.requestId,name:f.name,contactMethod:f.contactMethod,contact:f.contact,city:savedCity.current,service:f.service==='buyer-advisory'?'buyer-advisory':houseWork?f.service:'buyer-advisory'}}}>{L('继续补充详细需求','Add detailed requirements')}</Link>}
+          {!rental&&<Link className="btn btn-line" to={registrationPath(f.service)} state={{intake:{leadRequestId:lastAttempt.current?.requestId,name:f.name,contactMethod:f.contactMethod,contact:f.contact,city:savedCity.current,service:f.service==='buyer-advisory'?'buyer-advisory':houseWork?f.service:'buyer-advisory'}}}>{L('繼續補充詳細需求','Add detailed requirements')}</Link>}
           <button type="button" className="btn btn-quiet" onClick={reset}>
-            {L('再咨询一套房', 'Ask about another property')}
+            {L('再查詢一層樓', 'Ask about another property')}
           </button>
         </div>
       </div>
@@ -227,11 +227,11 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
   const aria = (k: string) => ({ 'aria-invalid': errors[k] ? true : undefined, 'aria-describedby': errors[k] ? id(k + '-err') : undefined });
 
   const titles = [
-    L('需要哪方面的帮助？', 'What can we help with?'),
-    buying ? L('想在哪座城市买房？', 'Where are you looking to buy?') : L('房子在哪座城市？', 'Which city is the property in?'),
-    L('怎么联系您？', 'How can we reach you?'),
+    L('需要邊方面嘅幫助？', 'What can we help with?'),
+    buying ? L('想喺邊區買樓？', 'Where are you looking to buy?') : L('單位喺邊區？', 'Which city is the property in?'),
+    L('點樣聯絡你？', 'How can we reach you?'),
   ];
-  const stepNames = [L('服务', 'Service'), L('城市', 'City'), L('联系', 'Contact')];
+  const stepNames = [L('服務', 'Service'), L('地區', 'City'), L('聯絡', 'Contact')];
 
   return (
     <form className={`lf ${sheet ? 'lf-sheet' : ''}`} onSubmit={submit} noValidate>
@@ -243,8 +243,8 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
           </li>
         ))}
       </ol>
-      {linkedListing && <p className="lf-listing-reference">{L('咨询房源', 'Viewing enquiry')}：{linkedListing.address}, {linkedListing.suburb}</p>}
-      {advisor && <p className="lf-preferred-advisor">{L('指定顾问', 'Preferred advisor')}：{advisor.name} <button type="button" className="linkbtn" onClick={() => set('preferredAdvisorId', '')}>{L('取消指定', 'Clear preference')}</button></p>}
+      {linkedListing && <p className="lf-listing-reference">{L('查詢樓盤', 'Viewing enquiry')}：{linkedListing.address}, {linkedListing.suburb}</p>}
+      {advisor && <p className="lf-preferred-advisor">{L('指定顧問', 'Preferred advisor')}：{advisor.name} <button type="button" className="linkbtn" onClick={() => set('preferredAdvisorId', '')}>{L('取消指定', 'Clear preference')}</button></p>}
 
       <div className={`lf-panel dir-${dir}`} ref={panelRef} key={step}>
         <h3 className="lf-title" tabIndex={-1} data-step-title>
@@ -254,7 +254,7 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
         {step === 0 && (
           <fieldset className="lf-service-picker field">
             <legend className="sr-only">{titles[0]}</legend>
-            <div className="lf-service-groups" role="group" aria-label={L('服务类别', 'Service category')}>
+            <div className="lf-service-groups" role="group" aria-label={L('服務類別', 'Service category')}>
               {Object.entries(SERVICE_GROUPS).map(([group, label]) => {
                 const Icon = GROUP_ICONS[group as keyof typeof GROUP_ICONS];
                 const shortLabel = GROUP_SHORT_LABELS[group as keyof typeof GROUP_SHORT_LABELS];
@@ -264,7 +264,7 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
                 }} aria-label={L(label.zh, label.en)}><Icon size={18} aria-hidden /><span>{L(shortLabel.zh, shortLabel.en)}</span><span className="lf-choice-check" aria-hidden>{active && <Check size={15} />}</span></button>;
               })}
             </div>
-            <p className="lf-service-hint">{L('再选一项具体服务，我们会安排对应同事跟进。', 'Choose a service so we can connect you with the right person.')}</p>
+            <p className="lf-service-hint">{L('再揀一項具體服務，我哋會安排對應同事跟進。', 'Choose a service so we can connect you with the right person.')}</p>
             <div className="lf-service-options">
               {PUBLIC_SERVICES.filter(service => SERVICES[service].group === selectedGroup).map(service => <label key={service} className="lf-service-option">
                 <input type="radio" name={id('service')} value={service} checked={f.service === service} onChange={() => set('service', service)} />
@@ -277,7 +277,7 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
         {step === 1 && (
           <>
             <fieldset className="field" {...aria('city')}>
-              <legend className="sr-only">{L('城市', 'City')}</legend>
+              <legend className="sr-only">{L('地區', 'City')}</legend>
               <div className="lf-cities">
                 {config.cities.map((c) => (
                   <label key={c} className={`lf-city ${!customCity && f.city === c ? 'on' : ''}`}>
@@ -285,25 +285,25 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
                     {cityName(c, lang)}
                   </label>
                 ))}
-                <label className={`lf-city ${customCity ? 'on' : ''}`}><input type="radio" name={id('city')} checked={customCity} onChange={() => { setCustomCity(true); set('city', ''); }} />{L('其他城市', 'Another city')}</label>
+                <label className={`lf-city ${customCity ? 'on' : ''}`}><input type="radio" name={id('city')} checked={customCity} onChange={() => { setCustomCity(true); set('city', ''); }} />{L('其他地區', 'Another city')}</label>
               </div>
-              {customCity && <div className="custom-city"><label htmlFor={id('custom-city')}>{L('城市名称', 'City name')}</label><input id={id('custom-city')} value={f.city} maxLength={80} autoComplete="address-level2" onChange={e => set('city', e.target.value)} {...aria('city')} /></div>}
+              {customCity && <div className="custom-city"><label htmlFor={id('custom-city')}>{L('地區名稱', 'City name')}</label><input id={id('custom-city')} value={f.city} maxLength={80} autoComplete="address-level2" onChange={e => set('city', e.target.value)} {...aria('city')} /></div>}
               {err('city')}
             </fieldset>
             <div className="field">
               <label htmlFor={id('address')}>
-                {buying ? L('关注的区域', 'Suburbs you’re interested in') : L('地址或区域', 'Address or suburb')} <span className="opt">{L('选填', 'optional')}</span>
+                {buying ? L('關注嘅區域', 'Suburbs you’re interested in') : L('地址或區域', 'Address or suburb')} <span className="opt">{L('揀填', 'optional')}</span>
               </label>
               <input id={id('address')} autoComplete={buying ? 'off' : 'street-address'} value={f.address} onChange={(e) => set('address', e.target.value)} />
             </div>
             {f.service !== 'other' && <details className="lf-service-details">
-              <summary>{L('补充需求（全部选填）', 'Add details (all optional)')}</summary>
-              <fieldset className="lf-optional-fields field-grid"><legend className="sr-only">{L('服务相关信息，全部选填', 'Service details, all optional')}</legend>
-                {(rental || houseWork) && <div className="field"><label htmlFor={id('property-type')}>{L('房屋类型', 'Property type')}</label><select id={id('property-type')} value={f.propertyType} onChange={event => set('propertyType', event.target.value as typeof f.propertyType)}><option value="">{L('暂不填写', 'Not specified')}</option><option value="house">{L('独立屋', 'House')}</option><option value="apartment">{L('公寓', 'Apartment')}</option><option value="townhouse">{L('联排屋', 'Townhouse')}</option><option value="other">{L('其他', 'Other')}</option></select></div>}
-                {rental && <div className="field"><label htmlFor={id('bedrooms')}>{L('卧室数', 'Bedrooms')}</label><input id={id('bedrooms')} type="number" inputMode="numeric" min={0} max={20} step={1} {...aria('bedrooms')} value={f.bedrooms} onChange={event => set('bedrooms', event.target.value)} />{err('bedrooms')}</div>}
-                {houseWork && <><div className="field"><label htmlFor={id('need-summary')}>{L('需求简述', 'What needs doing')}</label><textarea id={id('need-summary')} rows={2} maxLength={1000} value={f.needSummary} onChange={event => set('needSummary', event.target.value)} /></div><div className="field"><label htmlFor={id('start-time')}>{L('希望开始时间', 'Preferred start')}</label><select id={id('start-time')} value={f.startTime} onChange={event => set('startTime', event.target.value as typeof f.startTime)}><option value="">{L('暂不填写', 'Not specified')}</option>{Object.entries(START_TIMES).map(([value, label]) => <option value={value} key={value}>{L(label.zh, label.en)}</option>)}</select></div></>}
-                {buying && <div className="field"><label htmlFor={id('budget-range')}>{L('预算区间', 'Budget range')}</label><input id={id('budget-range')} value={f.budgetRange} maxLength={160} placeholder={L('例如 A$80–100 万', 'e.g. A$800,000–1,000,000')} onChange={event => set('budgetRange', event.target.value)} /></div>}
-                {f.service === 'selling' && <div className="field"><label htmlFor={id('sale-time')}>{L('预计出售时间', 'When do you plan to sell?')}</label><input id={id('sale-time')} value={f.saleTime} maxLength={160} placeholder={L('例如 3 个月内', 'e.g. within 3 months')} onChange={event => set('saleTime', event.target.value)} /></div>}
+              <summary>{L('補充需求（全部揀填）', 'Add details (all optional)')}</summary>
+              <fieldset className="lf-optional-fields field-grid"><legend className="sr-only">{L('服務相關資料，全部揀填', 'Service details, all optional')}</legend>
+                {(rental || houseWork) && <div className="field"><label htmlFor={id('property-type')}>{L('房屋類型', 'Property type')}</label><select id={id('property-type')} value={f.propertyType} onChange={event => set('propertyType', event.target.value as typeof f.propertyType)}><option value="">{L('暫不填寫', 'Not specified')}</option><option value="house">{L('獨立屋', 'House')}</option><option value="apartment">{L('公寓', 'Apartment')}</option><option value="townhouse">{L('聯排屋', 'Townhouse')}</option><option value="other">{L('其他', 'Other')}</option></select></div>}
+                {rental && <div className="field"><label htmlFor={id('bedrooms')}>{L('卧室數', 'Bedrooms')}</label><input id={id('bedrooms')} type="number" inputMode="numeric" min={0} max={20} step={1} {...aria('bedrooms')} value={f.bedrooms} onChange={event => set('bedrooms', event.target.value)} />{err('bedrooms')}</div>}
+                {houseWork && <><div className="field"><label htmlFor={id('need-summary')}>{L('需求簡述', 'What needs doing')}</label><textarea id={id('need-summary')} rows={2} maxLength={1000} value={f.needSummary} onChange={event => set('needSummary', event.target.value)} /></div><div className="field"><label htmlFor={id('start-time')}>{L('希望開始時間', 'Preferred start')}</label><select id={id('start-time')} value={f.startTime} onChange={event => set('startTime', event.target.value as typeof f.startTime)}><option value="">{L('暫不填寫', 'Not specified')}</option>{Object.entries(START_TIMES).map(([value, label]) => <option value={value} key={value}>{L(label.zh, label.en)}</option>)}</select></div></>}
+                {buying && <div className="field"><label htmlFor={id('budget-range')}>{L('預算區間', 'Budget range')}</label><input id={id('budget-range')} value={f.budgetRange} maxLength={160} placeholder={L('例如 HK$80–100 萬', 'e.g. HK$800,000–1,000,000')} onChange={event => set('budgetRange', event.target.value)} /></div>}
+                {f.service === 'selling' && <div className="field"><label htmlFor={id('sale-time')}>{L('預計出售時間', 'When do you plan to sell?')}</label><input id={id('sale-time')} value={f.saleTime} maxLength={160} placeholder={L('例如 3 個月內', 'e.g. within 3 months')} onChange={event => set('saleTime', event.target.value)} /></div>}
               </fieldset>
             </details>}
           </>
@@ -321,20 +321,20 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
               </button>
             </p>
             <div className="field">
-              <label htmlFor={id('name')}>{L('称呼', 'Name')}</label>
+              <label htmlFor={id('name')}>{L('稱呼', 'Name')}</label>
               <input id={id('name')} autoComplete="name" enterKeyHint="next" value={f.name} onChange={(e) => set('name', e.target.value)} {...aria('name')} />
               {err('name')}
             </div>
             <fieldset className="field lf-contact-methods lf-salutation">
-              <legend>{L('先生／女士（选填）', 'Mr / Ms (optional)')}</legend>
+              <legend>{L('先生／女士（揀填）', 'Mr / Ms (optional)')}</legend>
               <div className="lf-contact-options">{(Object.keys(SALUTATIONS) as Salutation[]).map(value => <button key={value} type="button" aria-pressed={f.salutation === value} onClick={() => set('salutation', f.salutation === value ? '' : value)}>{L(SALUTATIONS[value].zh, SALUTATIONS[value].en)}</button>)}</div>
             </fieldset>
             <fieldset className="field lf-contact-methods">
-              <legend>{L('联系方法', 'Contact method')}</legend>
+              <legend>{L('聯絡方法', 'Contact method')}</legend>
               <div className="lf-contact-options">{PUBLIC_CONTACT_METHODS.map(method => <button key={method} type="button" aria-pressed={f.contactMethod === method} onClick={() => { set('contactMethod', method); setErrors(previous => ({ ...previous, contact: '' })); }}>{L(CONTACT_METHODS[method].zh, CONTACT_METHODS[method].en)}</button>)}</div>
             </fieldset>
             <div className="field">
-              <label htmlFor={id('contact')}>{L('联系方式（必填）', 'Contact details (required)')}</label>
+              <label htmlFor={id('contact')}>{L('聯絡方式（必填）', 'Contact details (required)')}</label>
               <input
                 id={id('contact')}
                 required aria-required="true"
@@ -343,7 +343,7 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
                 autoComplete={f.contactMethod === 'email' ? 'email' : f.contactMethod === 'wechat' ? 'off' : 'tel'}
                 maxLength={160}
                 enterKeyHint="next"
-                placeholder={f.contactMethod === 'email' ? 'name@example.com' : f.contactMethod === 'wechat' ? L('您的微信号', 'Your WeChat ID') : '+61 4xx xxx xxx'}
+                placeholder={f.contactMethod === 'email' ? 'name@example.com' : f.contactMethod === 'wechat' ? L('你嘅微信 ID', 'Your WeChat ID') : '+61 4xx xxx xxx'}
                 value={f.contact}
                 onChange={(e) => set('contact', e.target.value)}
                 {...aria('contact')}
@@ -352,13 +352,13 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
             </div>
             <div className="field">
               <label htmlFor={id('message')}>
-                {L('补充说明', 'Anything else')} <span className="opt">{L('选填', 'optional')}</span>
+                {L('補充說明', 'Anything else')} <span className="opt">{L('揀填', 'optional')}</span>
               </label>
               <textarea
                 id={id('message')}
                 rows={2}
                 maxLength={2000}
-                placeholder={L('房屋类型、空置时间、方便联系的时段', 'Property type, when it’s vacant, best time to call')}
+                placeholder={L('房屋類型、空置時間、方便聯絡嘅時段', 'Property type, when it’s vacant, best time to call')}
                 value={f.message}
                 onChange={(e) => set('message', e.target.value)}
               />
@@ -380,7 +380,7 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
       </div>
 
       <div className="lf-nav">
-        {step === 2 && <p className="lf-submit-note">{L('提交后，我们会按您提供的方式联系您。', 'After you submit, we’ll contact you using the details you provide.')} <a href={localizedHref('/privacy', lang)} target="_blank" rel="noopener noreferrer">{L('隐私说明', 'Privacy')}<ExternalLink size={12} aria-hidden /><span className="sr-only">{L('（在新标签页打开）', ' (opens in a new tab)')}</span></a></p>}
+        {step === 2 && <p className="lf-submit-note">{L('提交之後，我哋會用你留低嘅方法搵你。你嘅資料只會用嚟跟進今次查詢，未經你同意唔會用嚟做直接促銷。', 'After you submit, we will contact you using the details you provide. Your data is used only for this enquiry and never for direct marketing without your consent.')} <a href={localizedHref('/privacy', lang)} target="_blank" rel="noopener noreferrer">{L('收集個人資料聲明', 'Personal information collection statement')}<ExternalLink size={12} aria-hidden /><span className="sr-only">{L('（喺新分頁打開）', ' (opens in a new tab)')}</span></a></p>}
         {step > 0 && (
           <button type="button" className="btn btn-quiet lf-back" onClick={() => setStep(step - 1)} aria-label={L('上一步', 'Back')}>
             <ArrowLeft size={18} aria-hidden />
@@ -388,13 +388,13 @@ export default function LeadForm({ defaultService = 'letting', defaultCity = '',
           </button>
         )}
         <button type="submit" className="btn btn-primary lf-next" disabled={sending}>
-          {step < 2 ? L('下一步', 'Continue') : sending ? L('正在发送…', 'Sending…') : serverError ? L('重新发送', 'Send again') : L('提交联系方式', 'Submit contact details')}
+          {step < 2 ? L('下一步', 'Continue') : sending ? L('正在發送…', 'Sending…') : serverError ? L('重新發送', 'Send again') : L('提交聯絡方式', 'Submit contact details')}
         </button>
       </div>
       {step === 0 && !sheet && (
         <p className="fine lf-foot">
-          {L('提交咨询不等于委托，助理会先了解情况再说明服务与费用。', 'An enquiry isn’t an appointment; our assistant explains services and fees first.')}{' '}
-          <Link to="/services">{L('服务说明', 'Services')}</Link>
+          {L('提交查詢不等於委託，同事會先了解情況再說明服務同費用。', 'An enquiry isn’t an appointment; our assistant explains services and fees first.')}{' '}
+          <Link to="/services">{L('服務說明', 'Services')}</Link>
         </p>
       )}
     </form>

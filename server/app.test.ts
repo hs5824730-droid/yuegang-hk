@@ -31,14 +31,14 @@ test('property platform: persistence, permissions, validation and notifications'
   };
   const property = {
     title: { zh: '测试房产', en: 'Test property' }, description: { zh: '测试', en: 'Test' },
-    address: '1 Test Street', city: 'Melbourne', suburb: 'Test', postcode: '3000', type: 'house',
+    address: '1 Test Street', city: 'Kowloon', suburb: 'Test', postcode: '3000', type: 'house',
     status: 'sale', price: 1000000, priceLabel: { zh: '', en: '' }, beds: 3, baths: 2, cars: 1, area: 200,
     images: [], floorplan: '', tourUrl: '', tourKind: 'none', published: false,
     events: [{ date: '2026-10-22', type: 'listed', price: 1000000, note: { zh: '', en: '' } }],
   };
   let adminCookie = ''; let managerCookie = ''; let assistantCookie = '';
   let leadId = ''; let propertyId = ''; let managerId = '';
-  const input = { name: '=Test Owner', contact: '+61 400 123 456', city: 'Melbourne', service: 'management', language: 'zh', message: 'Test only', currentlyManaged: false, consent: true, requestId: randomUUID() };
+  const input = { name: '=Test Owner', contact: '+61 400 123 456', city: 'Kowloon', service: 'management', language: 'zh', message: 'Test only', currentlyManaged: false, consent: true, requestId: randomUUID() };
   try {
     await t.test('production frames allow the exact map origin without widening tour URLs', async () => {
       const previous = config.production;
@@ -100,16 +100,16 @@ test('property platform: persistence, permissions, validation and notifications'
       assert.equal((await request('/api/properties')).body.properties.length, 0);
       assert.equal((await request('/api/properties/' + propertyId)).response.status, 404);
       const published = await request('/api/admin/properties/' + propertyId, 'PUT', { ...property, published: true }, adminCookie); assert.equal(published.response.status, 200);
-      assert.equal((await request('/api/properties?city=Melbourne&beds=3&minPrice=900000')).body.properties.length, 1);
-      assert.equal((await request('/api/properties?city=Sydney')).body.properties.length, 0);
+      assert.equal((await request('/api/properties?city=Kowloon&beds=3&minPrice=900000')).body.properties.length, 1);
+      assert.equal((await request('/api/properties?city=Hong Kong Island')).body.properties.length, 0);
       assert.equal((await request('/api/properties?minPrice=bad')).response.status, 400);
       assert.equal((await request('/api/admin/properties', 'POST', { ...property, tourKind: 'real', tourUrl: 'https://evil.example/tour' }, adminCookie)).response.status, 400);
       assert.equal((await request('/api/admin/properties', 'POST', { ...property, events: [{ ...property.events[0], date: '2026-02-30' }] }, adminCookie)).response.status, 400);
     });
     await t.test('cities and roles limit data access and writes', async () => {
-      const manager = await request('/api/admin/users', 'POST', { name: 'Sydney Manager', email: 'manager@example.test', password: 'TestManagerPassword123', role: 'manager', city: 'Sydney' }, adminCookie);
+      const manager = await request('/api/admin/users', 'POST', { name: 'Hong Kong Island Manager', email: 'manager@example.test', password: 'TestManagerPassword123', role: 'manager', city: 'Hong Kong Island' }, adminCookie);
       assert.equal(manager.response.status, 201); managerId = manager.body.user.id;
-      const assistant = await request('/api/admin/users', 'POST', { name: 'Melbourne Assistant', email: 'assistant@example.test', password: 'TestAssistantPassword123', role: 'assistant', city: 'Melbourne' }, adminCookie); assert.equal(assistant.response.status, 201);
+      const assistant = await request('/api/admin/users', 'POST', { name: 'Kowloon Assistant', email: 'assistant@example.test', password: 'TestAssistantPassword123', role: 'assistant', city: 'Kowloon' }, adminCookie); assert.equal(assistant.response.status, 201);
       const login = await request('/api/admin/login', 'POST', { email: 'manager@example.test', password: 'TestManagerPassword123' }); managerCookie = login.response.headers.get('set-cookie')!.split(';')[0];
       const login2 = await request('/api/admin/login', 'POST', { email: 'assistant@example.test', password: 'TestAssistantPassword123' }); assistantCookie = login2.response.headers.get('set-cookie')!.split(';')[0];
       assert.equal((await request('/api/admin/leads', 'GET', undefined, managerCookie)).body.leads.length, 0);
@@ -166,13 +166,13 @@ test('property platform: persistence, permissions, validation and notifications'
       assert.equal(leads.find((lead) => lead.id === legacy.body.id)!.currentlyManaged, false);
     });
     await t.test('other-city enquiries reach admin without crossing city permissions', async () => {
-      const result = await request('/api/leads', 'POST', { ...input, city: ' Brisbane ', requestId: randomUUID() });
+      const result = await request('/api/leads', 'POST', { ...input, city: ' New Territories ', requestId: randomUUID() });
       assert.equal(result.response.status, 201);
       const all = (await request('/api/admin/leads', 'GET', undefined, adminCookie)).body.leads;
-      assert.equal(all.find((lead: any) => lead.id === result.body.id).city, 'Brisbane');
+      assert.equal(all.find((lead: any) => lead.id === result.body.id).city, 'New Territories');
       const scoped = (await request('/api/admin/leads', 'GET', undefined, managerCookie)).body.leads;
       assert.ok(!scoped.some((lead: any) => lead.id === result.body.id));
-      for (const city of [' ', 'a'.repeat(81), 'Sydney\nprivate']) {
+      for (const city of [' ', 'a'.repeat(81), 'Hong Kong Island\nprivate']) {
         assert.equal(leadSchema.safeParse({ ...input, city, requestId: randomUUID() }).success, false);
       }
     });

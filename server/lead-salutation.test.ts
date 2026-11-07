@@ -5,7 +5,7 @@ import {leadSalutationComBundle} from '../scripts/com-lead-salutation.mjs';
 import {leadEmailComBundle} from '../scripts/com-lead-email.mjs';
 import {notificationMessage} from './notification-message.js';
 
-const lead=(extra:Record<string,unknown>={})=>({name:'虚构验收',contact:'+447700900001',contactMethod:'phone',city:'Sydney',service:'letting',language:'zh',...extra});
+const lead=(extra:Record<string,unknown>={})=>({name:'虚构验收',contact:'+447700900001',contactMethod:'phone',city:'Hong Kong Island',service:'letting',language:'zh',...extra});
 
 test('callback leads accept an optional Mr or Ms and nothing else',()=>{
  assert.equal(leadSchema.parse(lead({salutation:'mr'})).salutation,'mr');
@@ -37,7 +37,7 @@ test('callback leads accept email as the contact method and the frozen com form 
 });
 
 test('email leads are reported with the address and an email-reply channel',()=>{
- const text=notificationMessage({lead_id:'x',city:'Sydney',service:'house-care',created_at:'2026-11-02T00:00:00Z',data:JSON.stringify({name:'虚构',contact:'fictional@example.test',contactMethod:'email',salutation:'ms'})},'');
+ const text=notificationMessage({lead_id:'x',city:'Hong Kong Island',service:'house-care',created_at:'2026-11-02T00:00:00Z',data:JSON.stringify({name:'虚构',contact:'fictional@example.test',contactMethod:'email',salutation:'ms'})},'');
  assert.match(text,/【客户性别】女（女士）\n【联系电话】未提供\n/);
  assert.match(text,/联系方式种类：邮箱（fictional@example.test）\n分流渠道：未分流（邮件回复）\n/);
 });

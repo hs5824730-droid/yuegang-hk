@@ -1,3 +1,23 @@
+# 悦港 Harbour Joy · 香港物业网站
+
+由 EUCOVE（origin/main e8f448d）复制，改为香港市场版本。2026-11-07 起在本目录独立开发，**未连接 GitHub 或 Cloudflare，未发布**。
+
+## 与 EUCOVE 的主要差异
+
+- 品牌：中文 悦港、英文 Harbour Joy；标志为楼宇加海浪图形（不含文字），配色海军蓝 #0B1F45、米白 #F7EFDC、黄铜 #C9A86A。
+- 语言：中文为粤语口语、香港繁体（zh-HK），可切换英文。后台管理页保留书面繁体。
+- 地区：港岛、九龙、新界、离岛（server/policy.ts）。港币、月租、实用面积（呎）。
+- 首页「立体实景」：src/components/HkScene3D.tsx + hk-scene-engine.ts，用 Wikimedia 香港照片和本机 Depth Anything V2 景深图（scripts/create-hk-depth-maps.py 生成 public/depth/hk）组成可拖动的 3D 点云浮雕；WebGL 不可用时显示静态照片。
+- 房源：server/owner-listings.json 为 11 个**示范盘**（demo: true），网页明确标注「示范盘」。上线前必须换成已签表格 3／表格 5 的真实放盘，再把 src/hk-site.ts 的 SHOW_DEMO_LISTINGS 改为 false。EUCOVE 的第三方摘录房源已清空——香港《地产代理条例》不允许未经业主书面同意刊登放盘。
+- 合规：页脚显示公司地产代理牌照号码（src/hk-site.ts 的 EAA_COMPANY_LICENCE，未填时显示「待公布」）；私隐政策按《个人资料（私隐）条例》改写；团队成员需有牌照号码才列出（src/components/Team.tsx）。
+- wrangler.jsonc / wrangler.net.jsonc 已改为 harbour-joy，去掉 eucove 域名、D1 ID 和 R2 桶，防止误发布到 EUCOVE。部署前需建立悦港自己的 D1、R2 和域名。
+
+## 待确认
+
+公司牌照号码、正式域名（src/hk-site.ts 的 SITE_ORIGIN）、业主优惠（沿用 EUCOVE「首个单位免佣、第二个半价、送搬屋，至 2027 年 2 月」）、团队成员、WhatsApp 号码、真实盘源。
+
+---
+
 # 澳洲房产中介网站
 
 GitHub 私有仓库：[2026-10-27-EUCOVE](https://github.com/hs5824730-droid/2026-10-27-EUCOVE)。其他智能体接手前请阅读 [AGENTS.md](AGENTS.md) 和 [GitHub 协作与同步](docs/GitHub协作与同步.md)。

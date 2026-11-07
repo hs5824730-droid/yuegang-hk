@@ -1,6 +1,6 @@
 import type { Bi } from '../api';
 
-/** Populate only with verified EUCOVE client work and approved feedback. */
+/** Populate only with verified Harbour Joy client work and approved feedback. */
 export interface SalesClientCase {
   id: string;
   service: 'buying' | 'selling';

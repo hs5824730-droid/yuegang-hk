@@ -35,7 +35,7 @@ test('frozen com navigation and tiles link to home services without changing the
  const source=readFileSync('site/com/assets/index-Db9ODUdG.js','utf8');
  const result=homeServicesComBundle(source);
  assert.equal(result.split('i("/zh/home-services","/en/home-services")').length,4);
- assert.ok(result.includes('{to:"/advisory",label:i("置业顾问","Property services")},{to:i("/zh/home-services","/en/home-services"),label:i("房屋服务","Home services")},'));
+ assert.ok(result.includes('{to:"/advisory",label:i("置業顧問","Property services")},{to:i("/zh/home-services","/en/home-services"),label:i("房屋服务","Home services")},'));
  assert.equal(result.split('reloadDocument:').length-source.split('reloadDocument:').length,5);
  assert.equal((result.match(/className:/g)||[]).length,(source.match(/className:/g)||[]).length);
  assert.doesNotMatch(result,/service=care"|service=house-care"/);

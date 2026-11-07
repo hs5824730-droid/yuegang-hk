@@ -1,4 +1,4 @@
-/* Sol: compact adaptations within the established EUCOVE design. */
+/* Sol: compact adaptations within the established Harbour Joy design. */
 .ds .ds-team-split { grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:32px; }
 .ds-team-split .ds-avatars { align-self:center; gap:12px 8px; }
 .ds-team-split .ds-avatar { width:100%; max-width:64px; height:auto; aspect-ratio:3/4; border-radius:0; border:1px solid var(--ds-line); }

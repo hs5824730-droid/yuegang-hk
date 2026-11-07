@@ -2,7 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {publicViewingListing,publicViewingListings} from './public-viewing.js';
-import release from './public-viewing-release.json';
+import releaseJson from './public-viewing-release.json';
+import type { ViewingListing } from '../src/viewing-types.js';
+// 悦港 starts with an empty third-party release; keep the listing type for these legacy checks.
+const release = releaseJson as unknown as { version: number; release: string; listings: ViewingListing[]; media: Record<string, { key: string; sha256: string; bytes: number; contentType: string }> };
 import {ownerListingsComBundle} from '../scripts/com-owner-listings.mjs';
 import {saleListingComBundle} from '../scripts/com-sale-listing.mjs';
 import {leadSchema} from './schema.js';

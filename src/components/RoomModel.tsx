@@ -20,10 +20,10 @@ export default function RoomModel({ beds = 2, baths = 1 }: { beds?:number; baths
   const bathroomCount = Number.isFinite(baths) ? Math.min(6,Math.max(0,Math.floor(baths))) : 1;
   const width = Math.max(8.4,bedroomCount*2.8);
   const rooms:Room[] = [
-    { id:'living',zh:'客餐厅',en:'Living / dining',x:-width/6,z:1.8,w:width*2/3,d:4,type:'living' },
-    { id:'kitchen',zh:'厨房',en:'Kitchen',x:width/3,z:2.8,w:width/3,d:2,type:'kitchen' },
+    { id:'living',zh:'客餐廳',en:'Living / dining',x:-width/6,z:1.8,w:width*2/3,d:4,type:'living' },
+    { id:'kitchen',zh:'廚房',en:'Kitchen',x:width/3,z:2.8,w:width/3,d:2,type:'kitchen' },
     ...Array.from({length:bedroomCount},(_,i)=>({id:'bed'+i,zh:i===0?'主卧':`卧室 ${i+1}`,en:i===0?'Main bedroom':`Bedroom ${i+1}`,x:-width/2+(i+.5)*width/bedroomCount,z:-1.8,w:width/bedroomCount,d:3.2,type:'bed' as const})),
-    ...Array.from({length:bathroomCount},(_,i)=>({id:'bath'+i,zh:`卫浴${bathroomCount>1?' '+(i+1):''}`,en:`Bathroom${bathroomCount>1?' '+(i+1):''}`,x:width/3,z:.25+(i+.5)*1.5/bathroomCount,w:width/3,d:1.5/bathroomCount,type:'bath' as const})),
+    ...Array.from({length:bathroomCount},(_,i)=>({id:'bath'+i,zh:`衞浴${bathroomCount>1?' '+(i+1):''}`,en:`Bathroom${bathroomCount>1?' '+(i+1):''}`,x:width/3,z:.25+(i+.5)*1.5/bathroomCount,w:width/3,d:1.5/bathroomCount,type:'bath' as const})),
   ];
   const select = (id:string) => { selectedRoom.current=id;setSelected(id); engine.current?.select(id); };
   useEffect(() => {
@@ -138,19 +138,19 @@ export default function RoomModel({ beds = 2, baths = 1 }: { beds?:number; baths
   },[bedroomCount,bathroomCount]);
   const current=rooms.find(r=>r.id===selected);
   return <div className="room-model" onKeyDown={e=>{if(e.key==='Escape'){engine.current?.interact(false);setInteractive(false);}}}>
-    <div className="model-caption"><span>3D</span>{L('空间示意 · 非房源实景或真实户型', 'Spatial illustration · not the actual property or floor plan')}</div>
-    <div className="model-canvas" ref={host} hidden={failed} role="img" aria-label={L('按卧卫数生成的空间示意，非真实户型','Spatial illustration based on room counts, not an actual floor plan')} aria-busy={!ready&&!failed} />
-    {!ready&&!failed&&<p role="status">{L('正在加载空间示意…','Loading the spatial illustration…')}</p>}
-    {failed && <div className="model-fallback" role="status"><p>{L('设备未能显示 3D，您仍可查看房间列表和房源资料。', '3D could not be displayed on this device. Room labels and listing details remain available.')}</p></div>}
-    <div className="model-toolbar" role="group" aria-label={L('空间示意控制','Spatial illustration controls')} aria-describedby={helpId}>
-      <button type="button" disabled={!ready||failed} aria-pressed={interactive} onClick={()=>{setInteractive(!interactive);engine.current?.interact(!interactive);}}><Hand size={16} aria-hidden />{interactive?L('退出拖动','Stop dragging'):L('拖动旋转','Drag to rotate')}</button>
-      <button type="button" disabled={!ready||failed} aria-label={L('向左旋转','Rotate left')} onClick={()=>engine.current?.rotate(-.3)}><RotateCcw size={17} /></button>
-      <button type="button" disabled={!ready||failed} aria-label={L('缩小','Zoom out')} onClick={()=>engine.current?.zoom(-.15)}><Minus size={17} /></button>
+    <div className="model-caption"><span>3D</span>{L('空間示意 · 非樓盤實景或真實戶型', 'Spatial illustration · not the actual property or floor plan')}</div>
+    <div className="model-canvas" ref={host} hidden={failed} role="img" aria-label={L('按卧衞數生成嘅空間示意，非真實戶型','Spatial illustration based on room counts, not an actual floor plan')} aria-busy={!ready&&!failed} />
+    {!ready&&!failed&&<p role="status">{L('正在加載空間示意…','Loading the spatial illustration…')}</p>}
+    {failed && <div className="model-fallback" role="status"><p>{L('設備未能顯示 3D，你仍可查睇樓間列表同樓盤資料。', '3D could not be displayed on this device. Room labels and listing details remain available.')}</p></div>}
+    <div className="model-toolbar" role="group" aria-label={L('空間示意控制','Spatial illustration controls')} aria-describedby={helpId}>
+      <button type="button" disabled={!ready||failed} aria-pressed={interactive} onClick={()=>{setInteractive(!interactive);engine.current?.interact(!interactive);}}><Hand size={16} aria-hidden />{interactive?L('退出拖動','Stop dragging'):L('拖動旋轉','Drag to rotate')}</button>
+      <button type="button" disabled={!ready||failed} aria-label={L('向左旋轉','Rotate left')} onClick={()=>engine.current?.rotate(-.3)}><RotateCcw size={17} /></button>
+      <button type="button" disabled={!ready||failed} aria-label={L('縮小','Zoom out')} onClick={()=>engine.current?.zoom(-.15)}><Minus size={17} /></button>
       <button type="button" disabled={!ready||failed} aria-label={L('放大','Zoom in')} onClick={()=>engine.current?.zoom(.15)}><Plus size={17} /></button>
-      <button type="button" disabled={!ready||failed} aria-label={L('恢复视角','Reset view')} onClick={()=>engine.current?.reset()}><Maximize2 size={17} /></button>
-      <button type="button" disabled={!ready||failed} aria-pressed={playing} onClick={()=>{const next=!playing;setPlaying(next);engine.current?.play(next);}}>{playing?<Pause size={16} />:<Play size={16} />}{playing?L('暂停','Pause'):L('环绕预览','Orbit preview')}</button>
+      <button type="button" disabled={!ready||failed} aria-label={L('恢復視角','Reset view')} onClick={()=>engine.current?.reset()}><Maximize2 size={17} /></button>
+      <button type="button" disabled={!ready||failed} aria-pressed={playing} onClick={()=>{const next=!playing;setPlaying(next);engine.current?.play(next);}}>{playing?<Pause size={16} />:<Play size={16} />}{playing?L('暫停','Pause'):L('環繞預覽','Orbit preview')}</button>
     </div>
-    <div className="model-room-list" role="group" aria-label={L('选择示意房间','Choose an illustrative room')}>{rooms.map(r=><button key={r.id} type="button" aria-pressed={selected===r.id} onClick={()=>select(r.id)}>{L(r.zh,r.en)}</button>)}</div>
-    <p className="model-room-note" id={helpId} aria-live="polite"><strong>{current?L(current.zh,current.en):''}</strong> · {L('仅用于了解空间概念，布局、家具和比例均为示意。可使用旋转和缩放按钮；按 Esc 退出拖动，恢复页面滚动。', 'Layout, furniture and proportions are illustrative only. Use rotation and zoom buttons; press Escape to stop dragging and restore page scrolling.')}</p>
+    <div className="model-room-list" role="group" aria-label={L('揀示意房間','Choose an illustrative room')}>{rooms.map(r=><button key={r.id} type="button" aria-pressed={selected===r.id} onClick={()=>select(r.id)}>{L(r.zh,r.en)}</button>)}</div>
+    <p className="model-room-note" id={helpId} aria-live="polite"><strong>{current?L(current.zh,current.en):''}</strong> · {L('僅用於了解空間概念，佈局、傢俱同比例均為示意。可使用旋轉同縮放按鈕；按 Esc 退出拖動，恢復頁面滾動。', 'Layout, furniture and proportions are illustrative only. Use rotation and zoom buttons; press Escape to stop dragging and restore page scrolling.')}</p>
   </div>;
 }

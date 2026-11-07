@@ -31,28 +31,28 @@ export default function GardenModel({ design, title, onPhoto }: { design: number
   useEffect(() => { if (status === 'ready') engine.current?.interact(interactive); }, [interactive, status]);
   const chooseView = (value: GardenView) => { engine.current?.setView(value); setView(value); };
   return <div className="garden-model" onKeyDown={event => { if (event.key === 'Escape') setInteractive(false); }}>
-    <div className="garden-model-views" role="group" aria-label={L('三维视角', '3D viewpoints')}>
-      {(['overview', 'plan', 'close'] as const).map((value, i) => <button key={value} type="button" aria-pressed={view === value} disabled={status !== 'ready'} onClick={() => chooseView(value)}>{[L('鸟瞰', 'Overview'), L('俯视', 'Top view'), L('近景', 'Close view')][i]}</button>)}
-      <span>{L('3D 设计示意', '3D design study')}</span>
+    <div className="garden-model-views" role="group" aria-label={L('三維視角', '3D viewpoints')}>
+      {(['overview', 'plan', 'close'] as const).map((value, i) => <button key={value} type="button" aria-pressed={view === value} disabled={status !== 'ready'} onClick={() => chooseView(value)}>{[L('鳥瞰', 'Overview'), L('俯視', 'Top view'), L('近景', 'Close view')][i]}</button>)}
+      <span>{L('3D 設計示意', '3D design study')}</span>
     </div>
     <div className="garden-model-stage">
-      <div className="garden-model-canvas" ref={host} role="img" aria-label={L(`${title}，可旋转的三维设计示意`, `${title}, interactive 3D design study`)} aria-describedby={help} hidden={status === 'failed'} />
-      {status === 'loading' && <p className="garden-model-status" role="status">{L('正在构建三维庭院…', 'Building the 3D garden…')}</p>}
+      <div className="garden-model-canvas" ref={host} role="img" aria-label={L(`${title}，可旋轉嘅三維設計示意`, `${title}, interactive 3D design study`)} aria-describedby={help} hidden={status === 'failed'} />
+      {status === 'loading' && <p className="garden-model-status" role="status">{L('正在構建三維庭院…', 'Building the 3D garden…')}</p>}
       {status === 'failed' && <div className="garden-model-error" role="status">
-        <p>{L('当前设备暂时无法显示三维场景，可以继续查看完整设计图。', '3D is unavailable on this device. You can still view the full design image.')}</p>
-        <button type="button" onClick={onPhoto}>{L('返回设计图', 'Back to images')}</button>
-        <button type="button" onClick={() => setAttempt(a => a + 1)}>{L('重新加载 3D', 'Reload 3D')}</button>
+        <p>{L('當前設備暫時無法顯示三維場景，可以繼續查睇完整設計圖。', '3D is unavailable on this device. You can still view the full design image.')}</p>
+        <button type="button" onClick={onPhoto}>{L('返回設計圖', 'Back to images')}</button>
+        <button type="button" onClick={() => setAttempt(a => a + 1)}>{L('重新加載 3D', 'Reload 3D')}</button>
       </div>}
     </div>
-    <div className="garden-model-tools" role="group" aria-label={L('三维操作', '3D controls')}>
-      <button type="button" className="garden-model-drag" disabled={status !== 'ready'} aria-pressed={interactive} onClick={() => setInteractive(v => !v)}><Hand size={16} aria-hidden />{interactive ? L('结束拖动', 'Stop dragging') : L('启用拖动', 'Enable dragging')}</button>
-      <button type="button" disabled={status !== 'ready'} aria-label={L('向左旋转', 'Rotate left')} onClick={() => engine.current?.rotate(-1)}><ArrowLeft size={17} aria-hidden /></button>
-      <button type="button" disabled={status !== 'ready'} aria-label={L('向右旋转', 'Rotate right')} onClick={() => engine.current?.rotate(1)}><ArrowRight size={17} aria-hidden /></button>
-      <button type="button" disabled={status !== 'ready'} aria-label={L('缩小模型', 'Zoom out')} onClick={() => engine.current?.zoom(-1)}><Minus size={17} aria-hidden /></button>
+    <div className="garden-model-tools" role="group" aria-label={L('三維操作', '3D controls')}>
+      <button type="button" className="garden-model-drag" disabled={status !== 'ready'} aria-pressed={interactive} onClick={() => setInteractive(v => !v)}><Hand size={16} aria-hidden />{interactive ? L('結束拖動', 'Stop dragging') : L('啓用拖動', 'Enable dragging')}</button>
+      <button type="button" disabled={status !== 'ready'} aria-label={L('向左旋轉', 'Rotate left')} onClick={() => engine.current?.rotate(-1)}><ArrowLeft size={17} aria-hidden /></button>
+      <button type="button" disabled={status !== 'ready'} aria-label={L('向右旋轉', 'Rotate right')} onClick={() => engine.current?.rotate(1)}><ArrowRight size={17} aria-hidden /></button>
+      <button type="button" disabled={status !== 'ready'} aria-label={L('縮小模型', 'Zoom out')} onClick={() => engine.current?.zoom(-1)}><Minus size={17} aria-hidden /></button>
       <button type="button" disabled={status !== 'ready'} aria-label={L('放大模型', 'Zoom in')} onClick={() => engine.current?.zoom(1)}><Plus size={17} aria-hidden /></button>
-      <button type="button" disabled={status !== 'ready'} aria-label={L('复位视角', 'Reset viewpoint')} onClick={() => engine.current?.reset()}><RotateCcw size={17} aria-hidden /></button>
+      <button type="button" disabled={status !== 'ready'} aria-label={L('復位視角', 'Reset viewpoint')} onClick={() => engine.current?.reset()}><RotateCcw size={17} aria-hidden /></button>
     </div>
-    <p id={help} className="garden-model-help">{interactive ? L('拖动旋转，滚轮或双指缩放；结束拖动后可继续滚动页面。', 'Drag to rotate, scroll or pinch to zoom. Stop dragging to scroll the page.') : L('可用上方按钮切换视角、旋转和缩放；启用拖动后支持鼠标与触屏。', 'Use the controls to change views, rotate and zoom, or enable dragging for mouse and touch.')}</p>
-    <p className="garden-model-disclosure">{L('依据参考图重建的空间示意，非原始模型或实测尺寸。', 'Rebuilt from the reference images; not the original model or measured dimensions.')}</p>
+    <p id={help} className="garden-model-help">{interactive ? L('拖動旋轉，滾輪或雙指縮放；結束拖動後可繼續滾動頁面。', 'Drag to rotate, scroll or pinch to zoom. Stop dragging to scroll the page.') : L('可用上方按鈕切換視角、旋轉同縮放；啓用拖動後支持鼠標同觸屏。', 'Use the controls to change views, rotate and zoom, or enable dragging for mouse and touch.')}</p>
+    <p className="garden-model-disclosure">{L('依據參考圖重建嘅空間示意，非原始模型或實測尺寸。', 'Rebuilt from the reference images; not the original model or measured dimensions.')}</p>
   </div>;
 }

@@ -15,7 +15,7 @@ import { deliverSignal } from './signal-delivery';
 
 const settings={secret:'fixture-meta-sheets-secret-12345678901234567890',spreadsheetId:'fixture-sheet',formIds:'123456789',signalEnabled:true};
 const now=Date.now();
-const payload={spreadsheetId:settings.spreadsheetId,leadId:'123456789012345',formId:'123456789',submittedAt:new Date(now-1000).toISOString(),name:'',phone:'+61 400 000 001',cities:['悉尼','墨尔本'],services:['寻找租客','长期托管'],campaignName:'Fixture',adName:'Fixture image'};
+const payload={spreadsheetId:settings.spreadsheetId,leadId:'123456789012345',formId:'123456789',submittedAt:new Date(now-1000).toISOString(),name:'',phone:'+61 400 000 001',cities:['港島','九龍'],services:['寻找租客','租務管理'],campaignName:'Fixture',adName:'Fixture image'};
 function request(data:unknown=payload,time=String(now),secret=settings.secret){
  const raw=JSON.stringify(data),hash=createHash('sha256').update(raw).digest('hex');
  return new Request('https://eucove.com'+META_IMPORT_PATH,{method:'POST',headers:{'Content-Type':'application/json','x-eucove-time':time,'x-eucove-signature':createHmac('sha256',secret).update([time,'POST',META_IMPORT_PATH,hash].join('\n')).digest('hex')},body:raw});
@@ -31,14 +31,14 @@ test('signed import preserves all selections, queues both transports, never allo
   const first=await importMetaLead(request(),settings,db,now);assert.equal(first.status,201);const body=await first.json() as {id:string};
   const row=sql.prepare('SELECT * FROM leads').get()!;const data=JSON.parse(String(row.data));
   assert.equal(row.assigned_to,null);assert.equal(row.city,'other');assert.equal(row.service,'other');
-  assert.deepEqual(data.meta.cities,['Sydney','Melbourne']);assert.deepEqual(data.meta.services,payload.services);
+  assert.deepEqual(data.meta.cities,['Hong Kong Island','Kowloon']);assert.deepEqual(data.meta.services,payload.services);
   assert.equal(sql.prepare('SELECT COUNT(*) n FROM reception_channel_assignments').get()!.n,0);
   assert.equal(sql.prepare('SELECT COUNT(*) n FROM notifications').get()!.n,1);assert.equal(sql.prepare('SELECT COUNT(*) n FROM signal_notifications').get()!.n,1);
   const repeat=await importMetaLead(request(),settings,db,now);assert.equal(repeat.status,200);assert.equal((await repeat.json() as {id:string}).id,body.id);
   assert.equal(sql.prepare('SELECT COUNT(*) n FROM leads').get()!.n,1);
   assert.equal((await importMetaLead(request({...payload,phone:'+61 400 000 002'}),settings,db,now)).status,409);
   const text=notificationMessage({lead_id:body.id,city:String(row.city),service:String(row.service),data:String(row.data),created_at:String(row.created_at)},'https://eucove.com');
-  assert.match(text,/【客户姓名】未提供/);assert.match(text,/【房屋所在城市】悉尼、墨尔本/);assert.match(text,/分组：出租与托管\n类型：寻找租客、长期托管/);
+  assert.match(text,/【客户姓名】未提供/);assert.match(text,/【房屋所在城市】港島、九龍/);assert.match(text,/分组：放租同管理\n类型：寻找租客、租務管理/);
   assert.match(text,/分流渠道：未自动分流\n分配目标：等待主动分配\n分流名称：未设置/);assert.doesNotMatch(text,/https?:|\+61.*\+61|undefined/);
  }finally{sql.close();}
 });

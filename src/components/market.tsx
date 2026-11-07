@@ -33,17 +33,17 @@ export function MarketList({ records, mode }: { records: MarketRecord[]; mode: '
   const { L, lang, pick } = useI18n();
   const enquire = useEnquiry();
   const basis = (b: MarketRecord['priceBasis']) =>
-    b === 'achieved_sale' ? L('公开成交价', 'Reported sold price') : b === 'asking_sale' ? L('挂牌报价', 'Asking price') : b === 'sale_guide' ? L('卖方指导价', 'Seller price guide') : b === 'asking_weekly_rent' ? L('挂牌周租', 'Asking rent per week') : b === 'historical_asking_weekly_rent' ? L('原广告周租 · 非成交租金', 'Previous asking rent · not achieved rent') : L('价格未公开', 'Price not disclosed');
-  const propertyType = (type?: string) => ({ house: L('独立屋', 'House'), apartment: L('公寓', 'Apartment'), townhouse: L('联排屋', 'Townhouse'), duplex: L('双拼住宅', 'Duplex') }[type || ''] || type || '');
-  const kindLabel = (k: MarketRecord['kind']) => (k === 'sold' ? L('公开成交记录', 'Public sale record') : k === 'sale' ? L('在售挂牌', 'Listed for sale') : k === 'rent' ? L('招租挂牌', 'Listed for lease') : L('公开租赁记录', 'Public lease record'));
+    b === 'achieved_sale' ? L('公開成交價', 'Reported sold price') : b === 'asking_sale' ? L('掛牌報價', 'Asking price') : b === 'sale_guide' ? L('賣方指導價', 'Seller price guide') : b === 'asking_weekly_rent' ? L('掛牌月租', 'Asking rent per month') : b === 'historical_asking_weekly_rent' ? L('原廣告月租 · 非成交租金', 'Previous asking rent · not achieved rent') : L('價格未公開', 'Price not disclosed');
+  const propertyType = (type?: string) => ({ house: L('獨立屋', 'House'), apartment: L('公寓', 'Apartment'), townhouse: L('聯排屋', 'Townhouse'), duplex: L('雙拼住宅', 'Duplex') }[type || ''] || type || '');
+  const kindLabel = (k: MarketRecord['kind']) => (k === 'sold' ? L('公開成交記錄', 'Public sale record') : k === 'sale' ? L('在售掛牌', 'Listed for sale') : k === 'rent' ? L('放租掛牌', 'Listed for lease') : L('公開租賃記錄', 'Public lease record'));
 
   return (
     <ul className="mkt">
       {records.map((r) => {
         const specs = [
           r.beds != null ? L(`${r.beds} 卧`, `${r.beds} bed`) : '',
-          r.baths != null ? L(`${r.baths} 卫`, `${r.baths} bath`) : '',
-          r.cars != null ? L(`${r.cars} 车位`, `${r.cars} car`) : '',
+          r.baths != null ? L(`${r.baths} 衞`, `${r.baths} bath`) : '',
+          r.cars != null ? L(`${r.cars} 車位`, `${r.cars} car`) : '',
           propertyType(r.propertyType),
         ].filter(Boolean);
         const date = r.eventDate ? (r.dateLabel ? `${pick(r.dateLabel)} ${formatDate(r.eventDate, lang)}` : formatDate(r.eventDate, lang)) : '';
@@ -59,18 +59,18 @@ export function MarketList({ records, mode }: { records: MarketRecord[]; mode: '
               {r.summary && pick(r.summary) && <p className="mkt-summary">{pick(r.summary)}</p>}
             </div>
             <div className="mkt-side">
-              <p className="mkt-price">{pick(r.priceDisplay) || L('价格未公开', 'Price not disclosed')}</p>
+              <p className="mkt-price">{pick(r.priceDisplay) || L('價格未公開', 'Price not disclosed')}</p>
               <p className="mkt-basis">{basis(r.priceBasis)}</p>
               {(date || r.kind === 'leased') && <p className="mkt-date">{date || L('出租日期未披露', 'Lease date not disclosed')}</p>}
             </div>
             <div className="mkt-foot">
                 {r.kind === 'sale' || r.kind === 'sold' ? (
                   <button type="button" className="btn btn-quiet btn-sm" onClick={() => enquire({ service: 'buying', city: r.city })}>
-                    {L('咨询买房需求', 'Ask about buying')}
+                    {L('查詢買樓需求', 'Ask about buying')}
                   </button>
                 ) : (
                   <button type="button" className="btn btn-quiet btn-sm" onClick={() => enquire({ service: 'letting', city: r.city })}>
-                    {L('委托出租我的房子', 'Let my property')}
+                    {L('委託出租我嘅單位', 'Let my property')}
                   </button>
                 )}
             </div>
@@ -86,8 +86,8 @@ export function MarketNote() {
   return (
     <p className="mkt-note">
       {L(
-        '市场参考：以下房源不代表桉湾代理或成交案例，价格与日期以各项记录为准。',
-        'Market references, not EUCOVE agency listings or sales. Prices and dates are shown with each record.',
+        '市場參考：以下樓盤唔代表悦港代理或成交案例，價格同日期以各項記錄為準。',
+        'Market references, not Harbour Joy agency listings or sales. Prices and dates are shown with each record.',
       )}
     </p>
   );

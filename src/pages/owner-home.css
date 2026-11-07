@@ -1,4 +1,4 @@
-/* EUCOVE: orange ink, generous photography and compact, useful interactions. */
+/* Harbour Joy: orange ink, generous photography and compact, useful interactions. */
 .owner-home .section-head p { font-size: 14px; line-height: 1.8; }
 .owner-home .section-head h2 { font-size: 28px; letter-spacing: -.035em; }
 .owner-hero { padding: 40px 0 0; }
@@ -18,7 +18,7 @@
 .owner-photo-caption { position: absolute; bottom: 116px; left: 28px; right: 24px; color: #fff; z-index: 2; animation: ownerDetail .3s ease-out both; }
 .owner-photo-caption span { font-size: 10px; letter-spacing: .14em; display: block; margin-bottom: 8px; }
 .owner-photo-caption strong { font-size: clamp(18px, 1.6vw, 23px); font-weight: 500; letter-spacing: -.025em; line-height: 1.5; }
-.owner-photo-signature { position: absolute; right: 0; bottom: 0; z-index: 3; background: var(--brand-orange); color: #27180f; display: flex; align-items: center; gap: 14px; width: 222px; padding: 20px 25px; border-radius: 0; }
+.owner-photo-signature { position: absolute; right: 0; bottom: 0; z-index: 3; background: var(--brand-orange); color: #12295A; display: flex; align-items: center; gap: 14px; width: 222px; padding: 20px 25px; border-radius: 0; }
 .owner-photo-signature span { font-size: 13px; font-weight: 500; line-height: 1.45; }
 .cove-signature { flex: none; width: 48px; height: 48px; overflow: visible; }
 .cove-signature path { stroke: currentColor; stroke-width: 3.4; stroke-linecap: round; stroke-dasharray: 140; animation: coveDraw .9s cubic-bezier(.2,.8,.2,1) both; }
@@ -85,11 +85,11 @@
 
 /* Strong orange is reserved for the actual offer. */
 .home-offer.section { padding-block: 12px 40px; }
-.home-offer .offer-grid { padding: 36px 40px; background: var(--brand-orange); border-radius: 0; grid-template-columns: .95fr 1.05fr; gap: 48px; color: #27180f; }
+.home-offer .offer-grid { padding: 36px 40px; background: var(--brand-orange); border-radius: 0; grid-template-columns: .95fr 1.05fr; gap: 48px; color: #12295A; }
 .home-offer .home-offer-label { font-size: 12px; margin-bottom: 18px; color: #402312; }
 .home-offer .offer-copy h2 { font-size: 30px; line-height: 1.45; letter-spacing: -.035em; margin-bottom: 16px; }
 .home-offer .offer-copy p { color: #402312; font-size: 13px; }
-.home-offer .offer-copy .textlink { color: #27180f; font-size: 13px; min-height: 44px; }
+.home-offer .offer-copy .textlink { color: #12295A; font-size: 13px; min-height: 44px; }
 .home-offer .meter { border: 0; padding: 25px; }
 .home-offer .meter-head p { font-size: 13px; }
 .home-offer .meter-note { font-size: 11px; }
@@ -331,7 +331,7 @@
 .home-offer-copy p svg { flex: none; }
 .home-offer-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .home-offer .btn-primary { background: #fff; color: #9a3412; }
-.home-offer .btn-primary:hover { background: #fff3eb; }
+.home-offer .btn-primary:hover { background: #F6EFDF; }
 .home-offer .btn-line { border-color: rgba(255,255,255,.75); color: #fff; }
 .home-offer .btn-line:hover { background: #fff; color: #9a3412; }
 

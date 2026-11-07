@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS reception_settings(key TEXT PRIMARY KEY,data TEXT NOT NULL,version INTEGER NOT NULL DEFAULT 1,updated_at TEXT NOT NULL);
-INSERT OR IGNORE INTO reception_settings(key,data,version,updated_at) VALUES('whatsapp_prefill','{"zh":"您好，我通过桉湾 EUCOVE 网站咨询。我想了解{房屋城市}的{服务类型}，请与我联系。","en":"Hello, I found EUCOVE online. I would like to discuss {service} in {city}. Please contact me."}',1,strftime('%Y-%m-%dT%H:%M:%fZ','now'));
+INSERT OR IGNORE INTO reception_settings(key,data,version,updated_at) VALUES('whatsapp_prefill','{"zh":"你好，我通過悦港 Harbour Joy 網站查詢。我想了解{房屋地區}嘅{服務類型}，請同我聯絡。","en":"Hello, I found Harbour Joy online. I would like to discuss {service} in {city}. Please contact me."}',1,strftime('%Y-%m-%dT%H:%M:%fZ','now'));
 ALTER TABLE reception_channel_assignments ADD COLUMN whatsapp_text TEXT;
 ALTER TABLE reception_channel_assignments ADD COLUMN whatsapp_template_version INTEGER;
 

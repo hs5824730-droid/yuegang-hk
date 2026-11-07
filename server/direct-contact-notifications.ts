@@ -5,7 +5,7 @@ import type {ReceptionDB} from './reception.js';
 import {ensureNotificationRecipient,recipientFromTarget,notificationRecipientLabel} from './notification-recipient.js';
 import {dispatchReadySql,dispatchPresentation,recordDispatchTelegram} from './manual-lead-dispatch.js';
 
-const cityNames:Record<string,string>={Melbourne:'墨尔本',Sydney:'悉尼',Brisbane:'布里斯班',Perth:'珀斯',Adelaide:'阿德莱德',Canberra:'堪培拉',other:'其他城市'};
+const cityNames:Record<string,string>={'Hong Kong Island':'港島',Kowloon:'九龍','New Territories':'新界',Islands:'離島',other:'其他地區'};
 /** Source facts only: an assigned staff number can never become the visitor's telephone. */
 export function directContactMessage(row:Record<string,any>){
  const context=JSON.parse(row.direct_context||'{}'),target=row.target_data?JSON.parse(row.target_data):null;

@@ -78,17 +78,17 @@ export default function DepthPhotoViewer({ photo }: { photo: DepthPhoto }) {
       onPointerLeave={() => { if (pointer.current == null && !auto) engine.current?.offset(0, 0); }}>
       <img src={photo.image} width={photo.width} height={photo.height} alt={pick(photo.alt)} fetchPriority="high" />
       <canvas key={`${photo.id}-${enabled ? 'depth' : 'still'}`} ref={canvas} aria-hidden="true" />
-      {enabled && !ready && !failed && <span className="depth-frame-status" role="status">{L('正在准备立体照片…', 'Preparing the depth photo…')}</span>}
+      {enabled && !ready && !failed && <span className="depth-frame-status" role="status">{L('正在準備立體照片…', 'Preparing the depth photo…')}</span>}
     </div>
-    <div className="depth-controls" role="group" aria-label={L('立体照片控制', 'Depth photo controls')} aria-describedby={help}>
-      {!enabled ? <button type="button" className="depth-primary" onClick={begin}><Play size={16} aria-hidden />{L('开启立体效果', 'Enable depth effect')}</button> : <>
-        <button type="button" disabled={!ready || failed || reduced} aria-pressed={drag} onClick={() => { setDrag(!drag); setAuto(false); setTilt(false); }}><Hand size={16} aria-hidden />{drag ? L('退出拖动', 'Stop dragging') : L('拖动环顾', 'Drag to look')}</button>
-        <button type="button" disabled={!ready || failed || reduced} aria-pressed={auto} onClick={() => { setAuto(!auto); setDrag(false); setTilt(false); }}>{auto ? <Pause size={16} aria-hidden /> : <Play size={16} aria-hidden />}{auto ? L('暂停环顾', 'Pause motion') : L('自动环顾', 'Gentle motion')}</button>
-        <button type="button" disabled={!ready || failed} onClick={reset} aria-label={L('视角居中', 'Center view')}><RotateCcw size={16} aria-hidden /></button>
+    <div className="depth-controls" role="group" aria-label={L('立體照片控制', 'Depth photo controls')} aria-describedby={help}>
+      {!enabled ? <button type="button" className="depth-primary" onClick={begin}><Play size={16} aria-hidden />{L('開啓立體效果', 'Enable depth effect')}</button> : <>
+        <button type="button" disabled={!ready || failed || reduced} aria-pressed={drag} onClick={() => { setDrag(!drag); setAuto(false); setTilt(false); }}><Hand size={16} aria-hidden />{drag ? L('退出拖動', 'Stop dragging') : L('拖動環顧', 'Drag to look')}</button>
+        <button type="button" disabled={!ready || failed || reduced} aria-pressed={auto} onClick={() => { setAuto(!auto); setDrag(false); setTilt(false); }}>{auto ? <Pause size={16} aria-hidden /> : <Play size={16} aria-hidden />}{auto ? L('暫停環顧', 'Pause motion') : L('自動環顧', 'Gentle motion')}</button>
+        <button type="button" disabled={!ready || failed} onClick={reset} aria-label={L('視角居中', 'Center view')}><RotateCcw size={16} aria-hidden /></button>
         <button type="button" onClick={still}><ImageIcon size={16} aria-hidden />{L('普通照片', 'Still photo')}</button>
-        {window.isSecureContext && typeof DeviceOrientationEvent !== 'undefined' && navigator.maxTouchPoints > 0 && <button type="button" disabled={!ready || failed || reduced} aria-pressed={tilt} onClick={() => void requestTilt()}><Smartphone size={16} aria-hidden />{L('倾斜手机', 'Tilt phone')}</button>}
+        {window.isSecureContext && typeof DeviceOrientationEvent !== 'undefined' && navigator.maxTouchPoints > 0 && <button type="button" disabled={!ready || failed || reduced} aria-pressed={tilt} onClick={() => void requestTilt()}><Smartphone size={16} aria-hidden />{L('傾斜手機', 'Tilt phone')}</button>}
       </>}
     </div>
-    <p className="depth-help" id={help} role={failed || tiltError ? 'status' : undefined}>{failed ? L('当前设备未能显示立体效果，已保留普通照片。您可以继续切换图片。', 'Depth rendering is unavailable. The still photograph and photo navigation remain available.') : reduced ? L('已遵循系统“减少动态效果”设置，照片保持静止。', 'Your reduced-motion preference is respected; the photo stays still.') : tiltError ? L('未获得方向感应权限，您仍可用手指拖动照片。', 'Orientation permission was unavailable. You can still drag the photo.') : ready ? L('轻拖照片，或移动鼠标。退出拖动即可上下滑动页面。', 'Gently drag the photo or move your mouse. Stop dragging to scroll the page.') : L('先看照片，再开启立体效果。左右方向键可切换照片。', 'View the photo, then enable depth. Arrow keys switch photographs.')}</p>
+    <p className="depth-help" id={help} role={failed || tiltError ? 'status' : undefined}>{failed ? L('當前設備未能顯示立體效果，已保留普通照片。你可以繼續切換圖片。', 'Depth rendering is unavailable. The still photograph and photo navigation remain available.') : reduced ? L('已遵循系統“減少動態效果”設置，照片保持靜止。', 'Your reduced-motion preference is respected; the photo stays still.') : tiltError ? L('未獲得方向感應權限，你仍可用手指拖動照片。', 'Orientation permission was unavailable. You can still drag the photo.') : ready ? L('輕拖照片，或移動鼠標。退出拖動即可上下滑動頁面。', 'Gently drag the photo or move your mouse. Stop dragging to scroll the page.') : L('先睇照片，再開啓立體效果。左右方向鍵可切換照片。', 'View the photo, then enable depth. Arrow keys switch photographs.')}</p>
   </div>;
 }

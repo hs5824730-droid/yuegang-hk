@@ -37,7 +37,7 @@ test('private viewing samples: room media, isolation and enquiry linkage', async
   const base = `http://127.0.0.1:${address.port}`;
   const request = (url: string, options?: RequestInit) => fetch(base + url, options);
   const submit = (body: unknown) => request('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'http://localhost:5173' }, body: JSON.stringify(body) });
-  const input = { name: 'Viewing fixture', contact: '+61 400 888 991', city: 'Perth', propertyAddress: 'Forged address', service: 'rent', listingId: id,
+  const input = { name: 'Viewing fixture', contact: '+61 400 888 991', city: 'New Territories', propertyAddress: 'Forged address', service: 'rent', listingId: id,
     language: 'zh', consent: true, currentlyManaged: false, message: '', requestId: randomUUID() };
   try {
     await t.test('only manifest-listed photographs are exposed; original documents stay private', async () => {
@@ -123,8 +123,8 @@ test('private viewing samples: room media, isolation and enquiry linkage', async
       const retry = await submit(input); assert.equal(retry.status, 200); assert.equal((await retry.json()).id, result.id);
       const row = db.prepare('SELECT city,data FROM leads WHERE id=?').get(result.id) as { city: string; data: string };
       const data = JSON.parse(row.data);
-      assert.equal(row.city, 'Sydney'); assert.equal(data.listingId, id);
-      assert.equal(data.propertyAddress, '2/24B Arthur Street, Randwick, Sydney 2031');
+      assert.equal(row.city, 'Hong Kong Island'); assert.equal(data.listingId, id);
+      assert.equal(data.propertyAddress, '2/24B Arthur Street, Randwick, Hong Kong Island 2031');
       assert.equal((db.prepare('SELECT COUNT(*) AS n FROM notifications').get() as { n: number }).n, 1);
       assert.equal((await submit({ ...input, listingId: 'reference-1111111', requestId: randomUUID() })).status, 400);
       assert.equal((await submit({ ...input, propertyId: randomUUID(), requestId: randomUUID() })).status, 400);
@@ -277,7 +277,7 @@ test('private viewing samples: room media, isolation and enquiry linkage', async
       assert.equal(rentals, 3 + Object.keys(approvals).length + newRentals); assert.equal(sales, 8 + newSales);
       assert.equal(available, 2 + Object.keys(approvals).length + newRentals);
       assert.equal(images, 47 + Object.values(reviewed).reduce((sum, item) => sum + item.rooms.length, 0));
-      assert.deepEqual([...cities].sort(), ['Brisbane', 'Melbourne', 'Perth', 'Sydney']);
+      assert.deepEqual([...cities].sort(), ['New Territories', 'Kowloon', 'New Territories', 'Hong Kong Island']);
       const excluded = JSON.parse(readFileSync('data/viewing-source/reference-3598987/manifest.json', 'utf8'));
       assert.equal(excluded.displayEligible, false); assert.ok(excluded.rooms.every((room: { watermarked: boolean }) => room.watermarked));
     });

@@ -1,24 +1,24 @@
 /** Shared public vocabulary. Existing persisted service values remain canonical. */
 export const SERVICES = {
-  letting: { group: 'rental', zh: '出租招租', en: 'Letting' },
-  management: { group: 'rental', zh: '长期托管', en: 'Ongoing management' },
-  selling: { group: 'sales', zh: '卖房', en: 'Selling' },
-  buying: { group: 'sales', zh: '买房', en: 'Buying' },
-  renovation: { group: 'advisory', zh: '装修翻新', en: 'Renovation' },
+  letting: { group: 'rental', zh: '放租', en: 'Letting' },
+  management: { group: 'rental', zh: '租務管理', en: 'Ongoing management' },
+  selling: { group: 'sales', zh: '賣樓', en: 'Selling' },
+  buying: { group: 'sales', zh: '買樓', en: 'Buying' },
+  renovation: { group: 'advisory', zh: '裝修翻新', en: 'Renovation' },
   'house-care': { group: 'advisory', zh: '房屋打理', en: 'House care' },
-  maintenance: { group: 'advisory', zh: '维修维护', en: 'Repairs & maintenance' },
-  'buyer-advisory': { group: 'advisory', zh: '购房咨询', en: 'Buying advice' },
-  other: { group: 'other', zh: '其他咨询', en: 'Other enquiries' },
-  moving: { group: 'rental', zh: '搬家服务', en: 'Moving service' },
+  maintenance: { group: 'advisory', zh: '維修維護', en: 'Repairs & maintenance' },
+  'buyer-advisory': { group: 'advisory', zh: '置業查詢', en: 'Buying advice' },
+  other: { group: 'other', zh: '其他查詢', en: 'Other enquiries' },
+  moving: { group: 'rental', zh: '搬屋服務', en: 'Moving service' },
 } as const;
 export type Service = keyof typeof SERVICES;
 export type PublicService = Exclude<Service, 'moving'>;
 export type ServiceInput = Service | 'rent' | 'manage' | 'sell' | 'buy' | 'care';
 export const SERVICE_GROUPS = {
-  rental: { zh: '出租与托管', en: 'Letting & management' },
-  sales: { zh: '买卖房屋', en: 'Buying & selling' },
-  advisory: { zh: '置业顾问', en: 'Property services' },
-  other: { zh: '其他咨询', en: 'Other enquiries' },
+  rental: { zh: '放租同管理', en: 'Letting & management' },
+  sales: { zh: '買賣物業', en: 'Buying & selling' },
+  advisory: { zh: '置業顧問', en: 'Property services' },
+  other: { zh: '其他查詢', en: 'Other enquiries' },
 } as const;
 export type ServiceGroup = keyof typeof SERVICE_GROUPS;
 export const PUBLIC_SERVICES = Object.keys(SERVICES).filter(service => service !== 'moving') as PublicService[];
@@ -30,7 +30,7 @@ export function normalizeService(value: string | null | undefined): Service | un
 /** Legacy advisory links used buying for buying advice; API buying keeps its historic meaning. */
 export const normalizeServiceQuery = (value: string | null | undefined) => value === 'buying' ? 'buyer-advisory' : normalizeService(value);
 export const serviceGroup = (value: Service): ServiceGroup => SERVICES[value].group;
-export const CONTACT_METHODS = { phone: { zh: '电话', en: 'Phone' }, whatsapp: { zh: 'WhatsApp', en: 'WhatsApp' }, wechat: { zh: '微信', en: 'WeChat' }, email: { zh: '邮箱', en: 'Email' } } as const;
+export const CONTACT_METHODS = { phone: { zh: '電話', en: 'Phone' }, whatsapp: { zh: 'WhatsApp', en: 'WhatsApp' }, wechat: { zh: '微信', en: 'WeChat' }, email: { zh: '電郵', en: 'Email' } } as const;
 export type ContactMethod = keyof typeof CONTACT_METHODS;
 export function isPhone(value: string) {
   const text = value.trim(); const digits = text.replace(/\D/g, '').length;
@@ -43,20 +43,10 @@ export function isContact(value: string, method?: ContactMethod) {
   if (method === 'email' || (!method && text.includes('@'))) return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text);
   return isPhone(text);
 }
-export const ADVISORS = [
-  { id: 'andy-xiang', name: 'Andy Xiang', zh: '项家龙', city: 'Sydney' },
-  { id: 'chloe-xu', name: 'Chloe Xu', zh: '许安琪', city: 'Sydney' },
-  { id: 'marina-wang', name: 'Marina Wang', zh: '王丽丽', city: '' },
-  { id: 'sophie-lin', name: 'Sophie Lin', zh: '林嘉宁', city: 'Melbourne' },
-  { id: 'olivia-chen', name: 'Olivia Chen', zh: '陈雅雯', city: 'Perth' },
-  { id: 'ethan-zhou', name: 'Ethan Zhou', zh: '周明轩', city: 'Brisbane' },
-  { id: 'michelle-qin', name: 'Michelle', zh: '秦川', city: 'Melbourne' },
-  { id: 'crystal-liu', name: 'Crystal', zh: '刘晓洁', city: 'Sydney' },
-  { id: 'steven-zhou', name: 'Steven Zhou', zh: '周泰', city: 'Melbourne' },
-  { id: 'judy-liu', name: 'Judy Liu', zh: '刘燕', city: 'Brisbane' },
-] as const;
+/** Hong Kong advisors are added only with consent and a valid EAA licence number. */
+export const ADVISORS: readonly { id: string; name: string; zh: string; city: string }[] = [];
 export const findAdvisor = (id?: string | null) => ADVISORS.find(advisor => advisor.id === id);
-export const START_TIMES = { asap: { zh: '尽快', en: 'As soon as possible' }, '1-3-months': { zh: '1–3 个月', en: '1–3 months' }, later: { zh: '之后', en: 'Later' } } as const;
+export const START_TIMES = { asap: { zh: '儘快', en: 'As soon as possible' }, '1-3-months': { zh: '1–3 個月', en: '1–3 months' }, later: { zh: '之後', en: 'Later' } } as const;
 /** Optional form of address chosen on the callback form; the notification reports it as the customer's gender. */
 export const SALUTATIONS = { mr: { zh: '先生', en: 'Mr', gender: '男' }, ms: { zh: '女士', en: 'Ms', gender: '女' } } as const;
 export type Salutation = keyof typeof SALUTATIONS;

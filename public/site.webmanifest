@@ -1,16 +1,26 @@
 {
   "id": "/",
-  "name": "桉湾 EUCOVE",
-  "short_name": "桉湾",
-  "description": "澳洲房产出租与托管 · Letting & property management",
-  "lang": "zh-CN",
+  "name": "悦港 Harbour Joy",
+  "short_name": "悦港",
+  "description": "香港物業放租、租務管理同買賣 · Hong Kong letting, management & sales",
+  "lang": "zh-HK",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "icons": [
-    { "src": "/app-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }

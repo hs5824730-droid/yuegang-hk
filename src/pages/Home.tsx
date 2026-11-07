@@ -1,19 +1,20 @@
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Check, Hammer, HeartHandshake, House, Languages, MapPin, Minus, Search, ShieldCheck, Sparkles, Wrench } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BadgeCheck, Check, FileSignature, Hammer, HeartHandshake, House, Languages, MapPin, Minus, Search, ShieldCheck, Sparkles, Wrench } from 'lucide-react';
 import { CtaBand } from '../components/sections';
 import { useEnquiry } from '../components/Enquiry';
-import { MEMBERS } from '../components/Team';
 import { Reveal, SmartImg } from '../components/ui';
 import { OfferReceipt, QAGrid, SectionHead } from '../components/v2/blocks';
 import { cityName, useI18n } from '../i18n';
 
-/** Wikimedia city photographs with recorded authors and licences (see /credits). */
-const CITY_PHOTOS = [
-  { city: 'Melbourne', img: '/img/melbourne.jpg', pos: '50% 55%' },
-  { city: 'Perth', img: '/img/perth.jpg', pos: '50% 60%' },
-  { city: 'Adelaide', img: '/img/adelaide.jpg', pos: '50% 55%' },
-  { city: 'Canberra', img: '/img/canberra.jpg', pos: '50% 50%' },
-  { city: 'Sydney', img: '/img/sydney.jpg', pos: '35% 50%' },
+const HkScene3D = lazy(() => import('../components/HkScene3D'));
+
+/** Wikimedia photographs of the four service regions, credited on /credits. */
+const REGION_PHOTOS = [
+  { city: 'Hong Kong Island', img: '/img/hk/hk-island.webp', pos: '62% 50%' },
+  { city: 'Kowloon', img: '/img/hk/kowloon.webp', pos: '22% 55%' },
+  { city: 'New Territories', img: '/img/hk/new-territories.webp', pos: '55% 50%' },
+  { city: 'Islands', img: '/img/hk/islands.webp', pos: '62% 45%' },
 ];
 
 export default function Home() {
@@ -21,60 +22,68 @@ export default function Home() {
   const enquire = useEnquiry();
 
   const promises = [
-    { Icon: ShieldCheck, t: L('交给我们，省心安心', 'Hand it over and relax'), d: L('看房、签约、报修、续租，当地团队跟进。', 'Viewings, leases, repairs, renewals — followed up locally.') },
-    { Icon: Sparkles, t: L('减价不减服务', 'Lower fees, same service'), d: L('优惠只减佣金，推广、筛选、维护一项不少。', 'Only the fee is lower; marketing, screening and upkeep stay.') },
-    { Icon: HeartHandshake, t: L('一次合作，终生合作', 'One appointment, a lasting relationship'), d: L('出租、买卖、装修维修，以后也找我们。', 'Letting, sales, renovation — whatever comes next.') },
+    { Icon: ShieldCheck, t: L('交俾我哋，你可以放心', 'Hand it over and relax'), d: L('睇樓、簽約、報維修、續租，我哋本地同事一路跟到尾。', 'Viewings, tenancies, repairs and renewals — followed up locally.') },
+    { Icon: Sparkles, t: L('減佣唔減服務', 'Lower fees, same service'), d: L('優惠只係減佣金，放盤宣傳、揀租客、跟維修，一樣都唔會少。', 'Only the fee is lower; marketing, screening and upkeep stay.') },
+    { Icon: HeartHandshake, t: L('做一次，做朋友', 'One appointment, a lasting relationship'), d: L('放租、買賣、裝修維修，之後有咩事都可以搵返我哋。', 'Letting, sales, renovation — whatever comes next.') },
   ];
 
   const compare: [string, boolean][] = [
-    [L('出租准备、推广看房', 'Preparation, marketing, viewings'), true],
-    [L('筛选租客、签约入住', 'Tenant selection, lease, move-in'), true],
-    [L('收租与租客联络', 'Rent and tenant contact'), false],
-    [L('维修、巡检与续租', 'Repairs, inspections, renewals'), false],
+    [L('放盤宣傳、約人睇樓', 'Marketing and viewings'), true],
+    [L('揀租客、簽租約、交吉交收', 'Tenant selection, tenancy, handover'), true],
+    [L('收租、同租客傾偈', 'Rent and tenant contact'), false],
+    [L('維修、驗樓、續約', 'Repairs, inspections, renewals'), false],
   ];
 
   const extras = [
-    { to: '/home-services', Icon: House, t: L('房屋服务', 'Home services'), d: L('园艺、清洁、居家照看，人工半价', 'Garden, cleaning, home sitting; half-price labour') },
-    { to: '/?service=maintenance', Icon: Wrench, t: L('维修维护', 'Repairs'), d: L('报修跟进、小修、定期检查', 'Requests, small fixes, checks') },
-    { to: '/advisory#renovation', Icon: Hammer, t: L('装修翻新', 'Renovation'), d: L('出租前焕新、厨卫更新', 'Refreshes, kitchens, bathrooms') },
-    { to: '/?service=buyer-advisory', Icon: Search, t: L('购房咨询', 'Buying advice'), d: L('城市、区域与预算梳理', 'City, area and budget') },
+    { to: '/home-services', Icon: House, t: L('家居服務', 'Home services'), d: L('清潔、睇屋、吉屋巡查', 'Cleaning, home sitting, vacant-flat checks') },
+    { to: '/?service=maintenance', Icon: Wrench, t: L('維修保養', 'Repairs'), d: L('報維修、執執修修、定期檢查', 'Requests, small fixes, checks') },
+    { to: '/advisory#renovation', Icon: Hammer, t: L('裝修翻新', 'Renovation'), d: L('放租前執靚、換廚廁', 'Pre-letting refreshes, kitchens, bathrooms') },
+    { to: '/?service=buyer-advisory', Icon: Search, t: L('置業查詢', 'Buying advice'), d: L('幫你理清地區、預算、按揭同印花稅', 'Districts, budget, mortgage and stamp duty') },
   ];
 
   const faq: [string, string][] = [
-    [L('费用怎么收？', 'How are fees charged?'), L('出租佣金和管理费分开计算，委托前书面说明，确认后再开始。', 'Letting commission and management fees are separate, set out in writing before you appoint us.')],
-    [L('人不在澳洲，可以委托吗？', 'Can I appoint you from overseas?'), L('可以。看房、交接、巡检由当地团队处理，进展通过电话或 WhatsApp 告诉您。', 'Yes. Viewings, handovers and inspections are handled locally; we update you by phone or WhatsApp.')],
-    [L('可以只招租、不托管吗？', 'Can I choose letting only?'), L('可以。租客入住后由您自己管理，之后想改为托管也可以再沟通。', 'Yes. You manage the tenancy after move-in, and can switch to management later.')],
-    [L('其他城市也能服务吗？', 'Do you cover other cities?'), L('重点在六座城市，但不限于此；其他城市的房子也欢迎咨询。', 'We focus on six cities but are not limited to them; ask us about other areas.')],
+    [L('佣金點計？', 'How is commission charged?'), L('香港一般做法係：租樓佣金業主同租客各俾半個月租，買賣佣金大家各俾成交價 1% 左右。我哋實際收幾多，會喺簽地產代理協議（表格 3／表格 5）之前白紙黑字寫清楚，唔會有隱藏收費。', 'In Hong Kong, letting commission is customarily half a month’s rent from each side, and sale commission around 1% from each side. Our actual fees are written into the estate agency agreement (Form 3 / Form 5) before we act for you.')],
+    [L('我唔喺香港，都可以委託你哋？', 'Can I appoint you from outside Hong Kong?'), L('得㗎！睇樓、交收、驗樓我哋本地同事搞掂，進度會用電話、WhatsApp 或者微信話你知。', 'Yes. Viewings, handovers and inspections are handled locally; we update you by phone, WhatsApp or WeChat.')],
+    [L('可唔可以淨係放租，唔使管理？', 'Can I choose letting only?'), L('冇問題。租客入住之後你自己打理；第時想轉做租務管理，隨時同我哋講。', 'Yes. You manage the tenancy after move-in and can switch to management later.')],
+    [L('新界同離島都有做？', 'Do you cover the New Territories and Islands?'), L('有！港島、九龍、新界、離島嘅住宅都歡迎搵我哋，我哋會按地址安排附近嘅同事跟。', 'Yes. Homes across Hong Kong Island, Kowloon, the New Territories and the Islands are welcome; we assign a colleague by address.')],
+  ];
+
+  const trust = [
+    { Icon: BadgeCheck, t: L('持牌經營', 'Licensed'), d: L('我哋跟足《地產代理條例》做嘢，公司同營業員牌照號碼都會喺網站同廣告度公開。', 'We operate under the Estate Agents Ordinance; company and salesperson licence numbers are shown on this site and in our ads.') },
+    { Icon: FileSignature, t: L('講清楚先開工', 'In writing first'), d: L('佣金、服務範圍、會唔會做雙邊代理，簽表格 3／表格 5 之前全部同你講清楚。', 'Commission, scope and any dual agency are explained before Form 3 / Form 5 is signed.') },
+    { Icon: Languages, t: L('粵語、普通話、English', 'Cantonese, Mandarin, English'), d: L('本地業主、內地同海外客，你講開邊種語言我哋就用邊種。', 'Local, mainland and overseas clients, in the language you prefer.') },
   ];
 
   return (
     <div className="v-home">
       {/* ---------------------------------------------------------- opening */}
       <section className="v-hero v-home-hero has-bg" aria-labelledby="home-title">
-        <img className="v-hero-bg" src="/img/renovation/1.webp" alt="" style={{ objectPosition: '60% 55%' }} fetchPriority="high" />
+        <Suspense fallback={<div className="hk3d"><img className="hk3d-still" src="/depth/hk/harbour-night.webp" alt="" /></div>}>
+          <HkScene3D />
+        </Suspense>
         <span className="v-hero-shade" aria-hidden />
         <div className="wrap v-hero-grid">
           <div className="v-hero-copy">
-            <p className="v-pill"><Languages size={15} aria-hidden />{L('澳洲房产出租与托管 · 中文 / English', 'Australian letting & management · 中文 / English')}</p>
+            <p className="v-pill"><Languages size={15} aria-hidden />{L('香港物業放租同管理 · 粵語 / English', 'Hong Kong letting & management · 粵語 / English')}</p>
             <h1 id="home-title">
-              {L('出租交给我们，', 'Leave the letting to us.')}
-              <em>{L('您只管收租。', 'You just collect the rent.')}</em>
+              {L('放租交俾我哋，', 'Leave the letting to us.')}
+              <em>{L('你淨係收租就得。', 'You just collect the rent.')}</em>
             </h1>
-            <p className="v-lead">{L('找租客、收租、维修、和租客沟通，当地团队一路跟进。', 'Finding tenants, rent, repairs and tenant contact — followed up by a local team.')}</p>
+            <p className="v-lead">{L('搵租客、收租、維修、同租客溝通，我哋本地團隊幫你一手包辦。', 'Finding tenants, rent, repairs and tenant contact — followed up by a local team.')}</p>
             <div className="v-actions">
               <button type="button" className="btn btn-primary v-hero-cta" onClick={() => enquire({ service: 'letting' })}>
-                {L('免费咨询', 'Free enquiry')}
+                {L('免費傾吓', 'Free enquiry')}
                 <ArrowRight size={18} aria-hidden />
               </button>
-              <Link className="btn btn-line" to="/services">{L('看看怎么收费', 'See how it works')}</Link>
+              <Link className="btn btn-line" to="/viewings">{L('睇吓盤', 'See listings')}</Link>
             </div>
           </div>
           <div className="v-hero-aside">
             <OfferReceipt
               className="v-hero-receipt"
               cta={<>
-                <Link className="btn btn-primary ds-offer-cta" to="/?service=rent&offer=1">{L('咨询这项优惠', 'Ask about the offer')}</Link>
-                <Link className="v-link" to="/offer">{L('优惠说明', 'Offer details')}<ArrowUpRight size={15} aria-hidden /></Link>
+                <Link className="btn btn-primary ds-offer-cta" to="/?service=rent&offer=1">{L('問吓呢個優惠', 'Ask about the offer')}</Link>
+                <Link className="v-link" to="/offer">{L('優惠詳情', 'Offer details')}<ArrowUpRight size={15} aria-hidden /></Link>
               </>}
             />
           </div>
@@ -82,7 +91,7 @@ export default function Home() {
       </section>
 
       {/* --------------------------------------------------------- promises */}
-      <section className="v-promises" aria-label={L('我们的承诺', 'Our promise')}>
+      <section className="v-promises" aria-label={L('我哋嘅承諾', 'Our promise')}>
         <ul className="wrap">
           {promises.map(({ Icon, t, d }) => (
             <li key={t}>
@@ -99,20 +108,20 @@ export default function Home() {
       {/* -------------------------------------------------------- businesses */}
       <section className="v-sec" id="what-we-do" aria-labelledby="home-biz-title">
         <div className="wrap">
-          <SectionHead kicker={L('我们做什么', 'What we do')} title={L('一个团队，照看房子的三件事', 'One team for three things your property needs')} id="home-biz-title" />
+          <SectionHead kicker={L('我哋做咩', 'What we do')} title={L('一個團隊，幫你搞掂層樓三件事', 'One team for three things your flat needs')} id="home-biz-title" />
           <div className="v-bento">
             <Reveal as="article" className="v-tile v-tile-ink v-tile-letting">
               <span id="services" className="v-anchor" />
-              <p className="v-kicker">{L('主营 · 出租与托管', 'Main service · Letting & management')}</p>
-              <h3>{L('帮您把房子租好，也一直照看好', 'Your home let well, and looked after')}</h3>
-              <p>{L('仅招租：找到合适租客并完成入住。长期托管：之后的收租、报修、续租也交给我们。', 'Letting only: we find the tenant and handle move-in. Management: rent, repairs and renewals after that too.')}</p>
+              <p className="v-kicker">{L('主力 · 放租同租務管理', 'Main service · Letting & management')}</p>
+              <h3>{L('幫你租得好，之後都繼續睇住', 'Your flat let well, and looked after')}</h3>
+              <p>{L('淨放租：我哋幫你搵啱租客、搞掂交收。租務管理：之後收租、維修、續約都可以交俾我哋。', 'Letting only: we find the tenant and handle handover. Management: rent, repairs and renewals after that too.')}</p>
               <table className="v-compare">
-                <caption className="sr-only">{L('仅招租和长期托管对照', 'Letting only vs management')}</caption>
+                <caption className="sr-only">{L('淨放租同租務管理比較', 'Letting only vs management')}</caption>
                 <thead>
                   <tr>
-                    <th scope="col"><span className="sr-only">{L('服务内容', 'Service')}</span></th>
-                    <th scope="col">{L('仅招租', 'Letting')}</th>
-                    <th scope="col">{L('长期托管', 'Managed')}</th>
+                    <th scope="col"><span className="sr-only">{L('服務內容', 'Service')}</span></th>
+                    <th scope="col">{L('淨放租', 'Letting')}</th>
+                    <th scope="col">{L('租務管理', 'Managed')}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -126,9 +135,9 @@ export default function Home() {
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td><Link className="v-link v-link-light" to="/services">{L('完整服务', 'Full details')}<ArrowUpRight size={15} aria-hidden /></Link></td>
-                    <td><button type="button" className="btn btn-line rp-letting-cta" onClick={() => enquire({ service: 'letting' })}>{L('咨询', 'Enquire')}</button></td>
-                    <td><button type="button" className="btn btn-primary rp-management-cta" onClick={() => enquire({ service: 'management' })}>{L('咨询', 'Enquire')}</button></td>
+                    <td><Link className="v-link v-link-light" to="/services">{L('睇晒全部服務', 'Full details')}<ArrowUpRight size={15} aria-hidden /></Link></td>
+                    <td><button type="button" className="btn btn-line rp-letting-cta" onClick={() => enquire({ service: 'letting' })}>{L('問吓', 'Enquire')}</button></td>
+                    <td><button type="button" className="btn btn-primary rp-management-cta" onClick={() => enquire({ service: 'management' })}>{L('問吓', 'Enquire')}</button></td>
                   </tr>
                 </tfoot>
               </table>
@@ -136,41 +145,41 @@ export default function Home() {
 
             <Reveal as="article" className="v-tile v-tile-sand v-tile-sales" delay={80}>
               <span id="buy-sell-home" className="v-anchor" />
-              <p className="v-kicker">{L('买卖房屋', 'Buying & selling')}</p>
-              <p className="v-big"><span>30%</span><small>{L('佣金比同行低', 'lower commission than competitors')}</small></p>
-              <h3>{L('想卖房或买房，先聊清您的打算', 'Selling or buying? Start with your plans')}</h3>
+              <p className="v-kicker">{L('買樓賣樓', 'Buying & selling')}</p>
+              <p className="v-big"><span>HK$0</span><small>{L('未簽約，一蚊都唔收', 'nothing to pay before you sign')}</small></p>
+              <h3>{L('想買定想賣？先同我哋傾吓你嘅計劃', 'Selling or buying? Start with your plans')}</h3>
               <ul className="v-ticks">
-                <li><Check size={16} aria-hidden />{L('佣金比同行低30%', 'Commission 30% lower than competitors')}</li>
-                <li><Check size={16} aria-hidden />{L('免费咨询', 'Free consultation')}</li>
-                <li><Check size={16} aria-hidden />{L('买卖前期不收取服务费', 'No upfront service fee')}</li>
+                <li><Check size={16} aria-hidden />{L('免費俾你市價參考', 'Free market price guidance')}</li>
+                <li><Check size={16} aria-hidden />{L('佣金喺表格 3／表格 5 寫得清清楚楚', 'Commission set out in Form 3 / Form 5')}</li>
+                <li><Check size={16} aria-hidden />{L('物業資料表格、查冊，我哋幫你準備', 'Property information forms and land searches')}</li>
               </ul>
               <div className="v-actions">
-                <Link className="btn btn-primary sales-selling-cta" to="/selling-registration">{L('登记卖房需求', 'Register selling needs')}</Link>
-                <Link className="btn btn-line sales-buying-cta" to="/buying-registration">{L('登记购房需求', 'Register buying needs')}</Link>
+                <Link className="btn btn-primary sales-selling-cta" to="/selling-registration">{L('登記放售', 'Register selling needs')}</Link>
+                <Link className="btn btn-line sales-buying-cta" to="/buying-registration">{L('登記買樓', 'Register buying needs')}</Link>
               </div>
-              <Link className="v-link" to="/buy-sell">{L('了解买卖服务', 'More on buying & selling')}<ArrowUpRight size={15} aria-hidden /></Link>
+              <Link className="v-link" to="/buy-sell">{L('了解買賣服務', 'More on buying & selling')}<ArrowUpRight size={15} aria-hidden /></Link>
             </Reveal>
 
             <Reveal as="article" className="v-tile v-tile-paper v-tile-advisory" delay={120}>
               <span id="advisory-home" className="v-anchor" />
               <figure className="v-tile-photo">
-                <SmartImg src="/img/renovation/2.webp" alt={L('明亮的厨房（示意）', 'A bright kitchen (illustrative)')} position="50% 55%" />
+                <SmartImg src="/img/renovation/2.webp" alt={L('光猛嘅廚房（示意）', 'A bright kitchen (illustrative)')} position="50% 55%" />
                 <figcaption>{L('示意', 'Illustrative')}</figcaption>
               </figure>
               <div className="v-tile-body">
-                <p className="v-kicker">{L('置业顾问 · 房屋装修', 'Property services · Renovation')}</p>
-                <h3>{L('装修翻新，从免费上门评估开始', 'Renovation, starting with a free on-site assessment')}</h3>
-                <p>{L('出租前焕新、局部改造、厨卫更新。先评估、再按项目报价，确认方案后才开工。', 'Pre-letting refreshes, makeovers, kitchens and bathrooms. Assessed first, quoted per project, started once you approve.')}</p>
+                <p className="v-kicker">{L('置業顧問 · 裝修翻新', 'Property services · Renovation')}</p>
+                <h3>{L('想裝修？我哋免費上門睇先', 'Renovation, starting with a free on-site assessment')}</h3>
+                <p>{L('放租前執靚、局部改動、換廚房廁所。我哋先睇、再逐項報價，你點頭先開工。', 'Pre-letting refreshes, makeovers, kitchens and bathrooms. Assessed first, quoted per project, started once you approve.')}</p>
                 <div className="v-actions">
-                  <Link className="btn btn-primary advisory-home-cta" to="/advisory-registration?service=renovation">{L('登记装修需求', 'Register renovation needs')}<ArrowRight size={18} aria-hidden /></Link>
-                  <Link className="v-link" to="/advisory">{L('了解置业顾问', 'More on property services')}<ArrowUpRight size={15} aria-hidden /></Link>
+                  <Link className="btn btn-primary advisory-home-cta" to="/advisory-registration?service=renovation">{L('登記裝修', 'Register renovation needs')}<ArrowRight size={18} aria-hidden /></Link>
+                  <Link className="v-link" to="/advisory">{L('了解置業顧問', 'More on property services')}<ArrowUpRight size={15} aria-hidden /></Link>
                 </div>
               </div>
             </Reveal>
           </div>
 
           <div className="v-extras">
-            <h3>{L('我们还能做什么', 'What else we can do')}</h3>
+            <h3>{L('仲可以幫你做', 'What else we can do')}</h3>
             <ul>
               {extras.map(({ to, Icon, t, d }) => (
                 <li key={to}>
@@ -189,24 +198,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------ cities */}
+      {/* ----------------------------------------------------------- regions */}
       <section className="v-sec v-sec-sage" aria-labelledby="home-cities-title">
         <div className="wrap">
-          <SectionHead kicker={L('服务城市', 'Where we work')} title={L('当地团队，就在您的房子附近', 'A local team near your property')} id="home-cities-title" lead={L('重点服务六座城市，其他城市也欢迎咨询。', 'Six focus cities; other areas are welcome too.')} />
-          <ul className="v-cities">
-            {CITY_PHOTOS.map(({ city, img, pos }) => (
+          <SectionHead kicker={L('服務地區', 'Where we work')} title={L('港九新界，我哋都喺你層樓附近', 'Across Hong Kong, near your flat')} id="home-cities-title" lead={L('港島、九龍、新界、離島，撳一下就可以搵我哋。', 'Homes on Hong Kong Island, in Kowloon, the New Territories and the Islands are all welcome.')} />
+          <ul className="v-cities v-regions">
+            {REGION_PHOTOS.map(({ city, img, pos }) => (
               <li key={city}>
-                <button type="button" onClick={() => enquire({ city, service: 'letting' })} aria-label={L(`咨询${cityName(city, lang)}的房子`, `Ask about a property in ${city}`)}>
+                <button type="button" onClick={() => enquire({ city, service: 'letting' })} aria-label={L(`問吓${cityName(city, lang)}嘅單位`, `Ask about a flat in ${city}`)}>
                   <SmartImg src={img} alt="" position={pos} />
                   <span><MapPin size={15} aria-hidden />{cityName(city, lang)}</span>
-                </button>
-              </li>
-            ))}
-            {['Brisbane'].map((city) => (
-              <li key={city} className="v-city-text">
-                <button type="button" onClick={() => enquire({ city, service: 'letting' })}>
-                  <span><MapPin size={15} aria-hidden />{cityName(city, lang)}</span>
-                  <small>{L('咨询这座城市', 'Ask about this city')}</small>
                 </button>
               </li>
             ))}
@@ -217,33 +218,31 @@ export default function Home() {
       {/* --------------------------------------------------------------- FAQ */}
       <section className="v-sec" aria-labelledby="home-faq-title">
         <div className="wrap">
-          <SectionHead kicker={L('常见问题', 'FAQ')} title={L('您可能想先知道', 'Things owners ask first')} id="home-faq-title" more={{ to: '/services#rental-faq', label: L('更多问题', 'More questions') }} />
+          <SectionHead kicker={L('常見問題', 'FAQ')} title={L('業主最常問我哋嘅問題', 'Things owners ask first')} id="home-faq-title" more={{ to: '/services#rental-faq', label: L('仲有其他問題', 'More questions') }} />
           <QAGrid items={faq} />
         </div>
       </section>
 
-      {/* -------------------------------------------------------------- team */}
+      {/* ------------------------------------------------------------- trust */}
       <section className="v-sec v-sec-tight" aria-labelledby="home-about-title">
         <div className="wrap">
-          <Reveal className="v-team">
+          <Reveal className="v-team v-trust">
             <div className="v-team-copy">
-              <p className="v-kicker">{L('专业团队', 'Our team')}</p>
-              <h2 id="home-about-title">{L('熟悉当地，认真做好每份托付', 'Local knowledge, careful follow-through')}</h2>
-              <p>{L('桉湾 EUCOVE 专注澳洲房产出租与长期托管，也做买卖和装修维修。团队成员在墨尔本、悉尼、珀斯、布里斯班等城市跟进当地租务：组织看房、核对申请、办理入住、协调维修，并用中文或英文及时告诉您进展。', 'EUCOVE focuses on Australian letting and management, and also handles sales, renovation and repairs. Team members in Melbourne, Sydney, Perth, Brisbane and other cities look after viewings, applications, move-ins and repairs, keeping you updated in Chinese or English.')}</p>
-              <Link className="v-link" to="/about">{L('认识团队', 'Meet the team')}<ArrowRight size={16} aria-hidden /></Link>
+              <p className="v-kicker">{L('關於悦港', 'About Harbour Joy')}</p>
+              <h2 id="home-about-title">{L('熟悉香港，認真對待每一層樓', 'Local knowledge, careful follow-through')}</h2>
+              <p>{L('悦港專做香港住宅放租同租務管理，亦都做買賣同裝修維修。由約人睇樓、核對租客資料、交收，到搵師傅維修，我哋都會親自跟，再用粵語、普通話或者英文即時話你知進度。', 'Harbour Joy focuses on Hong Kong residential letting and management, and also handles sales, renovation and repairs. We organise viewings, check tenant details, handle handovers and coordinate repairs, keeping you updated in Cantonese, Mandarin or English.')}</p>
+              <Link className="v-link" to="/about">{L('認識悦港', 'About us')}<ArrowRight size={16} aria-hidden /></Link>
             </div>
-            <ul className="v-team-faces" aria-label={L('团队成员', 'Team members')}>
-              {MEMBERS.map((m) => (
-                <li key={m.id}>
-                  <SmartImg src={`/team/${m.id}.webp`} alt={L(m.zh, m.en)} position="50% 18%" />
-                </li>
+            <ul className="v-trust-list">
+              {trust.map(({ Icon, t, d }) => (
+                <li key={t}><Icon size={22} aria-hidden /><span><strong>{t}</strong><small>{d}</small></span></li>
               ))}
             </ul>
           </Reveal>
         </div>
       </section>
 
-      <CtaBand title={L('聊聊您的房子吧', 'Let’s talk about your property')} text={L('告诉我们房子在哪、想要什么帮助，助理会联系您。', 'Tell us where the property is and what you need — an assistant will be in touch.')} />
+      <CtaBand title={L('不如傾吓你層樓？', 'Let’s talk about your flat')} text={L('話我哋知層樓喺邊、想我哋幫咩手，同事好快會搵你。', 'Tell us where the flat is and what you need — a colleague will be in touch.')} />
     </div>
   );
 }

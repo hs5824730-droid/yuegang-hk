@@ -10,14 +10,14 @@ export function OfferReceipt({ cta, className = '' }: { cta?: ReactNode; classNa
   const { config } = useConfig();
   const end = formatMonth(config.promotion.endMonth, lang);
   const rows = [
-    [L('第 1 套 · 出租佣金', '1st property · letting fee'), 'A$0'],
-    [L('第 2 套 · 出租佣金', '2nd property · letting fee'), L('半价', '50% off')],
-    [L('出租配套 · 搬家', 'With letting · moving'), L('免费', 'Free')],
+    [L('第 1 個單位 · 出租佣金', '1st property · letting fee'), 'HK$0'],
+    [L('第 2 個單位 · 出租佣金', '2nd property · letting fee'), L('半價', '50% off')],
+    [L('出租配套 · 搬屋', 'With letting · moving'), L('免費', 'Free')],
   ];
   return (
     <div className={`v-receipt ${className}`}>
       <p className="v-receipt-head">
-        <span>{L('房东优惠', 'Owner offer')}</span>
+        <span>{L('業主優惠', 'Owner offer')}</span>
         <span>{L(`至 ${end}`, `Until ${end}`)}</span>
       </p>
       <dl>
@@ -28,7 +28,7 @@ export function OfferReceipt({ cta, className = '' }: { cta?: ReactNode; classNa
           </div>
         ))}
       </dl>
-      <p className="v-receipt-note">{L('按同一房东委托顺序计算；管理费另计，不是免租金。', 'Counted per owner in order. Management fees are separate; this is not free rent.')}</p>
+      <p className="v-receipt-note">{L('按同一業主委託順序計算；管理費另計，唔係免租金。', 'Counted per owner in order. Management fees are separate; this is not free rent.')}</p>
       {cta && <div className="v-receipt-actions">{cta}</div>}
     </div>
   );

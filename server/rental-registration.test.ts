@@ -4,7 +4,7 @@ import {saveRentalRegistration,registrationAdmin} from './rental-registration.js
 import {GoogleRegistrationSheet,syncRentalRegistrations,registrationSheetValues,registrationSheetFormat,SHEET_HEADERS,RegistrationSyncError} from './registration-sheets.js';
 import {rentalRegistrationSchema,type RentalRegistrationRecord} from '../src/rental-registration.js';
 import {applyTestMigrations} from './test-migrations.js';import type {ReceptionDB} from './reception.js';import type {User} from './schema.js';
-const admin:User={id:'admin',name:'Fixture',email:'admin@example.test',role:'admin',city:null},manager:User={...admin,role:'manager',city:'Sydney'};
+const admin:User={id:'admin',name:'Fixture',email:'admin@example.test',role:'admin',city:null},manager:User={...admin,role:'manager',city:'Hong Kong Island'};
 const sample=(extra={})=>({requestId:crypto.randomUUID(),language:'zh',name:'仅虚构房东',phone:'+447700900001',email:'fictional@example.test',...extra});
 function fixture(){const native=new DatabaseSync(':memory:');native.exec('PRAGMA foreign_keys=ON');for(const f of readdirSync('migrations').filter(f=>f.endsWith('.sql')).sort())native.exec(readFileSync('migrations/'+f,'utf8'));const db:ReceptionDB={all:async(sql,args=[])=>native.prepare(sql).all(...args as any[]) as any[],batch:async qs=>{native.exec('BEGIN');try{for(const q of qs)native.prepare(q.sql).run(...q.args as any[]);native.exec('COMMIT')}catch(e){native.exec('ROLLBACK');throw e}}};return{db,native};}
 const list=async(db:ReceptionDB)=>(await registrationAdmin(db,admin,'GET','/api/admin/rental-registrations') as {records:RentalRegistrationRecord[]}).records;
@@ -30,13 +30,13 @@ test('missing, null, whitespace and invalid required values reject before any in
 
 test('concurrent idempotency, private city-scoped admin access and follow-up conflict protection',async()=>{
  const {db,native}=fixture();try{
-  const input=sample({city:'Sydney',street:'100 Fictional Street',suburb:'Example',state:'NSW',postcode:'2000',services:['management','marketing','management']}),results=await Promise.all(Array.from({length:12},()=>saveRentalRegistration(db,input)));
+  const input=sample({city:'Hong Kong Island',street:'100 Fictional Street',suburb:'Example',state:'NSW',postcode:'2000',services:['management','marketing','management']}),results=await Promise.all(Array.from({length:12},()=>saveRentalRegistration(db,input)));
   assert.equal(new Set(results.map(r=>r.receipt.id)).size,1);assert.equal((await list(db)).length,1);const [r]=await list(db);assert.deepEqual(r.services,['management','marketing']);
   assert.equal((await db.all('SELECT seq FROM sqlite_sequence WHERE name=?',['rental_registrations']))[0].seq,1,'Retries do not reserve empty spreadsheet rows');
   await assert.rejects(saveRentalRegistration(db,{...input,name:'Different'}),/其他资料/);
   await assert.rejects(registrationAdmin(db,{...admin,role:'mail'},'GET','/api/admin/rental-registrations'),/权限/);
-  assert.equal((await registrationAdmin(db,{...manager,city:'Melbourne'},'GET','/api/admin/rental-registrations') as any).records.length,0);
-  await assert.rejects(registrationAdmin(db,{...manager,city:'Melbourne'},'GET','/api/admin/rental-registrations/'+r.id),/不存在/);
+  assert.equal((await registrationAdmin(db,{...manager,city:'Kowloon'},'GET','/api/admin/rental-registrations') as any).records.length,0);
+  await assert.rejects(registrationAdmin(db,{...manager,city:'Kowloon'},'GET','/api/admin/rental-registrations/'+r.id),/不存在/);
   await registrationAdmin(db,manager,'PATCH','/api/admin/rental-registrations/'+r.id,{version:1,status:'following',followUp:'仅内部跟进'});
   await assert.rejects(registrationAdmin(db,manager,'PATCH','/api/admin/rental-registrations/'+r.id,{version:1,status:'paused'}),/刷新/);
   assert.equal((await db.all('SELECT revision FROM rental_registration_sync'))[0].revision,2);
