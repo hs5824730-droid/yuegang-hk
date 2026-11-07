@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const browser = await chromium.connectOverCDP('http://127.0.0.1:59306');
+const page = browser.contexts().flatMap(c => c.pages()).find(p => p.url().includes('selected_ad_ids=120257615111960405') && p.url().includes('/ads/edit/'));
+if (!page) throw new Error('Target draft page not found');
+const chooserPromise = page.waitForEvent('filechooser', { timeout: 15000 });
+await page.getByRole('button', { name: '上传', exact: true }).click();
+const chooser = await chooserPromise;
+await chooser.setFiles(process.argv.slice(2));
+console.log('Selected files:', process.argv.slice(2).length);
+await browser.close();

@@ -1,0 +1,6 @@
+**/private/**
+**/*.tar*
+**/*.sqlite*
+**/*.test.mjs
+**/node_modules/**
+.git

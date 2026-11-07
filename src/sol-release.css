@@ -1,0 +1,68 @@
+/* Sol: compact adaptations within the established EUCOVE design. */
+.ds .ds-team-split { grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:32px; }
+.ds-team-split .ds-avatars { align-self:center; gap:12px 8px; }
+.ds-team-split .ds-avatar { width:100%; max-width:64px; height:auto; aspect-ratio:3/4; border-radius:0; border:1px solid var(--ds-line); }
+.ds-team-split .ds-avatar img { border-radius:0; object-fit:cover; object-position:50% 16%; }
+.ds-team-split .ds-avatar-name { font-size:11px; }
+.ds-service-compare { margin:0; }
+.ds-service-compare table { width:100%; table-layout:fixed; }
+.ds-service-compare th:first-child { width:48%; }
+.ds-service-compare caption { text-align:left; }
+.offer-compact-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.routing-link { min-width:0; overflow-wrap:anywhere; }
+.routing-link code { white-space:normal; }
+.lf-handoff img { max-width:100%; height:auto; }
+@media (max-width:1023px) {
+  :root { --header-h:160px; }
+  .site-header,.site-header.over-intro { background:var(--paper); color:var(--ink); border-bottom:1px solid var(--line); }
+  .header-row { display:grid; grid-template-columns:minmax(0,1fr) auto; grid-template-rows:60px 88px; height:160px; gap:0 8px; align-content:start; }
+  .header-row .logo-link { grid-column:1; grid-row:1; min-width:0; }
+  .header-row .header-actions { grid-column:2; grid-row:1; gap:6px; }
+  .header-row .header-cta { display:inline-flex; min-height:44px; padding:8px 12px; font-size:13px; }
+  .header-row .lang-toggle { min-height:44px; min-width:44px; }
+  .header-row .menu-toggle { display:none; }
+  .header-row .main-nav { display:grid; grid-column:1/-1; grid-row:2; grid-template-columns:repeat(3,minmax(0,1fr)); grid-template-rows:repeat(2,44px); margin:0; gap:0 4px; width:100%; }
+  .header-row .main-nav a { white-space:normal; min-width:0; min-height:44px; padding:4px; justify-content:center; text-align:center; font-size:13px; line-height:1.2; }
+  html[lang='en'] .header-row .main-nav a { font-size:12px; }
+  .site-header.over-intro :is(.logo,.logo-name,.main-nav a) { color:var(--ink); }
+  .site-header.over-intro .logo-secondary { color:var(--ink-2); border-left-color:var(--line); }
+  .site-header.over-intro .lang-toggle { color:var(--ink); background:transparent; border-color:var(--line); }
+  .site-header.over-intro .main-nav a.active { color:var(--ink); border-bottom-color:var(--euc); }
+  .rp-offer,.rp-section,.rp-management { scroll-margin-top:calc(var(--header-h) + 56px); }
+}
+@media (max-width:760px) {
+  .ds-split-panel { min-width:0; }
+  .ds-actions .btn { max-width:100%; white-space:normal; }
+  .owner-home .ds-promise { padding-block:12px; }
+  .owner-home .ds-promise-list li,.owner-home .ds-promise-list li+li { display:block; padding:10px 0; }
+  .owner-home .ds-promise .ds-num,.owner-home .ds-promise p { display:none; }
+  .owner-home .ds-promise h3 { font-size:17px; line-height:1.35; margin:0; }
+  .owner-home .intro-play :is(.intro-kicker,.intro-content h1 .line,.intro-sub,.intro-actions,.rental-offer-stamp) { animation:none; opacity:1; transform:none; }
+  .services-page .offer-compact { padding-block:20px; }
+  .services-page .offer-compact .ds-head { margin-bottom:12px; display:block; }
+  .services-page .offer-compact .ds-head h2 { font-size:23px; margin-bottom:4px; }
+  .services-page .offer-compact .ds-head .ds-lead { display:none; }
+  .services-page .offer-compact .ds-offer-grid { display:block; }
+  .services-page .offer-compact .ds-offer-item { display:flex; align-items:center; gap:12px; padding:12px 0; border:0; border-top:1px solid var(--line); }
+  .services-page .offer-compact .ds-offer-num { font-size:16px; line-height:1; margin:0; flex:none; }
+  .services-page .offer-compact .ds-offer-item h3 { font-size:16px; margin:0; }
+  .services-page .offer-compact .ds-offer-item p { display:none; }
+  .services-page .offer-compact .ds-offer-foot { margin-top:4px; padding-top:12px; }
+  .services-page .offer-compact-actions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); width:100%; }
+  .services-page .offer-compact-actions .btn { min-width:0; padding:10px 8px; font-size:13px; white-space:normal; }
+  .ds .ds-service-compare table { font-size:12px; }
+  .ds .ds-service-compare th,.ds .ds-service-compare td { font-size:12px; padding:10px 6px; overflow-wrap:anywhere; }
+  .ds .ds-service-compare caption { padding:0 0 12px; font-size:20px; }
+  .ds .ds-service-compare th:first-child { width:44%; }
+  .ds .ds-service-compare .btn { min-height:44px; padding:8px 4px; font-size:12px; white-space:normal; }
+  .ds .ds-team-split { grid-template-columns:minmax(0,1fr); gap:16px; padding:20px; }
+  .ds-team-split .ds-avatars { gap:8px; }
+  .ds-team-split .ds-avatar { max-width:56px; }
+  .ds-team-split .ds-avatar-name { display:none; }
+  .ds .ds-team-split-copy p:not(.ds-kicker) { font-size:14px; line-height:1.6; }
+}
+@media (max-width:360px) {
+  .header-row .logo-name { font-size:24px; }
+  .header-row .logo-secondary { display:none; }
+  .header-row .logo .mark { width:28px; height:28px; }
+}

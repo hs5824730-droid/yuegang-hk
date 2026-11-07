@@ -1,0 +1,62 @@
+.sales-service-page { font-size: 15px; line-height: 1.7; }
+.sales-service-page h1 { font-size: clamp(28px, 3vw, 40px); line-height: 1.3; margin-bottom: 14px; }
+.sales-service-page h2 { font-size: clamp(23px, 2.2vw, 29px); line-height: 1.4; margin: 0 0 12px; }
+.sales-service-page h3 { font-size: 18px; line-height: 1.4; margin-bottom: 10px; }
+.sales-service-page p { color: var(--ink-2); }
+.sales-service-page .btn { min-height: 44px; font-size: 14px; }
+.sales-service-page :is(button, a, summary):focus-visible { outline: 2px solid var(--euc); outline-offset: 3px; }
+.sales-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 32px; }
+.sales-lead { max-width: 42ch; margin-bottom: 20px; }
+.sales-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.sales-hero .textlink { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 12px; font-size: 14px; }
+.sales-service-page figure { margin: 0; overflow: hidden; border-radius: var(--r); }
+.sales-service-page figure img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.sales-hero figure { aspect-ratio: 4 / 3; }
+.sales-paths { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-block: 24px 44px; }
+.sales-paths article { min-width: 0; scroll-margin-top: 80px; }
+.sales-paths figure { aspect-ratio: 16 / 8; margin-bottom: 20px; }
+.sales-path-copy ul { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 10px; }
+.sales-path-copy li { display: flex; gap: 10px; }
+.sales-path-copy li svg { flex: none; color: var(--euc); margin-top: 4px; }
+.sales-path-copy p.sales-owner { border-top: 1px solid var(--line); padding-top: 14px; color: var(--euc-dark); font-size: 14px; }
+.sales-scenarios { background: var(--alt); padding-block: 36px; }
+.sales-scenario-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 24px; }
+.sales-scenario-list > article { border-top: 1px solid var(--line); }
+.sales-scenario-list dl { margin: 0; }
+.sales-scenario-list dl > div { margin-top: 12px; }
+.sales-scenario-list dt { font-size: 14px; font-weight: 600; color: var(--euc); }
+.sales-scenario-list dd { margin: 4px 0 0; color: var(--ink-2); font-size: 14px; }
+.sales-start { padding-block: 36px; }
+.sales-start ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 0; list-style-position: inside; }
+.sales-start li { padding-top: 12px; border-top: 1px solid var(--line); }
+.sales-start li::marker { color: var(--euc); font-size: 14px; font-weight: 600; }
+.sales-start h3 { display: inline; font-size: 16px; }
+.sales-start p { font-size: 14px; margin: 8px 0 0; }
+.sales-faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 36px; padding-bottom: 36px; }
+.sales-faq details { border-bottom: 1px solid var(--line); }
+.sales-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 12px 0; cursor: pointer; list-style: none; }
+.sales-faq summary::-webkit-details-marker { display: none; }
+.sales-faq summary svg { flex: none; color: var(--euc); }
+.sales-faq details[open] summary svg { transform: rotate(180deg); }
+.sales-faq p { font-size: 14px; margin: 0 0 16px; }
+.sales-final { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 24px 36px; border-top: 1px solid var(--line); }
+.sales-final p { margin: 0; }
+.sales-final .btn { flex: none; }
+.sales-client-cases { padding-block: 36px; }
+@media (max-width: 900px) {
+  .sales-hero, .sales-paths { gap: 24px; }
+  .sales-faq { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .sales-service-page { font-size: 14px; }
+  .sales-hero { grid-template-columns: 1fr; gap: 18px; padding-block: 24px; }
+  .sales-hero figure { aspect-ratio: 2 / 1; }
+  .sales-paths { grid-template-columns: 1fr; gap: 32px; }
+  .sales-scenario-list, .sales-start ol { grid-template-columns: 1fr; gap: 20px; }
+  .sales-scenarios { padding-block: 28px; }
+  .sales-start { padding-block: 28px; }
+  .sales-final { align-items: flex-start; flex-direction: column; gap: 16px; }
+}
+.sales-fee-highlight { display: grid; gap: 4px; margin-bottom: 16px; }
+.sales-fee-highlight strong { color: var(--euc-dark); font-size: 19px; line-height: 1.4; }
+.sales-fee-highlight span { font-size: 14px; }

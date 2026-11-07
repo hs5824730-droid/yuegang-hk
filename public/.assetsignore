@@ -1,0 +1,9 @@
+# Internal or abandoned previews are not part of the production website.
+/brand-concepts/**
+/depth/**
+/data/**
+/reference-media/**
+/3d-preview/**
+**/*.zip
+**/*.map
+**/.env*

@@ -1,0 +1,23 @@
+"""Publish only reviewed private source frames; retain all original bytes."""
+from pathlib import Path
+from PIL import Image,ImageOps
+import json,hashlib
+root=Path(__file__).resolve().parents[1];review=root/'data/design-review/rental-completion-2026-10-23'
+labels={'exterior':('外观与入口','Exterior & entrance'),'living':('客厅','Living room'),'kitchen':('厨房','Kitchen'),'bedroom':('卧室','Bedroom'),'bathroom':('卫浴','Bathroom'),'balcony':('阳台','Balcony'),'courtyard':('庭院','Courtyard'),'hall':('入口走廊','Entrance & hallway')}
+selections=json.loads((review/'approved-room-selections.json').read_text());exclusions=json.loads((review/'photo-exclusions.json').read_text());assert not set(selections)&set(exclusions)
+for ident,choice in selections.items():
+ folder=root/'data/viewing-source'/ident;m=json.loads((folder/'candidate-metadata.json').read_text());assert m['status']=='metadata-verified-awaiting-photo-review' and m['kind']==choice['kind'];assert 3<=len(choice['rooms'])<=5
+ assert hashlib.sha256((folder/'source-page.html').read_bytes()).hexdigest()==m['sourceSha256'];rooms=[]
+ for order,(num,label) in enumerate(choice['rooms'],1):
+  raw=folder/'candidates'/f'{num}.jpg';full=ImageOps.exif_transpose(Image.open(raw)).convert('RGB');assert min(full.size)>=300
+  if max(full.size)>1600:full=ImageOps.contain(full,(1600,1600),Image.Resampling.LANCZOS)
+  file=f'room-{order}-{label}.jpg';thumb=f'room-{order}-{label}.thumb.jpg';full.save(folder/file,quality=86,optimize=True,progressive=True);small=ImageOps.contain(full,(640,480),Image.Resampling.LANCZOS);small.save(folder/thumb,quality=82)
+  rooms.append({'id':label,'order':order,'label':dict(zip(['zh','en'],labels[label])),'file':file,'thumbnailFile':thumb,'originalUrl':m['candidates'][num-1],'sourceImageNumber':num,'watermarked':False,'watermarkReviewedAt':'2026-10-23','watermarkReview':'Human full-frame review, no visible watermark; no crop, inpainting, or watermark removal.','recommended':True,'recommendation':'真实来源房间首帧，仅描述可见空间。','videoFile':f'room-{order}.mp4','originalSha256':hashlib.sha256(raw.read_bytes()).hexdigest(),'fileSha256':hashlib.sha256((folder/file).read_bytes()).hexdigest(),'assetTransform':'Full-frame proportional downscale to maximum 1600px and JPEG compression only; no crop or watermark editing. Original retained.'})
+ kind=m['kind'];price=m['askingWeeklyRent'] if kind=='rent' else m['soldPrice'];amount=format(price,',.0f') if price is not None else None;priceDisplay={'zh':f'A${amount} / 周','en':f'A${amount} / week'} if kind=='rent' else {'zh':f'A${amount}' if amount else '价格未披露','en':f'A${amount}' if amount else 'Price undisclosed'}
+ evidence={'officialPageReadable':True,'sourceUrl':m['sourceUrl'],'checkedAt':m['checkedAt'],'sourceSha256':m['sourceSha256'],'sourceFormat':m['sourceFormat'],'signal':'active-rental-page' if kind=='rent' else 'public-sold-page','text':m['priceText']+('; Available: '+str(m.get('availableDateSourceText')) if kind=='rent' else ''),'sourceFile':f'data/viewing-source/{ident}/source-page.html'}
+ (folder/'source-verification.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2),encoding='utf8')
+ manifest={'version':1,'id':ident,'kind':kind,'usage':'internal-viewing-sample','publicReuseApproved':False,'displayEligible':True,'availabilityStatus':'available' if kind=='rent' else 'unknown','availabilityCheckedAt':m['checkedAt'] if kind=='rent' else None,**{k:m[k] for k in ['address','suburb','city','postcode','beds','baths','cars','geo','sourceName','sourceUrl','sourceCode','sourceFormat','sourceSha256']},'priceDisplay':priceDisplay,'priceAmount':price,'priceBasis':'asking_weekly_rent' if kind=='rent' else ('sold_price' if price is not None else 'undisclosed'),'checkedAt':'2026-10-23','listingDate':None,'availableDate':m.get('availableDate') if kind=='rent' else None,'availableDateSourceText':m.get('availableDateSourceText'),'soldPrice':m.get('soldPrice') if kind=='sold' else None,'soldDate':m.get('soldDate') if kind=='sold' else None,'coverRoom':choice.get('coverRoom',rooms[0]['id']),'rooms':rooms,'robotsCheckedAt':'2026-10-23','rights':'Third-party copyright; private internal reference only; no public reuse or watermark editing.'}
+ if kind=='rent':manifest['availabilityEvidence']={'sourceUrl':m['sourceUrl'],'checkedAt':m['checkedAt'],'signal':'active-rental-page','text':evidence['text'][:300],'evidenceFile':f'data/viewing-source/{ident}/source-verification.json'}
+ else:manifest['sourceEventText']=m['sourceEventText']
+ if m.get('activeIndexEvidence'):manifest['activeIndexEvidence']=m['activeIndexEvidence']
+ (folder/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8');print(ident,kind,m['address'],len(rooms))

@@ -1,0 +1,7 @@
+.rental-offer-stamp { display: inline-flex; gap: 12px; align-items: center; max-width: 100%; min-height: 44px; margin: 0 0 18px; padding: 10px 16px 10px 10px; border-radius: 14px; background: #fff; color: #1d1b19; text-decoration: none; text-align: left; box-shadow: 0 16px 36px -18px rgba(0, 0, 0, .55); transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
+.rental-offer-stamp > svg { flex: none; box-sizing: content-box; padding: 10px; border-radius: 50%; background: var(--brand-orange, #ff6a2b); color: #1b1410; }
+.rental-offer-stamp strong { display: block; font-size: 16.5px; line-height: 1.35; }
+.rental-offer-stamp small { display: block; margin-top: 1px; font-size: 13px; line-height: 1.5; color: #4b4642; }
+.rental-offer-stamp:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@media (hover: hover) { .rental-offer-stamp:hover { transform: translateY(-2px); } }
+.home-intro .rental-offer-stamp { margin-top: 4px; }

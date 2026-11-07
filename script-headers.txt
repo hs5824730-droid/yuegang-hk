@@ -1,0 +1,20 @@
+HTTP/1.1 200 OK
+Date: Sat, 24 Oct 2026 11:09:53 GMT
+Content-Type: text/javascript
+Content-Length: 4682
+Connection: keep-alive
+CF-Cache-Status: MISS
+Cache-Control: public, max-age=0, must-revalidate
+ETag: "ffd0049def4556c1939ce29409577a9f"
+Strict-Transport-Security: max-age=31536000
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data: blob:; connect-src 'self' https://analytics.jiangyuan.org; frame-src 'self' https://my.matterport.com https://*.my.matterport.com https://matterport.com https://*.matterport.com https://kuula.co https://*.kuula.co https://www.kuula.co https://*.www.kuula.co https://tour.klapty.com https://*.tour.klapty.com https://iguide.au https://*.iguide.au https://youriguide.com https://*.youriguide.com https://www.openstreetmap.org; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+Referrer-Policy: strict-origin-when-cross-origin
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=rYb%2FWw2t%2FkGp2Cw6xkz4YmbVSyeNzzWUbUw6Ncjh%2F9a4XZr%2BsmJoDORVKObElTLx3X3ZUdhbWhtPfH%2FhRt36WenV62UMg0mOnXiDeBW7R405GsHWEAnh64rxbthE"}]}
+Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+Server: cloudflare
+CF-RAY: a4f888275dcb8806-FRA
+alt-svc: h3=":443"; ma=86400
+

@@ -1,0 +1,89 @@
+/* Letting product page only. Shared home, offer and form components keep their styles. */
+.rental-product { font-size: 15px; line-height: 1.7; }
+.rental-product h1 { font-size: clamp(28px, 3.3vw, 42px); line-height: 1.25; letter-spacing: -.03em; margin: 0 0 16px; }
+.rental-product h2 { font-size: clamp(23px, 2.3vw, 30px); line-height: 1.35; margin: 0 0 10px; letter-spacing: -.02em; }
+.rental-product h3 { font-size: 20px; line-height: 1.4; margin: 0 0 10px; }
+.rental-product p { color: var(--ink-2); }
+.rental-product .btn { min-height: 44px; font-size: 14px; line-height: 1.4; padding: 11px 14px; }
+.rental-product .textlink { min-height: 44px; background: none; border: 0; font: 600 14px var(--sans); padding: 8px 0; cursor: pointer; }
+.rental-product :is(button, a, summary):focus-visible { outline: 2px solid var(--euc); outline-offset: 3px; }
+.rp-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 32px; }
+.rp-lead { margin: 0 0 20px; max-width: 43ch; }
+.rp-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.rp-hero-photo, .rp-stage-photo, .rp-management-photo { margin: 0; overflow: hidden; border-radius: var(--r); }
+.rp-hero-photo { aspect-ratio: 4 / 3; }
+.rp-hero-photo img, .rp-stage-photo img, .rp-management-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rp-offer { background: var(--euc-tint); padding-block: 32px; scroll-margin-top: 80px; }
+.rp-section-heading { margin-bottom: 24px; max-width: 820px; }
+.rp-section-heading p { margin: 0; }
+.rp-offer-items { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.rp-offer-items article { display: flex; gap: 12px; align-items: flex-start; }
+.rp-offer-items article > svg { flex: none; color: var(--euc); margin-top: 3px; }
+.rp-offer-items h3 { font-size: 18px; }
+.rp-offer-items p { font-size: 14px; margin: 0; }
+.rp-offer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); margin-top: 24px; padding-top: 18px; }
+.rp-offer-bottom p { margin: 0; max-width: 78ch; font-size: 14px; }
+.rp-offer-bottom .btn { flex: none; }
+.rp-section { padding-block: 48px; scroll-margin-top: 72px; }
+.rp-stage-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+.rp-stage-photo { aspect-ratio: 4 / 3; }
+.rp-stage-copy > p { margin: 0 0 16px; }
+.rp-management { background: var(--alt); padding-block: 44px; scroll-margin-top: 72px; }
+.rp-management-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 40px; align-items: start; }
+.rp-management-photo { aspect-ratio: 4 / 5; max-height: 560px; }
+.rp-management-copy article { padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid var(--line); }
+.rp-management-copy h3 { font-size: 18px; }
+.rp-management-copy p { margin: 0 0 8px; }
+.rp-faq { display: grid; grid-template-columns: .7fr 1.3fr; gap: 40px; padding-bottom: 40px; }
+.rp-faq details { border-bottom: 1px solid var(--line); }
+.rp-faq summary { display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 52px; padding: 12px 0; font-weight: 500; cursor: pointer; list-style: none; }
+.rp-faq summary::-webkit-details-marker { display: none; }
+.rp-faq summary svg { flex: none; color: var(--euc); }
+.rp-faq details[open] summary svg { transform: rotate(180deg); }
+.rp-faq details p { margin: 0 0 16px; font-size: 14px; }
+.rp-final { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding-block: 28px 40px; border-top: 1px solid var(--line); }
+.rp-final h2 { font-size: 24px; }
+.rp-final p { margin: 0; max-width: 65ch; }
+.rental-product .service-comparison .fine { font-size: 14px; }
+@media (max-width: 900px) {
+  .rp-hero { gap: 24px; }
+  .rp-offer-items { gap: 16px; }
+  .rp-offer-items article { flex-direction: column; gap: 8px; }
+  .rp-stage-layout, .rp-management-layout { gap: 24px; }
+  .rp-offer-bottom { align-items: flex-start; }
+  .rp-faq { grid-template-columns: 1fr; gap: 12px; }
+}
+@media (max-width: 600px) {
+  .rental-product { font-size: 14px; }
+  .rp-hero { grid-template-columns: 1fr; padding-block: 24px; gap: 16px; }
+  .rental-product h1 { font-size: 28px; margin-bottom: 12px; }
+  .rp-lead { margin-bottom: 16px; }
+  .rp-hero-photo { aspect-ratio: 2.2 / 1; }
+  .rp-actions { gap: 8px; }
+  .rp-actions .btn { flex: 1; padding-inline: 10px; }
+  .rp-offer { padding-block: 28px; }
+  .rp-section-heading { margin-bottom: 20px; }
+  .rp-offer-items { grid-template-columns: 1fr; gap: 18px; }
+  .rp-offer-items article { flex-direction: row; }
+  .rp-offer-items h3 { font-size: 17px; margin-bottom: 5px; }
+  .rp-offer-bottom { flex-direction: column; gap: 16px; margin-top: 18px; padding-top: 16px; }
+  .rp-offer-bottom .btn { width: 100%; }
+  .rp-section { padding-block: 32px; }
+  .rp-stage-layout, .rp-management-layout { grid-template-columns: 1fr; gap: 20px; }
+  .rp-stage-photo { aspect-ratio: 16 / 9; }
+  .rp-management { padding-block: 32px; }
+  .rp-management-photo { aspect-ratio: 16 / 9; }
+  .rp-management-photo img { object-position: 50% 65%; }
+  .rp-management-copy article { padding-bottom: 14px; margin-bottom: 16px; }
+  .rp-management-copy .btn { width: 100%; }
+  .rental-product .service-options { gap: 8px; margin-bottom: 16px; }
+  .rental-product .service-option { padding: 14px 32px 14px 12px; }
+  .rental-product .service-option input { top: 16px; right: 10px; }
+  .rental-product .service-option-title { font-size: 16px; gap: 6px; }
+  .rental-product .service-matrix th, .rental-product .service-matrix td { padding: 12px 8px; font-size: 14px; overflow-wrap: anywhere; }
+  .rp-faq { padding-bottom: 28px; }
+  .rp-final { gap: 18px; padding-block: 24px 32px; }
+  .rp-final .rp-actions { width: 100%; }
+}
+.rp-stage-list { display: grid; gap: 32px; }
+.rp-stage-number { display: block; color: var(--euc); font-size: 14px; margin-bottom: 8px; }

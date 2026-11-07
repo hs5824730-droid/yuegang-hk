@@ -1,0 +1,2 @@
+# The deployed com baseline is verified by byte-level hashes on Windows and Linux.
+site/com/** -text

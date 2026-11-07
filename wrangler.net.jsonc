@@ -1,0 +1,16 @@
+{
+ "$schema":"node_modules/wrangler/config-schema.json",
+ "name":"eucove-net",
+ "account_id":"b65685ed0ee606d73747149aff303600",
+ "main":"worker/net.ts",
+ "compatibility_date":"2026-10-23",
+ "compatibility_flags":["nodejs_compat"],
+ "workers_dev":false,
+ "preview_urls":false,
+ "send_metrics":false,
+ "routes":[{"pattern":"eucove.net","custom_domain":true},{"pattern":"www.eucove.net","custom_domain":true}],
+ "assets":{"directory":"./dist-net","binding":"ASSETS","not_found_handling":"single-page-application","run_worker_first":true},
+ "services":[{"binding":"BACKEND","service":"eucove"}],
+ "vars":{"APP_URL":"https://eucove.net"},
+ "observability":{"enabled":true,"logs":{"enabled":true,"invocation_logs":false},"traces":{"enabled":true,"persist":false}}
+}

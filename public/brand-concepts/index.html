@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>桉湾 EUCOVE · 品牌预览</title>
+<link rel="icon" id="fav" href="data:,">
+<style>
+:root{--o:#F26522;--d:#C2410C;--s:#FFF1E8;--ink:#1F1D1B;--mute:#6F6A64;--line:#ECE6E0;--bg:#FAF8F6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font:15px/1.6 'PingFang SC','Noto Sans SC','Microsoft YaHei','Segoe UI',system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:540px;margin:0 auto;padding:0 16px 40px}
+.top{padding:28px 2px 14px}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--d);font-weight:600}
+h1{font-size:22px;line-height:1.3;margin-top:4px;font-weight:650}
+.top p{color:var(--mute);font-size:13.5px;margin-top:4px}
+.tabs{position:sticky;top:0;z-index:5;background:rgba(250,248,246,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:8px 0 10px;margin:0 -16px;padding-left:16px;padding-right:16px}
+.seg{display:flex;background:#F0EBE6;border-radius:12px;padding:3px;gap:2px}
+.seg button{flex:1;min-height:40px;border-radius:9px;font-size:13.5px;color:var(--mute);line-height:1.2;padding:4px 6px}
+.seg button b{display:block;font-size:14px;color:var(--ink);font-weight:600}
+.seg button[aria-pressed=true]{background:#fff;box-shadow:0 1px 2px rgba(31,29,27,.08),0 0 0 1px rgba(31,29,27,.04)}
+.seg button[aria-pressed=true] b{color:var(--d)}
+.seg.sm button{min-height:32px;font-size:13px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin-top:12px}
+.card h3{font-size:13px;font-weight:600;color:var(--mute);letter-spacing:.04em;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.tag{display:inline-block;font-size:11.5px;font-weight:600;color:var(--d);background:var(--s);border-radius:999px;padding:2px 9px}
+.hero h2{font-size:19px;margin-top:8px;font-weight:650;letter-spacing:.01em}
+.hero h2 small{font-size:13px;color:var(--mute);font-weight:500;margin-left:6px;letter-spacing:.06em}
+.hero p{font-size:14px;color:#47423D;margin-top:4px}
+.hero p.read{font-size:12.5px;color:var(--mute);margin-top:2px}
+.stage{margin:14px -16px 12px;height:190px;display:flex;align-items:center;justify-content:center;transition:background .2s;padding:0 20px}
+.stage[data-bg=light]{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stage[data-bg=dark]{background:#1F1D1B}
+.stage[data-bg=orange]{background:var(--o)}
+.stage svg{display:block;width:100%;height:auto}
+#logo{width:220px;max-width:100%;transition:width .2s}
+.ctrl{display:flex;gap:8px}
+.ctrl .seg{flex:1}
+.phone{border-radius:22px;padding:22px 14px 16px;background:linear-gradient(160deg,#FCE3D3,#F7EFE8 55%,#EFE9E3)}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 8px;justify-items:center}
+.app{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11px;color:#3D3833;width:64px}
+.app svg,.app i{width:58px;height:58px;display:block;border-radius:13px}
+.app i{background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px rgba(31,29,27,.05)}
+.app svg{filter:drop-shadow(0 2px 4px rgba(150,70,20,.16))}
+.site{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;gap:8px}
+.bar .lg{height:30px}
+.bar .lg svg{height:100%;width:auto;display:block}
+.cta{background:var(--d);color:#fff;font-size:13px;font-weight:600;border-radius:999px;padding:7px 13px;white-space:nowrap}
+.strip{font-size:12px;color:var(--mute);padding:7px 12px;border-top:1px solid var(--line);background:#FDFBF9;line-height:1.45}
+.strip b{color:var(--ink);font-weight:600}
+.nav{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line)}
+.nav div{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 0 9px;font-size:11.5px;color:#47423D}
+.nav svg{width:22px;height:22px;color:var(--d)}
+.sizes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sizes>div{border-radius:12px;padding:14px 10px;display:flex;align-items:flex-end;justify-content:space-around}
+.sizes .l{background:#F6F2EE}
+.sizes .k{background:#1F1D1B;color:#BDB6AE}
+.sz{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:10.5px;color:var(--mute)}
+.k .sz{color:#9C958D}
+.sz svg{display:block}
+.tab{margin-top:10px;background:#EDE8E3;border-radius:10px 10px 0 0;padding:8px 10px 0}
+.tab div{background:#fff;border-radius:8px 8px 0 0;display:flex;align-items:center;gap:7px;padding:7px 10px;font-size:12px;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tab svg{width:16px;height:16px;flex:none}
+.mono{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mono div{border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center;padding:0 14px}
+.mono div:first-child{background:#fff;border:1px solid var(--line)}
+.mono div:last-child{background:#1F1D1B}
+.mono svg{width:100%;height:auto;max-height:56px}
+.sw{display:flex;gap:8px}
+.sw div{flex:1;border-radius:12px;height:62px;padding:8px;font-size:11px;display:flex;flex-direction:column;justify-content:flex-end;line-height:1.3}
+.sw span{opacity:.85;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:10.5px}
+.font{font-size:12.5px;color:var(--mute);margin-top:10px}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dl button{border:1px solid var(--line);border-radius:11px;padding:10px 12px;text-align:left;font-size:13px;display:flex;justify-content:space-between;align-items:center;min-height:44px}
+.dl button:active,.ic button:active{background:var(--s)}
+.dl button::after{content:'';width:14px;height:14px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 4v11M7 10l5 5 5-5M5 20h14'/%3E%3C/svg%3E") center/contain no-repeat;color:var(--d)}
+.ic{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ic button{border:1px solid var(--line);border-radius:12px;padding:14px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:12.5px}
+.ic svg{width:28px;height:28px;color:var(--d)}
+.ic small{font-size:10.5px;color:var(--mute);margin-top:-5px}
+.note{font-size:12px;color:var(--mute);margin-top:6px}
+.foot{font-size:11.5px;color:#9C958D;text-align:center;margin-top:22px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);background:#1F1D1B;color:#fff;font-size:13px;padding:8px 14px;border-radius:999px;opacity:0;transition:.2s;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (min-width:900px){.wrap{max-width:980px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;align-items:start}.stage{height:240px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">品牌提案 · 橘 + 白</div>
+    <h1>桉湾 EUCOVE · 品牌预览</h1>
+    <p>澳洲房产出租招租与长期托管 · 面向华人与海外房东</p>
+  </header>
+  <nav class="tabs"><div class="seg" id="tabs" role="group" aria-label="切换方案"></div></nav>
+  <main class="grid2">
+    <div>
+      <section class="card hero">
+        <span class="tag" id="tagc">方案 B · 已选定</span>
+        <h2 id="name"></h2>
+        <p id="idea"></p>
+        <p class="read" id="read"></p>
+        <div class="stage" id="stage" data-bg="light"><div id="logo"></div></div>
+        <div class="ctrl">
+          <div class="seg sm" id="bgs" role="group" aria-label="底色"></div>
+          <div class="seg sm" id="szs" role="group" aria-label="大小"></div>
+        </div>
+      </section>
+      <section class="card">
+        <h3>手机桌面图标</h3>
+        <div class="phone"><div class="apps" id="apps"></div></div>
+      </section>
+      <section class="card">
+        <h3>网页页头示意</h3>
+        <div class="site">
+          <div class="bar"><div class="lg" id="hlogo"></div><span class="cta">房东咨询</span></div>
+          <div class="strip"><b>房产出租与托管</b> · Letting &amp; property management<br>Melbourne · Sydney · Perth · Adelaide · Canberra</div>
+          <div class="nav" id="nav"></div>
+        </div>
+      </section>
+    </div>
+    <div>
+      <section class="card">
+        <h3>标志动效 <button type="button" class="motion-replay" id="replay">播放动效 ↻</button></h3>
+        <div class="motion-stage" id="motion"></div>
+        <p class="note" id="motion-note">轻触播放，看看标志如何出现。</p>
+      </section>
+      <section class="card">
+        <h3>小尺寸识别 <span class="tag">16 / 24 / 32 / 48 px</span></h3>
+        <div class="sizes"><div class="l" id="szl"></div><div class="k" id="szk"></div></div>
+        <div class="tab"><div id="tabmock"></div></div>
+      </section>
+      <section class="card">
+        <h3>单色与反白</h3>
+        <div class="mono"><div id="mink"></div><div id="mwhite"></div></div>
+      </section>
+      <section class="card">
+        <h3>颜色与字体</h3>
+        <div class="sw" id="sw"></div>
+        <p class="font" id="font"></p>
+      </section>
+      <section class="card">
+        <h3>下载本方案 SVG</h3>
+        <div class="dl" id="dl"></div>
+      </section>
+      <section class="card">
+        <h3>业务线性图标 <span class="tag">三套通用</span></h3>
+        <div class="ic" id="ic"></div>
+        <p class="note">24px 网格 · 1.6 描边 · 圆角端点，颜色跟随方案。点击下载。</p>
+      </section>
+    </div>
+  </main>
+  <p class="foot">名称为初步构思，用于方向选择；正式使用前需另做商标与域名检索。</p>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<style>
+body{background:#fff}.card{border-radius:10px}.tabs{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}.tag{border-radius:4px}
+.phone{background:#fff4ed;border-radius:10px}.apps{grid-template-columns:repeat(3,1fr)}
+.motion-stage{height:130px;display:grid;place-items:center;background:#fff7f1;border-radius:6px;overflow:hidden}
+.motion-stage svg{width:82px;height:82px;overflow:visible}
+.motion-replay{border:1px solid var(--line);border-radius:6px;min-height:44px;padding:6px 12px;font-size:12px;color:var(--d)}
+button:focus-visible{outline:2px solid var(--d);outline-offset:3px}.seg.sm button{min-height:44px}
+.motion-stage.playing .motion-leaf{transform-origin:32px 42px;animation:leaf-in .65s cubic-bezier(.16,1,.3,1) both}
+.motion-stage.playing .motion-shore{transform-origin:32px 55px;animation:shore-in .55s .1s cubic-bezier(.16,1,.3,1) both}
+.motion-stage.playing .motion-ring-1{transform-origin:32px 32px;animation:bay-in .7s cubic-bezier(.16,1,.3,1) both}
+.motion-stage.playing .motion-ring-2{transform-origin:32px 32px;animation:bay-in .65s .08s cubic-bezier(.16,1,.3,1) both}
+.motion-stage.playing .motion-center{transform-origin:32px 32px;animation:center-in .4s .25s ease-out both}
+.motion-stage.playing .motion-court{animation:court-in .65s cubic-bezier(.2,.7,.3,1) both}
+.motion-stage.playing .motion-room{transform-origin:32px 32px;animation:room-in .5s .15s cubic-bezier(.16,1,.3,1) both}
+@keyframes leaf-in{from{opacity:0;transform:translate(5px,-8px) rotate(-12deg)}to{opacity:1;transform:none}}
+@keyframes shore-in{from{opacity:0;transform:scaleX(.3)}to{opacity:1;transform:none}}
+@keyframes bay-in{from{opacity:0;transform:rotate(-45deg) scale(.8)}to{opacity:1;transform:none}}
+@keyframes center-in{from{opacity:0;transform:scale(.25)}to{opacity:1;transform:none}}
+@keyframes court-in{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes room-in{from{opacity:0;transform:translateY(5px) scale(.85)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<script>
+window.__errors=[];window.addEventListener('error',function(e){window.__errors.push(String(e.message));document.documentElement.setAttribute('data-err',window.__errors.join('|'))});
+</script>
+<script>
+/* 品牌方案核心：三套方案的矢量定义。build.mjs 用它导出独立 SVG，index.html 内联同一份代码。 */
+var BRAND = (function () {
+  var INK = '#1F1D1B';
+  var SERIF_CN = "'Noto Serif SC','Source Han Serif SC','Songti SC','STSong','SimSun',serif";
+  var SANS_CN = "'PingFang SC','Noto Sans SC','Source Han Sans SC','Microsoft YaHei',sans-serif";
+  var SANS_EN = "'Inter','Helvetica Neue','Segoe UI',Arial,sans-serif";
+  var SERIF_EN = "'Cormorant Garamond','Playfair Display',Georgia,'Times New Roman',serif";
+  var uid = 0;
+  function id(p) { uid += 1; return p + uid; }
+
+  // 64×64 标志
+  var marks = {
+    a: function (c) {
+      var m = id('lf');
+      return '<mask id="' + m + '"><rect width="64" height="64" fill="#fff"/>' +
+        '<path d="M19.5 44.5C28 36 37.5 25.5 45.5 15" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round"/></mask>' +
+        '<path mask="url(#' + m + ')" d="M16.5 47.5C17.5 31 31 15.5 49.5 10.5C48.5 28 36 42.5 16.5 47.5Z" fill="' + c + '"/>' +
+        '<rect x="9" y="52.5" width="46" height="4.6" rx="2.3" fill="' + c + '"/>';
+    },
+    b: function (c) {
+      return '<g fill="none" stroke="' + c + '" stroke-width="5" stroke-linecap="round">' +
+        '<path d="M48.97 48.97A24 24 0 1 1 48.97 15.03"/>' +
+        '<path d="M42.61 42.61A15 15 0 1 1 42.61 21.39"/></g>' +
+        '<circle cx="32" cy="32" r="5.5" fill="' + c + '"/>';
+    },
+    c: function (c) {
+      return '<path d="M27 52.5H11.5V11.5H52.5V52.5H37" fill="none" stroke="' + c + '" stroke-width="5.5" stroke-linejoin="miter"/>' +
+        '<rect x="24" y="24" width="16" height="16" fill="' + c + '"/>';
+    }
+  };
+  // 32×32 小尺寸简化标志（favicon / 16–32px）
+  var smallMarks = {
+    a: function (c) {
+      return '<path d="M8.5 23.5C9 15.5 15.5 8 24.5 5.5C24 14 18 21 8.5 23.5Z" fill="' + c + '"/>' +
+        '<rect x="4.5" y="26" width="23" height="2.8" rx="1.4" fill="' + c + '"/>';
+    },
+    b: function (c) {
+      return '<path d="M23.07 23.07A10 10 0 1 1 23.07 8.93" fill="none" stroke="' + c + '" stroke-width="4" stroke-linecap="round"/>' +
+        '<circle cx="16" cy="16" r="3.4" fill="' + c + '"/>';
+    },
+    c: function (c) {
+      return '<path d="M13.5 26.5H5.5V5.5H26.5V26.5H18.5" fill="none" stroke="' + c + '" stroke-width="3.4"/>' +
+        '<rect x="12" y="12" width="8" height="8" fill="' + c + '"/>';
+    }
+  };
+
+  var concepts = {
+    a: {
+      key: 'a', cn: '桉岸', en: 'ANSHORE', enDisplay: 'Anshore',
+      idea: '一片桉叶落在海岸线上：澳洲的树，安心的岸。',
+      reading: '中文“桉岸”谐音“安岸”；英文 An + shore 为自创组合。',
+      orange: '#F26522', deep: '#C2410C', soft: '#FFF1E8',
+      tile: 'orange',
+      fonts: '中文宋体衬线 · 英文宽字距无衬线',
+      lockup: function (o) {
+        return {
+          w: 182, h: 80,
+          body: '<g transform="translate(0 8)">' + marks.a(o.mark) + '</g>' +
+            '<text x="80" y="43" font-family="' + SERIF_CN + '" font-size="34" font-weight="600" letter-spacing="6" fill="' + o.ink + '">桉岸</text>' +
+            '<text x="81" y="66" font-family="' + SANS_EN + '" font-size="11.5" font-weight="600" letter-spacing="5.2" fill="' + o.accent + '">ANSHORE</text>'
+        };
+      }
+    },
+    b: {
+      key: 'b', cn: '桉湾', en: 'EUCOVE', enDisplay: 'eucove',
+      idea: '海湾等高线环抱一个点：被安稳守护的那套房。',
+      reading: '英文 eucalyptus + cove 自创，小写更像 App；中文“桉湾”。',
+      orange: '#FF6A2B', deep: '#C2410C', soft: '#FFF2EA',
+      tile: 'white',
+      fonts: '英文小写粗体无衬线为主 · 中文黑体',
+      lockup: function (o) {
+        return {
+          w: 282, h: 80,
+          body: '<g transform="translate(0 8)">' + marks.b(o.mark) + '</g>' +
+            '<text x="78" y="53" font-family="' + SANS_EN + '" font-size="38" font-weight="700" letter-spacing="-1" fill="' + o.ink + '">eucove</text>' +
+            '<line x1="216" y1="27" x2="216" y2="57" stroke="' + o.rule + '" stroke-width="1.5"/>' +
+            '<text x="228" y="51" font-family="' + SANS_CN + '" font-size="22" font-weight="600" letter-spacing="2" fill="' + o.accent + '">桉湾</text>'
+        };
+      }
+    },
+    c: {
+      key: 'c', cn: '衡庭', en: 'HENGTING', enDisplay: 'Hengting',
+      idea: '俯视的庭院平面：四面有墙、留一道门，托管就是替你守好这个院子。',
+      reading: '“衡”取公允、“庭”取家宅；英文采用中文拼音 Hengting。',
+      orange: '#E8571E', deep: '#B93C0C', soft: '#FDF0E9',
+      tile: 'orange',
+      fonts: '英文大写衬线为主 · 中文衬线宽排',
+      lockup: function (o) {
+        return {
+          w: 266, h: 80,
+          body: '<g transform="translate(0 8)">' + marks.c(o.mark) + '</g>' +
+            '<text x="80" y="40" font-family="' + SERIF_EN + '" font-size="25" font-weight="600" letter-spacing="2.6" fill="' + o.ink + '">HENGTING</text>' +
+            '<text x="81" y="64" font-family="' + SERIF_CN + '" font-size="15" font-weight="600" letter-spacing="10" fill="' + o.accent + '">衡庭</text>'
+        };
+      }
+    }
+  };
+
+  function wrap(w, h, body, attrs) {
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + w + ' ' + h + '"' + (attrs || '') + '>' + body + '</svg>';
+  }
+  // mode: light | dark | orange | mono-white | mono-ink
+  function lockupOpts(c, mode) {
+    switch (mode) {
+      case 'dark': return { mark: c.orange, ink: '#FFFFFF', accent: c.orange, rule: 'rgba(255,255,255,.3)' };
+      case 'orange': return { mark: '#FFFFFF', ink: '#FFFFFF', accent: '#FFFFFF', rule: 'rgba(255,255,255,.5)' };
+      case 'mono-white': return { mark: '#FFFFFF', ink: '#FFFFFF', accent: '#FFFFFF', rule: '#FFFFFF' };
+      case 'mono-ink': return { mark: INK, ink: INK, accent: INK, rule: INK };
+      default: return { mark: c.orange, ink: INK, accent: c.deep, rule: '#D9D2CA' };
+    }
+  }
+  function logo(key, mode, attrs) {
+    var c = concepts[key], l = c.lockup(lockupOpts(c, mode));
+    return wrap(l.w, l.h, l.body, attrs);
+  }
+  function mark(key, color, attrs) {
+    return wrap(64, 64, marks[key](color || concepts[key].orange), attrs);
+  }
+  function appIcon(key, attrs) {
+    var c = concepts[key];
+    var bg = c.tile === 'white' ? '#FFFFFF' : c.orange;
+    var fg = c.tile === 'white' ? c.orange : '#FFFFFF';
+    var stroke = c.tile === 'white' ? '<rect x="0.5" y="0.5" width="119" height="119" rx="26.5" fill="none" stroke="#EDE6DF"/>' : '';
+    return wrap(120, 120, '<rect width="120" height="120" rx="27" fill="' + bg + '"/>' + stroke +
+      '<g transform="translate(24 24) scale(1.125)">' + marks[key](fg) + '</g>', attrs);
+  }
+  function favicon(key, attrs) {
+    var c = concepts[key];
+    var bg = c.tile === 'white' ? '#FFFFFF' : c.orange;
+    var fg = c.tile === 'white' ? c.orange : '#FFFFFF';
+    var stroke = c.tile === 'white' ? '<rect x="0.5" y="0.5" width="31" height="31" rx="6.5" fill="none" stroke="#E8DFD6"/>' : '';
+    return wrap(32, 32, '<rect width="32" height="32" rx="7" fill="' + bg + '"/>' + stroke +
+      '<g transform="translate(4 4) scale(.75)">' + smallMarks[key](fg) + '</g>', attrs);
+  }
+  function smallMark(key, color, attrs) {
+    return wrap(32, 32, smallMarks[key](color || concepts[key].orange), attrs);
+  }
+  function motionMark(key) {
+    var body = marks[key](concepts[key].orange);
+    if (key === 'a') body = body.replace('<path mask=', '<path class="motion-leaf" mask=').replace('<rect x="9"', '<rect class="motion-shore" x="9"');
+    if (key === 'b') {
+      var count = 0;
+      body = body.replace(/<path /g, function () { count++; return '<path class="motion-ring-' + count + '" '; }).replace('<circle ', '<circle class="motion-center" ');
+    }
+    if (key === 'c') body = body.replace('<path ', '<path class="motion-court" pathLength="1" ').replace('<rect ', '<rect class="motion-room" ');
+    return wrap(64, 64, body, ' role="img" aria-label="' + concepts[key].cn + '标志动效"');
+  }
+
+  var icons = [
+    { key: 'letting', cn: '招租', en: 'Letting', body: '<path d="M5 21V3.5"/><path d="M5 5h14"/><path d="M9 5v2.5M16 5v2.5"/><rect x="7.5" y="7.5" width="10.5" height="7" rx="1.5"/><path d="M10.5 11h4.5"/>' },
+    { key: 'management', cn: '托管', en: 'Management', body: '<path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3"/><path d="M19.5 3.6v3.6h-3.6"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/>' },
+    { key: 'sales', cn: '买卖', en: 'Sales', body: '<path d="M4 8.5h15"/><path d="M15.5 5 19 8.5 15.5 12"/><path d="M20 15.5H5"/><path d="M8.5 12 5 15.5 8.5 19"/>' },
+    { key: 'listings', cn: '房源', en: 'Listings', body: '<rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 11h7v9.5"/><path d="M10.5 15h10"/><path d="M14 3.5v4"/>' },
+    { key: 'cities', cn: '城市', en: 'Cities', body: '<path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>' },
+    { key: 'consult', cn: '咨询', en: 'Consult', body: '<path d="M4 6.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-7l-4.5 3.5v-3.5H6a2 2 0 0 1-2-2z"/><path d="M8 9.5h8M8 12.5h5"/>' }
+  ];
+  function icon(i, color, attrs) {
+    return wrap(24, 24, '<g fill="none" stroke="' + (color || 'currentColor') + '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' + i.body + '</g>', attrs);
+  }
+
+  return { INK: INK, concepts: concepts, logo: logo, mark: mark, smallMark: smallMark, appIcon: appIcon, favicon: favicon, icons: icons, icon: icon, motionMark: motionMark };
+})();
+
+</script>
+<script>
+(function(){
+  var B=BRAND, C=B.concepts, keys=['a','b','c'];
+  var st={c:'b',bg:'light',s:'m'};
+  (location.hash||'').replace(/^#/,'').split('&').forEach(function(p){var kv=p.split('=');if(kv[0]==='c'&&C[kv[1]])st.c=kv[1];if(kv[0]==='bg'&&/^(light|dark|orange)$/.test(kv[1]))st.bg=kv[1];if(kv[0]==='s'&&/^(s|m|l)$/.test(kv[1]))st.s=kv[1];});
+  var $=function(id){return document.getElementById(id)};
+  var SIZES={s:140,m:220,l:320};
+  function segs(el,items,cur,on){el.innerHTML=items.map(function(i){return '<button type="button" data-v="'+i[0]+'" aria-pressed="'+(i[0]===cur)+'">'+i[1]+'</button>'}).join('');
+    el.onclick=function(e){var b=e.target.closest('button');if(b){on(b.getAttribute('data-v'));render();}}}
+  function dl(name,svg){
+    try{var blob=new Blob(['<?xml version="1.0" encoding="UTF-8"?>\n'+svg],{type:'image/svg+xml'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);toast('已下载 '+name);}
+    catch(err){window.__errors.push('dl:'+err.message);toast('下载失败，请用电脑打开');}
+  }
+  var tt;function toast(t){var el=$('toast');el.textContent=t;el.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('on')},1600)}
+  function files(k){var c=C[k],n=c.en.toLowerCase();return [
+    ['标志组合 · 浅底',n+'-logo.svg',function(){return B.logo(k,'light')}],
+    ['标志组合 · 深底',n+'-logo-dark.svg',function(){return B.logo(k,'dark')}],
+    ['反白单色',n+'-logo-white.svg',function(){return B.logo(k,'mono-white')}],
+    ['深灰单色',n+'-logo-ink.svg',function(){return B.logo(k,'mono-ink')}],
+    ['图形标志',n+'-mark.svg',function(){return B.mark(k)}],
+    ['App 图标',n+'-app-icon.svg',function(){return B.appIcon(k)}],
+    ['网页 favicon',n+'-favicon.svg',function(){return B.favicon(k)}],
+    ['小尺寸标志',n+'-mark-small.svg',function(){return B.smallMark(k)}]
+  ]}
+  function render(){
+    var active=document.activeElement,group=active&&active.parentElement&&active.parentElement.id,value=active&&active.getAttribute('data-v');
+    var k=st.c,c=C[k],r=document.documentElement.style;
+    r.setProperty('--o',c.orange);r.setProperty('--d',c.deep);r.setProperty('--s',c.soft);
+    segs($('tabs'),keys.map(function(x){return [x,'<b>'+C[x].cn+'</b>'+C[x].enDisplay]}),k,function(v){st.c=v});
+    segs($('bgs'),[['light','浅底'],['dark','深底'],['orange','橘底']],st.bg,function(v){st.bg=v});
+    segs($('szs'),[['s','小'],['m','中'],['l','大']],st.s,function(v){st.s=v});
+    $('tagc').textContent='方案 '+k.toUpperCase()+(k==='b'?' · 已选定':' · 备选稿');
+    $('name').innerHTML=c.cn+'<small>'+c.en+'</small>';
+    $('idea').textContent=c.idea;$('read').textContent=c.reading;
+    $('stage').setAttribute('data-bg',st.bg);
+    $('logo').style.width=SIZES[st.s]+'px';
+    $('logo').innerHTML=B.logo(k,st.bg,' role="img" aria-label="'+c.cn+' '+c.en+'"');
+    $('apps').innerHTML=['桌面图标','社交头像','快捷入口'].map(function(l,i){return '<div class="app">'+B.appIcon(k)+(i===0?'<span>'+c.cn+'</span>':'<span>'+l+'</span>')+'</div>'}).join('');
+    $('motion').classList.remove('playing');
+    $('motion').innerHTML=B.motionMark(k);
+    $('motion-note').textContent=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'已按系统设置显示静态标志。':'轻触播放，看看标志如何出现。';
+    $('hlogo').innerHTML=B.logo(k,'light');
+    $('nav').innerHTML=B.icons.map(function(i){return '<div>'+B.icon(i)+'<span>'+i.cn+'</span></div>'}).join('');
+    function row(dark){return [16,24,32,48].map(function(px){
+      var svg=px<=32?(dark?B.smallMark(k,c.orange):B.favicon(k)):(dark?B.mark(k,c.orange):B.appIcon(k));
+      return '<div class="sz"><span style="width:'+px+'px;height:'+px+'px;display:block">'+svg.replace('<svg ','<svg width="'+px+'" height="'+px+'" ')+'</span>'+px+'</div>'}).join('')}
+    $('szl').innerHTML=row(false);$('szk').innerHTML=row(true);
+    $('tabmock').innerHTML=B.favicon(k)+'<span>'+c.cn+' '+c.enDisplay+' · 房产出租与托管</span>';
+    $('mink').innerHTML=B.logo(k,'mono-ink');$('mwhite').innerHTML=B.logo(k,'mono-white');
+    $('sw').innerHTML=[[c.orange,'主橘','#fff'],[c.deep,'深橘 · 按钮','#fff'],['#FFFFFF','白','#1F1D1B'],['#1F1D1B','深灰 · 文字','#fff']].map(function(s){
+      return '<div style="background:'+s[0]+';color:'+s[2]+';'+(s[0]==='#FFFFFF'?'box-shadow:inset 0 0 0 1px #ECE6E0':'')+'">'+s[1]+'<span>'+s[0]+'</span></div>'}).join('');
+    $('font').textContent='字体方向：'+c.fonts+'。组合标文字可编辑，字形会随设备字体变化；图形标为纯矢量。';
+    var fs=files(k);
+    $('dl').innerHTML=fs.map(function(f,i){return '<button type="button" data-i="'+i+'">'+f[0]+'</button>'}).join('');
+    $('dl').onclick=function(e){var b=e.target.closest('button');if(b){var f=fs[+b.getAttribute('data-i')];dl(f[1],f[2]())}};
+    $('ic').innerHTML=B.icons.map(function(i,n){return '<button type="button" data-i="'+n+'">'+B.icon(i)+'<span>'+i.cn+'</span><small>'+i.en+'</small></button>'}).join('');
+    $('ic').onclick=function(e){var b=e.target.closest('button');if(b){var i=B.icons[+b.getAttribute('data-i')];dl('icon-'+i.key+'.svg',B.icon(i,c.deep))}};
+    $('fav').href='data:image/svg+xml,'+encodeURIComponent(B.favicon(k));
+    history.replaceState(null,'','#c='+st.c+'&bg='+st.bg+'&s='+st.s);
+    document.documentElement.setAttribute('data-ready',st.c);
+    if(group&&value){var focus=$((group)).querySelector('button[data-v="'+value+'"]');if(focus)focus.focus({preventScroll:true});}
+  }
+  $('replay').onclick=function(){
+    var el=$('motion');el.classList.remove('playing');
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){$('motion-note').textContent='已按系统设置显示静态标志。';return;}
+    void el.offsetWidth;el.classList.add('playing');
+    $('motion-note').textContent='播放一次；可随时再次播放。';
+  };
+  render();
+})();
+</script>
+</body>
+</html>

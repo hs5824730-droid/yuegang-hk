@@ -1,0 +1,13 @@
+.reception-page { max-width: 800px; padding-block: 40px 56px; }
+.reception-page h1 { font-size: clamp(24px,4vw,34px); margin-bottom: 12px; }
+.reception-page > p { color: var(--ink-2); font-size: 15px; line-height: 1.7; }
+.reception-card { margin-block: 20px; padding-block: 20px; border-block: 1px solid var(--line); text-align: left; width: 100%; }
+.reception-card h2 { margin: 0 0 16px; font-size: 19px; }
+.reception-card p { font-size: 14px; line-height: 1.7; }
+.reception-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.reception-actions .btn, .reception-card button { min-height: 44px; }
+.reception-wechat { margin-top: 16px; }
+.reception-wechat strong { overflow-wrap: anywhere; user-select: all; }
+.reception-wechat img { display: block; object-fit: contain; max-width: 100%; height: auto; border: 0; border-radius: 0; padding: 0; margin-top: 10px; }
+@media(max-width:600px){.reception-page { padding-top: 28px; }.reception-actions .btn { flex: 1 1 150px; }}
+@media(max-width:420px){.reception-card .reception-actions .btn { flex-basis: 100%; }}

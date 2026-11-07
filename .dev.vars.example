@@ -1,0 +1,32 @@
+# Copy to .dev.vars for LOCAL Wrangler only. Never commit populated secret files.
+# Rental registration Sheets export is disabled until a separate backend Google OAuth grant is configured.
+REGISTRATION_SHEETS_ENABLED="false"
+REGISTRATION_SHEETS_ID=""
+REGISTRATION_SHEETS_TAB=""
+REGISTRATION_GOOGLE_CLIENT_ID=""
+REGISTRATION_GOOGLE_CLIENT_SECRET=""
+REGISTRATION_GOOGLE_REFRESH_TOKEN=""
+APP_URL="http://localhost:8787"
+SESSION_SECRET=""
+ADMIN_EMAIL=""
+ADMIN_PASSWORD=""
+DISABLE_TELEGRAM="true"
+SIGNAL_ENABLED="false"
+META_SHEETS_IMPORT_SECRET=""
+META_SHEETS_SPREADSHEET_ID=""
+META_LEAD_FORM_IDS=""
+# Optional SIGNAL_RELAY_URL / SIGNAL_RELAY_SECRET stay local/private; never enable a real device for fixture tests.
+# Optional: TURNSTILE_ENABLED, TURNSTILE_SECRET, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+# Enterprise mail is disabled until local review and explicit deployment approval.
+MAIL_ENABLED=false
+MAIL_SEND_ENABLED=false
+MAIL_START_AT=
+ZOHO_ACCOUNT_ID=
+ZOHO_CLIENT_ID=
+ZOHO_CLIENT_SECRET=
+ZOHO_REFRESH_TOKEN=
+
+# Public contact is callback-only; keep legacy direct allocation disabled.
+PUBLIC_DIRECT_CONTACT_ENABLED=false
+# Optional: random Telegram webhook secret for manual lead assignment; never use a real value in this file.
+TELEGRAM_DISPATCH_WEBHOOK_SECRET=

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "reference-20261031001",
+    "kind": "sale",
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": null,
+    "address": "Upper Coomera",
+    "suburb": "Upper Coomera",
+    "city": "Gold Coast",
+    "postcode": "4209",
+    "beds": 3,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "A$720,000",
+      "en": "A$720,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-10-31",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/uploads/62ba3a1b-a34a-47d0-b8de-9a4948064dc4.webp",
+    "features": [
+      {
+        "zh": "业主因资金周转需要诚意出售。",
+        "en": "The owner is selling in good faith because they need to free up funds."
+      },
+      {
+        "zh": "三间卧室。",
+        "en": "Three bedrooms."
+      },
+      {
+        "zh": "开放式客厅、餐厅与厨房。",
+        "en": "Open-plan living, dining and kitchen."
+      },
+      {
+        "zh": "浴室配有浴缸和淋浴。",
+        "en": "Bathroom with a bathtub and shower."
+      },
+      {
+        "zh": "带前院及有顶露台。",
+        "en": "Front yard and a covered patio."
+      }
+    ],
+    "rooms": [
+      {
+        "id": "photo-1",
+        "order": 1,
+        "label": {
+          "zh": "外观与前院",
+          "en": "Exterior and front yard"
+        },
+        "photoUrl": "/uploads/62ba3a1b-a34a-47d0-b8de-9a4948064dc4.webp",
+        "thumbnailUrl": "/uploads/62ba3a1b-a34a-47d0-b8de-9a4948064dc4.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-2",
+        "order": 2,
+        "label": {
+          "zh": "客厅与开放式厨房",
+          "en": "Living area and open-plan kitchen"
+        },
+        "photoUrl": "/uploads/7200765e-129e-42b9-bf73-4eafa839b767.png",
+        "thumbnailUrl": "/uploads/7200765e-129e-42b9-bf73-4eafa839b767.png",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-3",
+        "order": 3,
+        "label": {
+          "zh": "浴室视角",
+          "en": "Bathroom view"
+        },
+        "photoUrl": "/uploads/1f627921-13ea-4064-b487-a0fef360b7be.webp",
+        "thumbnailUrl": "/uploads/1f627921-13ea-4064-b487-a0fef360b7be.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-4",
+        "order": 4,
+        "label": {
+          "zh": "厨房与吧台",
+          "en": "Kitchen and breakfast bar"
+        },
+        "photoUrl": "/uploads/b5df0407-c8ee-48ef-ae22-90c805f556e3.png",
+        "thumbnailUrl": "/uploads/b5df0407-c8ee-48ef-ae22-90c805f556e3.png",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-5",
+        "order": 5,
+        "label": {
+          "zh": "卧室视角一",
+          "en": "Bedroom view one"
+        },
+        "photoUrl": "/uploads/8ca92755-b237-4706-a690-9cab5381350f.png",
+        "thumbnailUrl": "/uploads/8ca92755-b237-4706-a690-9cab5381350f.png",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-6",
+        "order": 6,
+        "label": {
+          "zh": "卧室视角二",
+          "en": "Bedroom view two"
+        },
+        "photoUrl": "/uploads/a7d95daf-6bfb-4265-a3c2-0b5a6c9820cd.png",
+        "thumbnailUrl": "/uploads/a7d95daf-6bfb-4265-a3c2-0b5a6c9820cd.png",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-7",
+        "order": 7,
+        "label": {
+          "zh": "浴缸与淋浴",
+          "en": "Bathtub and shower"
+        },
+        "photoUrl": "/uploads/600b4a9e-7060-4504-a38d-666509f1e2e9.png",
+        "thumbnailUrl": "/uploads/600b4a9e-7060-4504-a38d-666509f1e2e9.png",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-8",
+        "order": 8,
+        "label": {
+          "zh": "有顶露台",
+          "en": "Covered patio"
+        },
+        "photoUrl": "/uploads/608be747-2994-44f2-9b45-d670a718d075.webp",
+        "thumbnailUrl": "/uploads/608be747-2994-44f2-9b45-d670a718d075.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-9",
+        "order": 9,
+        "label": {
+          "zh": "入户前廊",
+          "en": "Front porch"
+        },
+        "photoUrl": "/uploads/1864560f-e179-4483-9701-508db815abe0.webp",
+        "thumbnailUrl": "/uploads/1864560f-e179-4483-9701-508db815abe0.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-10",
+        "order": 10,
+        "label": {
+          "zh": "厨房家电",
+          "en": "Kitchen appliances"
+        },
+        "photoUrl": "/uploads/eca5adb0-70b5-4abb-89a5-34db1411973c.webp",
+        "thumbnailUrl": "/uploads/eca5adb0-70b5-4abb-89a5-34db1411973c.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo-11",
+        "order": 11,
+        "label": {
+          "zh": "客餐厨全景",
+          "en": "Living, dining and kitchen"
+        },
+        "photoUrl": "/uploads/78c8a9e7-ea27-4521-befb-3dc2ffd3f929.webp",
+        "thumbnailUrl": "/uploads/78c8a9e7-ea27-4521-befb-3dc2ffd3f929.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  }
+]

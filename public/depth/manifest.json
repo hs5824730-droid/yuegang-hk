@@ -1,0 +1,49 @@
+{
+  "model": "onnx-community/depth-anything-v2-small",
+  "revision": "4472b7362082ad9968fee890ca0f1e5aca36b93d",
+  "dtype": "q8",
+  "depthConvention": "relative-inverse-depth-white-near",
+  "purpose": "Illustrative photo sample. Images depict different properties; not a real listing or measured 3D scan.",
+  "photos": [
+    {
+      "id": "interior",
+      "source": "/img/interior.jpg",
+      "sourceSha256": "d820f414c3a75f82781223d30132a245d9d7aae2b5054145403383e85912a75c",
+      "image": "/depth/interior.webp",
+      "depth": "/depth/interior.depth.png",
+      "thumbnail": "/depth/interior.thumb.webp",
+      "width": 1280,
+      "height": 870
+    },
+    {
+      "id": "hero-house",
+      "source": "/img/hero-house.jpg",
+      "sourceSha256": "048b5b8a03826f2d50e27cee957b7e6118392f47ddad188b856bc450bce3f07a",
+      "image": "/depth/hero-house.webp",
+      "depth": "/depth/hero-house.depth.png",
+      "thumbnail": "/depth/hero-house.thumb.webp",
+      "width": 1280,
+      "height": 854
+    },
+    {
+      "id": "white-house",
+      "source": "/img/white-house.jpg",
+      "sourceSha256": "0a672a8193851d9314997a9070cd2e0a3631df1e9dff4a7af6e82a96017dd7db",
+      "image": "/depth/white-house.webp",
+      "depth": "/depth/white-house.depth.png",
+      "thumbnail": "/depth/white-house.thumb.webp",
+      "width": 1280,
+      "height": 1280
+    },
+    {
+      "id": "queenslander",
+      "source": "/img/queenslander.jpg",
+      "sourceSha256": "01bc25839566e21c10de876234d083904e3fde23a23c7b81706e32fdc117e38a",
+      "image": "/depth/queenslander.webp",
+      "depth": "/depth/queenslander.depth.png",
+      "thumbnail": "/depth/queenslander.thumb.webp",
+      "width": 1280,
+      "height": 854
+    }
+  ]
+}

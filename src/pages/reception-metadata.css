@@ -1,0 +1,10 @@
+.routing-qr-identity { display:flex; align-items:center; gap:10px; min-width:0; }
+.routing-qr-name { display:block; min-width:0; max-width:260px; overflow-wrap:anywhere; white-space:normal; }
+.routing-qr-name strong { display:block; font-size:14px; }
+.routing-qr-name small { display:block; font-size:11px; line-height:1.5; color:var(--a-mute); }
+.routing-name-fields p { overflow-wrap:anywhere; }
+@media (max-width:900px) {
+ .routing-table td { min-width:0; }
+ .routing-qr-name { max-width:100%; }
+ .routing-qr-identity { align-items:flex-start; }
+}

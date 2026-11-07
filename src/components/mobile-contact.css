@@ -1,0 +1,38 @@
+/* One fixed contact strip replaces the existing mobile strip; desktop is unchanged. */
+.direct-contact[hidden] { display:none !important; }
+.mobile-contact.direct-contact.callback-contact { grid-template-columns:minmax(0,1fr); }
+@media(max-width:1023px) {
+ body.has-direct-contact { padding-bottom:var(--direct-contact-height,calc(68px + env(safe-area-inset-bottom,0px))); }
+ .mobile-contact.direct-contact { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:8px; padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px)); transition:none; }
+ .direct-contact .btn { min-height:46px; min-width:0; padding:9px 10px; gap:6px; font-size:13px; line-height:1.25; touch-action:manipulation; white-space:normal; }
+ .direct-contact .btn svg { flex:none; }
+ .direct-contact .btn span { overflow-wrap:anywhere; }
+ .direct-contact .btn:disabled { cursor:wait; opacity:.75; }
+ .direct-contact-error { grid-column:1/-1; margin:0; font-size:12px; line-height:1.4; color:var(--ink); }
+}
+
+/* Native dialog gives Escape, focus trapping and a single top-layer mobile panel. */
+.direct-contact-dialog { position:fixed; inset:auto 0 0; width:min(100%,480px); max-width:100%; max-height:min(660px,calc(var(--direct-viewport,100dvh) - 20px)); margin:0 auto; padding:0; color:var(--ink); background:var(--paper,#fff); border:1px solid var(--line); overflow:auto; overscroll-behavior:contain; }
+.direct-contact-dialog::backdrop { background:rgba(20,18,16,.35); }
+.direct-contact-panel { padding:16px max(16px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); }
+.direct-contact-head { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px; }
+.direct-contact-head h2 { margin:0; font-size:18px; line-height:1.4; }
+.direct-contact-head .icon-btn { min-width:44px; min-height:44px; }
+.direct-contact-methods { display:grid; gap:0; }
+.direct-contact-methods > :is(button,a) { display:flex; align-items:center; gap:12px; width:100%; min-height:52px; padding:12px 8px; color:var(--ink); background:transparent; border:0; border-bottom:1px solid var(--line); text-align:left; font:inherit; text-decoration:none; cursor:pointer; touch-action:manipulation; }
+.direct-contact-methods > :is(button,a) > span { flex:1; }
+.direct-contact-methods > :is(button,a) > svg { flex:none; }
+.direct-contact-methods > :is(button,a):focus-visible { outline:2px solid var(--euc); outline-offset:-2px; }
+.direct-contact-methods > button[aria-pressed="true"] { color:var(--euc); }
+.direct-contact-methods > button:disabled { opacity:.6; cursor:wait; }
+.direct-contact-result,.direct-contact-status { margin-top:16px; }
+.direct-contact-result p { margin:0 0 10px; font-size:14px; line-height:1.5; }
+.direct-contact-result .btn { min-height:44px; font-size:14px; border-radius:0; }
+.direct-contact-number { display:block; margin:6px 0 16px; font-size:24px; line-height:1.3; overflow-wrap:anywhere; user-select:text; }
+.direct-contact-phone-actions { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.direct-contact-qr img { display:block; max-width:100%; width:220px; height:auto; margin:0 auto; object-fit:contain; border-radius:0; }
+.direct-contact-form-link { display:flex; justify-content:center; align-items:center; gap:8px; min-height:44px; width:100%; margin-top:12px; padding:10px 4px; color:var(--ink); background:none; border:0; font:inherit; font-size:13px; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+
+/* The phone already has one fixed callback action; keep the header clear at narrow widths. */
+.site-header .header-cta { white-space:normal; max-width:210px; line-height:1.25; }
+@media(max-width:600px) { .site-header .header-cta { display:none !important; } }
