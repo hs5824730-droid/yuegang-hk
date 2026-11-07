@@ -4,10 +4,15 @@ import { SERVICES } from './enquiry-options';
 import {useLocation} from 'react-router-dom';
 import {languageFromPath} from './language-path';
 import {navigateLanguage} from './language-navigation';
+import {storedZhVariant, toWrittenChinese, type SiteLanguage, type ZhVariant} from './zh-variant';
 
 interface I18n {
   lang: Lang;
   setLang: (l: Lang) => void;
+  /** Chinese display variant: 粵語 (as written) or 繁體中文 書面語. */
+  zhVariant: ZhVariant;
+  /** Switch among 粵語, 繁體中文 and English. */
+  setSiteLanguage: (l: SiteLanguage) => void;
   /** inline bilingual string */
   L: (zh: string, en: string) => string;
   /** pick from {zh,en}; falls back to the other language when untranslated */
@@ -31,23 +36,33 @@ function initialLang(): Lang {
 export function I18nProvider({ children }: { children: ReactNode }) {
   const location = useLocation();
   const [fallbackLang, setLangState] = useState<Lang>(initialLang);
+  const [zhVariant, setZhVariant] = useState<ZhVariant>(storedZhVariant);
   const lang = languageFromPath(window.location.pathname) || fallbackLang;
   const setLang = useCallback((l: Lang) => {
     try { localStorage.setItem('lang', l); } catch { /* URL language works without storage. */ }
     navigateLanguage(l);
     setLangState(l);
   }, []);
+  const setSiteLanguage = useCallback((l: SiteLanguage) => {
+    if (l !== 'en') { try { localStorage.setItem('zhVariant', l); } catch { /* storage optional */ } setZhVariant(l); }
+    setLang(l === 'en' ? 'en' : 'zh');
+  }, [setLang]);
   useEffect(() => {
     document.documentElement.lang = lang === 'zh' ? 'zh-HK' : 'en-HK';
   }, [lang, location.pathname]);
   const value = useMemo<I18n>(
-    () => ({
-      lang,
-      setLang,
-      L: (zh, en) => (lang === 'zh' ? zh : en),
-      pick: (b) => (b ? b[lang] || b[lang === 'zh' ? 'en' : 'zh'] || '' : ''),
-    }),
-    [lang, setLang],
+    () => {
+      const zh = (text: string) => (zhVariant === 'hant' ? toWrittenChinese(text) : text);
+      return {
+        lang,
+        setLang,
+        zhVariant,
+        setSiteLanguage,
+        L: (zhText: string, en: string) => (lang === 'zh' ? zh(zhText) : en),
+        pick: (b?: Bi | null) => (b ? (lang === 'zh' ? (b.zh ? zh(b.zh) : b.en) : b.en || b.zh) || '' : ''),
+      };
+    },
+    [lang, setLang, zhVariant, setSiteLanguage],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

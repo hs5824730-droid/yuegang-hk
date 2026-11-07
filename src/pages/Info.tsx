@@ -269,7 +269,7 @@ export function Credits() {
           </ul>
           <div className="prose credits-note">
             <p>{L('圖片按版面縮放同裁切顯示，冇改動畫面內容。首頁嘅「立體實景」係用相片加上 Depth Anything V2 估算嘅景深整成嘅 3D 浮雕，只作示意，唔係實地測量。Wikimedia 圖片按各自許可條款署名；CC BY-SA 圖片同樣以相同方式共享。', 'Images are scaled and cropped to fit, without altering their content. The home page 3D scenes are reliefs made from these photos plus depth estimated with Depth Anything V2 — illustrative, not measured. Wikimedia images are credited under their licences, and CC BY-SA images are shared alike.')}</p>
-            <p>{L('呢啲相片用嚟展示香港唔同地區同屋苑，唔代表任何真實放盤。示範盤用屋苑外觀相，唔係單位內部。', 'These photos illustrate Hong Kong districts and estates and do not depict any real listing. Example listings use estate exteriors, not the flats themselves.')}</p>
+            <p>{L('呢啲相片用嚟展示香港唔同地區同屋苑，唔代表任何真實放盤。樓盤相片係屋苑外觀，唔係單位內部。', 'These photos illustrate Hong Kong districts and estates and do not depict any real listing. Listing photos show estate exteriors, not the flats themselves.')}</p>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import { useConfig, useI18n } from '../i18n';
 import { EnquiryProvider, useEnquiry } from './Enquiry';
 import { scrollBehavior } from './ui';
 import MobileContactBar from './MobileContactBar';
+import LanguageMenu from './LanguageMenu';
 import {ContactPageProvider} from './ContactPageContext';
 import '../v2.css';
 import '../site-additions.css';
@@ -21,9 +22,9 @@ export function Logo({ light = false }: { light?: boolean }) {
   const { config } = useConfig();
   return <span className={`logo ${light ? 'logo-light' : ''}`}><Mark /><span className="logo-type"><span className="logo-name">{config.brand.en}</span><span className="logo-secondary">{config.brand.zh}</span></span></span>;
 }
-export function LangToggle() {
-  const { lang, setLang } = useI18n();
-  return <button type="button" className="lang-toggle" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')} aria-label={lang === 'zh' ? 'Switch to English' : '轉做粵語（繁體中文）'} lang={lang === 'zh' ? 'en' : 'zh-HK'}>{lang === 'zh' ? 'EN' : '粵語'}</button>;
+/** Kept for existing callers (enquiry drawer, admin); renders the three-language menu. */
+export function LangToggle({ compact = false }: { compact?: boolean }) {
+  return <LanguageMenu compact={compact} />;
 }
 function Shell() {
   const { L, pick, lang } = useI18n();
@@ -53,12 +54,12 @@ function Shell() {
   }, [menuOpen]);
   const nav = [
     { to: '/', label: L('首頁', 'Home') },
-    { to: '/services', label: L('放租同管理', 'Letting & management') },
-    { to: '/buy-sell', label: L('買賣物業', 'Buying & selling') },
-    { to: '/advisory', label: L('置業顧問', 'Property services') },
+    { to: '/services', label: L('放租同管理', 'Letting') },
+    { to: '/buy-sell', label: L('買賣物業', 'Buy & sell') },
+    { to: '/advisory', label: L('置業顧問', 'Advisory') },
     { to: '/home-services', label: L('房屋服務', 'Home services') },
-    { to: '/viewings', label: L('網上睇樓', 'Online viewings') },
-    { to: '/about', label: L('關於我哋', 'About us') },
+    { to: '/viewings', label: L('網上睇樓', 'Listings') },
+    { to: '/about', label: L('關於我哋', 'About') },
   ];
   useEffect(() => {
     const page = nav.find(n => n.to !== '/' && loc.pathname.startsWith(n.to))?.label;

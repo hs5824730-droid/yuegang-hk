@@ -96,7 +96,7 @@ export default function ViewingSamplePage() {
   const priceNote=(l:Listing)=>l.kind==='sold'?(l.soldPrice===null?L('成交紀錄 · 成交價未公開','Sold record · price not disclosed'):L('成交紀錄 · 成交價','Sold record · sold price'))
     :l.kind==='sale'?L('業主叫價，最終以買賣合約為準。','Asking price; the sale agreement is final.'):L('掛牌月租，唔包差餉、地租同管理費（另有註明除外）。','Asking rent per month, excluding rates, government rent and management fees unless stated.');
   const items: ExplorerItem[] = listings.map(l => ({
-    id: l.id, statusLabel:(l.demo?L('示範 · ','Example · '):'')+statusLabel(l), address: l.address, suburb: l.suburb, city: l.city, postcode: l.postcode,
+    id: l.id, statusLabel:statusLabel(l), address: l.address, suburb: l.suburb, city: l.city, postcode: l.postcode,
     beds: l.beds, baths: l.baths, cars: l.cars, price: pick(l.priceDisplay),
     priceNote: priceNote(l),
     facts: [...(l.features||[]).map(pick), ...(l.kind === 'sold' ? (l.soldDate ? [L('成交日期：', 'Sold: ') + formatDate(l.soldDate, lang)] : []) : (l.availableDate ? [L('可入住日期：', 'Available from: ') + formatDate(l.availableDate, lang)] : []))],
@@ -105,11 +105,9 @@ export default function ViewingSamplePage() {
   }));
   const tabLabel = (k: Kind) => k === 'rent' ? L('租盤', 'To rent') : k === 'sale' ? L('售盤', 'For sale') : L('成交紀錄', 'Sold');
   const tabNote = (k: Kind) => k === 'rent' ? L('可租單位', 'Available homes') : k === 'sale' ? L('業主放售', 'Owner listings') : L('近期成交', 'Recent sales');
-  const hasDemo = Boolean(publicCatalog && kinds.some(k => publicCatalog[k].some(l => l.demo)));
 
   return <div className="viewing-samples wrap">
     <header className="ds viewing-samples-heading"><p className="ds-kicker">{L('網上睇樓', 'Online viewings')}</p><h1>{L('未到現場，都可以先睇清楚層樓', 'See the flat clearly before you visit')}</h1><p className="ds-lead">{L('租盤、售盤同成交紀錄都喺度。睇中咗，撳一下就可以約我哋睇樓。', 'Rentals, sales and recent transactions in one place. Found one you like? Tap to book a viewing.')}</p></header>
-    {hasDemo && <p className="hk-demo-banner" role="note">{L('溫馨提示：以下係網站示範盤，用嚟展示放盤格式，並非業主委託嘅真實放盤，價錢同資料都唔可以作準。正式上線前會換成已簽表格 3／表格 5 嘅真實盤源。屋苑相片來自 Wikimedia Commons，詳見圖片署名。', 'Please note: the listings below are website examples showing the listing format. They are not real instructions from owners, and prices and details are not offers. They will be replaced by real listings with signed Form 3 / Form 5 before launch. Estate photos come from Wikimedia Commons; see Photo credits.')}</p>}
     <div className="viewing-kind-tabs" role="group" aria-label={L('樓盤類型', 'Property category')}>
       {kinds.map(k => <button type="button" key={k} aria-pressed={kind === k} onClick={() => chooseKind(k)} disabled={!catalog}>
         <span>{tabLabel(k)}</span>
@@ -123,7 +121,7 @@ export default function ViewingSamplePage() {
         city={city} onCity={c => { const first = listings.find(l => !c || l.city === c); navigate(kind, { listing: first?.id || '', room: '', city: c }); }}
         onSelect={id => navigate(kind, { listing: id, room: '', city })}
         onRoom={id => navigate(kind, { listing: chosen.id, room: id, city })}
-        tag={(chosen.demo?L('示範盤 · ','Example · '):'')+statusLabel(chosen)}
+        tag={statusLabel(chosen)}
         photoNote={L('而家顯示緊屋苑相片。', 'Showing estate photos.')}
         videoNote={L('AI 影片可能會改變細節；實際間隔、面積同樓況以現場為準。', 'AI video may alter details; check layout, size and condition in person.')}
         cta={{ label: kind==='sold'?L('想買同區？問吓我哋','Buying nearby? Ask us'):kind==='sale'?L('約睇呢個盤','Book a viewing'):L('約睇樓','Book a viewing'), onClick: openEnquiry }}

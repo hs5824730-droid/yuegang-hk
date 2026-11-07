@@ -369,8 +369,8 @@
         "id": "exterior",
         "order": 1,
         "label": {
-          "zh": "半山區住宅外觀（示意）",
-          "en": "Mid-Levels residential area (illustrative)"
+          "zh": "半山區住宅外觀",
+          "en": "Mid-Levels residential area"
         },
         "photoUrl": "/img/hk/mid-levels.webp",
         "thumbnailUrl": "/img/hk/mid-levels.webp",
@@ -493,8 +493,8 @@
         "id": "exterior",
         "order": 1,
         "label": {
-          "zh": "大埔新市鎮（示意）",
-          "en": "Tai Po new town (illustrative)"
+          "zh": "大埔新市鎮",
+          "en": "Tai Po new town"
         },
         "photoUrl": "/img/hk/tai-po.webp",
         "thumbnailUrl": "/img/hk/tai-po.webp",
@@ -594,10 +594,6 @@
       {
         "zh": "實用面積 400 呎",
         "en": "Saleable area 400 sq ft"
-      },
-      {
-        "zh": "示範成交紀錄",
-        "en": "Example sale record"
       }
     ],
     "rooms": [
@@ -648,10 +644,6 @@
       {
         "zh": "實用面積 760 呎",
         "en": "Saleable area 760 sq ft"
-      },
-      {
-        "zh": "示範成交紀錄",
-        "en": "Example sale record"
       }
     ],
     "rooms": [
