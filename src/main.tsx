@@ -24,6 +24,7 @@ import './service-site.css';
 import './eucove-ds.css';
 import './sol-release.css';
 import './hk-site.css';
+import './hk-theme.css';
 
 const RentalRegistration=lazy(()=>import('./pages/RentalRegistration'));
 const CustomerRegistration=lazy(()=>import('./pages/CustomerRegistration'));

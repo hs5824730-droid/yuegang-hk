@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, BadgeCheck, Check, FileSignature, Hammer, HeartHandshake, House, Languages, MapPin, Minus, Search, ShieldCheck, Sparkles, Wrench } from 'lucide-react';
 import { CtaBand } from '../components/sections';
@@ -7,7 +7,14 @@ import { Reveal, SmartImg } from '../components/ui';
 import { OfferReceipt, QAGrid, SectionHead } from '../components/v2/blocks';
 import { cityName, useI18n } from '../i18n';
 
-const HkScene3D = lazy(() => import('../components/HkScene3D'));
+/** Licensed Wikimedia photographs, credited on /credits. Rotate slowly; a visitor can pick one. */
+const HERO_PHOTOS = [
+  { city: 'Harbour', img: '/img/hk/harbour-night.webp', pos: '50% 45%' },
+  { city: 'Hong Kong Island', img: '/img/hk/hk-island.webp', pos: '62% 50%' },
+  { city: 'Kowloon', img: '/img/hk/kowloon.webp', pos: '30% 55%' },
+  { city: 'New Territories', img: '/img/hk/new-territories.webp', pos: '55% 45%' },
+  { city: 'Islands', img: '/img/hk/islands.webp', pos: '62% 45%' },
+];
 
 /** Wikimedia photographs of the four service regions, credited on /credits. */
 const REGION_PHOTOS = [
@@ -20,6 +27,13 @@ const REGION_PHOTOS = [
 export default function Home() {
   const { L, lang } = useI18n();
   const enquire = useEnquiry();
+  const [scene, setScene] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (paused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const timer = window.setTimeout(() => setScene(i => (i + 1) % HERO_PHOTOS.length), 9000);
+    return () => window.clearTimeout(timer);
+  }, [scene, paused]);
 
   const promises = [
     { Icon: ShieldCheck, t: L('交俾我哋，你可以放心', 'Hand it over and relax'), d: L('睇樓、簽約、報維修、續租，我哋本地同事一路跟到尾。', 'Viewings, tenancies, repairs and renewals — followed up locally.') },
@@ -57,36 +71,28 @@ export default function Home() {
   return (
     <div className="v-home">
       {/* ---------------------------------------------------------- opening */}
-      <section className="v-hero v-home-hero has-bg" aria-labelledby="home-title">
-        <Suspense fallback={<div className="hk3d"><img className="hk3d-still" src="/depth/hk/harbour-night.webp" alt="" /></div>}>
-          <HkScene3D />
-        </Suspense>
-        <span className="v-hero-shade" aria-hidden />
-        <div className="wrap v-hero-grid">
-          <div className="v-hero-copy">
-            <p className="v-pill"><Languages size={15} aria-hidden />{L('香港物業放租同管理 · 粵語 / English', 'Hong Kong letting & management · 粵語 / English')}</p>
-            <h1 id="home-title">
-              {L('放租交俾我哋，', 'Leave the letting to us.')}
-              <em>{L('你淨係收租就得。', 'You just collect the rent.')}</em>
-            </h1>
-            <p className="v-lead">{L('搵租客、收租、維修、同租客溝通，我哋本地團隊幫你一手包辦。', 'Finding tenants, rent, repairs and tenant contact — followed up by a local team.')}</p>
-            <div className="v-actions">
-              <button type="button" className="btn btn-primary v-hero-cta" onClick={() => enquire({ service: 'letting' })}>
-                {L('免費傾吓', 'Free enquiry')}
-                <ArrowRight size={18} aria-hidden />
-              </button>
+      <section className="hj-hero" aria-labelledby="home-title">
+        <div className="hj-hero-photos" aria-hidden>
+          {HERO_PHOTOS.map((p, i) => <img key={p.city} src={p.img} alt="" className={i === scene ? 'is-on' : ''} style={{ objectPosition: p.pos }} fetchPriority={i === 0 ? 'high' : 'low'} loading={i === 0 ? 'eager' : 'lazy'} />)}
+        </div>
+        <span className="hj-hero-shade" aria-hidden />
+        <div className="hj-hero-inner">
+          <div className="hj-hero-copy">
+            <p className="hj-hero-lead">{L('香港住宅放租、租務管理同買賣', 'Hong Kong residential letting, management and sales')}</p>
+            <h1 id="home-title"><span>{L('放租交俾我哋，', 'Leave the letting to us.')}</span> <span>{L('你淨係收租就得。', 'You just collect the rent.')}</span></h1>
+            <p className="hj-hero-sub">{L('搵租客、收租、維修、同租客溝通，我哋本地團隊幫你一手包辦。粵語、普通話、English 都講得。', 'Finding tenants, rent, repairs and tenant contact, handled by a local team in Cantonese, Mandarin or English.')}</p>
+            <div className="hj-hero-actions">
+              <button type="button" className="btn btn-primary" onClick={() => enquire({ service: 'letting' })}>{L('免費傾吓', 'Free enquiry')}</button>
               <Link className="btn btn-line" to="/viewings">{L('睇吓盤', 'See listings')}</Link>
             </div>
           </div>
-          <div className="v-hero-aside">
-            <OfferReceipt
-              className="v-hero-receipt"
-              cta={<>
-                <Link className="btn btn-primary ds-offer-cta" to="/?service=rent&offer=1">{L('問吓呢個優惠', 'Ask about the offer')}</Link>
-                <Link className="v-link" to="/offer">{L('優惠詳情', 'Offer details')}<ArrowUpRight size={15} aria-hidden /></Link>
-              </>}
-            />
+          <p className="hj-sign" aria-hidden lang="zh-HK">悦港<small>{L('放租 · 買賣', 'LETTING · SALES')}</small></p>
+        </div>
+        <div className="hj-hero-foot">
+          <div className="hj-regions" role="group" aria-label={L('揀地區', 'Choose a district')}>
+            {HERO_PHOTOS.map((p, i) => <button key={p.city} type="button" aria-pressed={i === scene} onClick={() => { setScene(i); setPaused(true); }}>{p.city === 'Harbour' ? L('維港', 'Victoria Harbour') : cityName(p.city, lang)}</button>)}
           </div>
+          <Link className="hj-offer" to="/offer"><strong>{L('業主免佣', 'No owner commission')}</strong><span>{L('首個單位 · 送交吉清潔 · 至 2027年2月', 'First flat · free pre-letting clean · until Feb 2027')}</span><ArrowUpRight size={16} aria-hidden /></Link>
         </div>
       </section>
 
