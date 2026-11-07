@@ -12,7 +12,6 @@ import '../site-additions.css';
 import {siteHomeHref,isComSite} from '../site-home';
 import {registrationPageTitle} from '../language-path';
 import {documentMetadata} from '../language-seo';
-import {EAA_COMPANY_LICENCE} from '../hk-site';
 
 export function Mark({ size = 36 }: { size?: number }) {
   // Harbour Joy / 悦港 mark: towers over a harbour wave, traced from the brand logo (no lettering).
@@ -97,7 +96,7 @@ function Shell() {
         </nav>
       </div>
       <div className="footer-base">
-        <div><p>© {new Date().getFullYear()} 悦港 Harbour Joy</p><p className="site-licence">{L('地產代理（公司）牌照號碼：', 'Estate Agent (Company) Licence No.: ')}{EAA_COMPANY_LICENCE || L('待公布', 'to be published')}</p></div>
+        <div><p>© {new Date().getFullYear()} 悦港 Harbour Joy</p></div>
         <nav className="footer-legal" aria-label={L('其他連結', 'More links')}><Link to="/privacy">{L('私隱政策', 'Privacy')}</Link><a href="/admin">{L('團隊登入', 'Team sign-in')}</a></nav>
       </div>
     </div></footer>

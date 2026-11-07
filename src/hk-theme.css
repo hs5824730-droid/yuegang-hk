@@ -336,3 +336,20 @@ html body.v2 #main .hs .hs-offer-chip { background: var(--brass-soft); color: #7
 }
 html body.v2 .hx-compare .btn { white-space: nowrap; }
 @media (max-width: 600px) { html body.v2 .hx-compare .btn { padding-inline: 12px; min-height: 36px; font-size: 13px; } .hx-compare :is(th, td) { padding: 12px 6px; } }
+
+/* A larger, easier enquiry dock. */
+html body.v2 .mobile-contact.direct-contact.hx-dock { width: min(940px, calc(100% - 32px)); padding: 14px 14px 14px 30px; bottom: 20px; gap: 24px; border-radius: 16px; }
+html body.v2 .hx-dock::before { top: 18px; bottom: 18px; width: 4px; }
+.hx-dock-copy { gap: 4px; }
+.hx-dock-copy small { font-size: 13px; }
+.hx-dock-copy span { font-size: 18.5px; font-weight: 700; }
+html body.v2 .hx-dock .btn { min-height: 56px; padding-inline: 30px; font-size: 16.5px; font-weight: 700; }
+html body.v2 .hx-dock .btn svg { width: 20px; height: 20px; }
+@media (max-width: 1023px) {
+  html body.v2 .mobile-contact.direct-contact.hx-dock { width: calc(100% - 16px); padding: 12px 12px 12px 20px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)); gap: 12px; }
+  .hx-dock-copy small { font-size: 11.5px; }
+  .hx-dock-copy span { font-size: 15.5px; }
+  html body.v2 .hx-dock .btn { min-height: 52px; padding-inline: 18px; font-size: 15px; }
+}
+html body.v2 .mobile-contact.hx-dock .btn { min-height: 56px !important; padding-inline: 30px !important; font-size: 16.5px !important; font-weight: 700 !important; }
+@media (max-width: 1023px) { html body.v2 .mobile-contact.hx-dock .btn { min-height: 52px !important; padding-inline: 16px !important; font-size: 15px !important; } }
