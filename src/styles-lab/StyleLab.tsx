@@ -8,7 +8,7 @@ import './lab.css';
 
 const PAGES = {
   app: lazy(() => import('./AppStyle')),
-  immersive: lazy(() => import('./ImmersiveStyle')),
+  immersive: lazy(() => import('../components/immersive/ImmersiveHome')),
   magazine: lazy(() => import('./MagazineStyle')),
   cinema: lazy(() => import('./CinemaStyle')),
 };

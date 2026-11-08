@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import type { ViewingListing } from '../viewing-types';
 import { useI18n } from '../i18n';
 import LanguageMenu from '../components/LanguageMenu';
+import { FULL_LARGE, FULL_PHOTOS } from '../photo-full';
 
 export type Kind = ViewingListing['kind'];
 
@@ -57,5 +58,23 @@ export function StyleSwitcher() {
       {STYLES.map(s => <Link key={s.id} to={`/styles/${s.id}`} aria-current={pathname.endsWith('/' + s.id) ? 'page' : undefined}>{L(s.zh, s.en)}</Link>)}
       <span className="lab-switch-lang"><LanguageMenu compact /></span>
     </nav>
+  );
+}
+
+/**
+ * A full-screen photograph: graded 16:9 crops on desktop, a 9:16 crop on phones.
+ * Falls back to the original site image when no graded crop exists.
+ */
+export function FullPhoto({ src, className, eager }: { src: string; className?: string; eager?: boolean }) {
+  const name = src.match(/\/img\/hk\/([^/]+)\.webp$/)?.[1];
+  const loading = eager ? 'eager' : 'lazy';
+  if (!name || !FULL_PHOTOS.has(name)) return <img src={src} alt="" className={className} loading={loading} />;
+  const wide = `/img/hk/full/${name}-1600.webp 1600w${FULL_LARGE.has(name) ? `, /img/hk/full/${name}-2560.webp 2560w` : ''}`;
+  return (
+    <picture className={className}>
+      <source media="(max-width: 700px) and (orientation: portrait)" srcSet={`/img/hk/full/${name}-tall.webp`} />
+      <source srcSet={wide} sizes="100vw" />
+      <img src={`/img/hk/full/${name}-1600.webp`} alt="" loading={loading} />
+    </picture>
   );
 }

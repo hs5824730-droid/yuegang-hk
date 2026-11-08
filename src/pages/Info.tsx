@@ -250,6 +250,7 @@ export function Credits() {
       <section className="section section-tight">
         <div className="wrap">
           <h2 className="credits-h">Wikimedia Commons</h2>
+          <p className="credits-note">{L('全屏版本經過裁切同調色（亮度、對比、色彩同銳度），冇加減畫面內容；改編版本沿用原作嘅授權條款。', 'Full-screen versions are cropped and colour-adjusted (brightness, contrast, colour and sharpness) without adding or removing content; the adapted versions keep the original licence terms.')}</p>
           <ul className="credits">
             {WIKI.map((w) => (
               <li key={w.file}>

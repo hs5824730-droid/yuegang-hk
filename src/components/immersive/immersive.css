@@ -69,3 +69,53 @@
   .im-stats ul { gap: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .im { scroll-snap-type: none; } .im-bg, .im-line > span, .im-k, .im-d, .im-btn { transition: none !important; transform: none !important; opacity: 1 !important; } }
+
+/* Graded photographs arrive as <picture>; the img fills it. */
+picture.im-bg { display: block; }
+picture.im-bg img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* One shared finish over every photograph: soft vignette and fine film grain, so mixed sources read as one set. */
+.im-sec:not(.im-stats)::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(0, 0, 0, .45) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .5; mix-blend-mode: overlay; }
+
+/* ---------------------------------------------------- inside the website */
+.im.im-embedded { position: static; overflow: visible; scroll-snap-type: none; }
+html.im-snap { scroll-snap-type: y proximity; }
+.im-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.im-right .im-actions { justify-content: flex-end; }
+.im-actions .im-btn { transition-delay: .6s; }
+.im-btn { cursor: pointer; font: inherit; }
+/* The site header floats over the photographs on the home page. */
+html body.v2.is-immersive .site-header, html body.v2.is-immersive .site-header.over-intro {
+  position: fixed !important; left: 0; right: 0; top: 0; background: linear-gradient(180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0)) !important; border-bottom: 0 !important;
+  -webkit-backdrop-filter: none; backdrop-filter: none; }
+html body.v2.is-immersive .site-header :is(.logo, .logo-name, .logo .mark, .main-nav a, .main-nav a.active, .menu-toggle) { color: #fff !important; }
+html body.v2.is-immersive .site-header .logo-secondary { color: rgba(255, 255, 255, .75) !important; border-left-color: rgba(255, 255, 255, .3) !important; }
+html body.v2.is-immersive .site-header .main-nav a.active::after { background: #fff; }
+html body.v2.is-immersive .site-header .lang-menu-button { background: rgba(255, 255, 255, .1) !important; border-color: rgba(255, 255, 255, .35) !important; color: #fff !important; }
+html body.v2.is-immersive .site-header .header-cta { background: #fff !important; border-color: #fff !important; color: #111 !important; }
+@media (max-width: 1023px) {
+  html body.v2.is-immersive .header-row .main-nav { display: none !important; }
+  html body.v2.is-immersive .site-header .menu-toggle { display: inline-grid !important; place-items: center; width: 44px; height: 44px; background: none; border: 0; }
+  html body.v2.is-immersive .site-header .header-row { grid-template-rows: 60px; padding-bottom: 0; }
+}
+/* The enquiry bar sits on dark photographs here: a dark glass bar instead of white. */
+html body.v2.is-immersive .mobile-contact.direct-contact.hx-dock { background: rgba(14, 16, 20, .72); border-color: rgba(255, 255, 255, .16); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); }
+html body.v2.is-immersive .hx-dock-copy span { color: #fff; }
+html body.v2.is-immersive .mobile-contact.hx-dock .btn { background: #fff !important; border-color: #fff !important; color: #111 !important; }
+html body.v2.is-immersive.has-direct-contact { padding-bottom: 0; }
+html body.v2.is-immersive .site-footer { padding-bottom: 120px; }
+/* Leave room for the enquiry bar under each scene. */
+.im-embedded .im-sec { scroll-snap-align: start; }
+.im-embedded .im-copy { padding-bottom: 60px; }
+.im-embedded .im-dots { z-index: 30; }
+html body .im :is(h1, h2, h3) { color: #fff !important; font-family: 'Noto Serif HK', serif; font-weight: 900; letter-spacing: .01em; }
+html body .im .im-line > span { color: #fff; }
+html body .im .im-k { color: rgba(255, 255, 255, .88); }
+@media (max-width: 600px) {
+  html body.v2.is-immersive .site-header .logo-secondary { display: none; }
+  html body.v2.is-immersive .site-header .logo-name { font-size: 19px; white-space: nowrap; }
+  html body.v2.is-immersive .site-header .logo .mark { width: 28px; height: 28px; }
+}
+@media (max-width: 700px) { .im-right .im-actions { justify-content: flex-start; } }
