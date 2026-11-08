@@ -71,19 +71,23 @@ html body.v2 :is(.hx-panel, .v-tile, .v-qa-item, .v-extras a, .v-receipt, .v-tru
 html body.v2 :is(.v-tile, .v-extras a, .hs-card, .px-card, .sales-path, .adv-card) { transition: box-shadow .25s, border-color .25s, transform .25s; }
 html body.v2 :is(.v-tile, .v-extras a, .hs-card, .px-card, .sales-path, .adv-card):hover { box-shadow: var(--c-shadow-hover) !important; border-color: var(--line-2) !important; }
 /* Navy panels: the one dark surface, used sparingly for emphasis. */
-html body.v2 :is(.v-tile-ink, .ds-dark, .v-cta-panel, .v-promises ul, .v-care, .ds-split-panel, .px-main, .v-tiles4 li.is-featured a) {
+html body.v2 :is(.v-tile-ink, .ds-dark, .v-cta-panel, .v-promises ul, .v-care, .ds-split-panel, .v-tiles4 li.is-featured a) {
   background: var(--navy) !important; border-color: var(--navy) !important; color: rgba(255, 255, 255, .78) !important; border-radius: var(--c-r) !important;
 }
-html body.v2 :is(.v-tile-ink, .ds-dark, .v-cta-panel, .v-promises ul, .v-care, .ds-split-panel, .px-main, .v-tiles4 li.is-featured a) :is(h1, h2, h3, h4, strong) { color: #fff !important; }
-html body.v2 :is(.v-tile-ink, .ds-dark, .v-cta-panel, .v-promises ul, .v-care, .ds-split-panel, .px-main) :is(.v-kicker, .ds-kicker, .hx-eyebrow) { color: var(--brass-light) !important; }
+html body.v2 :is(.v-tile-ink, .ds-dark, .v-cta-panel, .v-promises ul, .v-care, .ds-split-panel, .v-tiles4 li.is-featured a) :is(h1, h2, h3, h4, strong) { color: #fff !important; }
+html body.v2 :is(.v-tile-ink, .ds-dark, .v-cta-panel, .v-promises ul, .v-care, .ds-split-panel) :is(.v-kicker, .ds-kicker, .hx-eyebrow) { color: var(--brass-light) !important; }
 html body.v2 :is(.v-tile-sand, .v-tile-paper) { background: #fff !important; }
 html body.v2 :is(.v-sec, .ds-sec, .hs-sec, .rp-section) { padding-block: clamp(56px, 6.5vw, 84px); }
 html body.v2 :is(.v-sec-sage, .ds-cream, .hs-sec-alt) { background: var(--bg-2) !important; }
 html body.v2 :is(.v-tile-photo, .v-cities button, .v-gallery figure, .v-care-photo, .hs-card img) { border-radius: var(--c-r-sm) !important; overflow: hidden; }
 html body.v2 :is(.v-ico, .ds-ico, .hs-ico) { background: var(--bg-3) !important; border: 0 !important; color: var(--navy) !important; border-radius: 10px !important; }
 html body.v2 .v-cta-leaf { display: none; }
-html body.v2 :is(.ds-index a[aria-current='true'], .ds-chips button[aria-pressed='true'], .viewing-kind-tabs button[aria-pressed='true'], .px-cities button[aria-pressed='true'], .px-strip button.on, .lf-contact-options button[aria-pressed='true'], .v-flow-n) {
+html body.v2 :is(.ds-index a[aria-current='true'], .ds-chips button[aria-pressed='true'], .viewing-kind-tabs button[aria-pressed='true'], .px-cities button[aria-pressed='true'], .lf-contact-options button[aria-pressed='true'], .v-flow-n) {
   background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important;
+}
+html body.v2 .viewing-kind-tabs button[aria-pressed='true'] .viewing-kind-n,
+html body.v2 .px-cities button[aria-pressed='true'] span {
+  color: #fff !important;
 }
 html body.v2 .ds-index-row { background: rgba(255, 255, 255, .96) !important; border-bottom: 1px solid var(--line); }
 
@@ -416,3 +420,53 @@ html body.v2 :is(.btn, .hx-extras a, .hx-offer-chip):active { transform: scale(.
 .hx-app-head { margin-bottom: 16px; }
 html body.v2 .hx-app h1 { margin-bottom: 6px; }
 html body.v2 .hx-app .hx-eyebrow { margin-bottom: 8px; }
+
+/* Photographic home: large harbour opening, estate mosaic, photo service cards. */
+html body.v2 .hx-home .hx-hero { min-height: min(78svh, 720px); padding: 88px 0 72px; overflow: hidden; }
+.hx-hero-stack { display: grid; grid-template-columns: 1.4fr .8fr; grid-template-rows: 1fr 1fr; gap: 10px; min-height: 360px; }
+.hx-hero-stack img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+.hx-hero-stack img:first-child { grid-row: 1 / 3; }
+.hx-gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; grid-template-rows: 220px 220px; gap: 10px; }
+.hx-gallery a { position: relative; display: block; overflow: hidden; border-radius: 12px; min-height: 160px; }
+.hx-gallery a:first-child { grid-row: 1 / 3; }
+.hx-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+.hx-gallery a:hover img { transform: scale(1.04); }
+.hx-gallery span { position: absolute; z-index: 1; left: 12px; bottom: 12px; color: #fff; font-weight: 700; text-shadow: 0 1px 8px rgba(0,0,0,.55); }
+.hx-card .hx-steps { max-height: none; }
+.hx-card .hx-steps li { opacity: 1; transform: none; }
+.hx-gallery a::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(8,22,44,.55)); }
+@media (max-width: 900px) {
+  .hx-hero-stack { display: none; }
+  .hx-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+  .hx-gallery a:first-child { grid-row: auto; grid-column: 1 / -1; min-height: 220px; }
+}
+
+/* Online viewings: segmented tabs + light listing card (beats inherited v2/ds). */
+html body.v2 .viewing-samples .viewing-kind-tabs {
+  display: inline-flex !important; gap: 4px !important; padding: 4px; margin-bottom: 16px; max-width: none;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px;
+}
+html body.v2 .viewing-samples .viewing-kind-tabs button {
+  display: inline-flex !important; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 16px !important;
+  border: 0 !important; border-radius: 999px !important; background: transparent !important; color: var(--t-2) !important;
+  font: 600 14px/1 var(--sans-f);
+}
+html body.v2 .viewing-samples .viewing-kind-tabs button + button { border-left: 0 !important; }
+html body.v2 .viewing-samples .viewing-kind-tabs button[aria-pressed='true'] {
+  background: var(--navy) !important; color: #fff !important; border-color: var(--navy) !important;
+}
+html body.v2 .viewing-samples .viewing-kind-n {
+  display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px;
+  background: #fff; color: var(--navy) !important; font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums;
+}
+html body.v2 .viewing-samples .viewing-kind-tabs button[aria-pressed='true'] .viewing-kind-n {
+  background: rgba(255,255,255,.18) !important; color: #fff !important;
+}
+html body.v2 .viewing-samples .px-main {
+  background: #fff !important; color: var(--t-1) !important; border: 1px solid var(--line); border-radius: 12px;
+}
+html body.v2 .viewing-samples .px-main :is(h2, h3, strong) { color: var(--navy) !important; }
+html body.v2 .viewing-samples .px-stage :is(h2, h3, strong, .px-num, .px-count) { color: #fff !important; }
+html body.v2 .viewing-samples .px-strip button.on {
+  background: #fff !important; color: var(--navy) !important; border-color: var(--navy) !important;
+}

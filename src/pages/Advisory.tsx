@@ -75,6 +75,8 @@ export default function Advisory() {
   return (
     <div className="v-page advisory-page">
       <PageHero
+        bg="/img/hk/mid-levels.webp"
+        bgPos="50% 40%"
         kicker={L('置業顧問', 'Property services')}
         title={<>{L('出租之外，', 'Beyond letting,')}<em>{L('單位嘅事都可以交俾我哋。', 'the rest of the house too.')}</em></>}
         lead={L('裝修翻新、房屋打理、維修維護同置業查詢。免費上門評估，按項目報價。', 'Renovation, home care, repairs and buying advice. A free on-site assessment, then a quote per project.')}

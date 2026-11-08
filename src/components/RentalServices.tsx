@@ -71,8 +71,8 @@ export default function RentalServices() {
           <button type="button" className="btn btn-line rp-management-cta" onClick={() => enquire({ service: 'management' })}>{L('查詢租務管理', 'Management enquiry')}</button>
         </>}
         aside={<OfferReceipt className="v-hero-receipt" />}
-        bg="/img/renovation/8.webp"
-        bgPos="50% 60%"
+        bg="/img/hk/taikoo-shing.webp"
+        bgPos="50% 40%"
       />
 
       <SectionIndex items={index} label={L('本頁內容', 'On this page')} />

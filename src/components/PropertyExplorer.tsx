@@ -136,7 +136,7 @@ export default function PropertyExplorer({ items, selectedId, roomId, onSelect, 
           <ul className="px-specs">
             <li><span>{L('卧室', 'Bedrooms')}</span><strong><BedDouble size={18} aria-hidden />{current.beds ?? '—'}</strong></li>
             <li><span>{L('衞浴', 'Bathrooms')}</span><strong><Bath size={18} aria-hidden />{current.baths ?? '—'}</strong></li>
-            <li><span>{L('車位', 'Car spaces')}</span><strong><CarFront size={18} aria-hidden />{current.cars ?? '—'}</strong></li>
+            {current.cars != null && <li><span>{L('車位', 'Car spaces')}</span><strong><CarFront size={18} aria-hidden />{current.cars}</strong></li>}
           </ul>
           {current.facts.map((f) => <p className="px-fact" key={f}>{f}</p>)}
           {current.rooms.length > 0 && <>
@@ -156,7 +156,7 @@ export default function PropertyExplorer({ items, selectedId, roomId, onSelect, 
           </>}
           <button type="button" className="btn btn-primary px-cta" onClick={cta.onClick}>{cta.label}<ArrowUpRight size={18} aria-hidden /></button>
         </div>
-        <PropertyMap key={`map-${current.id}`} item={current} />
+        {current.geo && Number.isFinite(current.geo.latitude) && <PropertyMap key={`map-${current.id}`} item={current} />}
       </aside>
     </div>
 

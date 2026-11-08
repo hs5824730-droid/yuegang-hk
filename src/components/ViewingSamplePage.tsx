@@ -104,14 +104,13 @@ export default function ViewingSamplePage() {
     rooms: l.rooms.map(r => ({ id: r.id, label: pick(r.label), photoUrl: r.photoUrl, thumbnailUrl: r.thumbnailUrl, videoUrl: r.videoUrl })),
   }));
   const tabLabel = (k: Kind) => k === 'rent' ? L('租盤', 'To rent') : k === 'sale' ? L('售盤', 'For sale') : L('成交紀錄', 'Sold');
-  const tabNote = (k: Kind) => k === 'rent' ? L('可租單位', 'Available homes') : k === 'sale' ? L('業主放售', 'Owner listings') : L('近期成交', 'Recent sales');
 
   return <div className="viewing-samples wrap">
     <header className="ds viewing-samples-heading"><p className="ds-kicker">{L('網上睇樓', 'Online viewings')}</p><h1>{L('未到現場，都可以先睇清楚層樓', 'See the flat clearly before you visit')}</h1><p className="ds-lead">{L('租盤、售盤同成交紀錄都喺度。睇中咗，撳一下就可以約我哋睇樓。', 'Rentals, sales and recent transactions in one place. Found one you like? Tap to book a viewing.')}</p></header>
     <div className="viewing-kind-tabs" role="group" aria-label={L('樓盤類型', 'Property category')}>
       {kinds.map(k => <button type="button" key={k} aria-pressed={kind === k} onClick={() => chooseKind(k)} disabled={!catalog}>
         <span>{tabLabel(k)}</span>
-        <small>{tabNote(k)}{publicCatalog && ` · ${publicCatalog[k].length}`}</small>
+        {publicCatalog && <b className="viewing-kind-n">{publicCatalog[k].length}</b>}
       </button>)}
     </div>
 

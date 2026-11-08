@@ -2,11 +2,12 @@
 .viewing-samples-heading { margin-bottom:20px; }
 .viewing-samples-heading h1 { font-size:32px; margin-bottom:12px; }
 .viewing-samples-heading p { color:var(--ink-2); font-size:15px; }
-.viewing-kind-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; max-width: 500px; margin-bottom: 20px; }
-.viewing-kind-tabs button { display: grid; gap: 3px; min-height: 62px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 0; text-align: left; color: var(--ink-2); background: var(--white); font: 600 15px/1.4 var(--sans); cursor: pointer; }
-.viewing-kind-tabs small { color: var(--ink-3); font-size: 12px; font-weight: 400; }
-.viewing-kind-tabs button[aria-pressed='true'] { border-color: var(--euc); background: var(--euc-tint); color: var(--euc-dark); }
-.viewing-kind-tabs button:focus-visible { outline: 2px solid var(--euc); outline-offset: 3px; }
+.viewing-kind-tabs { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; margin-bottom: 16px; max-width: none; background: var(--bg-2, #F4F6F9); border: 1px solid var(--line); border-radius: 999px; }
+.viewing-kind-tabs button { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 14px 0 16px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-2); font: 600 14px/1 var(--sans); cursor: pointer; }
+.viewing-kind-n { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; background: #fff; color: var(--ink); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.viewing-kind-tabs button[aria-pressed='true'] { background: var(--navy, #0B2545); color: #fff; }
+.viewing-kind-tabs button[aria-pressed='true'] .viewing-kind-n { background: rgba(255,255,255,.16); color: #fff; }
+.viewing-kind-tabs button:focus-visible { outline: 2px solid var(--navy, #0B2545); outline-offset: 2px; }
 .viewing-sample-banner { padding:14px 16px; border-left:3px solid var(--action); background:var(--sand-2); color:var(--ink-2); font-size:14px; margin-bottom:26px; }
 .viewing-sample-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
 .viewing-sample-card { color:var(--ink); text-decoration:none; border:1px solid var(--line); border-radius: 0; overflow:hidden; }

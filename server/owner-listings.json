@@ -660,5 +660,7265 @@
         "watermarked": false
       }
     ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000012",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "YOHO Town · 中層單位",
+    "suburb": "元朗",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$18,800 / 月",
+      "en": "HK$18,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-01",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/yoho-town.webp",
+    "features": [
+      {
+        "zh": "實用面積 490 呎",
+        "en": "Saleable area 490 sq ft"
+      },
+      {
+        "zh": "元朗站上蓋，基座 YOHO MIX",
+        "en": "Above Yuen Long MTR and YOHO MIX"
+      },
+      {
+        "zh": "兩房梗廚，連基本傢俬",
+        "en": "Two bedrooms, closed kitchen, partly furnished"
+      },
+      {
+        "zh": "適合行屯馬線返工嘅租客",
+        "en": "Convenient for Tuen Ma Line commuters"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "YOHO Town 屋苑外觀",
+          "en": "YOHO Town"
+        },
+        "photoUrl": "/img/hk/yoho-town.webp",
+        "thumbnailUrl": "/img/hk/yoho-town.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000013",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "海怡半島 · 高層單位",
+    "suburb": "鴨脷洲",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$32,000 / 月",
+      "en": "HK$32,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-11-28",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/south-horizons.webp",
+    "features": [
+      {
+        "zh": "實用面積 780 呎",
+        "en": "Saleable area 780 sq ft"
+      },
+      {
+        "zh": "海怡站步行約 3 分鐘",
+        "en": "About 3 minutes’ walk to South Horizons MTR"
+      },
+      {
+        "zh": "三房兩廁，望海景",
+        "en": "Three bedrooms, two bathrooms, sea view"
+      },
+      {
+        "zh": "屋苑會所、商場同海濱長廊齊全",
+        "en": "Clubhouse, mall and waterfront promenade"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海怡半島屋苑外觀",
+          "en": "South Horizons"
+        },
+        "photoUrl": "/img/hk/south-horizons.webp",
+        "thumbnailUrl": "/img/hk/south-horizons.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000014",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "康怡花園 · 中層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$23,800 / 月",
+      "en": "HK$23,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-08",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/kornhill.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "太古站／康怡廣場基座",
+        "en": "By Tai Koo MTR and Kornhill Plaza"
+      },
+      {
+        "zh": "兩房向南，少裝修即可入住",
+        "en": "South-facing two-bed, light renovation, ready to move in"
+      },
+      {
+        "zh": "東區名校網附近",
+        "en": "Near Eastern District school nets"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "康怡花園屋苑外觀",
+          "en": "Kornhill"
+        },
+        "photoUrl": "/img/hk/kornhill.webp",
+        "thumbnailUrl": "/img/hk/kornhill.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000015",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "維港灣 · 高層單位",
+    "suburb": "大角咀",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$36,000 / 月",
+      "en": "HK$36,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-15",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/island-harbourview.webp",
+    "features": [
+      {
+        "zh": "實用面積 850 呎",
+        "en": "Saleable area 850 sq ft"
+      },
+      {
+        "zh": "奧運站奧海城上蓋",
+        "en": "Above Olympic MTR and Olympian City"
+      },
+      {
+        "zh": "高層向南，望維港",
+        "en": "High floor, south-facing harbour view"
+      },
+      {
+        "zh": "連工人房，傢電齊全",
+        "en": "Helper’s room; appliances included"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "維港灣屋苑外觀",
+          "en": "Island Harbourview"
+        },
+        "photoUrl": "/img/hk/island-harbourview.webp",
+        "thumbnailUrl": "/img/hk/island-harbourview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000016",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "海之戀 · 中層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$19,800 / 月",
+      "en": "HK$19,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-11-22",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/ocean-pride.webp",
+    "features": [
+      {
+        "zh": "實用面積 512 呎",
+        "en": "Saleable area 512 sq ft"
+      },
+      {
+        "zh": "荃灣西站上蓋",
+        "en": "Above Tsuen Wan West MTR"
+      },
+      {
+        "zh": "兩房望藍巴勒海峽",
+        "en": "Two bedrooms facing Rambler Channel"
+      },
+      {
+        "zh": "新淨少住，即租即住",
+        "en": "Lightly lived-in, available now"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海之戀屋苑外觀",
+          "en": "Ocean Pride"
+        },
+        "photoUrl": "/img/hk/ocean-pride.webp",
+        "thumbnailUrl": "/img/hk/ocean-pride.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000017",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "珀麗灣 · 低層單位",
+    "suburb": "馬灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$16,800 / 月",
+      "en": "HK$16,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-05",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/park-island.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
+      },
+      {
+        "zh": "渡輪直出中環，巴士接駁荃灣",
+        "en": "Ferry to Central; bus link to Tsuen Wan"
+      },
+      {
+        "zh": "低層望園景，連會所泳池",
+        "en": "Low floor garden view; clubhouse and pool"
+      },
+      {
+        "zh": "適合想清靜啲嘅租客",
+        "en": "Suits tenants who want a quieter estate"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "珀麗灣屋苑外觀",
+          "en": "Park Island"
+        },
+        "photoUrl": "/img/hk/park-island.webp",
+        "thumbnailUrl": "/img/hk/park-island.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000018",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "置富花園 · 中層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$28,500 / 月",
+      "en": "HK$28,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-20",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/chi-fu.webp",
+    "features": [
+      {
+        "zh": "實用面積 720 呎",
+        "en": "Saleable area 720 sq ft"
+      },
+      {
+        "zh": "南區傳統屋苑，近置富商場",
+        "en": "Southern District estate, next to Chi Fu mall"
+      },
+      {
+        "zh": "三房兩廁，啱一家大細",
+        "en": "Three bedrooms, two bathrooms — family layout"
+      },
+      {
+        "zh": "巴士總站就喺屋苑下面",
+        "en": "Bus terminus at the estate"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "置富花園屋苑外觀",
+          "en": "Chi Fu Fa Yuen"
+        },
+        "photoUrl": "/img/hk/chi-fu.webp",
+        "thumbnailUrl": "/img/hk/chi-fu.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000019",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "德福花園 · 中層單位",
+    "suburb": "九龍灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$638萬",
+      "en": "HK$6.38M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/telford.webp",
+    "features": [
+      {
+        "zh": "實用面積 480 呎",
+        "en": "Saleable area 480 sq ft"
+      },
+      {
+        "zh": "九龍灣站／德福廣場上蓋",
+        "en": "Above Kowloon Bay MTR and Telford Plaza"
+      },
+      {
+        "zh": "兩房梗廚，實用率高",
+        "en": "Two bedrooms, closed kitchen, efficient layout"
+      },
+      {
+        "zh": "業主交吉，可約睇樓",
+        "en": "Vacant possession; viewings by appointment"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "德福花園屋苑外觀",
+          "en": "Telford Gardens"
+        },
+        "photoUrl": "/img/hk/telford.webp",
+        "thumbnailUrl": "/img/hk/telford.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000020",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "蔚藍灣畔 · 高層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$888萬",
+      "en": "HK$8.88M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/residence-oasis.webp",
+    "features": [
+      {
+        "zh": "實用面積 680 呎",
+        "en": "Saleable area 680 sq ft"
+      },
+      {
+        "zh": "坑口站步行約 5 分鐘",
+        "en": "About 5 minutes’ walk to Hang Hau MTR"
+      },
+      {
+        "zh": "三房兩廁連儲物房",
+        "en": "Three bedrooms, two bathrooms and a store"
+      },
+      {
+        "zh": "望將軍澳灣，連會所",
+        "en": "Tseung Kwan O Bay view; clubhouse"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "蔚藍灣畔屋苑外觀",
+          "en": "Residence Oasis"
+        },
+        "photoUrl": "/img/hk/residence-oasis.webp",
+        "thumbnailUrl": "/img/hk/residence-oasis.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000021",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "杏花邨 · 高層單位",
+    "suburb": "柴灣",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$728萬",
+      "en": "HK$7.28M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/heng-fa-chuen.webp",
+    "features": [
+      {
+        "zh": "實用面積 530 呎",
+        "en": "Saleable area 530 sq ft"
+      },
+      {
+        "zh": "杏花邨站上蓋，望海景",
+        "en": "Above Heng Fa Chuen MTR, sea view"
+      },
+      {
+        "zh": "兩房，適合首置或者換樓",
+        "en": "Two bedrooms — first home or upgrade"
+      },
+      {
+        "zh": "屋苑內有商場同海濱公園",
+        "en": "Mall and waterfront park in the estate"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "杏花邨屋苑外觀",
+          "en": "Heng Fa Chuen"
+        },
+        "photoUrl": "/img/hk/heng-fa-chuen.webp",
+        "thumbnailUrl": "/img/hk/heng-fa-chuen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000022",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "淘大花園 · 中層單位",
+    "suburb": "牛頭角",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$588萬",
+      "en": "HK$5.88M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5880000,
+    "soldDate": "2026-10-12",
+    "coverUrl": "/img/hk/amoy-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 450 呎",
+        "en": "Saleable area 450 sq ft"
+      },
+      {
+        "zh": "近牛頭角站同淘大商場",
+        "en": "Near Ngau Tau Kok MTR and Amoy Plaza"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淘大花園屋苑外觀",
+          "en": "Amoy Gardens"
+        },
+        "photoUrl": "/img/hk/amoy-gardens.webp",
+        "thumbnailUrl": "/img/hk/amoy-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000023",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "YOHO Town · 高層單位",
+    "suburb": "元朗",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$715萬",
+      "en": "HK$7.15M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7150000,
+    "soldDate": "2026-09-21",
+    "coverUrl": "/img/hk/yoho-town.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "元朗站上蓋成交紀錄",
+        "en": "Sold record above Yuen Long MTR"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "YOHO Town 屋苑外觀",
+          "en": "YOHO Town"
+        },
+        "photoUrl": "/img/hk/yoho-town.webp",
+        "thumbnailUrl": "/img/hk/yoho-town.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000024",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "海怡半島 · 中層單位",
+    "suburb": "鴨脷洲",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,180萬",
+      "en": "HK$11.8M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 11800000,
+    "soldDate": "2026-08-30",
+    "coverUrl": "/img/hk/south-horizons.webp",
+    "features": [
+      {
+        "zh": "實用面積 790 呎",
+        "en": "Saleable area 790 sq ft"
+      },
+      {
+        "zh": "南區三房成交參考",
+        "en": "Southern District three-bed sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海怡半島屋苑外觀",
+          "en": "South Horizons"
+        },
+        "photoUrl": "/img/hk/south-horizons.webp",
+        "thumbnailUrl": "/img/hk/south-horizons.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000025",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "名城 · 中層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$21,500 / 月",
+      "en": "HK$21,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-10",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/festival-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 650 呎",
+        "en": "Saleable area 650 sq ft"
+      },
+      {
+        "zh": "近大圍站，基座名城商場",
+        "en": "Near Tai Wai MTR and Festival City mall"
+      },
+      {
+        "zh": "三房兩廁，連會所泳池",
+        "en": "Three bedrooms, two bathrooms, clubhouse pool"
+      },
+      {
+        "zh": "適合一家大細",
+        "en": "Suits a family"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田名城屋苑外觀",
+          "en": "Festival City, Sha Tin"
+        },
+        "photoUrl": "/img/hk/festival-city.webp",
+        "thumbnailUrl": "/img/hk/festival-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000026",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "灝景灣 · 高層單位",
+    "suburb": "青衣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$19,800 / 月",
+      "en": "HK$19,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-01",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/villa-esplanada.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
+      },
+      {
+        "zh": "青衣站／青衣城附近",
+        "en": "Near Tsing Yi MTR and Maritime Square"
+      },
+      {
+        "zh": "兩房望海，連基本傢俬",
+        "en": "Two-bed sea view, partly furnished"
+      },
+      {
+        "zh": "機場鐵路兩站到中環",
+        "en": "Two Airport Express stops to Central"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "青衣灝景灣屋苑外觀",
+          "en": "Villa Esplanada, Tsing Yi"
+        },
+        "photoUrl": "/img/hk/villa-esplanada.webp",
+        "thumbnailUrl": "/img/hk/villa-esplanada.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000027",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "城市花園 · 中層單位",
+    "suburb": "北角",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$26,800 / 月",
+      "en": "HK$26,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-11-25",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/city-garden.webp",
+    "features": [
+      {
+        "zh": "實用面積 580 呎",
+        "en": "Saleable area 580 sq ft"
+      },
+      {
+        "zh": "北角站步行約 6 分鐘",
+        "en": "About 6 minutes’ walk to North Point MTR"
+      },
+      {
+        "zh": "兩房梗廚，近電廠街街市",
+        "en": "Two bedrooms, closed kitchen, near wet market"
+      },
+      {
+        "zh": "屋苑有商場同會所",
+        "en": "Estate mall and clubhouse"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "北角城市花園屋苑外觀",
+          "en": "City Garden, North Point"
+        },
+        "photoUrl": "/img/hk/city-garden.webp",
+        "thumbnailUrl": "/img/hk/city-garden.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000028",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "鯉景灣 · 高層單位",
+    "suburb": "筲箕灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$29,000 / 月",
+      "en": "HK$29,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-18",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/lei-king-wan.webp",
+    "features": [
+      {
+        "zh": "實用面積 720 呎",
+        "en": "Saleable area 720 sq ft"
+      },
+      {
+        "zh": "西灣河站附近，望海景",
+        "en": "Near Sai Wan Ho MTR, sea view"
+      },
+      {
+        "zh": "三房兩廁，連工人房可再傾",
+        "en": "Three bedrooms, two bathrooms; helper’s room negotiable"
+      },
+      {
+        "zh": "近太安樓同海濱長廊",
+        "en": "Near Tai On Building and the waterfront"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "筲箕灣鯉景灣屋苑外觀",
+          "en": "Lei King Wan, Shau Kei Wan"
+        },
+        "photoUrl": "/img/hk/lei-king-wan.webp",
+        "thumbnailUrl": "/img/hk/lei-king-wan.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000029",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "屯門市廣場 · 中層單位",
+    "suburb": "屯門",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$528萬",
+      "en": "HK$5.28M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/tuen-mun.webp",
+    "features": [
+      {
+        "zh": "實用面積 430 呎",
+        "en": "Saleable area 430 sq ft"
+      },
+      {
+        "zh": "屯門站／市廣場上蓋",
+        "en": "Above Tuen Mun MTR and Town Plaza"
+      },
+      {
+        "zh": "兩房，適合首置",
+        "en": "Two bedrooms — good first home"
+      },
+      {
+        "zh": "業主交吉，可約睇樓",
+        "en": "Vacant possession; viewings by appointment"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "屯門市廣場住宅外觀",
+          "en": "Tuen Mun Town Plaza"
+        },
+        "photoUrl": "/img/hk/tuen-mun.webp",
+        "thumbnailUrl": "/img/hk/tuen-mun.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000030",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "麗港城 · 高層單位",
+    "suburb": "藍田",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$798萬",
+      "en": "HK$7.98M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/laguna-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 680 呎",
+        "en": "Saleable area 680 sq ft"
+      },
+      {
+        "zh": "藍田站／觀塘附近",
+        "en": "Near Lam Tin and Kwun Tong MTR"
+      },
+      {
+        "zh": "三房兩廁，實用率高",
+        "en": "Three bedrooms, two bathrooms, efficient layout"
+      },
+      {
+        "zh": "屋苑有會所、商場同海濱",
+        "en": "Clubhouse, mall and waterfront"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "藍田麗港城屋苑外觀",
+          "en": "Laguna City, Lam Tin"
+        },
+        "photoUrl": "/img/hk/laguna-city.webp",
+        "thumbnailUrl": "/img/hk/laguna-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000031",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "海濱花園 · 中層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$618萬",
+      "en": "HK$6.18M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/riviera-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "荃灣西站附近",
+        "en": "Near Tsuen Wan West MTR"
+      },
+      {
+        "zh": "兩房望海，連會所",
+        "en": "Two-bed sea view with clubhouse"
+      },
+      {
+        "zh": "可做按揭，業主誠意放售",
+        "en": "Mortgage-ready; owner keen to sell"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "荃灣海濱花園屋苑外觀",
+          "en": "Riviera Gardens, Tsuen Wan"
+        },
+        "photoUrl": "/img/hk/riviera-gardens.webp",
+        "thumbnailUrl": "/img/hk/riviera-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000032",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "名城 · 高層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$868萬",
+      "en": "HK$8.68M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 8680000,
+    "soldDate": "2026-10-05",
+    "coverUrl": "/img/hk/festival-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "大圍名城近期成交",
+        "en": "Recent Festival City sale"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田名城屋苑外觀",
+          "en": "Festival City, Sha Tin"
+        },
+        "photoUrl": "/img/hk/festival-city.webp",
+        "thumbnailUrl": "/img/hk/festival-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000033",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "城市花園 · 低層單位",
+    "suburb": "北角",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$780萬",
+      "en": "HK$7.8M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7800000,
+    "soldDate": "2026-09-08",
+    "coverUrl": "/img/hk/city-garden.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
+      },
+      {
+        "zh": "北角兩房成交參考",
+        "en": "North Point two-bed sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "北角城市花園屋苑外觀",
+          "en": "City Garden, North Point"
+        },
+        "photoUrl": "/img/hk/city-garden.webp",
+        "thumbnailUrl": "/img/hk/city-garden.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000034",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "碧瑤灣 · 中層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$38,000 / 月",
+      "en": "HK$38,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-12",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/baguio.webp",
+    "features": [
+      {
+        "zh": "實用面積 900 呎",
+        "en": "Saleable area 900 sq ft"
+      },
+      {
+        "zh": "南區傳統屋苑，近置富",
+        "en": "Southern District estate, near Chi Fu"
+      },
+      {
+        "zh": "三房兩廁，望山景",
+        "en": "Three bedrooms, two bathrooms, hill view"
+      },
+      {
+        "zh": "巴士往中環、香港大學方便",
+        "en": "Buses to Central and HKU"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "薄扶林碧瑤灣屋苑外觀",
+          "en": "Baguio Villa, Pok Fu Lam"
+        },
+        "photoUrl": "/img/hk/baguio.webp",
+        "thumbnailUrl": "/img/hk/baguio.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000035",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "碧海藍天 · 高層單位",
+    "suburb": "長沙灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$22,000 / 月",
+      "en": "HK$22,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-11-30",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/aquamarine.webp",
+    "features": [
+      {
+        "zh": "實用面積 480 呎",
+        "en": "Saleable area 480 sq ft"
+      },
+      {
+        "zh": "南昌站步行約 8 分鐘",
+        "en": "About 8 minutes’ walk to Nam Cheong MTR"
+      },
+      {
+        "zh": "兩房望海，連基本傢俬",
+        "en": "Two-bed sea view, partly furnished"
+      },
+      {
+        "zh": "近西九龍公路，往機場方便",
+        "en": "By West Kowloon Highway, easy airport access"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "長沙灣碧海藍天屋苑外觀",
+          "en": "AquaMarine, Cheung Sha Wan"
+        },
+        "photoUrl": "/img/hk/aquamarine.webp",
+        "thumbnailUrl": "/img/hk/aquamarine.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000036",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "將軍澳中心 · 中層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$16,500 / 月",
+      "en": "HK$16,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-06",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/park-central.webp",
+    "features": [
+      {
+        "zh": "實用面積 450 呎",
+        "en": "Saleable area 450 sq ft"
+      },
+      {
+        "zh": "將軍澳站上蓋",
+        "en": "Above Tseung Kwan O MTR"
+      },
+      {
+        "zh": "兩房，基座商場",
+        "en": "Two bedrooms above the mall"
+      },
+      {
+        "zh": "適合年輕家庭",
+        "en": "Suits a young family"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "將軍澳中心屋苑外觀",
+          "en": "Park Central, Tseung Kwan O"
+        },
+        "photoUrl": "/img/hk/park-central.webp",
+        "thumbnailUrl": "/img/hk/park-central.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00",
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000037",
+    "kind": "rent",
+    "availabilityStatus": "available",
+    "address": "香港仔中心 · 高層單位",
+    "suburb": "香港仔",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$18,500 / 月",
+      "en": "HK$18,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "availableDate": "2026-12-01",
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/aberdeen.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "香港仔市中心，近街市同海傍",
+        "en": "Aberdeen town centre, near the market and waterfront"
+      },
+      {
+        "zh": "兩房梗廚",
+        "en": "Two bedrooms, closed kitchen"
+      },
+      {
+        "zh": "巴士往中環、黃竹坑",
+        "en": "Buses to Central and Wong Chuk Hang"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "香港仔中心屋苑外觀",
+          "en": "Aberdeen Centre"
+        },
+        "photoUrl": "/img/hk/aberdeen.webp",
+        "thumbnailUrl": "/img/hk/aberdeen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000038",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "陽明山莊 · 高層單位",
+    "suburb": "大潭",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$4,280萬",
+      "en": "HK$42.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/parkview.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,800 呎",
+        "en": "Saleable area 1,800 sq ft"
+      },
+      {
+        "zh": "南區低密度屋苑，望山景",
+        "en": "Low-density Southern District estate, hill view"
+      },
+      {
+        "zh": "三房連工人房，會所齊全",
+        "en": "Three bedrooms plus helper’s room, full clubhouse"
+      },
+      {
+        "zh": "業主交吉，可約睇樓",
+        "en": "Vacant possession; viewings by appointment"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大潭陽明山莊屋苑外觀",
+          "en": "Hong Kong Parkview, Tai Tam"
+        },
+        "photoUrl": "/img/hk/parkview.webp",
+        "thumbnailUrl": "/img/hk/parkview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000039",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "淺水灣住宅 · 中層單位",
+    "suburb": "淺水灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,680萬",
+      "en": "HK$26.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/repulse.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,200 呎",
+        "en": "Saleable area 1,200 sq ft"
+      },
+      {
+        "zh": "淺水灣海旁住宅，望海景",
+        "en": "Repulse Bay waterfront home, sea view"
+      },
+      {
+        "zh": "三房兩廁",
+        "en": "Three bedrooms, two bathrooms"
+      },
+      {
+        "zh": "適合自住，可約睇樓",
+        "en": "For own use; viewings by appointment"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淺水灣住宅外觀",
+          "en": "Repulse Bay apartments"
+        },
+        "photoUrl": "/img/hk/repulse.webp",
+        "thumbnailUrl": "/img/hk/repulse.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000040",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "address": "粉嶺中心 · 中層單位",
+    "suburb": "粉嶺",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$468萬",
+      "en": "HK$4.68M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/fanling.webp",
+    "features": [
+      {
+        "zh": "實用面積 400 呎",
+        "en": "Saleable area 400 sq ft"
+      },
+      {
+        "zh": "粉嶺站附近",
+        "en": "Near Fanling MTR"
+      },
+      {
+        "zh": "兩房，適合首置",
+        "en": "Two bedrooms — a first home"
+      },
+      {
+        "zh": "業主交吉",
+        "en": "Vacant possession"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "粉嶺中心屋苑外觀",
+          "en": "Fanling Centre"
+        },
+        "photoUrl": "/img/hk/fanling.webp",
+        "thumbnailUrl": "/img/hk/fanling.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000041",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "上水中心 · 高層單位",
+    "suburb": "上水",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$520萬",
+      "en": "HK$5.2M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5200000,
+    "soldDate": "2026-10-18",
+    "coverUrl": "/img/hk/sheung-shui.webp",
+    "features": [
+      {
+        "zh": "實用面積 430 呎",
+        "en": "Saleable area 430 sq ft"
+      },
+      {
+        "zh": "上水站附近成交",
+        "en": "Sold near Sheung Shui MTR"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "上水中心屋苑外觀",
+          "en": "Sheung Shui Centre"
+        },
+        "photoUrl": "/img/hk/sheung-shui.webp",
+        "thumbnailUrl": "/img/hk/sheung-shui.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000042",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "香港仔中心 · 中層單位",
+    "suburb": "香港仔",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$598萬",
+      "en": "HK$5.98M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5980000,
+    "soldDate": "2026-09-14",
+    "coverUrl": "/img/hk/aberdeen.webp",
+    "features": [
+      {
+        "zh": "實用面積 410 呎",
+        "en": "Saleable area 410 sq ft"
+      },
+      {
+        "zh": "南區兩房成交參考",
+        "en": "Southern District two-bed sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "香港仔中心屋苑外觀",
+          "en": "Aberdeen Centre"
+        },
+        "photoUrl": "/img/hk/aberdeen.webp",
+        "thumbnailUrl": "/img/hk/aberdeen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000043",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "碧海藍天 · 低層單位",
+    "suburb": "長沙灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$688萬",
+      "en": "HK$6.88M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6880000,
+    "soldDate": "2026-08-22",
+    "coverUrl": "/img/hk/aquamarine.webp",
+    "features": [
+      {
+        "zh": "實用面積 470 呎",
+        "en": "Saleable area 470 sq ft"
+      },
+      {
+        "zh": "長沙灣兩房成交參考",
+        "en": "Cheung Sha Wan two-bed sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "長沙灣碧海藍天屋苑外觀",
+          "en": "AquaMarine, Cheung Sha Wan"
+        },
+        "photoUrl": "/img/hk/aquamarine.webp",
+        "thumbnailUrl": "/img/hk/aquamarine.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000044",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "黃埔花園 · 高層單位",
+    "suburb": "紅磡",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$980萬",
+      "en": "HK$9.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/whampoa.webp",
+    "features": [
+      {
+        "zh": "實用面積 750 呎",
+        "en": "Saleable area 750 sq ft"
+      },
+      {
+        "zh": "黃埔站步行約 3 分鐘",
+        "en": "About 3 minutes’ walk to Whampoa MTR"
+      },
+      {
+        "zh": "三房兩廁，業主交吉",
+        "en": "Three bedrooms, two bathrooms; vacant possession"
+      },
+      {
+        "zh": "可約睇樓",
+        "en": "Viewings by appointment"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "黃埔花園屋苑外觀",
+          "en": "Whampoa Garden"
+        },
+        "photoUrl": "/img/hk/whampoa.webp",
+        "thumbnailUrl": "/img/hk/whampoa.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000045",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "康怡花園 · 中層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$1,180萬",
+      "en": "HK$11.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/kornhill.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "太古站上蓋",
+        "en": "Above Tai Koo MTR"
+      },
+      {
+        "zh": "兩房向南，東區名校網附近",
+        "en": "South-facing two-bed, near Eastern District school nets"
+      },
+      {
+        "zh": "業主誠意放售",
+        "en": "Owner keen to sell"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "康怡花園屋苑外觀",
+          "en": "Kornhill"
+        },
+        "photoUrl": "/img/hk/kornhill.webp",
+        "thumbnailUrl": "/img/hk/kornhill.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000046",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "維港灣 · 中層單位",
+    "suburb": "大角咀",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,680萬",
+      "en": "HK$16.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/island-harbourview.webp",
+    "features": [
+      {
+        "zh": "實用面積 820 呎",
+        "en": "Saleable area 820 sq ft"
+      },
+      {
+        "zh": "奧運站奧海城上蓋",
+        "en": "Above Olympic MTR and Olympian City"
+      },
+      {
+        "zh": "三房望維港，連工人房",
+        "en": "Three-bed harbour view, with helper’s room"
+      },
+      {
+        "zh": "可做按揭，交吉",
+        "en": "Mortgage-ready; vacant possession"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "維港灣屋苑外觀",
+          "en": "Island Harbourview"
+        },
+        "photoUrl": "/img/hk/island-harbourview.webp",
+        "thumbnailUrl": "/img/hk/island-harbourview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000047",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "海之戀 · 高層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$880萬",
+      "en": "HK$8.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/ocean-pride.webp",
+    "features": [
+      {
+        "zh": "實用面積 512 呎",
+        "en": "Saleable area 512 sq ft"
+      },
+      {
+        "zh": "荃灣西站上蓋",
+        "en": "Above Tsuen Wan West MTR"
+      },
+      {
+        "zh": "兩房望藍巴勒海峽",
+        "en": "Two bedrooms facing Rambler Channel"
+      },
+      {
+        "zh": "新淨少住，有匙即睇",
+        "en": "Lightly lived-in; key in hand"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海之戀屋苑外觀",
+          "en": "Ocean Pride"
+        },
+        "photoUrl": "/img/hk/ocean-pride.webp",
+        "thumbnailUrl": "/img/hk/ocean-pride.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000048",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "置富花園 · 高層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,280萬",
+      "en": "HK$12.8M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/chi-fu.webp",
+    "features": [
+      {
+        "zh": "實用面積 720 呎",
+        "en": "Saleable area 720 sq ft"
+      },
+      {
+        "zh": "南區屋苑，近置富商場",
+        "en": "Southern District estate, next to Chi Fu mall"
+      },
+      {
+        "zh": "三房兩廁，適合換樓",
+        "en": "Three bedrooms, two bathrooms — an upgrade home"
+      },
+      {
+        "zh": "業主交吉，可約睇樓",
+        "en": "Vacant possession; viewings by appointment"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "置富花園屋苑外觀",
+          "en": "Chi Fu Fa Yuen"
+        },
+        "photoUrl": "/img/hk/chi-fu.webp",
+        "thumbnailUrl": "/img/hk/chi-fu.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000049",
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "灝景灣 · 中層單位",
+    "suburb": "青衣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$820萬",
+      "en": "HK$8.2M"
+    },
+    "priceBasis": "asking_sale",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "coverUrl": "/img/hk/villa-esplanada.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
+      },
+      {
+        "zh": "青衣站附近",
+        "en": "Near Tsing Yi MTR"
+      },
+      {
+        "zh": "兩房望海",
+        "en": "Two-bed sea view"
+      },
+      {
+        "zh": "適合首置或換樓",
+        "en": "First home or upgrade"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "青衣灝景灣屋苑外觀",
+          "en": "Villa Esplanada, Tsing Yi"
+        },
+        "photoUrl": "/img/hk/villa-esplanada.webp",
+        "thumbnailUrl": "/img/hk/villa-esplanada.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000050",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "映灣園 · 中層單位",
+    "suburb": "東涌",
+    "city": "Islands",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$620萬",
+      "en": "HK$6.2M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6200000,
+    "soldDate": "2026-10-09",
+    "coverUrl": "/img/hk/caribbean-coast.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "東涌站附近成交",
+        "en": "Sold near Tung Chung MTR"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "東涌映灣園屋苑外觀",
+          "en": "Caribbean Coast, Tung Chung"
+        },
+        "photoUrl": "/img/hk/caribbean-coast.webp",
+        "thumbnailUrl": "/img/hk/caribbean-coast.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000051",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "嘉湖山莊 · 低層單位",
+    "suburb": "天水圍",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$455萬",
+      "en": "HK$4.55M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4550000,
+    "soldDate": "2026-09-26",
+    "coverUrl": "/img/hk/kingswood.webp",
+    "features": [
+      {
+        "zh": "實用面積 510 呎",
+        "en": "Saleable area 510 sq ft"
+      },
+      {
+        "zh": "天水圍三房成交參考",
+        "en": "Tin Shui Wai three-bed sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "天水圍嘉湖山莊屋苑外觀",
+          "en": "Kingswood Villas"
+        },
+        "photoUrl": "/img/hk/kingswood.webp",
+        "thumbnailUrl": "/img/hk/kingswood.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000052",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "德福花園 · 高層單位",
+    "suburb": "九龍灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$650萬",
+      "en": "HK$6.5M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6500000,
+    "soldDate": "2026-10-21",
+    "coverUrl": "/img/hk/telford.webp",
+    "features": [
+      {
+        "zh": "實用面積 480 呎",
+        "en": "Saleable area 480 sq ft"
+      },
+      {
+        "zh": "九龍灣站上蓋成交",
+        "en": "Sold above Kowloon Bay MTR"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "德福花園屋苑外觀",
+          "en": "Telford Gardens"
+        },
+        "photoUrl": "/img/hk/telford.webp",
+        "thumbnailUrl": "/img/hk/telford.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000053",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "麗港城 · 中層單位",
+    "suburb": "藍田",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$760萬",
+      "en": "HK$7.6M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7600000,
+    "soldDate": "2026-08-16",
+    "coverUrl": "/img/hk/laguna-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "藍田三房成交參考",
+        "en": "Lam Tin three-bed sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "藍田麗港城屋苑外觀",
+          "en": "Laguna City"
+        },
+        "photoUrl": "/img/hk/laguna-city.webp",
+        "thumbnailUrl": "/img/hk/laguna-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000054",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "陽明山莊 · 中層單位",
+    "suburb": "大潭",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$3,980萬",
+      "en": "HK$39.8M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 39800000,
+    "soldDate": "2026-07-30",
+    "coverUrl": "/img/hk/parkview.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,650 呎",
+        "en": "Saleable area 1,650 sq ft"
+      },
+      {
+        "zh": "南區低密度成交參考",
+        "en": "Southern District low-density sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大潭陽明山莊屋苑外觀",
+          "en": "Hong Kong Parkview"
+        },
+        "photoUrl": "/img/hk/parkview.webp",
+        "thumbnailUrl": "/img/hk/parkview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000055",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "粉嶺中心 · 高層單位",
+    "suburb": "粉嶺",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$448萬",
+      "en": "HK$4.48M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4480000,
+    "soldDate": "2026-10-02",
+    "coverUrl": "/img/hk/fanling.webp",
+    "features": [
+      {
+        "zh": "實用面積 390 呎",
+        "en": "Saleable area 390 sq ft"
+      },
+      {
+        "zh": "粉嶺站附近成交",
+        "en": "Sold near Fanling MTR"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "粉嶺中心屋苑外觀",
+          "en": "Fanling Centre"
+        },
+        "photoUrl": "/img/hk/fanling.webp",
+        "thumbnailUrl": "/img/hk/fanling.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000056",
+    "address": "美孚新邨 · 低層單位",
+    "suburb": "荔枝角",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$568萬",
+      "en": "HK$5.68M"
+    },
+    "soldPrice": 5680000,
+    "soldDate": "2026-10-16",
+    "coverUrl": "/img/hk/mei-foo.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "荔枝角成交參考",
+        "en": "Mei Foo Sun Chuen sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "美孚新邨屋苑外觀",
+          "en": "Mei Foo Sun Chuen"
+        },
+        "photoUrl": "/img/hk/mei-foo.webp",
+        "thumbnailUrl": "/img/hk/mei-foo.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000057",
+    "address": "黃埔花園 · 低層單位",
+    "suburb": "紅磡",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$920萬",
+      "en": "HK$9.2M"
+    },
+    "soldPrice": 9200000,
+    "soldDate": "2026-09-11",
+    "coverUrl": "/img/hk/whampoa.webp",
+    "features": [
+      {
+        "zh": "實用面積 730 呎",
+        "en": "Saleable area 730 sq ft"
+      },
+      {
+        "zh": "紅磡成交參考",
+        "en": "Whampoa Garden sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "黃埔花園屋苑外觀",
+          "en": "Whampoa Garden"
+        },
+        "photoUrl": "/img/hk/whampoa.webp",
+        "thumbnailUrl": "/img/hk/whampoa.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000058",
+    "address": "半山區住宅 · 中層單位",
+    "suburb": "中半山",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,180萬",
+      "en": "HK$21.8M"
+    },
+    "soldPrice": 21800000,
+    "soldDate": "2026-08-19",
+    "coverUrl": "/img/hk/mid-levels.webp",
+    "features": [
+      {
+        "zh": "實用面積 980 呎",
+        "en": "Saleable area 980 sq ft"
+      },
+      {
+        "zh": "中半山成交參考",
+        "en": "Mid-Levels sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "半山區住宅外觀",
+          "en": "Mid-Levels"
+        },
+        "photoUrl": "/img/hk/mid-levels.webp",
+        "thumbnailUrl": "/img/hk/mid-levels.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000059",
+    "address": "大埔新市鎮 · 中層單位",
+    "suburb": "大埔",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$452萬",
+      "en": "HK$4.52M"
+    },
+    "soldPrice": 4520000,
+    "soldDate": "2026-10-28",
+    "coverUrl": "/img/hk/tai-po.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "大埔成交參考",
+        "en": "Tai Po new town sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大埔新市鎮",
+          "en": "Tai Po new town"
+        },
+        "photoUrl": "/img/hk/tai-po.webp",
+        "thumbnailUrl": "/img/hk/tai-po.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000060",
+    "address": "康怡花園 · 高層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$1,080萬",
+      "en": "HK$10.8M"
+    },
+    "soldPrice": 10800000,
+    "soldDate": "2026-07-22",
+    "coverUrl": "/img/hk/kornhill.webp",
+    "features": [
+      {
+        "zh": "實用面積 530 呎",
+        "en": "Saleable area 530 sq ft"
+      },
+      {
+        "zh": "鰂魚涌成交參考",
+        "en": "Kornhill sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "康怡花園屋苑外觀",
+          "en": "Kornhill"
+        },
+        "photoUrl": "/img/hk/kornhill.webp",
+        "thumbnailUrl": "/img/hk/kornhill.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000061",
+    "address": "維港灣 · 低層單位",
+    "suburb": "大角咀",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,550萬",
+      "en": "HK$15.5M"
+    },
+    "soldPrice": 15500000,
+    "soldDate": "2026-09-03",
+    "coverUrl": "/img/hk/island-harbourview.webp",
+    "features": [
+      {
+        "zh": "實用面積 800 呎",
+        "en": "Saleable area 800 sq ft"
+      },
+      {
+        "zh": "大角咀成交參考",
+        "en": "Island Harbourview sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "維港灣屋苑外觀",
+          "en": "Island Harbourview"
+        },
+        "photoUrl": "/img/hk/island-harbourview.webp",
+        "thumbnailUrl": "/img/hk/island-harbourview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000062",
+    "address": "海之戀 · 低層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$828萬",
+      "en": "HK$8.28M"
+    },
+    "soldPrice": 8280000,
+    "soldDate": "2026-10-07",
+    "coverUrl": "/img/hk/ocean-pride.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "荃灣成交參考",
+        "en": "Ocean Pride sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海之戀屋苑外觀",
+          "en": "Ocean Pride"
+        },
+        "photoUrl": "/img/hk/ocean-pride.webp",
+        "thumbnailUrl": "/img/hk/ocean-pride.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000063",
+    "address": "珀麗灣 · 中層單位",
+    "suburb": "馬灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$620萬",
+      "en": "HK$6.2M"
+    },
+    "soldPrice": 6200000,
+    "soldDate": "2026-08-28",
+    "coverUrl": "/img/hk/park-island.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "馬灣成交參考",
+        "en": "Park Island sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "珀麗灣屋苑外觀",
+          "en": "Park Island"
+        },
+        "photoUrl": "/img/hk/park-island.webp",
+        "thumbnailUrl": "/img/hk/park-island.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000064",
+    "address": "置富花園 · 低層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,180萬",
+      "en": "HK$11.8M"
+    },
+    "soldPrice": 11800000,
+    "soldDate": "2026-06-18",
+    "coverUrl": "/img/hk/chi-fu.webp",
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "薄扶林成交參考",
+        "en": "Chi Fu Fa Yuen sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "置富花園屋苑外觀",
+          "en": "Chi Fu Fa Yuen"
+        },
+        "photoUrl": "/img/hk/chi-fu.webp",
+        "thumbnailUrl": "/img/hk/chi-fu.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000065",
+    "address": "蔚藍灣畔 · 中層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$820萬",
+      "en": "HK$8.2M"
+    },
+    "soldPrice": 8200000,
+    "soldDate": "2026-09-19",
+    "coverUrl": "/img/hk/residence-oasis.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "將軍澳成交參考",
+        "en": "Residence Oasis sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "蔚藍灣畔屋苑外觀",
+          "en": "Residence Oasis"
+        },
+        "photoUrl": "/img/hk/residence-oasis.webp",
+        "thumbnailUrl": "/img/hk/residence-oasis.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000066",
+    "address": "杏花邨 · 中層單位",
+    "suburb": "柴灣",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$688萬",
+      "en": "HK$6.88M"
+    },
+    "soldPrice": 6880000,
+    "soldDate": "2026-10-24",
+    "coverUrl": "/img/hk/heng-fa-chuen.webp",
+    "features": [
+      {
+        "zh": "實用面積 510 呎",
+        "en": "Saleable area 510 sq ft"
+      },
+      {
+        "zh": "柴灣成交參考",
+        "en": "Heng Fa Chuen sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "杏花邨屋苑外觀",
+          "en": "Heng Fa Chuen"
+        },
+        "photoUrl": "/img/hk/heng-fa-chuen.webp",
+        "thumbnailUrl": "/img/hk/heng-fa-chuen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000067",
+    "address": "灝景灣 · 高層單位",
+    "suburb": "青衣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$768萬",
+      "en": "HK$7.68M"
+    },
+    "soldPrice": 7680000,
+    "soldDate": "2026-07-09",
+    "coverUrl": "/img/hk/villa-esplanada.webp",
+    "features": [
+      {
+        "zh": "實用面積 550 呎",
+        "en": "Saleable area 550 sq ft"
+      },
+      {
+        "zh": "青衣成交參考",
+        "en": "Villa Esplanada sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "青衣灝景灣屋苑外觀",
+          "en": "Villa Esplanada"
+        },
+        "photoUrl": "/img/hk/villa-esplanada.webp",
+        "thumbnailUrl": "/img/hk/villa-esplanada.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000068",
+    "address": "鯉景灣 · 中層單位",
+    "suburb": "筲箕灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,050萬",
+      "en": "HK$10.5M"
+    },
+    "soldPrice": 10500000,
+    "soldDate": "2026-08-05",
+    "coverUrl": "/img/hk/lei-king-wan.webp",
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "筲箕灣成交參考",
+        "en": "Lei King Wan sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "筲箕灣鯉景灣屋苑外觀",
+          "en": "Lei King Wan"
+        },
+        "photoUrl": "/img/hk/lei-king-wan.webp",
+        "thumbnailUrl": "/img/hk/lei-king-wan.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000069",
+    "address": "屯門市廣場 · 高層單位",
+    "suburb": "屯門",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$498萬",
+      "en": "HK$4.98M"
+    },
+    "soldPrice": 4980000,
+    "soldDate": "2026-10-30",
+    "coverUrl": "/img/hk/tuen-mun.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "屯門成交參考",
+        "en": "Tuen Mun Town Plaza sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "屯門市廣場住宅外觀",
+          "en": "Tuen Mun Town Plaza"
+        },
+        "photoUrl": "/img/hk/tuen-mun.webp",
+        "thumbnailUrl": "/img/hk/tuen-mun.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000070",
+    "address": "海濱花園 · 高層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$580萬",
+      "en": "HK$5.8M"
+    },
+    "soldPrice": 5800000,
+    "soldDate": "2026-09-08",
+    "coverUrl": "/img/hk/riviera-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 490 呎",
+        "en": "Saleable area 490 sq ft"
+      },
+      {
+        "zh": "荃灣成交參考",
+        "en": "Riviera Gardens sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "荃灣海濱花園屋苑外觀",
+          "en": "Riviera Gardens"
+        },
+        "photoUrl": "/img/hk/riviera-gardens.webp",
+        "thumbnailUrl": "/img/hk/riviera-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000071",
+    "address": "碧瑤灣 · 高層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,380萬",
+      "en": "HK$13.8M"
+    },
+    "soldPrice": 13800000,
+    "soldDate": "2026-06-27",
+    "coverUrl": "/img/hk/baguio.webp",
+    "features": [
+      {
+        "zh": "實用面積 880 呎",
+        "en": "Saleable area 880 sq ft"
+      },
+      {
+        "zh": "薄扶林成交參考",
+        "en": "Baguio Villa sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "薄扶林碧瑤灣屋苑外觀",
+          "en": "Baguio Villa"
+        },
+        "photoUrl": "/img/hk/baguio.webp",
+        "thumbnailUrl": "/img/hk/baguio.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000072",
+    "address": "將軍澳中心 · 高層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$620萬",
+      "en": "HK$6.2M"
+    },
+    "soldPrice": 6200000,
+    "soldDate": "2026-10-11",
+    "coverUrl": "/img/hk/park-central.webp",
+    "features": [
+      {
+        "zh": "實用面積 440 呎",
+        "en": "Saleable area 440 sq ft"
+      },
+      {
+        "zh": "將軍澳成交參考",
+        "en": "Park Central sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "將軍澳中心屋苑外觀",
+          "en": "Park Central"
+        },
+        "photoUrl": "/img/hk/park-central.webp",
+        "thumbnailUrl": "/img/hk/park-central.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000073",
+    "address": "淺水灣住宅 · 高層單位",
+    "suburb": "淺水灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,480萬",
+      "en": "HK$24.8M"
+    },
+    "soldPrice": 24800000,
+    "soldDate": "2026-07-15",
+    "coverUrl": "/img/hk/repulse.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,150 呎",
+        "en": "Saleable area 1,150 sq ft"
+      },
+      {
+        "zh": "淺水灣成交參考",
+        "en": "Repulse Bay sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淺水灣住宅外觀",
+          "en": "Repulse Bay"
+        },
+        "photoUrl": "/img/hk/repulse.webp",
+        "thumbnailUrl": "/img/hk/repulse.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000074",
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "沙田第一城 · 高層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$484萬",
+      "en": "HK$4.84M"
+    },
+    "priceBasis": "sold_price",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": 4840000,
+    "soldDate": "2025-11-12",
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/city-one.webp",
+    "features": [
+      {
+        "zh": "實用面積 400 呎",
+        "en": "Saleable area 400 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田第一城屋苑外觀",
+          "en": "City One Shatin estate"
+        },
+        "photoUrl": "/img/hk/city-one.webp",
+        "thumbnailUrl": "/img/hk/city-one.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000075",
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "太古城 · 低層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$949萬",
+      "en": "HK$9.49M"
+    },
+    "priceBasis": "sold_price",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": 9490000,
+    "soldDate": "2025-11-18",
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/taikoo-shing.webp",
+    "features": [
+      {
+        "zh": "實用面積 760 呎",
+        "en": "Saleable area 760 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "太古城屋苑外觀",
+          "en": "Taikoo Shing estate"
+        },
+        "photoUrl": "/img/hk/taikoo-shing.webp",
+        "thumbnailUrl": "/img/hk/taikoo-shing.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000076",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "淘大花園 · 高層單位",
+    "suburb": "牛頭角",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$547萬",
+      "en": "HK$5.47M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5470000,
+    "soldDate": "2025-11-24",
+    "coverUrl": "/img/hk/amoy-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 450 呎",
+        "en": "Saleable area 450 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淘大花園屋苑外觀",
+          "en": "Amoy Gardens"
+        },
+        "photoUrl": "/img/hk/amoy-gardens.webp",
+        "thumbnailUrl": "/img/hk/amoy-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000077",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "YOHO Town · 低層單位",
+    "suburb": "元朗",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$665萬",
+      "en": "HK$6.65M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6650000,
+    "soldDate": "2025-11-30",
+    "coverUrl": "/img/hk/yoho-town.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "YOHO Town 屋苑外觀",
+          "en": "YOHO Town"
+        },
+        "photoUrl": "/img/hk/yoho-town.webp",
+        "thumbnailUrl": "/img/hk/yoho-town.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000078",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "海怡半島 · 高層單位",
+    "suburb": "鴨脷洲",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,097萬",
+      "en": "HK$10.97M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 10970000,
+    "soldDate": "2025-12-06",
+    "coverUrl": "/img/hk/south-horizons.webp",
+    "features": [
+      {
+        "zh": "實用面積 790 呎",
+        "en": "Saleable area 790 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海怡半島屋苑外觀",
+          "en": "South Horizons"
+        },
+        "photoUrl": "/img/hk/south-horizons.webp",
+        "thumbnailUrl": "/img/hk/south-horizons.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000079",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "名城 · 低層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$807萬",
+      "en": "HK$8.07M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 8070000,
+    "soldDate": "2025-12-12",
+    "coverUrl": "/img/hk/festival-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田名城屋苑外觀",
+          "en": "Festival City, Sha Tin"
+        },
+        "photoUrl": "/img/hk/festival-city.webp",
+        "thumbnailUrl": "/img/hk/festival-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000080",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "城市花園 · 中層單位",
+    "suburb": "北角",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$725萬",
+      "en": "HK$7.25M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7250000,
+    "soldDate": "2025-12-18",
+    "coverUrl": "/img/hk/city-garden.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "北角城市花園屋苑外觀",
+          "en": "City Garden, North Point"
+        },
+        "photoUrl": "/img/hk/city-garden.webp",
+        "thumbnailUrl": "/img/hk/city-garden.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000081",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "上水中心 · 低層單位",
+    "suburb": "上水",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$484萬",
+      "en": "HK$4.84M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4840000,
+    "soldDate": "2025-12-24",
+    "coverUrl": "/img/hk/sheung-shui.webp",
+    "features": [
+      {
+        "zh": "實用面積 430 呎",
+        "en": "Saleable area 430 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "上水中心屋苑外觀",
+          "en": "Sheung Shui Centre"
+        },
+        "photoUrl": "/img/hk/sheung-shui.webp",
+        "thumbnailUrl": "/img/hk/sheung-shui.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000082",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "香港仔中心 · 高層單位",
+    "suburb": "香港仔",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$556萬",
+      "en": "HK$5.56M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5560000,
+    "soldDate": "2025-12-30",
+    "coverUrl": "/img/hk/aberdeen.webp",
+    "features": [
+      {
+        "zh": "實用面積 410 呎",
+        "en": "Saleable area 410 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "香港仔中心屋苑外觀",
+          "en": "Aberdeen Centre"
+        },
+        "photoUrl": "/img/hk/aberdeen.webp",
+        "thumbnailUrl": "/img/hk/aberdeen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000083",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "碧海藍天 · 中層單位",
+    "suburb": "長沙灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$640萬",
+      "en": "HK$6.40M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6400000,
+    "soldDate": "2026-01-05",
+    "coverUrl": "/img/hk/aquamarine.webp",
+    "features": [
+      {
+        "zh": "實用面積 470 呎",
+        "en": "Saleable area 470 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "長沙灣碧海藍天屋苑外觀",
+          "en": "AquaMarine, Cheung Sha Wan"
+        },
+        "photoUrl": "/img/hk/aquamarine.webp",
+        "thumbnailUrl": "/img/hk/aquamarine.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000084",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "映灣園 · 高層單位",
+    "suburb": "東涌",
+    "city": "Islands",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$577萬",
+      "en": "HK$5.77M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5770000,
+    "soldDate": "2026-01-11",
+    "coverUrl": "/img/hk/caribbean-coast.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "東涌映灣園屋苑外觀",
+          "en": "Caribbean Coast, Tung Chung"
+        },
+        "photoUrl": "/img/hk/caribbean-coast.webp",
+        "thumbnailUrl": "/img/hk/caribbean-coast.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000085",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "嘉湖山莊 · 中層單位",
+    "suburb": "天水圍",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$423萬",
+      "en": "HK$4.23M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4230000,
+    "soldDate": "2026-01-17",
+    "coverUrl": "/img/hk/kingswood.webp",
+    "features": [
+      {
+        "zh": "實用面積 510 呎",
+        "en": "Saleable area 510 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "天水圍嘉湖山莊屋苑外觀",
+          "en": "Kingswood Villas"
+        },
+        "photoUrl": "/img/hk/kingswood.webp",
+        "thumbnailUrl": "/img/hk/kingswood.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000086",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "德福花園 · 低層單位",
+    "suburb": "九龍灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$605萬",
+      "en": "HK$6.05M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6050000,
+    "soldDate": "2026-01-23",
+    "coverUrl": "/img/hk/telford.webp",
+    "features": [
+      {
+        "zh": "實用面積 480 呎",
+        "en": "Saleable area 480 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "德福花園屋苑外觀",
+          "en": "Telford Gardens"
+        },
+        "photoUrl": "/img/hk/telford.webp",
+        "thumbnailUrl": "/img/hk/telford.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000087",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "麗港城 · 高層單位",
+    "suburb": "藍田",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$707萬",
+      "en": "HK$7.07M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7070000,
+    "soldDate": "2026-01-29",
+    "coverUrl": "/img/hk/laguna-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "藍田麗港城屋苑外觀",
+          "en": "Laguna City"
+        },
+        "photoUrl": "/img/hk/laguna-city.webp",
+        "thumbnailUrl": "/img/hk/laguna-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000088",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "陽明山莊 · 高層單位",
+    "suburb": "大潭",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$3,701萬",
+      "en": "HK$37.01M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 37010000,
+    "soldDate": "2026-02-04",
+    "coverUrl": "/img/hk/parkview.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,650 呎",
+        "en": "Saleable area 1,650 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大潭陽明山莊屋苑外觀",
+          "en": "Hong Kong Parkview"
+        },
+        "photoUrl": "/img/hk/parkview.webp",
+        "thumbnailUrl": "/img/hk/parkview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000089",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "粉嶺中心 · 低層單位",
+    "suburb": "粉嶺",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$417萬",
+      "en": "HK$4.17M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4170000,
+    "soldDate": "2026-02-10",
+    "coverUrl": "/img/hk/fanling.webp",
+    "features": [
+      {
+        "zh": "實用面積 390 呎",
+        "en": "Saleable area 390 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "粉嶺中心屋苑外觀",
+          "en": "Fanling Centre"
+        },
+        "photoUrl": "/img/hk/fanling.webp",
+        "thumbnailUrl": "/img/hk/fanling.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000090",
+    "address": "美孚新邨 · 中層單位",
+    "suburb": "荔枝角",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$528萬",
+      "en": "HK$5.28M"
+    },
+    "soldPrice": 5280000,
+    "soldDate": "2026-02-16",
+    "coverUrl": "/img/hk/mei-foo.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "美孚新邨屋苑外觀",
+          "en": "Mei Foo Sun Chuen"
+        },
+        "photoUrl": "/img/hk/mei-foo.webp",
+        "thumbnailUrl": "/img/hk/mei-foo.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000091",
+    "address": "黃埔花園 · 中層單位",
+    "suburb": "紅磡",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$856萬",
+      "en": "HK$8.56M"
+    },
+    "soldPrice": 8560000,
+    "soldDate": "2026-02-22",
+    "coverUrl": "/img/hk/whampoa.webp",
+    "features": [
+      {
+        "zh": "實用面積 730 呎",
+        "en": "Saleable area 730 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "黃埔花園屋苑外觀",
+          "en": "Whampoa Garden"
+        },
+        "photoUrl": "/img/hk/whampoa.webp",
+        "thumbnailUrl": "/img/hk/whampoa.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000092",
+    "address": "半山區住宅 · 高層單位",
+    "suburb": "中半山",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,027萬",
+      "en": "HK$20.27M"
+    },
+    "soldPrice": 20270000,
+    "soldDate": "2026-02-28",
+    "coverUrl": "/img/hk/mid-levels.webp",
+    "features": [
+      {
+        "zh": "實用面積 980 呎",
+        "en": "Saleable area 980 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "半山區住宅外觀",
+          "en": "Mid-Levels"
+        },
+        "photoUrl": "/img/hk/mid-levels.webp",
+        "thumbnailUrl": "/img/hk/mid-levels.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000093",
+    "address": "大埔新市鎮 · 高層單位",
+    "suburb": "大埔",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$420萬",
+      "en": "HK$4.20M"
+    },
+    "soldPrice": 4200000,
+    "soldDate": "2026-03-06",
+    "coverUrl": "/img/hk/tai-po.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大埔新市鎮",
+          "en": "Tai Po new town"
+        },
+        "photoUrl": "/img/hk/tai-po.webp",
+        "thumbnailUrl": "/img/hk/tai-po.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000094",
+    "address": "康怡花園 · 低層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$1,004萬",
+      "en": "HK$10.04M"
+    },
+    "soldPrice": 10040000,
+    "soldDate": "2026-03-12",
+    "coverUrl": "/img/hk/kornhill.webp",
+    "features": [
+      {
+        "zh": "實用面積 530 呎",
+        "en": "Saleable area 530 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "康怡花園屋苑外觀",
+          "en": "Kornhill"
+        },
+        "photoUrl": "/img/hk/kornhill.webp",
+        "thumbnailUrl": "/img/hk/kornhill.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000095",
+    "address": "維港灣 · 中層單位",
+    "suburb": "大角咀",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,442萬",
+      "en": "HK$14.42M"
+    },
+    "soldPrice": 14420000,
+    "soldDate": "2026-03-18",
+    "coverUrl": "/img/hk/island-harbourview.webp",
+    "features": [
+      {
+        "zh": "實用面積 800 呎",
+        "en": "Saleable area 800 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "維港灣屋苑外觀",
+          "en": "Island Harbourview"
+        },
+        "photoUrl": "/img/hk/island-harbourview.webp",
+        "thumbnailUrl": "/img/hk/island-harbourview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000096",
+    "address": "海之戀 · 中層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$770萬",
+      "en": "HK$7.70M"
+    },
+    "soldPrice": 7700000,
+    "soldDate": "2026-03-24",
+    "coverUrl": "/img/hk/ocean-pride.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海之戀屋苑外觀",
+          "en": "Ocean Pride"
+        },
+        "photoUrl": "/img/hk/ocean-pride.webp",
+        "thumbnailUrl": "/img/hk/ocean-pride.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000097",
+    "address": "珀麗灣 · 高層單位",
+    "suburb": "馬灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$577萬",
+      "en": "HK$5.77M"
+    },
+    "soldPrice": 5770000,
+    "soldDate": "2026-03-30",
+    "coverUrl": "/img/hk/park-island.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "珀麗灣屋苑外觀",
+          "en": "Park Island"
+        },
+        "photoUrl": "/img/hk/park-island.webp",
+        "thumbnailUrl": "/img/hk/park-island.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000098",
+    "address": "置富花園 · 中層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,097萬",
+      "en": "HK$10.97M"
+    },
+    "soldPrice": 10970000,
+    "soldDate": "2026-04-05",
+    "coverUrl": "/img/hk/chi-fu.webp",
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "置富花園屋苑外觀",
+          "en": "Chi Fu Fa Yuen"
+        },
+        "photoUrl": "/img/hk/chi-fu.webp",
+        "thumbnailUrl": "/img/hk/chi-fu.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000099",
+    "address": "蔚藍灣畔 · 高層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$763萬",
+      "en": "HK$7.63M"
+    },
+    "soldPrice": 7630000,
+    "soldDate": "2026-04-11",
+    "coverUrl": "/img/hk/residence-oasis.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "蔚藍灣畔屋苑外觀",
+          "en": "Residence Oasis"
+        },
+        "photoUrl": "/img/hk/residence-oasis.webp",
+        "thumbnailUrl": "/img/hk/residence-oasis.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000100",
+    "address": "杏花邨 · 高層單位",
+    "suburb": "柴灣",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$640萬",
+      "en": "HK$6.40M"
+    },
+    "soldPrice": 6400000,
+    "soldDate": "2026-04-17",
+    "coverUrl": "/img/hk/heng-fa-chuen.webp",
+    "features": [
+      {
+        "zh": "實用面積 510 呎",
+        "en": "Saleable area 510 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "杏花邨屋苑外觀",
+          "en": "Heng Fa Chuen"
+        },
+        "photoUrl": "/img/hk/heng-fa-chuen.webp",
+        "thumbnailUrl": "/img/hk/heng-fa-chuen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000101",
+    "address": "灝景灣 · 低層單位",
+    "suburb": "青衣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$714萬",
+      "en": "HK$7.14M"
+    },
+    "soldPrice": 7140000,
+    "soldDate": "2026-04-23",
+    "coverUrl": "/img/hk/villa-esplanada.webp",
+    "features": [
+      {
+        "zh": "實用面積 550 呎",
+        "en": "Saleable area 550 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "青衣灝景灣屋苑外觀",
+          "en": "Villa Esplanada"
+        },
+        "photoUrl": "/img/hk/villa-esplanada.webp",
+        "thumbnailUrl": "/img/hk/villa-esplanada.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000102",
+    "address": "鯉景灣 · 高層單位",
+    "suburb": "筲箕灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$977萬",
+      "en": "HK$9.77M"
+    },
+    "soldPrice": 9770000,
+    "soldDate": "2026-04-29",
+    "coverUrl": "/img/hk/lei-king-wan.webp",
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "筲箕灣鯉景灣屋苑外觀",
+          "en": "Lei King Wan"
+        },
+        "photoUrl": "/img/hk/lei-king-wan.webp",
+        "thumbnailUrl": "/img/hk/lei-king-wan.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000103",
+    "address": "屯門市廣場 · 低層單位",
+    "suburb": "屯門",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$463萬",
+      "en": "HK$4.63M"
+    },
+    "soldPrice": 4630000,
+    "soldDate": "2026-05-05",
+    "coverUrl": "/img/hk/tuen-mun.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "屯門市廣場住宅外觀",
+          "en": "Tuen Mun Town Plaza"
+        },
+        "photoUrl": "/img/hk/tuen-mun.webp",
+        "thumbnailUrl": "/img/hk/tuen-mun.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000104",
+    "address": "海濱花園 · 低層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$539萬",
+      "en": "HK$5.39M"
+    },
+    "soldPrice": 5390000,
+    "soldDate": "2026-05-11",
+    "coverUrl": "/img/hk/riviera-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 490 呎",
+        "en": "Saleable area 490 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "荃灣海濱花園屋苑外觀",
+          "en": "Riviera Gardens"
+        },
+        "photoUrl": "/img/hk/riviera-gardens.webp",
+        "thumbnailUrl": "/img/hk/riviera-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000105",
+    "address": "碧瑤灣 · 低層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,283萬",
+      "en": "HK$12.83M"
+    },
+    "soldPrice": 12830000,
+    "soldDate": "2026-05-17",
+    "coverUrl": "/img/hk/baguio.webp",
+    "features": [
+      {
+        "zh": "實用面積 880 呎",
+        "en": "Saleable area 880 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "薄扶林碧瑤灣屋苑外觀",
+          "en": "Baguio Villa"
+        },
+        "photoUrl": "/img/hk/baguio.webp",
+        "thumbnailUrl": "/img/hk/baguio.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000106",
+    "address": "將軍澳中心 · 低層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$577萬",
+      "en": "HK$5.77M"
+    },
+    "soldPrice": 5770000,
+    "soldDate": "2026-05-23",
+    "coverUrl": "/img/hk/park-central.webp",
+    "features": [
+      {
+        "zh": "實用面積 440 呎",
+        "en": "Saleable area 440 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "將軍澳中心屋苑外觀",
+          "en": "Park Central"
+        },
+        "photoUrl": "/img/hk/park-central.webp",
+        "thumbnailUrl": "/img/hk/park-central.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000107",
+    "address": "淺水灣住宅 · 低層單位",
+    "suburb": "淺水灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,306萬",
+      "en": "HK$23.06M"
+    },
+    "soldPrice": 23060000,
+    "soldDate": "2026-05-29",
+    "coverUrl": "/img/hk/repulse.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,150 呎",
+        "en": "Saleable area 1,150 sq ft"
+      },
+      {
+        "zh": "較早成交紀錄",
+        "en": "Earlier sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淺水灣住宅外觀",
+          "en": "Repulse Bay"
+        },
+        "photoUrl": "/img/hk/repulse.webp",
+        "thumbnailUrl": "/img/hk/repulse.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000108",
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "沙田第一城 · 低層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": 1,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$502萬",
+      "en": "HK$5.02M"
+    },
+    "priceBasis": "sold_price",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": 5020000,
+    "soldDate": "2026-01-04",
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/city-one.webp",
+    "features": [
+      {
+        "zh": "實用面積 400 呎",
+        "en": "Saleable area 400 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田第一城屋苑外觀",
+          "en": "City One Shatin estate"
+        },
+        "photoUrl": "/img/hk/city-one.webp",
+        "thumbnailUrl": "/img/hk/city-one.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "id": "reference-9000000109",
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "太古城 · 中層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 3,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$985萬",
+      "en": "HK$9.85M"
+    },
+    "priceBasis": "sold_price",
+    "checkedAt": "2026-11-07",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": 9850000,
+    "soldDate": "2026-02-05",
+    "geo": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/taikoo-shing.webp",
+    "features": [
+      {
+        "zh": "實用面積 760 呎",
+        "en": "Saleable area 760 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "太古城屋苑外觀",
+          "en": "Taikoo Shing estate"
+        },
+        "photoUrl": "/img/hk/taikoo-shing.webp",
+        "thumbnailUrl": "/img/hk/taikoo-shing.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000110",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "淘大花園 · 低層單位",
+    "suburb": "牛頭角",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$568萬",
+      "en": "HK$5.68M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5680000,
+    "soldDate": "2026-03-06",
+    "coverUrl": "/img/hk/amoy-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 450 呎",
+        "en": "Saleable area 450 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淘大花園屋苑外觀",
+          "en": "Amoy Gardens"
+        },
+        "photoUrl": "/img/hk/amoy-gardens.webp",
+        "thumbnailUrl": "/img/hk/amoy-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000111",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "YOHO Town · 中層單位",
+    "suburb": "元朗",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$690萬",
+      "en": "HK$6.9M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6900000,
+    "soldDate": "2026-04-07",
+    "coverUrl": "/img/hk/yoho-town.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "YOHO Town 屋苑外觀",
+          "en": "YOHO Town"
+        },
+        "photoUrl": "/img/hk/yoho-town.webp",
+        "thumbnailUrl": "/img/hk/yoho-town.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000112",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "海怡半島 · 低層單位",
+    "suburb": "鴨脷洲",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,139萬",
+      "en": "HK$11.39M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 11390000,
+    "soldDate": "2026-05-08",
+    "coverUrl": "/img/hk/south-horizons.webp",
+    "features": [
+      {
+        "zh": "實用面積 790 呎",
+        "en": "Saleable area 790 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海怡半島屋苑外觀",
+          "en": "South Horizons"
+        },
+        "photoUrl": "/img/hk/south-horizons.webp",
+        "thumbnailUrl": "/img/hk/south-horizons.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000113",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "名城 · 中層單位",
+    "suburb": "沙田",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$838萬",
+      "en": "HK$8.38M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 8380000,
+    "soldDate": "2026-06-09",
+    "coverUrl": "/img/hk/festival-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "沙田名城屋苑外觀",
+          "en": "Festival City, Sha Tin"
+        },
+        "photoUrl": "/img/hk/festival-city.webp",
+        "thumbnailUrl": "/img/hk/festival-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000114",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "城市花園 · 高層單位",
+    "suburb": "北角",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$753萬",
+      "en": "HK$7.53M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7530000,
+    "soldDate": "2026-07-10",
+    "coverUrl": "/img/hk/city-garden.webp",
+    "features": [
+      {
+        "zh": "實用面積 560 呎",
+        "en": "Saleable area 560 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "北角城市花園屋苑外觀",
+          "en": "City Garden, North Point"
+        },
+        "photoUrl": "/img/hk/city-garden.webp",
+        "thumbnailUrl": "/img/hk/city-garden.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000115",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "上水中心 · 中層單位",
+    "suburb": "上水",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$502萬",
+      "en": "HK$5.02M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5020000,
+    "soldDate": "2026-08-11",
+    "coverUrl": "/img/hk/sheung-shui.webp",
+    "features": [
+      {
+        "zh": "實用面積 430 呎",
+        "en": "Saleable area 430 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "上水中心屋苑外觀",
+          "en": "Sheung Shui Centre"
+        },
+        "photoUrl": "/img/hk/sheung-shui.webp",
+        "thumbnailUrl": "/img/hk/sheung-shui.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000116",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "香港仔中心 · 低層單位",
+    "suburb": "香港仔",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$577萬",
+      "en": "HK$5.77M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5770000,
+    "soldDate": "2026-09-12",
+    "coverUrl": "/img/hk/aberdeen.webp",
+    "features": [
+      {
+        "zh": "實用面積 410 呎",
+        "en": "Saleable area 410 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "香港仔中心屋苑外觀",
+          "en": "Aberdeen Centre"
+        },
+        "photoUrl": "/img/hk/aberdeen.webp",
+        "thumbnailUrl": "/img/hk/aberdeen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000117",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "address": "碧海藍天 · 高層單位",
+    "suburb": "長沙灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$664萬",
+      "en": "HK$6.64M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6640000,
+    "soldDate": "2026-10-13",
+    "coverUrl": "/img/hk/aquamarine.webp",
+    "features": [
+      {
+        "zh": "實用面積 470 呎",
+        "en": "Saleable area 470 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "長沙灣碧海藍天屋苑外觀",
+          "en": "AquaMarine, Cheung Sha Wan"
+        },
+        "photoUrl": "/img/hk/aquamarine.webp",
+        "thumbnailUrl": "/img/hk/aquamarine.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000118",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "映灣園 · 低層單位",
+    "suburb": "東涌",
+    "city": "Islands",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$599萬",
+      "en": "HK$5.99M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 5990000,
+    "soldDate": "2026-11-06",
+    "coverUrl": "/img/hk/caribbean-coast.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "東涌映灣園屋苑外觀",
+          "en": "Caribbean Coast, Tung Chung"
+        },
+        "photoUrl": "/img/hk/caribbean-coast.webp",
+        "thumbnailUrl": "/img/hk/caribbean-coast.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000119",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "嘉湖山莊 · 高層單位",
+    "suburb": "天水圍",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$439萬",
+      "en": "HK$4.39M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4390000,
+    "soldDate": "2026-01-15",
+    "coverUrl": "/img/hk/kingswood.webp",
+    "features": [
+      {
+        "zh": "實用面積 510 呎",
+        "en": "Saleable area 510 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "天水圍嘉湖山莊屋苑外觀",
+          "en": "Kingswood Villas"
+        },
+        "photoUrl": "/img/hk/kingswood.webp",
+        "thumbnailUrl": "/img/hk/kingswood.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000120",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "德福花園 · 中層單位",
+    "suburb": "九龍灣",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$628萬",
+      "en": "HK$6.28M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 6280000,
+    "soldDate": "2026-02-16",
+    "coverUrl": "/img/hk/telford.webp",
+    "features": [
+      {
+        "zh": "實用面積 480 呎",
+        "en": "Saleable area 480 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "德福花園屋苑外觀",
+          "en": "Telford Gardens"
+        },
+        "photoUrl": "/img/hk/telford.webp",
+        "thumbnailUrl": "/img/hk/telford.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000121",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "麗港城 · 低層單位",
+    "suburb": "藍田",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$734萬",
+      "en": "HK$7.34M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 7340000,
+    "soldDate": "2026-03-17",
+    "coverUrl": "/img/hk/laguna-city.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "藍田麗港城屋苑外觀",
+          "en": "Laguna City"
+        },
+        "photoUrl": "/img/hk/laguna-city.webp",
+        "thumbnailUrl": "/img/hk/laguna-city.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000122",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "陽明山莊 · 低層單位",
+    "suburb": "大潭",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$3,841萬",
+      "en": "HK$38.41M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 38410000,
+    "soldDate": "2026-04-18",
+    "coverUrl": "/img/hk/parkview.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,650 呎",
+        "en": "Saleable area 1,650 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大潭陽明山莊屋苑外觀",
+          "en": "Hong Kong Parkview"
+        },
+        "photoUrl": "/img/hk/parkview.webp",
+        "thumbnailUrl": "/img/hk/parkview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "id": "reference-9000000123",
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "粉嶺中心 · 中層單位",
+    "suburb": "粉嶺",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$433萬",
+      "en": "HK$4.33M"
+    },
+    "priceBasis": "sold_price",
+    "availableDate": null,
+    "soldPrice": 4330000,
+    "soldDate": "2026-05-19",
+    "coverUrl": "/img/hk/fanling.webp",
+    "features": [
+      {
+        "zh": "實用面積 390 呎",
+        "en": "Saleable area 390 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "粉嶺中心屋苑外觀",
+          "en": "Fanling Centre"
+        },
+        "photoUrl": "/img/hk/fanling.webp",
+        "thumbnailUrl": "/img/hk/fanling.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000124",
+    "address": "美孚新邨 · 高層單位",
+    "suburb": "荔枝角",
+    "city": "Kowloon",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$548萬",
+      "en": "HK$5.48M"
+    },
+    "soldPrice": 5480000,
+    "soldDate": "2026-06-20",
+    "coverUrl": "/img/hk/mei-foo.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "美孚新邨屋苑外觀",
+          "en": "Mei Foo Sun Chuen"
+        },
+        "photoUrl": "/img/hk/mei-foo.webp",
+        "thumbnailUrl": "/img/hk/mei-foo.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000125",
+    "address": "黃埔花園 · 高層單位",
+    "suburb": "紅磡",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$888萬",
+      "en": "HK$8.88M"
+    },
+    "soldPrice": 8880000,
+    "soldDate": "2026-07-21",
+    "coverUrl": "/img/hk/whampoa.webp",
+    "features": [
+      {
+        "zh": "實用面積 730 呎",
+        "en": "Saleable area 730 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "黃埔花園屋苑外觀",
+          "en": "Whampoa Garden"
+        },
+        "photoUrl": "/img/hk/whampoa.webp",
+        "thumbnailUrl": "/img/hk/whampoa.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000126",
+    "address": "半山區住宅 · 低層單位",
+    "suburb": "中半山",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,104萬",
+      "en": "HK$21.04M"
+    },
+    "soldPrice": 21040000,
+    "soldDate": "2026-08-22",
+    "coverUrl": "/img/hk/mid-levels.webp",
+    "features": [
+      {
+        "zh": "實用面積 980 呎",
+        "en": "Saleable area 980 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "半山區住宅外觀",
+          "en": "Mid-Levels"
+        },
+        "photoUrl": "/img/hk/mid-levels.webp",
+        "thumbnailUrl": "/img/hk/mid-levels.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000127",
+    "address": "大埔新市鎮 · 低層單位",
+    "suburb": "大埔",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$436萬",
+      "en": "HK$4.36M"
+    },
+    "soldPrice": 4360000,
+    "soldDate": "2026-09-23",
+    "coverUrl": "/img/hk/tai-po.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "大埔新市鎮",
+          "en": "Tai Po new town"
+        },
+        "photoUrl": "/img/hk/tai-po.webp",
+        "thumbnailUrl": "/img/hk/tai-po.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000128",
+    "address": "康怡花園 · 中層單位",
+    "suburb": "鰂魚涌",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$1,042萬",
+      "en": "HK$10.42M"
+    },
+    "soldPrice": 10420000,
+    "soldDate": "2026-10-24",
+    "coverUrl": "/img/hk/kornhill.webp",
+    "features": [
+      {
+        "zh": "實用面積 530 呎",
+        "en": "Saleable area 530 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "康怡花園屋苑外觀",
+          "en": "Kornhill"
+        },
+        "photoUrl": "/img/hk/kornhill.webp",
+        "thumbnailUrl": "/img/hk/kornhill.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000129",
+    "address": "維港灣 · 高層單位",
+    "suburb": "大角咀",
+    "city": "Kowloon",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,496萬",
+      "en": "HK$14.96M"
+    },
+    "soldPrice": 14960000,
+    "soldDate": "2026-11-05",
+    "coverUrl": "/img/hk/island-harbourview.webp",
+    "features": [
+      {
+        "zh": "實用面積 800 呎",
+        "en": "Saleable area 800 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "維港灣屋苑外觀",
+          "en": "Island Harbourview"
+        },
+        "photoUrl": "/img/hk/island-harbourview.webp",
+        "thumbnailUrl": "/img/hk/island-harbourview.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000130",
+    "address": "海之戀 · 高層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$799萬",
+      "en": "HK$7.99M"
+    },
+    "soldPrice": 7990000,
+    "soldDate": "2026-01-26",
+    "coverUrl": "/img/hk/ocean-pride.webp",
+    "features": [
+      {
+        "zh": "實用面積 500 呎",
+        "en": "Saleable area 500 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "海之戀屋苑外觀",
+          "en": "Ocean Pride"
+        },
+        "photoUrl": "/img/hk/ocean-pride.webp",
+        "thumbnailUrl": "/img/hk/ocean-pride.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000131",
+    "address": "珀麗灣 · 低層單位",
+    "suburb": "馬灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$599萬",
+      "en": "HK$5.99M"
+    },
+    "soldPrice": 5990000,
+    "soldDate": "2026-02-27",
+    "coverUrl": "/img/hk/park-island.webp",
+    "features": [
+      {
+        "zh": "實用面積 540 呎",
+        "en": "Saleable area 540 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "珀麗灣屋苑外觀",
+          "en": "Park Island"
+        },
+        "photoUrl": "/img/hk/park-island.webp",
+        "thumbnailUrl": "/img/hk/park-island.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000132",
+    "address": "置富花園 · 高層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,139萬",
+      "en": "HK$11.39M"
+    },
+    "soldPrice": 11390000,
+    "soldDate": "2026-03-04",
+    "coverUrl": "/img/hk/chi-fu.webp",
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "置富花園屋苑外觀",
+          "en": "Chi Fu Fa Yuen"
+        },
+        "photoUrl": "/img/hk/chi-fu.webp",
+        "thumbnailUrl": "/img/hk/chi-fu.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000133",
+    "address": "蔚藍灣畔 · 低層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$792萬",
+      "en": "HK$7.92M"
+    },
+    "soldPrice": 7920000,
+    "soldDate": "2026-04-05",
+    "coverUrl": "/img/hk/residence-oasis.webp",
+    "features": [
+      {
+        "zh": "實用面積 660 呎",
+        "en": "Saleable area 660 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "蔚藍灣畔屋苑外觀",
+          "en": "Residence Oasis"
+        },
+        "photoUrl": "/img/hk/residence-oasis.webp",
+        "thumbnailUrl": "/img/hk/residence-oasis.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000134",
+    "address": "杏花邨 · 低層單位",
+    "suburb": "柴灣",
+    "city": "Hong Kong Island",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$664萬",
+      "en": "HK$6.64M"
+    },
+    "soldPrice": 6640000,
+    "soldDate": "2026-05-06",
+    "coverUrl": "/img/hk/heng-fa-chuen.webp",
+    "features": [
+      {
+        "zh": "實用面積 510 呎",
+        "en": "Saleable area 510 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "杏花邨屋苑外觀",
+          "en": "Heng Fa Chuen"
+        },
+        "photoUrl": "/img/hk/heng-fa-chuen.webp",
+        "thumbnailUrl": "/img/hk/heng-fa-chuen.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000135",
+    "address": "灝景灣 · 中層單位",
+    "suburb": "青衣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$741萬",
+      "en": "HK$7.41M"
+    },
+    "soldPrice": 7410000,
+    "soldDate": "2026-06-07",
+    "coverUrl": "/img/hk/villa-esplanada.webp",
+    "features": [
+      {
+        "zh": "實用面積 550 呎",
+        "en": "Saleable area 550 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "青衣灝景灣屋苑外觀",
+          "en": "Villa Esplanada"
+        },
+        "photoUrl": "/img/hk/villa-esplanada.webp",
+        "thumbnailUrl": "/img/hk/villa-esplanada.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000136",
+    "address": "鯉景灣 · 低層單位",
+    "suburb": "筲箕灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,014萬",
+      "en": "HK$10.14M"
+    },
+    "soldPrice": 10140000,
+    "soldDate": "2026-07-08",
+    "coverUrl": "/img/hk/lei-king-wan.webp",
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "筲箕灣鯉景灣屋苑外觀",
+          "en": "Lei King Wan"
+        },
+        "photoUrl": "/img/hk/lei-king-wan.webp",
+        "thumbnailUrl": "/img/hk/lei-king-wan.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000137",
+    "address": "屯門市廣場 · 中層單位",
+    "suburb": "屯門",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$481萬",
+      "en": "HK$4.81M"
+    },
+    "soldPrice": 4810000,
+    "soldDate": "2026-08-09",
+    "coverUrl": "/img/hk/tuen-mun.webp",
+    "features": [
+      {
+        "zh": "實用面積 420 呎",
+        "en": "Saleable area 420 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "屯門市廣場住宅外觀",
+          "en": "Tuen Mun Town Plaza"
+        },
+        "photoUrl": "/img/hk/tuen-mun.webp",
+        "thumbnailUrl": "/img/hk/tuen-mun.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000138",
+    "address": "海濱花園 · 中層單位",
+    "suburb": "荃灣",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$560萬",
+      "en": "HK$5.6M"
+    },
+    "soldPrice": 5600000,
+    "soldDate": "2026-09-10",
+    "coverUrl": "/img/hk/riviera-gardens.webp",
+    "features": [
+      {
+        "zh": "實用面積 490 呎",
+        "en": "Saleable area 490 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "荃灣海濱花園屋苑外觀",
+          "en": "Riviera Gardens"
+        },
+        "photoUrl": "/img/hk/riviera-gardens.webp",
+        "thumbnailUrl": "/img/hk/riviera-gardens.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000139",
+    "address": "碧瑤灣 · 中層單位",
+    "suburb": "薄扶林",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$1,332萬",
+      "en": "HK$13.32M"
+    },
+    "soldPrice": 13320000,
+    "soldDate": "2026-10-11",
+    "coverUrl": "/img/hk/baguio.webp",
+    "features": [
+      {
+        "zh": "實用面積 880 呎",
+        "en": "Saleable area 880 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "薄扶林碧瑤灣屋苑外觀",
+          "en": "Baguio Villa"
+        },
+        "photoUrl": "/img/hk/baguio.webp",
+        "thumbnailUrl": "/img/hk/baguio.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000140",
+    "address": "將軍澳中心 · 中層單位",
+    "suburb": "將軍澳",
+    "city": "New Territories",
+    "beds": 2,
+    "baths": 1,
+    "priceDisplay": {
+      "zh": "HK$599萬",
+      "en": "HK$5.99M"
+    },
+    "soldPrice": 5990000,
+    "soldDate": "2026-11-04",
+    "coverUrl": "/img/hk/park-central.webp",
+    "features": [
+      {
+        "zh": "實用面積 440 呎",
+        "en": "Saleable area 440 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "將軍澳中心屋苑外觀",
+          "en": "Park Central"
+        },
+        "photoUrl": "/img/hk/park-central.webp",
+        "thumbnailUrl": "/img/hk/park-central.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
+  },
+  {
+    "demo": true,
+    "kind": "sold",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "postcode": "",
+    "cars": null,
+    "listingDate": null,
+    "availableDate": null,
+    "publicReuseApproved": false,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "geo": null,
+    "checkedAt": "2026-11-08",
+    "priceBasis": "sold_price",
+    "id": "reference-9000000141",
+    "address": "淺水灣住宅 · 中層單位",
+    "suburb": "淺水灣",
+    "city": "Hong Kong Island",
+    "beds": 3,
+    "baths": 2,
+    "priceDisplay": {
+      "zh": "HK$2,393萬",
+      "en": "HK$23.93M"
+    },
+    "soldPrice": 23930000,
+    "soldDate": "2026-01-13",
+    "coverUrl": "/img/hk/repulse.webp",
+    "features": [
+      {
+        "zh": "實用面積 1,150 呎",
+        "en": "Saleable area 1,150 sq ft"
+      },
+      {
+        "zh": "2026年成交紀錄",
+        "en": "2026 sold record"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "exterior",
+        "order": 1,
+        "label": {
+          "zh": "淺水灣住宅外觀",
+          "en": "Repulse Bay"
+        },
+        "photoUrl": "/img/hk/repulse.webp",
+        "thumbnailUrl": "/img/hk/repulse.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
   }
 ]

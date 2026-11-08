@@ -188,7 +188,7 @@ export function Privacy() {
 }
 
 /* ================================================================= credits */
-const BYSA3='https://creativecommons.org/licenses/by-sa/3.0/', BY3='https://creativecommons.org/licenses/by/3.0/', BYSA4='https://creativecommons.org/licenses/by-sa/4.0/', BYSA25='https://creativecommons.org/licenses/by-sa/2.5/', CC0='https://creativecommons.org/publicdomain/zero/1.0/';
+const BYSA3='https://creativecommons.org/licenses/by-sa/3.0/', BY3='https://creativecommons.org/licenses/by/3.0/', BY4='https://creativecommons.org/licenses/by/4.0/', BYSA4='https://creativecommons.org/licenses/by-sa/4.0/', BYSA25='https://creativecommons.org/licenses/by-sa/2.5/', CC0='https://creativecommons.org/publicdomain/zero/1.0/';
 const commons=(name:string)=>'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(name.replace(/ /g,'_'));
 const WIKI = [
   { file: 'hk/harbour-night.webp', zh: '由山頂望維港夜景（首頁 3D 實景）', en: 'Victoria Harbour at night from the Peak (home 3D scene)', author: 'Benh LIEU SONG (Flickr)', src: commons('Hong Kong Harbour Night 2019-06-11.jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
@@ -204,6 +204,32 @@ const WIKI = [
   { file: 'hk/whampoa.webp', zh: '黃埔花園', en: 'Whampoa Garden', author: 'Wing1990hk', src: commons('Whampoa Garden Overview 201408.jpg'), lic: 'CC BY 3.0', licUrl: BY3 },
   { file: 'hk/caribbean-coast.webp', zh: '東涌映灣園', en: 'Caribbean Coast, Tung Chung', author: 'Mk2010', src: commons('Caribbean Coast, Tung Chung (Hong Kong).jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
   { file: 'hk/kingswood.webp', zh: '天水圍嘉湖山莊', en: 'Kingswood Villas, Tin Shui Wai', author: 'Wikimedia Commons contributor (public domain)', src: commons('Kingswood Villas in 2012.jpg'), lic: 'Public domain', licUrl: commons('Kingswood Villas in 2012.jpg') },
+  { file: 'hk/yoho-town.webp', zh: '元朗 YOHO Town', en: 'YOHO Town, Yuen Long', author: 'Wpcpey', src: commons('YOHO Town Overview 2017.jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/south-horizons.webp', zh: '鴨脷洲海怡半島', en: 'South Horizons, Ap Lei Chau', author: 'Wpcpey', src: commons('South Horizons 202103.jpg'), lic: 'CC BY 4.0', licUrl: BY4 },
+  { file: 'hk/kornhill.webp', zh: '鰂魚涌康怡花園', en: 'Kornhill, Quarry Bay', author: 'Wpcpey', src: commons('Kornhill 2014.jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/island-harbourview.webp', zh: '大角咀維港灣', en: 'Island Harbourview, Tai Kok Tsui', author: 'Exploringlife', src: commons('Island Harbourview (deep blue sky).jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/ocean-pride.webp', zh: '荃灣西海之戀', en: 'Ocean Pride, Tsuen Wan West', author: 'Prosperity Horizons', src: commons('Ocean Pride in 2020.jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/park-island.webp', zh: '馬灣珀麗灣', en: 'Park Island, Ma Wan', author: 'Geographer', src: commons('Park Island Aerial.jpg'), lic: 'CC BY-SA 3.0', licUrl: BYSA3 },
+  { file: 'hk/chi-fu.webp', zh: '薄扶林置富花園', en: 'Chi Fu Fa Yuen, Pok Fu Lam', author: 'Prosperity Horizons', src: commons('Chi Fu Fa Yuen South.jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/telford.webp', zh: '九龍灣德福花園', en: 'Telford Gardens, Kowloon Bay', author: 'Exploringlife', src: commons('Telford Gardens (full view).jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/residence-oasis.webp', zh: '將軍澳蔚藍灣畔', en: 'Residence Oasis, Tseung Kwan O', author: 'Wing1990hk', src: commons('Residence Oasis 201405.jpg'), lic: 'CC BY 3.0', licUrl: BY3 },
+  { file: 'hk/heng-fa-chuen.webp', zh: '柴灣杏花邨', en: 'Heng Fa Chuen, Chai Wan', author: 'Ng iman', src: commons('Heng Fa Chuen.png'), lic: 'Public domain', licUrl: commons('Heng Fa Chuen.png') },
+  { file: 'hk/amoy-gardens.webp', zh: '牛頭角淘大花園', en: 'Amoy Gardens, Ngau Tau Kok', author: 'Billy Yellow', src: commons('Amoy Garden.jpg'), lic: 'CC BY-SA 3.0', licUrl: BYSA3 },
+  { file: 'hk/festival-city.webp', zh: '沙田名城', en: 'Festival City, Sha Tin', author: 'Wpcpey', src: commons('Festival City 2018.jpg'), lic: 'CC BY 4.0', licUrl: BY4 },
+  { file: 'hk/tuen-mun.webp', zh: '屯門市廣場住宅', en: 'Tuen Mun Town Plaza residences', author: 'Wing1990hk', src: commons('Tuen Mun Town Plaza Phase 2 Residential 201404.jpg'), lic: 'CC BY 3.0', licUrl: BY3 },
+  { file: 'hk/villa-esplanada.webp', zh: '青衣灝景灣', en: 'Villa Esplanada, Tsing Yi', author: 'Baycrest', src: commons('Villa Esplanada.jpg'), lic: 'CC BY-SA 2.5', licUrl: BYSA25 },
+  { file: 'hk/city-garden.webp', zh: '北角城市花園', en: 'City Garden, North Point', author: 'Baycrest', src: commons('City Garden.jpg'), lic: 'CC BY-SA 2.5', licUrl: BYSA25 },
+  { file: 'hk/laguna-city.webp', zh: '藍田麗港城', en: 'Laguna City, Lam Tin', author: 'Baycrest', src: commons('Laguna City.jpg'), lic: 'CC BY-SA 2.5', licUrl: BYSA25 },
+  { file: 'hk/lei-king-wan.webp', zh: '筲箕灣鯉景灣', en: 'Lei King Wan, Shau Kei Wan', author: 'Baycrest', src: commons('Lei King Wan.jpg'), lic: 'CC BY-SA 2.5', licUrl: BYSA25 },
+  { file: 'hk/riviera-gardens.webp', zh: '荃灣海濱花園', en: 'Riviera Gardens, Tsuen Wan', author: 'Baycrest', src: commons('Riviera Gardens.jpg'), lic: 'CC BY-SA 2.5', licUrl: BYSA25 },
+  { file: 'hk/baguio.webp', zh: '薄扶林碧瑤灣', en: 'Baguio Villa, Pok Fu Lam', author: 'Wpcpey', src: commons('Baguio Villa 202107.jpg'), lic: 'CC BY 4.0', licUrl: BY4 },
+  { file: 'hk/aquamarine.webp', zh: '長沙灣碧海藍天', en: 'AquaMarine, Cheung Sha Wan', author: 'Baycrest', src: commons('AquaMarine.jpg'), lic: 'CC BY-SA 2.5', licUrl: BYSA25 },
+  { file: 'hk/park-central.webp', zh: '將軍澳中心', en: 'Park Central, Tseung Kwan O', author: 'Billy Yellow', src: commons('Park Central Phase 1,2 and 3.jpg'), lic: 'CC BY-SA 3.0', licUrl: BYSA3 },
+  { file: 'hk/parkview.webp', zh: '大潭陽明山莊', en: 'Hong Kong Parkview, Tai Tam', author: 'Minghong', src: commons('Hong Kong Parkview 2.jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/repulse.webp', zh: '淺水灣住宅', en: 'Repulse Bay apartments', author: 'Enochlau', src: commons('Repulse Bay apartments 2.jpg'), lic: 'CC BY-SA 3.0', licUrl: BYSA3 },
+  { file: 'hk/fanling.webp', zh: '粉嶺中心', en: 'Fanling Centre', author: 'WiNG', src: commons('Fanling Centre 201207.jpg'), lic: 'CC BY 3.0', licUrl: BY3 },
+  { file: 'hk/sheung-shui.webp', zh: '上水中心', en: 'Sheung Shui Centre', author: 'Exploringlife', src: commons('Sheung Shui Centre (full view).jpg'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
+  { file: 'hk/aberdeen.webp', zh: '香港仔中心', en: 'Aberdeen Centre', author: 'Exploringlife', src: commons('Aberdeen Centre.JPG'), lic: 'CC BY-SA 4.0', licUrl: BYSA4 },
 ];
 const UNSPLASH = [
   { file: 'interior.jpg', zh: '開放式客飯廳', en: 'Open-plan living room', id: '1600607687939-ce8a6c25118c' },
