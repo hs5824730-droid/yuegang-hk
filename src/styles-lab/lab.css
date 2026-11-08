@@ -1,0 +1,27 @@
+/* Style lab chrome: the floating switcher and the index page. Each prototype owns its own stylesheet. */
+.lab-switch { position: fixed; z-index: 1000; left: 50%; bottom: 18px; transform: translateX(-50%); display: flex; align-items: center; gap: 2px; padding: 5px; border-radius: 999px;
+  background: rgba(20, 20, 22, .82); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 16px 40px -12px rgba(0, 0, 0, .5); font: 500 13.5px/1 'Noto Sans HK', sans-serif; max-width: calc(100% - 20px); overflow-x: auto; scrollbar-width: none; }
+.lab-switch a { color: rgba(255, 255, 255, .72); text-decoration: none; padding: 9px 14px; border-radius: 999px; white-space: nowrap; transition: background .2s, color .2s; }
+.lab-switch a:hover { color: #fff; background: rgba(255, 255, 255, .1); }
+.lab-switch a[aria-current='page'] { background: #fff; color: #111; }
+.lab-switch .lab-switch-home { color: #E9C46A; }
+.lab-switch-lang { margin-left: 4px; }
+.lab-switch-lang .lang-menu-button { min-height: 32px !important; border-radius: 999px !important; background: rgba(255, 255, 255, .1) !important; border: 0 !important; color: #fff !important; padding: 0 10px !important; }
+.lab-switch-lang .lang-menu-panel { top: auto !important; bottom: calc(100% + 10px); }
+.lab-switch-lang .lang-menu-panel::before { display: none; }
+.lab-loading { padding: 40vh 0; text-align: center; font-family: 'Noto Sans HK', sans-serif; color: #777; }
+
+.lab-index { min-height: 100svh; padding: 64px 24px 120px; background: #111; color: #fff; font-family: 'Noto Sans HK', sans-serif; }
+.lab-index > * { width: min(1200px, 100%); margin-inline: auto; }
+.lab-index-kicker { margin-bottom: 14px; color: #E9C46A; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; }
+.lab-index h1 { margin-top: 0; margin-bottom: 14px; font: 900 clamp(32px, 5vw, 60px)/1.15 'Noto Serif HK', serif; color: #fff; }
+.lab-index-lead { margin-top: 0; margin-bottom: 40px; color: rgba(255, 255, 255, .7); font-size: 17px; line-height: 1.8; max-width: 40em; }
+.lab-index ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.lab-index a { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 16px; overflow: hidden; color: #fff; text-decoration: none; }
+.lab-index img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2, .8, .2, 1); }
+.lab-index a::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 0, 0, .8), transparent 60%); }
+.lab-index a:hover img { transform: scale(1.06); }
+.lab-index-no, .lab-index strong { position: absolute; z-index: 1; left: 20px; }
+.lab-index-no { top: 18px; font: 400 40px/1 'Bebas Neue', sans-serif; color: rgba(255, 255, 255, .85); }
+.lab-index strong { bottom: 20px; font: 900 26px/1.2 'Noto Serif HK', serif; }
+@media (max-width: 860px) { .lab-index ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

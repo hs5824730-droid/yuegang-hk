@@ -30,6 +30,7 @@ const RentalRegistration=lazy(()=>import('./pages/RentalRegistration'));
 const CustomerRegistration=lazy(()=>import('./pages/CustomerRegistration'));
 const RegistrationHub=lazy(()=>import('./pages/RegistrationHub'));
 const HomeServices=lazy(()=>import('./pages/HomeServices'));
+const StyleLab=lazy(()=>import('./styles-lab/StyleLab'));
 function ComStandaloneBoundary({children}:{children:ReactNode}) {
   const location=useLocation();
   const com=isComSite();
@@ -43,6 +44,8 @@ function ComStandaloneBoundary({children}:{children:ReactNode}) {
 function LegacyViewings() {const location=useLocation();return <Navigate to={'/viewings'+location.search+location.hash} replace/>;}
 function SiteRoutes() {return <Routes>
             {!languageFromPath(window.location.pathname)&&<Route path="/admin/*" element={<Admin />} />}
+            <Route path="styles" element={<Suspense fallback={null}><StyleLab /></Suspense>} />
+            <Route path="styles/:id" element={<Suspense fallback={null}><StyleLab /></Suspense>} />
             <Route element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="services" element={<Services />} />
