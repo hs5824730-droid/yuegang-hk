@@ -34,7 +34,8 @@ export interface ViewingListing {
   geo: { latitude: number; longitude: number } | null;
   /** Owner-supplied facts; no exact map pin is inferred from a suburb-only address. */
   features?: Bi[];
-  publicReuseApproved: false;
+  /** true 表示这条盘我们有权公开发布（自家委托盘）；第三方摘录的仍是 false。 */
+  publicReuseApproved: boolean;
   sourceName: string;
   sourceUrl: string;
   mapUrl: string;

@@ -7920,5 +7920,3335 @@
         "watermarked": false
       }
     ]
+  },
+  {
+    "id": "reference-4089710",
+    "demo": false,
+    "kind": "rent",
+    "address": "The Riverpark",
+    "suburb": "Tai Wai",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$28,800 / 月",
+      "en": "HK$28,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 507 呎",
+        "en": "Saleable area 507 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "The Riverpark 2 Bedrooms 507 sq ft for Rent $28,800",
+        "en": "The Riverpark 2 Bedrooms 507 sq ft for Rent $28,800"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089710",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089710/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089710/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089710/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living3",
+        "order": 3,
+        "label": {
+          "zh": "客廳 3",
+          "en": "Living room 3"
+        },
+        "photoUrl": "/img/hk/listings/4089710/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 4,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089710/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089710/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089710/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089710/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089710/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089729",
+    "demo": false,
+    "kind": "sale",
+    "address": "Phase I Of Park Villa",
+    "suburb": "Hung Shui Kiu",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 5,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$28,500,000",
+      "en": "HK$28,500,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 3,484 呎",
+        "en": "Saleable area 3,484 sq ft"
+      },
+      {
+        "zh": "5+ 房",
+        "en": "5+ bedrooms"
+      },
+      {
+        "zh": "Phase I Of Park Villa 5+ Bedrooms 3,484 sq ft for Sale $28.5M",
+        "en": "Phase I Of Park Villa 5+ Bedrooms 3,484 sq ft for Sale $28.5M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089729",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089729/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089729/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089729/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 3,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089729/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 4,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089729/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 5,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089729/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 6,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089729/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089729/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089729/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089693",
+    "demo": false,
+    "kind": "sale",
+    "address": "Mei Foo Sun Chuen",
+    "suburb": "Mei Foo",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$8,300,000",
+      "en": "HK$8,300,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 672 呎",
+        "en": "Saleable area 672 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "Mei Foo Sun Chuen 3 Bedrooms 672 sq ft for Sale $8.3M",
+        "en": "Mei Foo Sun Chuen 3 Bedrooms 672 sq ft for Sale $8.3M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089693",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089693/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089693/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089693/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089693/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089693/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 3,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089693/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089693/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 4,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089693/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089693/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 5,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089693/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089693/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 6,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089693/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089693/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089676",
+    "demo": false,
+    "kind": "rent",
+    "address": "Cullinan Sky",
+    "suburb": "Kai Tak",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 1,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$19,900 / 月",
+      "en": "HK$19,900 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 298 呎",
+        "en": "Saleable area 298 sq ft"
+      },
+      {
+        "zh": "1 房",
+        "en": "1 bedrooms"
+      },
+      {
+        "zh": "Cullinan Sky 1 Bedroom 298 sq ft for Rent $19,900",
+        "en": "Cullinan Sky 1 Bedroom 298 sq ft for Rent $19,900"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089676",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089676/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089676/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089676/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089676/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089676/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 3,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089676/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089676/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 4,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089676/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089676/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089676/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089676/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089676/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089676/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089684",
+    "demo": false,
+    "kind": "sale",
+    "address": "Parc Palais",
+    "suburb": "Ho Man Tin",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$17,900,000",
+      "en": "HK$17,900,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 842 呎",
+        "en": "Saleable area 842 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "Parc Palais 3 Bedrooms 842 sq ft for Sale $17.9M",
+        "en": "Parc Palais 3 Bedrooms 842 sq ft for Sale $17.9M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089684",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089684/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089684/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089684/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089684/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089684/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 5,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089684/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 6,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089684/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 7,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089684/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089684/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089655",
+    "demo": false,
+    "kind": "rent",
+    "address": "Telford Gardens",
+    "suburb": "Kowloon Bay",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$20,500 / 月",
+      "en": "HK$20,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 538 呎",
+        "en": "Saleable area 538 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Telford Gardens 2 Bedrooms 538 sq ft for Rent $20,500",
+        "en": "Telford Gardens 2 Bedrooms 538 sq ft for Rent $20,500"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089655",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089655/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089655/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089655/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089655/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089655/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 3,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089655/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089655/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 4,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089655/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089655/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 5,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089655/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089655/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089655/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089655/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089674",
+    "demo": false,
+    "kind": "sale",
+    "address": "The Pavilia Farm",
+    "suburb": "Tai Wai",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$10,800,000",
+      "en": "HK$10,800,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 475 呎",
+        "en": "Saleable area 475 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "The Pavilia Farm 2 Bedrooms 475 sq ft for Sale $10.8M",
+        "en": "The Pavilia Farm 2 Bedrooms 475 sq ft for Sale $10.8M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089674",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089674/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089674/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089674/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089674/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089674/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089674/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089674/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089674/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089674/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 5,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089674/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089674/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 6,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089674/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089674/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089668",
+    "demo": false,
+    "kind": "sale",
+    "address": "Parc Palais",
+    "suburb": "Ho Man Tin",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$16,800,000",
+      "en": "HK$16,800,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 829 呎",
+        "en": "Saleable area 829 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "Parc Palais 3 Bedrooms 829 sq ft for Sale $16.8M",
+        "en": "Parc Palais 3 Bedrooms 829 sq ft for Sale $16.8M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089668",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089668/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089668/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089668/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089668/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089668/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom3",
+        "order": 5,
+        "label": {
+          "zh": "睡房 3",
+          "en": "Bedroom 3"
+        },
+        "photoUrl": "/img/hk/listings/4089668/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 6,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089668/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 7,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089668/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089668/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089609",
+    "demo": false,
+    "kind": "rent",
+    "address": "Wetland Seasons Park",
+    "suburb": "Tin Shui Wai",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$14,500 / 月",
+      "en": "HK$14,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 424 呎",
+        "en": "Saleable area 424 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Wetland Seasons Park 2 Bedrooms 424 sq ft for Rent $14,500",
+        "en": "Wetland Seasons Park 2 Bedrooms 424 sq ft for Rent $14,500"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089609",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089609/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089609/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089609/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 3,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089609/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 4,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089609/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 5,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089609/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089609/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089609/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089609/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089560",
+    "demo": false,
+    "kind": "rent",
+    "address": "The Zenith",
+    "suburb": "Wan Chai",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$28,000 / 月",
+      "en": "HK$28,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 485 呎",
+        "en": "Saleable area 485 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "The Zenith 2 Bedrooms 485 sq ft for Rent $28,000",
+        "en": "The Zenith 2 Bedrooms 485 sq ft for Rent $28,000"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089560",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089560/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089560/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089560/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089560/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089560/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 5,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089560/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 6,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089560/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 7,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089560/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089560/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089656",
+    "demo": false,
+    "kind": "sale",
+    "address": "Century Link",
+    "suburb": "Tung Chung",
+    "city": "Islands",
+    "postcode": "",
+    "beds": 1,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$4,800,000",
+      "en": "HK$4,800,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 379 呎",
+        "en": "Saleable area 379 sq ft"
+      },
+      {
+        "zh": "1 房",
+        "en": "1 bedrooms"
+      },
+      {
+        "zh": "Century Link 1 Bedroom 379 sq ft for Sale $4.8M",
+        "en": "Century Link 1 Bedroom 379 sq ft for Sale $4.8M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089656",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089656/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089656/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089656/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 2,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089656/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089656/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 3,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089656/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089656/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089455",
+    "demo": false,
+    "kind": "rent",
+    "address": "Villa Esplanada",
+    "suburb": "Tsing Yi",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$23,000 / 月",
+      "en": "HK$23,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 531 呎",
+        "en": "Saleable area 531 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Villa Esplanada 2 Bedrooms 531 sq ft for Rent $23,000",
+        "en": "Villa Esplanada 2 Bedrooms 531 sq ft for Rent $23,000"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089455",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089455/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089455/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089455/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089455/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089455/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 3,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089455/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089455/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom3",
+        "order": 4,
+        "label": {
+          "zh": "睡房 3",
+          "en": "Bedroom 3"
+        },
+        "photoUrl": "/img/hk/listings/4089455/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089455/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 5,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089455/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089455/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 6,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089455/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089455/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089651",
+    "demo": false,
+    "kind": "sale",
+    "address": "Ping Yan Court",
+    "suburb": "Tin Shui Wai",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$4,580,000",
+      "en": "HK$4,580,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 447 呎",
+        "en": "Saleable area 447 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Ping Yan Court 2 Bedrooms 447 sq ft for Sale $4.58M",
+        "en": "Ping Yan Court 2 Bedrooms 447 sq ft for Sale $4.58M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089651",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089651/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089651/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089651/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089651/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089651/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089651/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089651/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo5",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 5",
+          "en": "Unit photo 5"
+        },
+        "photoUrl": "/img/hk/listings/4089651/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089651/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089439",
+    "demo": false,
+    "kind": "rent",
+    "address": "Sa Po Kong",
+    "suburb": "Tuen Mun",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$13,800 / 月",
+      "en": "HK$13,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "Sa Po Kong 3 Bedrooms 700 sq ft for Rent $13,800",
+        "en": "Sa Po Kong 3 Bedrooms 700 sq ft for Rent $13,800"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089439",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089439/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089439/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089439/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089439/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089439/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom3",
+        "order": 5,
+        "label": {
+          "zh": "睡房 3",
+          "en": "Bedroom 3"
+        },
+        "photoUrl": "/img/hk/listings/4089439/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 6,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089439/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 7,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089439/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089439/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089413",
+    "demo": false,
+    "kind": "rent",
+    "address": "The Visionary",
+    "suburb": "Tung Chung",
+    "city": "Islands",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$29,500 / 月",
+      "en": "HK$29,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 1,035 呎",
+        "en": "Saleable area 1,035 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "The Visionary 3 Bedrooms 1,035 sq ft for Rent $29,500",
+        "en": "The Visionary 3 Bedrooms 1,035 sq ft for Rent $29,500"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089413",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089413/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089413/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089413/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089413/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089413/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 5,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089413/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 6,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089413/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 7,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089413/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089413/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089631",
+    "demo": false,
+    "kind": "sale",
+    "address": "Park Central",
+    "suburb": "Tseung Kwan O",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$7,500,000",
+      "en": "HK$7,500,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 406 呎",
+        "en": "Saleable area 406 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Park Central 2 Bedrooms 406 sq ft for Sale $7.5M",
+        "en": "Park Central 2 Bedrooms 406 sq ft for Sale $7.5M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089631",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089631/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089631/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089631/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 3,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089631/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom3",
+        "order": 4,
+        "label": {
+          "zh": "睡房 3",
+          "en": "Bedroom 3"
+        },
+        "photoUrl": "/img/hk/listings/4089631/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 5,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089631/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 6,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089631/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 7,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089631/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089631/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089403",
+    "demo": false,
+    "kind": "rent",
+    "address": "Sereno Verde",
+    "suburb": "Yuen Long",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$13,000 / 月",
+      "en": "HK$13,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 381 呎",
+        "en": "Saleable area 381 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Sereno Verde 2 Bedrooms 381 sq ft for Rent $13,000",
+        "en": "Sereno Verde 2 Bedrooms 381 sq ft for Rent $13,000"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089403",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089403/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089403/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089403/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089403/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089403/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living3",
+        "order": 3,
+        "label": {
+          "zh": "客廳 3",
+          "en": "Living room 3"
+        },
+        "photoUrl": "/img/hk/listings/4089403/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089403/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 4,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089403/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089403/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 5,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089403/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089403/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089354",
+    "demo": false,
+    "kind": "rent",
+    "address": "Yoho Town",
+    "suburb": "Yuen Long",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$16,500 / 月",
+      "en": "HK$16,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 433 呎",
+        "en": "Saleable area 433 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Yoho Town 2 Bedrooms 433 sq ft for Rent $16,500",
+        "en": "Yoho Town 2 Bedrooms 433 sq ft for Rent $16,500"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089354",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089354/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089354/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living2",
+        "order": 2,
+        "label": {
+          "zh": "客廳 2",
+          "en": "Living room 2"
+        },
+        "photoUrl": "/img/hk/listings/4089354/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 3,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089354/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 4,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089354/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 5,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089354/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089354/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089354/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089354/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089574",
+    "demo": false,
+    "kind": "sale",
+    "address": "Grand Waterfront",
+    "suburb": "To Kwa Wan",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$6,950,000",
+      "en": "HK$6,950,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 427 呎",
+        "en": "Saleable area 427 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Grand Waterfront 2 Bedrooms 427 sq ft for Sale $6.95M",
+        "en": "Grand Waterfront 2 Bedrooms 427 sq ft for Sale $6.95M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089574",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089574/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089574/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 2,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089574/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089574/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089574/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089574/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089574/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo5",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 5",
+          "en": "Unit photo 5"
+        },
+        "photoUrl": "/img/hk/listings/4089574/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089574/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089237",
+    "demo": false,
+    "kind": "rent",
+    "address": "Yuen Long Plaza",
+    "suburb": "Yuen Long",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$14,200 / 月",
+      "en": "HK$14,200 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 427 呎",
+        "en": "Saleable area 427 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Yuen Long Plaza 2 Bedrooms 427 sq ft for Rent $14,200",
+        "en": "Yuen Long Plaza 2 Bedrooms 427 sq ft for Rent $14,200"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089237",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089237/01.webp",
+    "rooms": [
+      {
+        "id": "living",
+        "order": 1,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/4089237/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom",
+        "order": 2,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089237/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089237/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089237/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089237/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089237/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo5",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 5",
+          "en": "Unit photo 5"
+        },
+        "photoUrl": "/img/hk/listings/4089237/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089237/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089652",
+    "demo": false,
+    "kind": "rent",
+    "address": "The Visionary",
+    "suburb": "Tung Chung",
+    "city": "Islands",
+    "postcode": "",
+    "beds": 4,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$61,500 / 月",
+      "en": "HK$61,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 1,897 呎",
+        "en": "Saleable area 1,897 sq ft"
+      },
+      {
+        "zh": "4 房",
+        "en": "4 bedrooms"
+      },
+      {
+        "zh": "The Visionary 4 Bedrooms 1,897 sq ft for Rent $61,500",
+        "en": "The Visionary 4 Bedrooms 1,897 sq ft for Rent $61,500"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089652",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089652/01.webp",
+    "rooms": [
+      {
+        "id": "bedroom",
+        "order": 1,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089652/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089652/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 2,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089652/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089652/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089652/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089652/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089652/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089652/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089652/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089652/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089652/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089652/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089630",
+    "demo": false,
+    "kind": "rent",
+    "address": "Man Yiu Building Studio 180 sq ft for Rent $9,200",
+    "suburb": "Jordan",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": 0,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$9,200 / 月",
+      "en": "HK$9,200 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 180 呎",
+        "en": "Saleable area 180 sq ft"
+      },
+      {
+        "zh": "0 房",
+        "en": "0 bedrooms"
+      },
+      {
+        "zh": "Man Yiu Building Studio 180 sq ft for Rent $9,200",
+        "en": "Man Yiu Building Studio 180 sq ft for Rent $9,200"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089630",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089630/01.webp",
+    "rooms": [
+      {
+        "id": "bedroom",
+        "order": 1,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089630/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089630/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 2,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089630/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089630/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089630/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089630/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089630/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089630/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089630/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089630/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089630/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089630/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089635",
+    "demo": false,
+    "kind": "sale",
+    "address": "Sierra Sea",
+    "suburb": "Tai Po",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$9,980,000",
+      "en": "HK$9,980,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 700 呎",
+        "en": "Saleable area 700 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "Sierra Sea 3 Bedrooms 700 sq ft for Sale $9.98M",
+        "en": "Sierra Sea 3 Bedrooms 700 sq ft for Sale $9.98M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089635",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089635/01.webp",
+    "rooms": [
+      {
+        "id": "bedroom",
+        "order": 1,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089635/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 2,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089635/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom3",
+        "order": 3,
+        "label": {
+          "zh": "睡房 3",
+          "en": "Bedroom 3"
+        },
+        "photoUrl": "/img/hk/listings/4089635/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 4,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089635/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089635/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089635/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089635/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089635/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089629",
+    "demo": false,
+    "kind": "sale",
+    "address": "Le Mont",
+    "suburb": "Tai Po",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$5,650,000",
+      "en": "HK$5,650,000"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 435 呎",
+        "en": "Saleable area 435 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Le Mont 2 Bedrooms 435 sq ft for Sale $5.65M",
+        "en": "Le Mont 2 Bedrooms 435 sq ft for Sale $5.65M"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/buy/apartment/property-4089629",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089629/01.webp",
+    "rooms": [
+      {
+        "id": "bedroom",
+        "order": 1,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089629/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom2",
+        "order": 2,
+        "label": {
+          "zh": "睡房 2",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/4089629/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089629/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089629/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089629/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089629/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo5",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 5",
+          "en": "Unit photo 5"
+        },
+        "photoUrl": "/img/hk/listings/4089629/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089629/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": null,
+    "availabilityCheckedAt": null
+  },
+  {
+    "id": "reference-4089310",
+    "demo": false,
+    "kind": "rent",
+    "address": "One Kai Tak(I) 567 sq ft for Rent $35,000",
+    "suburb": "Kai Tak",
+    "city": "Kowloon",
+    "postcode": "",
+    "beds": null,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$35,000 / 月",
+      "en": "HK$35,000 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 567 呎",
+        "en": "Saleable area 567 sq ft"
+      },
+      {
+        "zh": " 房",
+        "en": " bedrooms"
+      },
+      {
+        "zh": "One Kai Tak(I) 567 sq ft for Rent $35,000",
+        "en": "One Kai Tak(I) 567 sq ft for Rent $35,000"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089310",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089310/01.webp",
+    "rooms": [
+      {
+        "id": "bedroom",
+        "order": 1,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089310/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 2,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089310/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 3,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089310/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 4,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089310/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089310/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089310/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089310/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089310/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089244",
+    "demo": false,
+    "kind": "rent",
+    "address": "City One Shatin",
+    "suburb": "Shatin",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 3,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$18,800 / 月",
+      "en": "HK$18,800 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 447 呎",
+        "en": "Saleable area 447 sq ft"
+      },
+      {
+        "zh": "3 房",
+        "en": "3 bedrooms"
+      },
+      {
+        "zh": "City One Shatin 3 Bedrooms 447 sq ft for Rent $18,800",
+        "en": "City One Shatin 3 Bedrooms 447 sq ft for Rent $18,800"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089244",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089244/01.webp",
+    "rooms": [
+      {
+        "id": "bedroom",
+        "order": 1,
+        "label": {
+          "zh": "睡房",
+          "en": "Bedroom"
+        },
+        "photoUrl": "/img/hk/listings/4089244/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089244/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 2,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089244/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089244/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 3,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089244/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089244/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089244/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089244/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089244/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089244/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
+  },
+  {
+    "id": "reference-4089707",
+    "demo": false,
+    "kind": "rent",
+    "address": "Tierra Verde",
+    "suburb": "Tsing Yi",
+    "city": "New Territories",
+    "postcode": "",
+    "beds": 2,
+    "baths": null,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$21,500 / 月",
+      "en": "HK$21,500 / month"
+    },
+    "priceBasis": "asking_monthly_rent",
+    "checkedAt": "2026-11-08",
+    "listingDate": "2026-11-08",
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "features": [
+      {
+        "zh": "實用面積 432 呎",
+        "en": "Saleable area 432 sq ft"
+      },
+      {
+        "zh": "2 房",
+        "en": "2 bedrooms"
+      },
+      {
+        "zh": "Tierra Verde 2 Bedrooms 432 sq ft for Rent $21,500",
+        "en": "Tierra Verde 2 Bedrooms 432 sq ft for Rent $21,500"
+      }
+    ],
+    "publicReuseApproved": true,
+    "sourceName": "28Hse",
+    "sourceUrl": "https://www.28hse.com/en/rent/apartment/property-4089707",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/4089707/01.webp",
+    "rooms": [
+      {
+        "id": "kitchen",
+        "order": 1,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/4089707/01.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom",
+        "order": 2,
+        "label": {
+          "zh": "浴室",
+          "en": "Bathroom"
+        },
+        "photoUrl": "/img/hk/listings/4089707/02.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo",
+        "order": 3,
+        "label": {
+          "zh": "單位照片",
+          "en": "Unit photo"
+        },
+        "photoUrl": "/img/hk/listings/4089707/03.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo2",
+        "order": 4,
+        "label": {
+          "zh": "單位照片 2",
+          "en": "Unit photo 2"
+        },
+        "photoUrl": "/img/hk/listings/4089707/04.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo3",
+        "order": 5,
+        "label": {
+          "zh": "單位照片 3",
+          "en": "Unit photo 3"
+        },
+        "photoUrl": "/img/hk/listings/4089707/05.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo4",
+        "order": 6,
+        "label": {
+          "zh": "單位照片 4",
+          "en": "Unit photo 4"
+        },
+        "photoUrl": "/img/hk/listings/4089707/06.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "photo5",
+        "order": 7,
+        "label": {
+          "zh": "單位照片 5",
+          "en": "Unit photo 5"
+        },
+        "photoUrl": "/img/hk/listings/4089707/07.webp",
+        "thumbnailUrl": "/img/hk/listings/4089707/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ],
+    "availabilityStatus": "available",
+    "availabilityCheckedAt": "2026-11-08T00:00:00+08:00"
   }
 ]
