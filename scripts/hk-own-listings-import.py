@@ -87,6 +87,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ref", required=True)
     ap.add_argument("--no-clean", action="store_true", help="用 raw 原始图，不去水印")
+    ap.add_argument("--clean-sub", default="clean", help="去水印图所在子目录（clean / clean-lama）")
     ap.add_argument("--dry-run", action="store_true")
     a = ap.parse_args()
     ref = Path(a.ref)
@@ -106,13 +107,13 @@ def main():
         kind = "rent" if r["租售"] == "出租" else "sale"
         key = f"{kind}-{pid}"
 
-        src_dir = None if a.no_clean else (ref / "clean" / "raw" / key)
+        src_dir = None if a.no_clean else (ref / a.clean_sub / "raw" / key)
         if not src_dir or not src_dir.is_dir():
             src_dir = ref / "raw" / key
         if not src_dir.is_dir():
             skipped.append((key, "无图片目录"))
             continue
-        cleaned = "clean" in src_dir.parts
+        cleaned = a.clean_sub in str(src_dir)
 
         files = sorted(src_dir.glob("*.jpg"))
         if not files:
