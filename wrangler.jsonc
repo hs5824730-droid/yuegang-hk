@@ -7,8 +7,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": false,
   "preview_urls": false,
-  // Harbour Joy has no domain yet; add its own routes here. Never reuse eucove.com.
-  "routes": [],
+  // Harbour Joy's own domain (zone in the same Cloudflare account). Never reuse eucove.com.
+  "routes": [{ "pattern": "harbor-hk.com", "custom_domain": true }],
   "send_metrics": false,
   "assets": {
     "directory": "./dist",
@@ -19,21 +19,21 @@
   "d1_databases": [{
     "binding": "DB",
     "database_name": "harbour-joy",
-    "database_id": "REPLACE-WITH-HARBOUR-JOY-D1-ID",
+    "database_id": "b8a44e9f-3977-4b5a-a7b2-b1f4d94ce49c",
     "migrations_dir": "migrations"
   }],
   "r2_buckets": [{ "binding": "MEDIA", "bucket_name": "harbour-joy-media" }],
-  "triggers": { "crons": ["* * * * *"] },
+  "triggers": { "crons": [] },
   "vars": {
     "PUBLIC_DIRECT_CONTACT_ENABLED": "false",
-    "APP_URL": "https://example.invalid",
+    "APP_URL": "https://harbor-hk.com",
     "BRAND_ZH": "悦港",
     "BRAND_EN": "Harbour Joy",
     "WHATSAPP_NUMBER": "",
     "DISABLE_TELEGRAM": "false",
-    "SIGNAL_ENABLED": "true",
-    "MAIL_ENABLED": "true",
-    "MAIL_SEND_ENABLED": "true",
+    "SIGNAL_ENABLED": "false",
+    "MAIL_ENABLED": "false",
+    "MAIL_SEND_ENABLED": "false",
     "MAIL_START_AT": "2026-10-26T13:56:13.958Z",
     "REGISTRATION_SHEETS_ENABLED": "false",
     "REGISTRATION_SHEETS_ID": "17qZqF0GvUsK4X9L_31uQvDwC1rUNGyXTgRy8aISddh0",

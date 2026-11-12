@@ -5,7 +5,7 @@ export async function publishedViewings(request:Request,env:AppEnv,path:string){
  if(!['GET','HEAD'].includes(request.method))return notFound();
  if(path==='/api/viewing-samples'){
   const kind=new URL(request.url).searchParams.get('kind')||'rent';
-  if(kind!=='rent'&&kind!=='sold'&&kind!=='sale')return json({error:'房源类型无效 / Invalid listing kind'},400);
+  if(kind!=='rent'&&kind!=='sold'&&kind!=='sale'&&kind!=='leased')return json({error:'房源类型无效 / Invalid listing kind'},400);
   return json({listings:publicViewingListings(kind)});
  }
  const listing=path.match(/^\/api\/viewing-samples\/(reference-\d{5,12})$/);
