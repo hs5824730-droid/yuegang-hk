@@ -87,7 +87,7 @@ export function viewingSamplesRouter() {
     // 悦港 serves its published listing set in every environment; local manifests are no longer used.
     if(!['GET','HEAD'].includes(req.method)){res.sendStatus(404);return;}
     const route=req.path.replace(/\/$/,'')||'/';
-    if(route==='/'){const kind=req.query.kind||'rent';if(kind!=='rent'&&kind!=='sold'&&kind!=='sale'){res.sendStatus(400);return;}res.json({listings:publicViewingListings(kind as 'rent'|'sold'|'sale')});return;}
+    if(route==='/'){const kind=req.query.kind||'rent';if(kind!=='rent'&&kind!=='sold'&&kind!=='sale'&&kind!=='leased'){res.sendStatus(400);return;}res.json({listings:publicViewingListings(kind as 'rent'|'sold'|'sale'|'leased')});return;}
     const detail=route.match(/^\/(reference-\d{5,12})$/);
     if(detail){const listing=publicViewingListing(detail[1]);if(listing)res.json({listing});else res.sendStatus(404);return;}
     const media=publicViewingMedia('/api/viewing-samples'+route);

@@ -9,19 +9,19 @@ import PropertyExplorer, { type ExplorerItem } from './PropertyExplorer';
 import { SHOW_DEMO_LISTINGS } from '../hk-site';
 import './viewing-samples.css';
 
-type Kind = 'rent' | 'sale' | 'sold';
+type Kind = 'rent' | 'sale' | 'sold' | 'leased';
 type Choice = { listing:string;room:string;city:string };
 type Listing = ViewingListing & { availabilityStatus?: unknown };
 type Catalog = Record<Kind, Listing[]>;
-const kinds: Kind[] = ['rent', 'sale', 'sold'];
-const asKind = (value: string | null | undefined): Kind => value === 'sale' || value === 'sold' ? value : 'rent';
+const kinds: Kind[] = ['rent', 'sale', 'sold', 'leased'];
+const asKind = (value: string | null | undefined): Kind => value === 'sale' || value === 'sold' || value === 'leased' ? value : 'rent';
 
 export default function ViewingSamplePage() {
   const { L, lang, pick } = useI18n();
   const [search, setSearch] = useSearchParams();
   const enquire = useEnquiry();
   const [catalog, setCatalog] = useState<Catalog | null>(null);
-  const [unavailable, setUnavailable] = useState<Record<Kind, boolean>>({ rent: false, sale: false, sold: false });
+  const [unavailable, setUnavailable] = useState<Record<Kind, boolean>>({ rent: false, sale: false, sold: false, leased: false });
   const choices = useRef<Partial<Record<Kind, Choice>>>({});
   useEffect(() => {
     const controller = new AbortController();
@@ -42,16 +42,16 @@ export default function ViewingSamplePage() {
   }, []);
 
   // The public rental pool contains only explicitly available rentals.
-  const publicCatalog=catalog?{rent:catalog.rent.filter(l=>viewingStatus(l)==='available'),sale:catalog.sale,sold:catalog.sold}:null;
+  const publicCatalog=catalog?{rent:catalog.rent.filter(l=>viewingStatus(l)==='available'),sale:catalog.sale,sold:catalog.sold,leased:catalog.leased}:null;
   const known=publicCatalog&&kinds.flatMap(k=>publicCatalog[k]).find(l=>l.id===search.get('listing'));
-  const kind:Kind=known?asKind(known.kind):asKind(search.get('kind'));
+  const kind:Kind=known?(viewingStatus(known)==='leased'?'leased':asKind(known.kind)):asKind(search.get('kind'));
   const listings=publicCatalog?.[kind]||[];
   const requestedCity=search.get('viewCity')||'';
   const city=listings.some(l=>l.city===requestedCity)?requestedCity:'';
   const visible=listings.filter(l=>!city||l.city===city);
   const chosen = visible.find(l => l.id === search.get('listing')) || visible[0];
   const room = chosen?.rooms.find(r => r.id === search.get('room'))?.id || '';
-  const service = kind === 'rent' ? 'rent' : 'buy';
+  const service = kind === 'rent' || kind === 'leased' ? 'rent' : 'buy';
   usePublishContactPage(chosen?{city:chosen.city,service,listing:kind==='rent'?chosen.id:undefined,propertyAddress:`${chosen.address}, ${chosen.suburb}`}:{city:city||undefined});
   const searchKey = search.toString();
 
@@ -92,7 +92,7 @@ export default function ViewingSamplePage() {
     if(kind==='rent'&&viewingStatus(chosen)==='available')enquire({service:'rent',listing:chosen.id,city:chosen.city,propertyAddress});
     else enquire({service:'buy',city:chosen.city,propertyAddress:kind==='sale'?propertyAddress:undefined});
   };
-  const statusLabel=(l:Listing)=>l.kind==='sold'?L('已成交','Sold'):l.kind==='sale'?L('放售中','For sale'):L('可租','For rent');
+  const statusLabel=(l:Listing)=>l.kind==='sold'?L('已成交','Sold'):l.kind==='sale'?L('放售中','For sale'):viewingStatus(l)==='leased'?L('已租','Leased'):L('可租','For rent');
   const priceNote=(l:Listing)=>l.kind==='sold'?(l.soldPrice===null?L('成交紀錄 · 成交價未公開','Sold record · price not disclosed'):L('成交紀錄 · 成交價','Sold record · sold price'))
     :l.kind==='sale'?L('業主叫價，最終以買賣合約為準。','Asking price; the sale agreement is final.'):L('掛牌月租，唔包差餉、地租同管理費（另有註明除外）。','Asking rent per month, excluding rates, government rent and management fees unless stated.');
   const items: ExplorerItem[] = listings.map(l => ({
@@ -103,7 +103,7 @@ export default function ViewingSamplePage() {
     coverUrl: l.coverUrl, geo: l.geo,
     rooms: l.rooms.map(r => ({ id: r.id, label: pick(r.label), photoUrl: r.photoUrl, thumbnailUrl: r.thumbnailUrl, videoUrl: r.videoUrl })),
   }));
-  const tabLabel = (k: Kind) => k === 'rent' ? L('租盤', 'To rent') : k === 'sale' ? L('售盤', 'For sale') : L('成交紀錄', 'Sold');
+  const tabLabel = (k: Kind) => k === 'rent' ? L('租盤', 'To rent') : k === 'sale' ? L('售盤', 'For sale') : k === 'leased' ? L('租賃記錄（已租）', 'Leased rentals') : L('成交紀錄', 'Sold');
 
   return <div className="viewing-samples wrap">
     <header className="ds viewing-samples-heading"><p className="ds-kicker">{L('網上睇樓', 'Online viewings')}</p><h1>{L('未到現場，都可以先睇清楚層樓', 'See the flat clearly before you visit')}</h1><p className="ds-lead">{L('租盤、售盤同成交紀錄都喺度。睇中咗，撳一下就可以約我哋睇樓。', 'Rentals, sales and recent transactions in one place. Found one you like? Tap to book a viewing.')}</p></header>
