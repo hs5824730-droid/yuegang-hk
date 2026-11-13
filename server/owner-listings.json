@@ -14200,5 +14200,167 @@
         "watermarked": false
       }
     ]
+  },
+  {
+    "id": "reference-9000000300",
+    "demo": false,
+    "kind": "sale",
+    "availabilityStatus": "unknown",
+    "availabilityCheckedAt": null,
+    "address": "愉景楼  礼顿道, 铜锣湾",
+    "suburb": "銅鑼灣",
+    "city": "Hong Kong Island",
+    "postcode": "",
+    "beds": 2,
+    "baths": 2,
+    "cars": null,
+    "priceDisplay": {
+      "zh": "HK$950萬",
+      "en": "HK$9.5M"
+    },
+    "priceBasis": "asking_sale",
+    "checkedAt": "2026-11-13",
+    "listingDate": null,
+    "availableDate": null,
+    "soldPrice": null,
+    "soldDate": null,
+    "geo": null,
+    "publicReuseApproved": true,
+    "sourceName": "",
+    "sourceUrl": "",
+    "mapUrl": "",
+    "coverUrl": "/img/hk/listings/9000000300/01.webp",
+    "features": [
+      {
+        "zh": "2 房 2 衛，實用面積 680 平方呎",
+        "en": "2 bedrooms, 2 bathrooms, saleable area 680 sq ft"
+      },
+      {
+        "zh": "呎價 HK$13,970",
+        "en": "HK$13,970 per sq ft"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "living-dining",
+        "order": 1,
+        "label": {
+          "zh": "客飯廳",
+          "en": "Living and dining room"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/01.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/01.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "study",
+        "order": 2,
+        "label": {
+          "zh": "書桌區",
+          "en": "Study area"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/02.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/02.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen-bar",
+        "order": 3,
+        "label": {
+          "zh": "開放式廚房及吧枱",
+          "en": "Open kitchen and breakfast bar"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/03.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/03.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "kitchen",
+        "order": 4,
+        "label": {
+          "zh": "廚房",
+          "en": "Kitchen"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/04.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/04.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living-dining-bar",
+        "order": 5,
+        "label": {
+          "zh": "客飯廳及吧枱",
+          "en": "Living and dining room with breakfast bar"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/05.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/05.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "living",
+        "order": 6,
+        "label": {
+          "zh": "客廳",
+          "en": "Living room"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/06.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/06.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom-1",
+        "order": 7,
+        "label": {
+          "zh": "睡房一",
+          "en": "Bedroom 1"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/07.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/07.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom-1",
+        "order": 8,
+        "label": {
+          "zh": "浴室一",
+          "en": "Bathroom 1"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/08.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/08.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bedroom-2",
+        "order": 9,
+        "label": {
+          "zh": "睡房二",
+          "en": "Bedroom 2"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/09.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/09.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      },
+      {
+        "id": "bathroom-2",
+        "order": 10,
+        "label": {
+          "zh": "浴室二",
+          "en": "Bathroom 2"
+        },
+        "photoUrl": "/img/hk/listings/9000000300/10.webp",
+        "thumbnailUrl": "/img/hk/listings/9000000300/10.thumb.webp",
+        "videoUrl": null,
+        "watermarked": false
+      }
+    ]
   }
 ]
